@@ -1,0 +1,5 @@
+Published asset set privacy scan: PASS
+Text files and PNG/SVG metadata checked for private identities, private filesystem paths, hostnames, IP addresses, GPU identifiers, credentials and unexpected emails.
+Raw logs, patch files, unpublished correspondence and draft metadata are excluded.
+Public repository identifiers, commit hashes and necessary software/hardware versions are retained.
+The asset commit uses a public GitHub identity and noreply email with DCO; no Co-authored-by trailer.

@@ -1,0 +1,84 @@
+NVIDIA/warp #2055 -- Numerical comparison assets
+
+Base: e207ab67b91bd843e3bda7918963fdaf83f17026
+Fix: 7bee3dbc3290e1c8593cb0657be1a01319f4645f
+Scope: FP16 SVD3 forward only.
+Environment: Linux x86_64, Python 3.12.13, Warp 1.19.0.dev0,
+NVIDIA B200, CUDA Toolkit 13.0.88, driver 580.126.20.
+
+Measurement
+The same measure.py was run against separately built source checkouts:
+the unmodified base and the fixed version. CPU and one CUDA GPU were
+measured, with separate compilation caches. Each version has 532 rows:
+51 FP16 matrices and 41 matrices per other dtype, each on two backends
+and with two calling forms. Repeated calling forms are counted as
+separate evaluations, not independent random samples.
+
+Before: 356/532 evaluations passed. There were 176 FP16 failures:
+144 with nonfinite factors and 32 finite but inaccurate results.
+After: 532/532 passed. On each backend, FP16 improved from 14/102
+passing evaluations to 102/102. Measured FP32/64 rows are identical
+before and after the change.
+
+Reported cases (before: NaN singular values on both backends)
+Device | Matrix | Returned sigma after | Reconstruction max abs error after
+CPU | diag(1,2,3) | [3, 2, 1] | 1.78814e-07
+CPU | diag(2,2,3) | [3, 2, 2] | 1.78814e-07
+CPU | zero | [0, 0, 0] | 0
+CUDA | diag(1,2,3) | [3, 2, 1] | 5.36442e-07
+CUDA | diag(2,2,3) | [3, 2, 2] | 5.36442e-07
+CUDA | zero | [0, 0, 0] | 0
+
+Error definitions
+All error measurements use the returned factors promoted to NumPy
+float64, against the input rounded to the tested dtype.
+- Reconstruction: max abs(U diag(sigma) V^T - A).
+- Scale-relative reconstruction: reconstruction / max abs(A); zero
+  input is reported as zero error.
+- Error allowance: tol * max abs(A) + 2 * dtype smallest subnormal.
+  Tolerances are 5e-3, 1e-5, 1e-12 for FP16, FP32, FP64 respectively.
+- Error-budget ratio: reconstruction / allowance; <= 1 passes.
+- Orthogonality: max entrywise error over U^T U - I and V^T V - I.
+
+The largest FP16 error-budget ratio after the fix is 0.165485;
+maximum orthogonality error is 5.70086e-4. At subnormal input scales,
+the largest scale-relative reconstruction error is 1.0021%; the
+absolute output-quantization allowance is necessary there. These
+results do not establish correctness for every possible finite input.
+Outputs that exceed the FP16 representable range are not in this set.
+
+Existing validation
+The new unittest regressions had 176 failing subcases on the base,
+then all 12 tests passed with the fix. All 170 tests in the full matrix
+module passed on CPU/CUDA. Native builds and applicable pre-commit
+checks passed. Test command: uv run --extra dev -m unittest warp.tests.matrix.test_mat -v. No performance
+or timing comparison is claimed.
+
+Files
+before.csv / after.csv: every measured evaluation; blank metric fields
+indicate nonfinite factors, not zero error.
+summary.csv: per-device/dtype summary.
+svd3-validation.png / .svg: raster and editable vector figures.
+measure.py / plot.py: reproducible measurement and figure generation.
+SHA256SUMS: SHA-256 checksums for this asset set.
+
+To reproduce, run measure.py from each built source checkout with that
+checkout on PYTHONPATH, a distinct --cache directory, --phase before or
+after, and the matching --output CSV filename. Use uv run --no-project
+--with numpy. Run plot.py with uv run --no-project --with numpy --with
+matplotlib in an environment with both CSV files beside the script.
+
+Publication status
+These assets support a prepared local draft; no GitHub PR has been opened. At the last
+check, #2055 had no maintainer comments. The contributor has stated
+this is independent research with no downstream application impact;
+that fact is preserved in the draft. Maintainer coordination remains
+pending under the agreed contribution workflow.
+
+Privacy and attribution
+This asset set excludes raw build/test logs, private filesystem paths,
+hostnames, IP addresses, GPU UUIDs/PCI identifiers, credentials and
+private email addresses. Public GitHub identity and its noreply email
+are intentionally preserved for authorship and DCO. The new commit has
+no Co-authored-by trailer. Inherited upstream history is not rewritten
+or included in this asset branch. The original raw logs remain local only.
