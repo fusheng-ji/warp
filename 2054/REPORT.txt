@@ -1,0 +1,65 @@
+GH-2054: SVD zero-adjoint gradient validation
+===========================================
+
+Before: c47fe4c86c99cfcff5b78e823d167972a4c3520e
+After:  e6185ac3cc8a65265b97bb2aae673a98a21ad344
+Both revisions were built independently with the standard build_lib.py command.
+Neither revision includes the GH-2055 SVD3 forward change.
+
+Environment: Linux x86_64; Python 3.12.13; NumPy 2.5.3; Warp 1.19.0.dev0.
+CUDA Toolkit 13.0 (nvcc 13.0.88); NVIDIA driver 580.126.20.
+Devices: CPU, cuda:0 and cuda:1 (two NVIDIA B200 GPUs, sm_100).
+
+Standalone measurement results
+------------------------------
+Device | Dtype | Evaluations/phase | Failed before | Failed after | Max gradient error ratio after
+cpu | float16 | 60 | 48 | 0 | 0.341796875
+cpu | float32 | 60 | 0 | 0 | 0.0476837158
+cpu | float64 | 60 | 0 | 0 | 4.67750365e-06
+cuda:0 | float16 | 60 | 48 | 0 | 0.341796875
+cuda:0 | float32 | 60 | 0 | 0 | 0.104357025
+cuda:0 | float64 | 60 | 0 | 0 | 1.3366309e-05
+cuda:1 | float16 | 60 | 48 | 0 | 0.341796875
+cuda:1 | float32 | 60 | 0 | 0 | 0.104357025
+cuda:1 | float64 | 60 | 0 | 0 | 1.3366309e-05
+
+Method: A=2I for SVD2 and SVD3; return-value and output-argument forms.
+Scenarios: squared singular-value norm; norm plus trace; norm with seeds
+[0, 1, -0.5]; trace alone; trace preceded by an unused SVD diagnostic.
+Each scenario uses three batch elements. Unused diagnostic outputs do not require gradients.
+Counts are evaluations across APIs, devices, and seeds, not independent random matrices.
+
+References: norm loss = 4n and gradient = 4I; adding trace gives loss 6n
+and gradient 5I; trace gives loss 2n and gradient I, with or without the diagnostic.
+Gradient references are multiplied by the corresponding output seed.
+Comparisons use float64 references computed from the actual input values.
+
+Error ratio = max(abs(actual-expected)/(atol+rtol*abs(expected))).
+Both atol and rtol are 1e-2 / 1e-5 / 1e-10 for FP16 / FP32 / FP64.
+An evaluation passes only if both loss and gradient are finite and each ratio <= 1.
+Non-finite results remain nan in CSV data; heatmaps display them as gray NaN cells.
+
+Repository validation
+---------------------
+Baseline with added regression tests: 60 tests, 48 failed FP16 subtests in 12 methods.
+After: all 78 SVD tests and all 295 matrix-module tests passed on CPU and both GPUs.
+Includes existing FP32/FP64 finite differences and small nonzero U/V adjoint checks.
+Applicable pre-commit hooks and git diff --check passed.
+
+Scope: exact-zero U/V adjoints bypass singular-vector derivatives; zero sigma
+adjoints preserve the existing input gradient. Forward implementations and the
+general nonzero U/V adjoint formula are unchanged. This does not address all
+decomposition findings in GH-2030 or the forward NaN defect in GH-2055.
+
+Reproduce
+---------
+Run measure.py from a checkout of the corresponding source revision, after
+uv run build_lib.py. Save this asset directory outside the source checkout.
+Use a separate kernel cache for each build. Example arguments:
+uv run python /path/to/assets/2054/measure.py --phase before --expected-commit c47fe4c86c99cfcff5b78e823d167972a4c3520e --output /path/to/results --cache /tmp/warp-2054-before
+uv run python /path/to/assets/2054/measure.py --phase after --expected-commit e6185ac3cc8a65265b97bb2aae673a98a21ad344 --output /path/to/results --cache /tmp/warp-2054-after
+The defaults require CPU and two CUDA devices; --devices can select available devices.
+Copy build_assets.py beside both CSVs and metadata JSONs, then run:
+uv run --with matplotlib --with numpy python /path/to/results/build_assets.py
+
+Published files deliberately omit raw logs and machine-specific filesystem paths.

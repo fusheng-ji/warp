@@ -9,6 +9,7 @@ Numerical reports, figures, data, and reproduction scripts for contributions to 
 
 | Issue | Assets | Report | Figure |
 |---|---|---|---|
+| [NVIDIA/warp#2054](https://github.com/NVIDIA/warp/issues/2054) | [SVD gradient validation](2054/) | [Numerical report](2054/REPORT.txt) | [Before / after gradients](2054/svd-gradient-comparison.png) |
 | [NVIDIA/warp#2055](https://github.com/NVIDIA/warp/issues/2055) | [SVD3 forward validation](2055/) | [Numerical report](2055/REPORT.txt) | [Before / after comparison](2055/svd3-validation.png) |
 
 Keep each contribution in its issue-number directory. PR descriptions should use links pinned to an asset commit so their evidence remains reproducible as this branch grows. Published assets exclude raw diagnostic logs and private environment identifiers.

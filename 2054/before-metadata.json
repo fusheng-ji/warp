@@ -1,0 +1,24 @@
+{
+  "phase": "before",
+  "commit": "c47fe4c86c99cfcff5b78e823d167972a4c3520e",
+  "python": "3.12.13",
+  "numpy": "2.5.3",
+  "warp": "1.19.0.dev0",
+  "platform": "Linux x86_64",
+  "devices": [
+    {
+      "alias": "cpu",
+      "name": "x86_64"
+    },
+    {
+      "alias": "cuda:0",
+      "name": "NVIDIA B200"
+    },
+    {
+      "alias": "cuda:1",
+      "name": "NVIDIA B200"
+    }
+  ],
+  "evaluations": 540,
+  "failed": 144
+}
