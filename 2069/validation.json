@@ -1,0 +1,52 @@
+{
+  "issue": 2069,
+  "base_commit": "c47fe4c86c99cfcff5b78e823d167972a4c3520e",
+  "implementation_commit": "86f766bfea3900f9eb36937e9a2848b05e29ee7d",
+  "branch": "fusheng-ji/bsr-mv-2069",
+  "native_build": "uv run build_lib.py (standard build in the independent worktree)",
+  "sparse_tests": {
+    "count": 139,
+    "passed": true,
+    "devices": [
+      "CPU",
+      "B200 physical 0",
+      "B200 physical 1"
+    ],
+    "log_summary": "Ran 139 tests in 68.363s"
+  },
+  "extension_tests": {
+    "count": 180,
+    "passed": true,
+    "modules": [
+      "test_linear_solvers",
+      "tile.test_tile_reduce"
+    ],
+    "devices": [
+      "CPU",
+      "B200 physical 1"
+    ],
+    "CUDA_VISIBLE_DEVICES": "1",
+    "log_summary": "Ran 180 tests in 225.241s"
+  },
+  "numerics_before": {
+    "cases": 80,
+    "passed": 0,
+    "reason": "Unsupported mixed scalar types"
+  },
+  "numerics_after": {
+    "cases": 80,
+    "passed": 80,
+    "max_abs_error": 0.0
+  },
+  "pre_commit": "passed",
+  "docs": "passed with --warnings-as-errors; zero warnings",
+  "asv_smoke_combinations": 8,
+  "dco_signoff": true,
+  "sparse_sha256": "267f2a030e3de0be46149f8715bd276664708828ff75832306783512fb806612",
+  "nvcc_version": [
+    "Cuda compilation tools, release 13.0, V13.0.88",
+    "Build cuda_13.0.r13.0/compiler.36424714_0"
+  ],
+  "documentation_checked_commit": "735bdf3c179b19012780c60689e5a8a23a73a721",
+  "documentation_note": "Documentation and public signatures are unchanged by the final packed-kernel indexing optimization."
+}

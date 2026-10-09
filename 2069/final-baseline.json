@@ -1,0 +1,57 @@
+{
+  "commit": "c47fe4c86c99cfcff5b78e823d167972a4c3520e",
+  "device": "NVIDIA B200",
+  "device_alias": "cuda:0",
+  "cuda_visible_devices": "1",
+  "arch": 100,
+  "sparse_sha256": "f91bf9b33ede47b3c3d3d876dcc2d4cdd4ffac38ef2c5d0f981821a631e1ab9b",
+  "python": "3.12.13",
+  "numpy": "2.5.3",
+  "system": "Linux",
+  "warp": "1.19.0.dev0",
+  "arguments": {
+    "checkout": "<baseline-checkout>",
+    "device": "cuda:0",
+    "output": "final-baseline",
+    "rows": [
+      4096,
+      32768
+    ],
+    "lengths": [
+      2,
+      8,
+      32,
+      128
+    ],
+    "precisions": [
+      "float32:float32",
+      "float64:float64"
+    ],
+    "distributions": [
+      "uniform"
+    ],
+    "blocks": [
+      "1x1"
+    ],
+    "packed": false,
+    "public_api": false,
+    "block_dims": [
+      128
+    ],
+    "threads": [
+      2,
+      4,
+      8,
+      16
+    ],
+    "modes": [
+      "graph",
+      "launch"
+    ],
+    "rounds": 5,
+    "samples": 6,
+    "iterations": 50
+  },
+  "gpu": "NVIDIA B200, 580.126.20, 0 %, 1965 MHz, 246.46 W\nNVIDIA B200, 580.126.20, 54 %, 1965 MHz, 537.51 W",
+  "paths_normalized_for_publication": true
+}

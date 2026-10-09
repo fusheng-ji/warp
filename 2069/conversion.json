@@ -1,0 +1,21 @@
+{
+  "nrow": 32768,
+  "nnz": 1048576,
+  "matrix_value_bytes_fp32": 4194304,
+  "matrix_value_bytes_fp64": 8388608,
+  "index_bytes": 4325380,
+  "conversion_with_allocation_ms": [
+    2.4358759983442724,
+    0.8116989993141033,
+    1.0074179954244755,
+    0.7268240005942062,
+    0.6656529949395917,
+    0.7586020001326688,
+    0.6697400021948852,
+    0.7314410031540319,
+    0.6609300035052001,
+    0.73764800617937
+  ],
+  "median_ms": 0.734544504666701,
+  "note": "Warm conversion plus allocation and synchronization; compilation excluded. Matrix coefficients are identical after promotion and column reordering."
+}
