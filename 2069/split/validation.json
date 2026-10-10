@@ -18,7 +18,7 @@
   "contributions": {
     "mixed": {
       "commit": "4db534d616d5ff16b31c8b851d93690dfc296fd8",
-      "branch": "fusheng-ji/2069-bsr-mv-mixed-precision",
+      "branch": "feat/bsr-mv-mixed-precision",
       "base_commit": "c47fe4c86c99cfcff5b78e823d167972a4c3520e",
       "tests": {
         "sparse": {
@@ -58,7 +58,7 @@
     },
     "packed": {
       "commit": "589fd1216f21ef500aa0d7bfe2e4dc8d6c3086ce",
-      "branch": "fusheng-ji/2069-bsr-mv-row-packed",
+      "branch": "perf/bsr-mv-row-packed",
       "base_commit": "4db534d616d5ff16b31c8b851d93690dfc296fd8",
       "tests": {
         "sparse": {
