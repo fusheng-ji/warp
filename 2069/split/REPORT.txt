@@ -2,8 +2,8 @@ GH-2069: split contribution validation
 
 Branch layout
 Official main c47fe4c86c99cfcff5b78e823d167972a4c3520e
-  -> fusheng-ji/bsr-mv-mixed-precision (4db534d616d5ff16b31c8b851d93690dfc296fd8)
-  -> fusheng-ji/bsr-mv-row-packed (589fd1216f21ef500aa0d7bfe2e4dc8d6c3086ce)
+  -> fusheng-ji/2069-bsr-mv-mixed-precision (4db534d616d5ff16b31c8b851d93690dfc296fd8)
+  -> fusheng-ji/2069-bsr-mv-row-packed (589fd1216f21ef500aa0d7bfe2e4dc8d6c3086ce)
 
 These are separate contribution branches with an explicit ordering dependency.
 The row-packed contribution is the diff from the mixed-precision branch, not
