@@ -1,6 +1,8 @@
 ## What problem are you trying to solve?
 
-Part of #2069. Depends on the [mixed-precision contribution](https://github.com/fusheng-ji/warp/tree/feat/bsr-mv-mixed-precision).
+Part of #2069. Depends on [#2072: Support mixed-precision BSR products](https://github.com/NVIDIA/warp/pull/2072).
+
+This is a stacked draft for the row-packing contribution. Please review the [incremental diff above #2072](https://github.com/fusheng-ji/warp/compare/4db534d616d5ff16b31c8b851d93690dfc296fd8...589fd1216f21ef500aa0d7bfe2e4dc8d6c3086ce). Before this PR is ready to merge, #2072 must land and this branch must be rebased onto upstream `main` so its diff contains only row packing.
 
 The existing tiled `bsr_mv` path assigns a thread block to one output row. For some matrices with medium-length rows, processing several rows together improves throughput. This change exposes an explicit CUDA row-packing option while retaining the existing default dispatch.
 
@@ -24,11 +26,11 @@ y = bsr_mv(A, x, tile_size=128, rows_per_block=32)
 ## Existing pull requests
 
 - [x] I searched open pull requests for duplicate or overlapping work.
-- Related pull requests: [#1791](https://github.com/NVIDIA/warp/pull/1791) changes sparse nonzero-count synchronization; [#1975](https://github.com/NVIDIA/warp/pull/1975) includes BSR transpose and tile fixes. Neither implements row-packed `bsr_mv`. This branch depends on the mixed-precision contribution: [review only the row-packing increment](https://github.com/fusheng-ji/warp/compare/feat/bsr-mv-mixed-precision...perf/bsr-mv-row-packed).
+- Related pull requests: [#2072](https://github.com/NVIDIA/warp/pull/2072) provides the mixed-precision foundation and is included in this branch's history. [#1791](https://github.com/NVIDIA/warp/pull/1791) changes sparse nonzero-count synchronization; [#1975](https://github.com/NVIDIA/warp/pull/1975) includes BSR transpose and tile fixes. Neither of those two implements row-packed `bsr_mv`.
 
-Checked the titles and descriptions of all 60 open upstream PRs on 2026-10-10 and inspected the sparse changes in the related PRs above. No direct duplicate was found in this search.
+The initial search on 2026-10-10 checked the titles and descriptions of all 60 then-open upstream PRs and inspected the sparse changes in #1791 and #1975. No direct duplicate was found. The subsequently opened #2072 is the explicit dependency for this contribution.
 
-The intended upstream base is `main` after the mixed-precision contribution merges and this branch is rebased. Against current `main`, this branch includes both contributions; the scope described here is the single incremental commit `589fd121` above `4db534d6`.
+The upstream target is `NVIDIA/warp:main`. While #2072 is open, GitHub's full diff against `main` includes both contributions. The scope described here is the single incremental commit `589fd121` above #2072's head `4db534d6`; mixed-precision behavior and its API contract belong to #2072.
 
 ## Validation
 
@@ -65,4 +67,4 @@ Timings were collected on the original combined implementation before the mechan
 - [ ] My branch is up to date with `main` and contains one commit, unless a maintainer agreed to keep the change as multiple commits.
 - [x] I included any required [changelog fragments](https://github.com/NVIDIA/warp/blob/main/changelog/README.md) and used a `+` prefix only for changes that do not require a GitHub issue.
 
-Upstream coordination and rebasing after the dependency merges remain pending. The incremental commit includes DCO sign-off and `changelog/2069.added.1.md`.
+Upstream coordination and rebasing after #2072 merges remain pending. The incremental commit includes DCO sign-off and `changelog/2069.added.1.md`. The single-commit checklist item remains unchecked while this branch contains both contributions above `main`.
