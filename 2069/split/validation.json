@@ -1,0 +1,101 @@
+{
+  "issue": 2069,
+  "checked_date_utc": "2026-10-10",
+  "integration": {
+    "base_commit": "c47fe4c86c99cfcff5b78e823d167972a4c3520e",
+    "official_main_at_check": "c47fe4c86c99cfcff5b78e823d167972a4c3520e",
+    "mixed_commit": "4db534d616d5ff16b31c8b851d93690dfc296fd8",
+    "packed_commit": "589fd1216f21ef500aa0d7bfe2e4dc8d6c3086ce",
+    "original_combined_commit": "86f766bfea3900f9eb36937e9a2848b05e29ee7d",
+    "combined_tree": "d955480835155323fb1f02dd1686a2b502268b7d",
+    "mixed_parent_is_base": true,
+    "packed_parent_is_mixed": true,
+    "sequential_patch_application": "passed without conflicts",
+    "merge_tree": "passed without conflicts",
+    "combined_tree_matches_original": true,
+    "publication": "Local branches only; second contribution depends on the first."
+  },
+  "contributions": {
+    "mixed": {
+      "commit": "4db534d616d5ff16b31c8b851d93690dfc296fd8",
+      "branch": "fusheng-ji/bsr-mv-mixed-precision",
+      "base_commit": "c47fe4c86c99cfcff5b78e823d167972a4c3520e",
+      "tests": {
+        "sparse": {
+          "count": 132,
+          "seconds": 53.973,
+          "passed": true,
+          "devices": [
+            "CPU",
+            "B200 physical 0",
+            "B200 physical 1"
+          ]
+        },
+        "extensions": {
+          "count": 180,
+          "seconds": 604.187,
+          "passed": true,
+          "devices": [
+            "CPU",
+            "B200 physical 1"
+          ]
+        }
+      },
+      "numerical_cases": 80,
+      "numerical_passed": 80,
+      "numerical_max_abs_error": 0.0,
+      "asv_smoke_combinations": 4,
+      "standard_native_build": "passed; built in this checkout",
+      "private_kernel_cache": true,
+      "pre_commit": "passed",
+      "docs": "passed with warnings treated as errors",
+      "dco_signoff": true,
+      "sparse_sha256": "5413db4952d7091cfdee1e7c8359b4c8c11c4e45aff3eb72e33206b2a19ce2a7",
+      "native_library_sha256": {
+        "warp-clang.so": "c080cc2274706eb0cefb4621b38fe0a7c219668aadae305febff3455ab2c0693",
+        "warp.so": "1387be71bf8011eee0afb47d99d76bb029e198688869ac7f07143065e6109001"
+      }
+    },
+    "packed": {
+      "commit": "589fd1216f21ef500aa0d7bfe2e4dc8d6c3086ce",
+      "branch": "fusheng-ji/bsr-mv-row-packed",
+      "base_commit": "4db534d616d5ff16b31c8b851d93690dfc296fd8",
+      "tests": {
+        "sparse": {
+          "count": 139,
+          "seconds": 59.641,
+          "passed": true,
+          "devices": [
+            "CPU",
+            "B200 physical 0",
+            "B200 physical 1"
+          ]
+        },
+        "extensions": {
+          "count": 180,
+          "seconds": 614.159,
+          "passed": true,
+          "devices": [
+            "CPU",
+            "B200 physical 1"
+          ]
+        }
+      },
+      "numerical_cases": 80,
+      "numerical_passed": 80,
+      "numerical_max_abs_error": 0.0,
+      "asv_smoke_combinations": 8,
+      "standard_native_build": "passed; built in this checkout",
+      "private_kernel_cache": true,
+      "pre_commit": "passed",
+      "docs": "passed with warnings treated as errors",
+      "dco_signoff": true,
+      "sparse_sha256": "267f2a030e3de0be46149f8715bd276664708828ff75832306783512fb806612",
+      "native_library_sha256": {
+        "warp-clang.so": "c080cc2274706eb0cefb4621b38fe0a7c219668aadae305febff3455ab2c0693",
+        "warp.so": "68299b04d701f2efc4c49e18c73a1c3f6649db8bc4e65014e99a64b1b9a77863"
+      }
+    }
+  },
+  "performance_note": "No performance timings were rerun for the split. The packed branch tree equals the original combined benchmark revision. Its row-packing speedups do not describe the mixed-only contribution."
+}

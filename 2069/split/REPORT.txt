@@ -1,0 +1,71 @@
+GH-2069: split contribution validation
+
+Branch layout
+Official main c47fe4c86c99cfcff5b78e823d167972a4c3520e
+  -> fusheng-ji/bsr-mv-mixed-precision (4db534d616d5ff16b31c8b851d93690dfc296fd8)
+  -> fusheng-ji/bsr-mv-row-packed (589fd1216f21ef500aa0d7bfe2e4dc8d6c3086ce)
+
+These are separate contribution branches with an explicit ordering dependency.
+The row-packed contribution is the diff from the mixed-precision branch, not
+from main before the mixed-precision change lands. It can be rebased onto main
+after the first contribution merges. No PR has been published.
+The original combined branch fusheng-ji/bsr-mv-2069 remains intact.
+mixed.patch and packed.patch contain one signed-off commit each and must be
+applied in that order. They preserve the public author and DCO metadata.
+
+Scope
+The first contribution contains mixed scalar-type rules, conversion before
+multiplication in existing kernels, output allocation, scaling, numerical tests,
+its ASV benchmark, documentation, and one changelog fragment. It has no
+rows_per_block argument or packed kernel. Its benchmark calls do not pass the
+new keyword, even with the default value.
+The second contribution adds the packed kernel, explicit option and validation,
+packed tests and ASV benchmark, documentation, and its own changelog fragment.
+
+Integration evidence
+The official main reference matched the recorded base when checked.
+Both patches were applied sequentially to a temporary Git index initialized
+from that base, with git apply --cached --check before each application.
+The resulting tree matches the original combined revision 86f766bf exactly:
+d955480835155323fb1f02dd1686a2b502268b7d.
+A separate git merge-tree --write-tree check produced the same tree without
+conflicts. These checks establish compatibility at the recorded base, not a
+guarantee about future upstream changes.
+
+Validation protocol
+Each worktree has its own virtual environment, native build, and kernel cache.
+Both native libraries were built using uv run build_lib.py, with WARP_CACHE_PATH
+pointing to the worktree's _build/kernel-cache directory. No shared cache was
+cleared by these completed builds. Native source is unchanged from the base.
+Use validation.json for exact commits, test counts, durations, and library hashes.
+
+Commands (run within each respective worktree):
+export WARP_CACHE_PATH="$PWD/_build/kernel-cache"
+uv run build_lib.py
+uv sync --extra dev --extra docs
+OPENBLAS_NUM_THREADS=1 uv run --no-sync -m unittest -v warp.tests.test_sparse
+CUDA_VISIBLE_DEVICES=1 OPENBLAS_NUM_THREADS=1 uv run --no-sync -m unittest -v warp.tests.test_linear_solvers warp.tests.tile.test_tile_reduce
+uv run --no-sync path/to/2069/numerics.py --checkout . --output numerical-results.csv
+uv run --no-sync build_docs.py --warnings-as-errors
+uvx pre-commit run --files <files changed by this contribution>
+
+Sparse and numerical checks use CPU and both NVIDIA B200 GPUs. Solver and tile
+reduction checks use CPU and the second physical GPU (CUDA_VISIBLE_DEVICES=1).
+ASV smoke checks exercise four mixed-precision setups in the first branch and
+those four plus four row-packed setups in the second branch.
+Run the included asv_smoke.py from the respective checkout, with --packed only
+for the second branch; set CUDA_VISIBLE_DEVICES=1 to match this validation.
+CPU forced-tile behavior remains the baseline limitation described in ../README.txt.
+
+Performance provenance
+No performance timings were rerun for this mechanical split. The existing
+report describes the preserved combined revision. The packed branch has the
+same complete file tree, but the row-packing gains must not be attributed to
+the mixed-precision-only contribution. The new CSV files contain fresh numerical
+checks for each branch. Raw workstation logs are excluded from this bundle.
+
+Publication and review
+Both contribution commits retain DCO sign-off. Branches and evidence are local.
+This is an independent correctness and performance investigation; no maintainer
+assignment or downstream production use is claimed. Upstream coordination and
+publication remain separate steps.

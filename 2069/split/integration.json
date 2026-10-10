@@ -1,0 +1,14 @@
+{
+  "base_commit": "c47fe4c86c99cfcff5b78e823d167972a4c3520e",
+  "official_main_at_check": "c47fe4c86c99cfcff5b78e823d167972a4c3520e",
+  "mixed_commit": "4db534d616d5ff16b31c8b851d93690dfc296fd8",
+  "packed_commit": "589fd1216f21ef500aa0d7bfe2e4dc8d6c3086ce",
+  "original_combined_commit": "86f766bfea3900f9eb36937e9a2848b05e29ee7d",
+  "combined_tree": "d955480835155323fb1f02dd1686a2b502268b7d",
+  "mixed_parent_is_base": true,
+  "packed_parent_is_mixed": true,
+  "sequential_patch_application": "passed without conflicts",
+  "merge_tree": "passed without conflicts",
+  "combined_tree_matches_original": true,
+  "publication": "Local branches only; second contribution depends on the first."
+}
