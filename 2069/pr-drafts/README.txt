@@ -26,11 +26,17 @@ b43287be27bc7980ae65668bc8ce18fbd8ab9297. Publication fields in those historical
 validation records describe the time of validation, before branch upload.
 Fresh split-specific tests are distinguished from the earlier timing runs.
 
-Before opening upstream PRs, refresh the main reference and complete the open-PR
-overlap search. The current drafts leave that checkbox unchecked. The complete
-contribution-guidelines checkbox is also unchecked because external contribution
-coordination is pending. No maintainer assignment, concrete downstream use, or
-approval is implied. No issue comments were posted as part of this preparation.
+The open-PR search checkbox is checked in both drafts. On 2026-10-10, the public
+GitHub API returned all 60 open upstream PRs in one page. Their titles and bodies
+were searched for GH-2069, BSR, mixed precision, and row packing. Sparse changes
+in related PRs #1791 and #1975 were inspected; no direct duplicate was found.
+Official main was rechecked and still matched c47fe4c8.
+
+The complete contribution-guidelines checkbox remains unchecked because external
+contribution coordination is pending. The row-packed draft's single-commit/main
+checkbox remains unchecked because it is stacked on the mixed-precision change.
+No maintainer assignment, concrete downstream use, or approval is implied.
+No issue comments were posted as part of this preparation.
 
 The publication bundle excludes raw workstation logs and private paths. Public
 author attribution and DCO sign-off are retained; no AI co-author trailer is added.

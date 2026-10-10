@@ -23,8 +23,10 @@ The same rules cover BSR blocks and scaled matrix expressions. Double-precision 
 
 ## Existing pull requests
 
-- [ ] I searched open pull requests for duplicate or overlapping work.
-- Related pull requests: none opened for this contribution yet. A separate [row-packing branch](https://github.com/fusheng-ji/warp/tree/perf/bsr-mv-row-packed) depends on this change. Refresh the complete overlap search before opening the PR.
+- [x] I searched open pull requests for duplicate or overlapping work.
+- Related pull requests: [#1791](https://github.com/NVIDIA/warp/pull/1791) changes sparse nonzero-count synchronization; [#1975](https://github.com/NVIDIA/warp/pull/1975) includes BSR transpose and tile fixes. Neither implements mixed-precision `bsr_mv`. A separate [row-packing branch](https://github.com/fusheng-ji/warp/tree/perf/bsr-mv-row-packed) depends on this contribution.
+
+Checked the titles and descriptions of all 60 open upstream PRs on 2026-10-10 and inspected the sparse changes in the related PRs above. No direct duplicate was found in this search.
 
 ## Validation
 

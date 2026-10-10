@@ -23,8 +23,10 @@ y = bsr_mv(A, x, tile_size=128, rows_per_block=32)
 
 ## Existing pull requests
 
-- [ ] I searched open pull requests for duplicate or overlapping work.
-- Related pull requests: the mixed-precision contribution has not been opened as a PR yet. This branch is stacked on it: [review only the row-packing increment](https://github.com/fusheng-ji/warp/compare/feat/bsr-mv-mixed-precision...perf/bsr-mv-row-packed). Refresh the complete overlap search before opening the PR.
+- [x] I searched open pull requests for duplicate or overlapping work.
+- Related pull requests: [#1791](https://github.com/NVIDIA/warp/pull/1791) changes sparse nonzero-count synchronization; [#1975](https://github.com/NVIDIA/warp/pull/1975) includes BSR transpose and tile fixes. Neither implements row-packed `bsr_mv`. This branch depends on the mixed-precision contribution: [review only the row-packing increment](https://github.com/fusheng-ji/warp/compare/feat/bsr-mv-mixed-precision...perf/bsr-mv-row-packed).
+
+Checked the titles and descriptions of all 60 open upstream PRs on 2026-10-10 and inspected the sparse changes in the related PRs above. No direct duplicate was found in this search.
 
 The intended upstream base is `main` after the mixed-precision contribution merges and this branch is rebased. Against current `main`, this branch includes both contributions; the scope described here is the single incremental commit `589fd121` above `4db534d6`.
 
