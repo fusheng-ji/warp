@@ -1,0 +1,30 @@
+{
+  "historical_tested_commit": "589fd1216f21ef500aa0d7bfe2e4dc8d6c3086ce",
+  "current_tested_commit": "bf0f7438737212ec35aeeaee139dc49415662f7a",
+  "complete_tree_equal": false,
+  "native_source_tree_equal": true,
+  "changed_paths": [
+    ".github/workflows/build-llvm-sdk.yml",
+    ".github/workflows/build-warp-builder-images.yml",
+    ".github/workflows/changelog.yml",
+    ".github/workflows/ci.yml",
+    ".github/workflows/sphinx.yml",
+    ".gitlab-ci.yml",
+    ".pre-commit-config.yaml",
+    "asv/benchmarks/sparse/matrix_vector.py",
+    "docker/warp-builder/Dockerfile",
+    "docker/warp-builder/README.md",
+    "docker/warp-builder/verify-image.sh",
+    "docker/warp-cpp-test-env/Dockerfile",
+    "docker/warp-cpp-test-env/README.md",
+    "docs/domain_modules/sparse.rst",
+    "uv.lock",
+    "warp/_src/sparse.py",
+    "warp/tests/test_sparse.py"
+  ],
+  "executable_ast_equal": {
+    "warp/_src/sparse.py": true,
+    "warp/tests/test_sparse.py": true,
+    "asv/benchmarks/sparse/matrix_vector.py": true
+  }
+}

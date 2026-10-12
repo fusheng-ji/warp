@@ -1,0 +1,32 @@
+Sanitized execution log; filesystem roots are replaced with variables.
+warning: `VIRTUAL_ENV=$WORKSPACE/warp/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+Warp 1.19.0.dev0 initialized:
+   CUDA Toolkit 13.0, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA B200" (178 GiB, sm_100, mempool enabled)
+     "cuda:1"   : "NVIDIA B200" (178 GiB, sm_100, mempool enabled)
+   CUDA peer access:
+     Supported fully (all-directional)
+   Kernel cache:
+     $CHECKOUT/_build/validation-cache/1.19.0.dev0
+Module _bsr_accumulate_triplet_values_5520c14c 5f22d31 load on device 'cpu' took 4.80 ms  (cached)
+Module make_bsr_mv_kernel__locals__bsr_mv_kernel_83c946a6 253e663 load on device 'cpu' took 1477.44 ms  (compiled)
+Module make_bsr_mv_transpose_kernel__locals__bsr_mv_transpose_kernel_468b629b f730d22 load on device 'cpu' took 108.93 ms  (compiled)
+Module _bsr_scale_1d_kernel_a1ea8ce3 5b13377 load on device 'cpu' took 2.03 ms  (cached)
+Module warp.sparse 336fa22 load on device 'cpu' took 1.77 ms  (cached)
+Module _bsr_set_from_triplets_padded_accumulate_values_6b9edfae 6105e60 load on device 'cpu' took 2.17 ms  (cached)
+Module _bsr_accumulate_triplet_values_5520c14c a398b74 load on device 'cuda:0' took 4.10 ms  (cached)
+Module make_bsr_mv_kernel__locals__bsr_mv_kernel_83c946a6 bd27654 load on device 'cuda:0' took 754.70 ms  (compiled)
+Module make_bsr_mv_tiled_kernel__locals__bsr_mv_tiled_kernel_4a95c94e 6976190 load on device 'cuda:0' took 413.55 ms  (compiled)
+Module make_bsr_mv_transpose_kernel__locals__bsr_mv_transpose_kernel_468b629b 4b48cb9 load on device 'cuda:0' took 101.20 ms  (compiled)
+Module _bsr_scale_1d_kernel_a1ea8ce3 40984be load on device 'cuda:0' took 29.46 ms  (cached)
+Module warp.sparse 628f4a0 load on device 'cuda:0' took 292.31 ms  (cached)
+Module _bsr_set_from_triplets_padded_accumulate_values_6b9edfae 579575a load on device 'cuda:0' took 4.29 ms  (cached)
+Module _bsr_accumulate_triplet_values_5520c14c a398b74 load on device 'cuda:1' took 9.43 ms  (cached)
+Module make_bsr_mv_kernel__locals__bsr_mv_kernel_83c946a6 bd27654 load on device 'cuda:1' took 80.23 ms  (cached)
+Module make_bsr_mv_tiled_kernel__locals__bsr_mv_tiled_kernel_4a95c94e 6976190 load on device 'cuda:1' took 48.74 ms  (cached)
+Module make_bsr_mv_transpose_kernel__locals__bsr_mv_transpose_kernel_468b629b 4b48cb9 load on device 'cuda:1' took 28.96 ms  (cached)
+Module _bsr_scale_1d_kernel_a1ea8ce3 40984be load on device 'cuda:1' took 31.02 ms  (cached)
+Module warp.sparse 628f4a0 load on device 'cuda:1' took 294.44 ms  (cached)
+Module _bsr_set_from_triplets_padded_accumulate_values_6b9edfae 579575a load on device 'cuda:1' took 4.13 ms  (cached)

@@ -1,0 +1,507 @@
+Sanitized execution log; filesystem roots are replaced with variables.
+warning: `VIRTUAL_ENV=$WORKSPACE/warp/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+Warp 1.19.0.dev0 initialized:
+   CUDA Toolkit 13.0, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA B200" (178 GiB, sm_100, mempool enabled)
+   Kernel cache:
+     $CHECKOUT/_build/validation-cache/1.19.0.dev0
+test_batched_bicgstab_f32_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_batched_bicgstab_f32_cpu) ... Module batch_dot_kernel_0ceb2790 a2e246f load on device 'cpu' took 1567.57 ms  (compiled)
+Module warp.optim.linear fbb4282 load on device 'cpu' took 581.24 ms  (compiled)
+Module _dense_mv_kernel_84fbc2cf 527e1db load on device 'cpu' took 157.86 ms  (compiled)
+ok
+test_batched_bicgstab_f32_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_batched_bicgstab_f32_cuda_0) ... Module batch_dot_kernel_0ceb2790 3e8d05b load on device 'cuda:0' took 371.71 ms  (compiled)
+Module warp.optim.linear c99a565 load on device 'cuda:0' took 2307.13 ms  (compiled)
+Module _dense_mv_kernel_84fbc2cf 71dc9a4 load on device 'cuda:0' took 384.05 ms  (compiled)
+ok
+test_batched_cg_f32_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_batched_cg_f32_cpu) ... ok
+test_batched_cg_f32_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_batched_cg_f32_cuda_0) ... ok
+test_batched_cg_f64_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_batched_cg_f64_cpu) ... Module batch_dot_kernel_0ceb2790 c3d2366 load on device 'cpu' took 203.43 ms  (compiled)
+Module _dense_mv_kernel_84fbc2cf 9160da0 load on device 'cpu' took 236.69 ms  (compiled)
+ok
+test_batched_cg_f64_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_batched_cg_f64_cuda_0) ... Module batch_dot_kernel_0ceb2790 4b75769 load on device 'cuda:0' took 406.61 ms  (compiled)
+Module _dense_mv_kernel_84fbc2cf 027148a load on device 'cuda:0' took 629.15 ms  (compiled)
+ok
+test_batched_cr_f32_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_batched_cr_f32_cpu) ... ok
+test_batched_cr_f32_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_batched_cr_f32_cuda_0) ... ok
+test_batched_gmres_f32_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_batched_gmres_f32_cpu) ... Module _extract_inverse_diagonal_dense_0252efac 829111e load on device 'cpu' took 120.58 ms  (compiled)
+Module _diag_mv_kernel_cf66d25c 1949161 load on device 'cpu' took 105.21 ms  (compiled)
+ok
+test_batched_gmres_f32_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_batched_gmres_f32_cuda_0) ... Module _extract_inverse_diagonal_dense_0252efac 4f69f32 load on device 'cuda:0' took 122.47 ms  (compiled)
+Module make_gmres_solve_least_squares_kernel_tiled__locals__gmres_solve_least_squares_tiled_abae3bf0 0880e59 load on device 'cuda:0' took 419.03 ms  (compiled)
+Module warp.optim.linear a122cb7 load on device 'cuda:0' took 1167.83 ms  (compiled)
+Module _diag_mv_kernel_cf66d25c da802fb load on device 'cuda:0' took 100.75 ms  (compiled)
+ok
+test_batched_gmres_f64_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_batched_gmres_f64_cpu) ... Module _extract_inverse_diagonal_dense_0252efac 49c03d0 load on device 'cpu' took 143.25 ms  (compiled)
+Module _diag_mv_kernel_cf66d25c 1e31e14 load on device 'cpu' took 135.57 ms  (compiled)
+ok
+test_batched_gmres_f64_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_batched_gmres_f64_cuda_0) ... Module _extract_inverse_diagonal_dense_0252efac 8c32d2b load on device 'cuda:0' took 172.70 ms  (compiled)
+Module make_gmres_solve_least_squares_kernel_tiled__locals__gmres_solve_least_squares_tiled_abae3bf0 af0705e load on device 'cuda:0' took 235.50 ms  (compiled)
+Module _diag_mv_kernel_cf66d25c 6181aa9 load on device 'cuda:0' took 180.51 ms  (compiled)
+ok
+test_batched_gmres_nonuniform_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_batched_gmres_nonuniform_cpu) ... ok
+test_batched_gmres_nonuniform_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_batched_gmres_nonuniform_cuda_0) ... Module _dense_mv_kernel_84fbc2cf 7d1f61a load on device 'cuda:0' took 849.25 ms  (compiled)
+ok
+test_batched_gmres_right_preconditioned_inactive_tail_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_batched_gmres_right_preconditioned_inactive_tail_cpu) ... ok
+test_batched_gmres_right_preconditioned_inactive_tail_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_batched_gmres_right_preconditioned_inactive_tail_cuda_0) ... Module warp.optim.linear fbb4282 load on device 'cuda:0' took 1608.92 ms  (compiled)
+Module _dense_mv_kernel_84fbc2cf 60e3b09 load on device 'cuda:0' took 914.98 ms  (compiled)
+ok
+test_batched_host_loop_per_batch_tolerance_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_batched_host_loop_per_batch_tolerance_cpu) ... ok
+test_batched_host_loop_per_batch_tolerance_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_batched_host_loop_per_batch_tolerance_cuda_0) ... ok
+test_batched_inactive_tail_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_batched_inactive_tail_cpu) ... ok
+test_batched_inactive_tail_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_batched_inactive_tail_cuda_0) ... ok
+test_batched_nonuniform_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_batched_nonuniform_cpu) ... ok
+test_batched_nonuniform_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_batched_nonuniform_cuda_0) ... ok
+test_batched_vector_inactive_tail_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_batched_vector_inactive_tail_cpu) ... Module warp.optim.linear 3fda00e load on device 'cpu' took 616.49 ms  (compiled)
+Module warp.optim.linear bbbb72d load on device 'cpu' took 936.99 ms  (compiled)
+Module warp.optim.linear b77739e load on device 'cpu' took 731.89 ms  (compiled)
+Module warp.optim.linear 667951c load on device 'cpu' took 1341.19 ms  (compiled)
+Module warp.optim.linear 2921c58 load on device 'cpu' took 2679.54 ms  (compiled)
+Module warp.optim.linear 48a7318 load on device 'cpu' took 2804.56 ms  (compiled)
+Module warp.optim.linear 1013001 load on device 'cpu' took 3195.36 ms  (compiled)
+Module warp.optim.linear 13e557f load on device 'cpu' took 2786.48 ms  (compiled)
+Module warp.optim.linear e4816fe load on device 'cpu' took 3889.33 ms  (compiled)
+ok
+test_batched_vector_inactive_tail_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_batched_vector_inactive_tail_cuda_0) ... Module warp.optim.linear 5961013 load on device 'cuda:0' took 11693.51 ms  (compiled)
+Module warp.optim.linear e4816fe load on device 'cuda:0' took 11368.43 ms  (compiled)
+ok
+test_batched_vector_offsets_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_batched_vector_offsets_cpu) ... Module warp.optim.linear 1478486 load on device 'cpu' took 4975.08 ms  (compiled)
+Module warp.optim.linear fc09aec load on device 'cpu' took 4572.16 ms  (compiled)
+Module warp.optim.linear 1ed2803 load on device 'cpu' took 4699.73 ms  (compiled)
+Module warp.optim.linear 2f9ace6 load on device 'cpu' took 2931.66 ms  (compiled)
+Module warp.optim.linear 340be7a load on device 'cpu' took 5113.58 ms  (compiled)
+Module warp.optim.linear c970c85 load on device 'cpu' took 4892.62 ms  (compiled)
+Module warp.optim.linear 40886c5 load on device 'cpu' took 6404.24 ms  (compiled)
+Module warp.optim.linear 60f4dcf load on device 'cpu' took 5774.41 ms  (compiled)
+Module warp.optim.linear c6fae2a load on device 'cpu' took 6391.26 ms  (compiled)
+ok
+test_batched_vector_offsets_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_batched_vector_offsets_cuda_0) ... Module warp.optim.linear 4dd0511 load on device 'cuda:0' took 12687.01 ms  (compiled)
+Module warp.optim.linear c6fae2a load on device 'cuda:0' took 6805.53 ms  (compiled)
+ok
+test_bicgstab_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_bicgstab_cpu) ... Module _create_tiled_dot_kernels__locals__block_dot_kernel_cf745abe a4a061e load on device 'cpu' took 620.82 ms  (compiled)
+Module _create_tiled_dot_kernels__locals__block_sum_kernel_e3580fc8 6765dac load on device 'cpu' took 1510.01 ms  (compiled)
+Module _create_tiled_dot_kernels__locals__block_dot_kernel_cf745abe 96281ef load on device 'cpu' took 304.32 ms  (compiled)
+Module _create_tiled_dot_kernels__locals__block_sum_kernel_e3580fc8 2c06359 load on device 'cpu' took 246.79 ms  (compiled)
+ok
+test_bicgstab_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_bicgstab_cuda_0) ... Module _create_tiled_dot_kernels__locals__block_dot_kernel_cf745abe f4ca728 load on device 'cuda:0' took 376.25 ms  (compiled)
+Module _create_tiled_dot_kernels__locals__block_sum_kernel_e3580fc8 7806476 load on device 'cuda:0' took 272.37 ms  (compiled)
+Module _create_update_condition_kernel__locals___update_condition_bba29a29 0492586 load on device 'cuda:0' took 164.04 ms  (compiled)
+Module _create_update_condition_kernel__locals___update_condition_bba29a29 ad12f8c load on device 'cuda:0' took 520.66 ms  (compiled)
+ok
+test_block_jacobi_direct_explicit_choice_honored_for_large_block_size_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_block_jacobi_direct_explicit_choice_honored_for_large_block_size_cpu)
+Verify an explicit "block_jacobi_direct" is honored regardless of block size. ... Module _bsr_accumulate_triplet_values_5520c14c 5f22d31 load on device 'cpu' took 4.05 ms  (cached)
+Module _bsr_get_diag_kernel_7a6beb6f f6efd1b load on device 'cpu' took 2.39 ms  (cached)
+Module _invert_diagonal_blocks_qr_806794e2 89976be load on device 'cpu' took 598.40 ms  (compiled)
+Module _block_diag_mv_inverse_5a86f704 0d8332b load on device 'cpu' took 202.45 ms  (compiled)
+ok
+test_block_jacobi_direct_explicit_choice_honored_for_large_block_size_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_block_jacobi_direct_explicit_choice_honored_for_large_block_size_cuda_0)
+Verify an explicit "block_jacobi_direct" is honored regardless of block size. ... Module _bsr_accumulate_triplet_values_5520c14c a398b74 load on device 'cuda:0' took 8.04 ms  (cached)
+Module _bsr_get_diag_kernel_7a6beb6f 1772b98 load on device 'cuda:0' took 82.89 ms  (cached)
+Module _invert_diagonal_blocks_qr_806794e2 f38d859 load on device 'cuda:0' took 17944.59 ms  (compiled)
+Module _block_diag_mv_inverse_5a86f704 3ecdf09 load on device 'cuda:0' took 655.15 ms  (compiled)
+ok
+test_block_jacobi_direct_explicit_choice_honored_for_unsupported_dtype_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_block_jacobi_direct_explicit_choice_honored_for_unsupported_dtype_cpu)
+Verify explicit "block_jacobi_direct" works for a block size/dtype combo "tile" rejects. ... Module _bsr_accumulate_triplet_values_5520c14c 513aee2 load on device 'cpu' took 221.88 ms  (compiled)
+Module _bsr_get_diag_kernel_7a6beb6f 35d3d42 load on device 'cpu' took 188.57 ms  (compiled)
+Module _invert_diagonal_blocks_qr_806794e2 3eac80b load on device 'cpu' took 1495.82 ms  (compiled)
+Module _block_diag_mv_inverse_5a86f704 5c30fd6 load on device 'cpu' took 398.63 ms  (compiled)
+ok
+test_block_jacobi_direct_explicit_choice_honored_for_unsupported_dtype_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_block_jacobi_direct_explicit_choice_honored_for_unsupported_dtype_cuda_0)
+Verify explicit "block_jacobi_direct" works for a block size/dtype combo "tile" rejects. ... Module _bsr_accumulate_triplet_values_5520c14c faf301d load on device 'cuda:0' took 270.80 ms  (compiled)
+Module _bsr_get_diag_kernel_7a6beb6f 76e4e2e load on device 'cuda:0' took 321.60 ms  (compiled)
+Module _invert_diagonal_blocks_qr_806794e2 5adb6ff load on device 'cuda:0' took 20058.47 ms  (compiled)
+Module _block_diag_mv_inverse_5a86f704 8c53d39 load on device 'cuda:0' took 966.33 ms  (compiled)
+ok
+test_block_jacobi_preconditioner_asymmetric_block_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_block_jacobi_preconditioner_asymmetric_block_cpu)
+Verify a non-symmetric block falls back to the identity under "sequential"/"tile". ... Module _bsr_accumulate_triplet_values_5520c14c 4a5b1be load on device 'cpu' took 290.69 ms  (compiled)
+Module _bsr_get_diag_kernel_7a6beb6f 2fd0a0c load on device 'cpu' took 253.86 ms  (compiled)
+Module _ldlt_diagonal_blocks_9c547f3e ebf3c01 load on device 'cpu' took 229.83 ms  (compiled)
+Module _block_diag_mv_ldlt_85995636 b3dd706 load on device 'cpu' took 181.97 ms  (compiled)
+Module _check_block_symmetry_81beebe1 e17999a load on device 'cpu' took 150.11 ms  (compiled)
+Module _create_block_jacobi_tile_kernels__locals__factorize_kernel_56e0358e 33b5e2b load on device 'cpu' took 240.11 ms  (compiled)
+Module _create_block_jacobi_tile_kernels__locals__solve_kernel_9b0faad4 3a85fb9 load on device 'cpu' took 255.14 ms  (compiled)
+Module _invert_diagonal_blocks_qr_806794e2 b2978d2 load on device 'cpu' took 1683.95 ms  (compiled)
+Module _block_diag_mv_inverse_5a86f704 781d869 load on device 'cpu' took 454.52 ms  (compiled)
+ok
+test_block_jacobi_preconditioner_asymmetric_block_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_block_jacobi_preconditioner_asymmetric_block_cuda_0)
+Verify a non-symmetric block falls back to the identity under "sequential"/"tile". ... Module _bsr_accumulate_triplet_values_5520c14c 338b4c5 load on device 'cuda:0' took 870.35 ms  (compiled)
+Module _bsr_get_diag_kernel_7a6beb6f 3751dfe load on device 'cuda:0' took 707.54 ms  (compiled)
+Module _ldlt_diagonal_blocks_9c547f3e 8f99823 load on device 'cuda:0' took 524.24 ms  (compiled)
+Module _block_diag_mv_ldlt_85995636 e5fa020 load on device 'cuda:0' took 252.14 ms  (compiled)
+Module _check_block_symmetry_81beebe1 c734cef load on device 'cuda:0' took 192.05 ms  (compiled)
+Module _create_block_jacobi_tile_kernels__locals__factorize_kernel_56e0358e 1c5ab47 load on device 'cuda:0' took 9097.29 ms  (compiled)
+Module _create_block_jacobi_tile_kernels__locals__solve_kernel_9b0faad4 a452853 load on device 'cuda:0' took 2325.98 ms  (compiled)
+Module _invert_diagonal_blocks_qr_806794e2 3dff6da load on device 'cuda:0' took 21188.21 ms  (compiled)
+Module _block_diag_mv_inverse_5a86f704 854fb33 load on device 'cuda:0' took 4138.25 ms  (compiled)
+ok
+test_block_jacobi_preconditioner_concurrent_streams_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_block_jacobi_preconditioner_concurrent_streams_cuda_0)
+Verify a preconditioner reused across concurrent CUDA streams never corrupts an output. ... Module warp.sparse 628f4a0 load on device 'cuda:0' took 1193.76 ms  (cached)
+Module _invert_diagonal_blocks_qr_806794e2 55d2340 load on device 'cuda:0' took 196209.09 ms  (compiled)
+Module _block_diag_mv_inverse_5a86f704 ae35684 load on device 'cuda:0' took 1578.60 ms  (compiled)
+Module _ldlt_diagonal_blocks_9c547f3e 33b8544 load on device 'cuda:0' took 3073.01 ms  (compiled)
+Module _block_diag_mv_ldlt_85995636 f17a538 load on device 'cuda:0' took 1138.41 ms  (compiled)
+Module _check_block_symmetry_81beebe1 936603d load on device 'cuda:0' took 684.14 ms  (compiled)
+Module _create_block_jacobi_tile_kernels__locals__factorize_kernel_f68a819f 2b9b38b load on device 'cuda:0' took 10719.49 ms  (compiled)
+Module _create_block_jacobi_tile_kernels__locals__solve_kernel_fdbc1787 14d2b2e load on device 'cuda:0' took 2622.63 ms  (compiled)
+ok
+test_block_jacobi_preconditioner_convergence_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_block_jacobi_preconditioner_convergence_cpu)
+Verify every block-Jacobi strategy converges in no more iterations than "diag". ... Module _extract_inverse_diagonal_blocked_23cffb22 ba03945 load on device 'cpu' took 476.56 ms  (compiled)
+Module make_bsr_mv_kernel__locals__bsr_mv_kernel_e712ff10 5cc91bd load on device 'cpu' took 701.41 ms  (compiled)
+Module _invert_diagonal_blocks_qr_806794e2 34a7425 load on device 'cpu' took 17571.48 ms  (compiled)
+Module _block_diag_mv_inverse_5a86f704 32b27d4 load on device 'cpu' took 3798.44 ms  (compiled)
+Module _extract_inverse_diagonal_blocked_23cffb22 36d2bca load on device 'cpu' took 1011.25 ms  (compiled)
+Module make_bsr_mv_kernel__locals__bsr_mv_kernel_1a36b052 6963eb4 load on device 'cpu' took 617.46 ms  (compiled)
+Module _ldlt_diagonal_blocks_9c547f3e b555f41 load on device 'cpu' took 5288.86 ms  (compiled)
+Module _block_diag_mv_ldlt_85995636 3c3cd17 load on device 'cpu' took 4799.81 ms  (compiled)
+Module _extract_inverse_diagonal_blocked_23cffb22 99ce2c2 load on device 'cpu' took 1695.50 ms  (compiled)
+Module make_bsr_mv_kernel__locals__bsr_mv_kernel_c3eba965 0a65219 load on device 'cpu' took 799.28 ms  (compiled)
+Module _check_block_symmetry_81beebe1 f751629 load on device 'cpu' took 3396.96 ms  (compiled)
+Module _create_block_jacobi_tile_kernels__locals__factorize_kernel_f68a819f 0c08a26 load on device 'cpu' took 3413.48 ms  (compiled)
+Module _create_block_jacobi_tile_kernels__locals__solve_kernel_fdbc1787 10080f7 load on device 'cpu' took 3420.52 ms  (compiled)
+ok
+test_block_jacobi_preconditioner_convergence_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_block_jacobi_preconditioner_convergence_cuda_0)
+Verify every block-Jacobi strategy converges in no more iterations than "diag". ... Module _extract_inverse_diagonal_blocked_23cffb22 bcbbe4c load on device 'cuda:0' took 5901.28 ms  (compiled)
+Module make_bsr_mv_kernel__locals__bsr_mv_kernel_e712ff10 5d2a61d load on device 'cuda:0' took 919.44 ms  (compiled)
+Module _invert_diagonal_blocks_qr_806794e2 0200621 load on device 'cuda:0' took 118984.76 ms  (compiled)
+Module _block_diag_mv_inverse_5a86f704 d0d3577 load on device 'cuda:0' took 21707.52 ms  (compiled)
+Module make_bsr_mv_kernel__locals__bsr_mv_kernel_1a36b052 d94ff1b load on device 'cuda:0' took 5401.04 ms  (compiled)
+Module _ldlt_diagonal_blocks_9c547f3e 47799ed load on device 'cuda:0' took 52496.29 ms  (compiled)
+Module _block_diag_mv_ldlt_85995636 0e29d4c load on device 'cuda:0' took 17013.25 ms  (compiled)
+Module make_bsr_mv_kernel__locals__bsr_mv_kernel_c3eba965 401c080 load on device 'cuda:0' took 2097.97 ms  (compiled)
+Module _check_block_symmetry_81beebe1 1bc1091 load on device 'cuda:0' took 8099.69 ms  (compiled)
+Module _create_block_jacobi_tile_kernels__locals__factorize_kernel_f68a819f c56da8c load on device 'cuda:0' took 95696.15 ms  (compiled)
+Module _create_block_jacobi_tile_kernels__locals__solve_kernel_fdbc1787 fb9d9ce load on device 'cuda:0' took 15481.68 ms  (compiled)
+ok
+test_block_jacobi_preconditioner_correctness_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_block_jacobi_preconditioner_correctness_cpu)
+Verify each block-Jacobi strategy's matvec matches a direct dense per-block solve. ... Module _invert_diagonal_blocks_qr_806794e2 3e6d0c4 load on device 'cpu' took 11160.58 ms  (compiled)
+Module _block_diag_mv_inverse_5a86f704 3b139ea load on device 'cpu' took 2110.09 ms  (compiled)
+Module _ldlt_diagonal_blocks_9c547f3e 7c9f792 load on device 'cpu' took 7196.78 ms  (compiled)
+Module _block_diag_mv_ldlt_85995636 395c120 load on device 'cpu' took 7996.95 ms  (compiled)
+Module _check_block_symmetry_81beebe1 bdceb16 load on device 'cpu' took 6438.67 ms  (compiled)
+Module _create_block_jacobi_tile_kernels__locals__factorize_kernel_9d3677cd e8094d6 load on device 'cpu' took 2564.60 ms  (compiled)
+Module _create_block_jacobi_tile_kernels__locals__solve_kernel_fab20ad6 6ec765e load on device 'cpu' took 2204.58 ms  (compiled)
+ok
+test_block_jacobi_preconditioner_correctness_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_block_jacobi_preconditioner_correctness_cuda_0)
+Verify each block-Jacobi strategy's matvec matches a direct dense per-block solve. ... Module _invert_diagonal_blocks_qr_806794e2 17cb85a load on device 'cuda:0' took 255692.84 ms  (compiled)
+Module _block_diag_mv_inverse_5a86f704 6d34a8d load on device 'cuda:0' took 6293.90 ms  (compiled)
+Module _ldlt_diagonal_blocks_9c547f3e bc830af load on device 'cuda:0' took 38710.15 ms  (compiled)
+Module _block_diag_mv_ldlt_85995636 1fc6e98 load on device 'cuda:0' took 4043.29 ms  (compiled)
+Module _check_block_symmetry_81beebe1 d929811 load on device 'cuda:0' took 5945.29 ms  (compiled)
+Module _create_block_jacobi_tile_kernels__locals__factorize_kernel_9d3677cd beb3b9f load on device 'cuda:0' took 17052.78 ms  (compiled)
+Module _create_block_jacobi_tile_kernels__locals__solve_kernel_fab20ad6 3b3f245 load on device 'cuda:0' took 3288.89 ms  (compiled)
+ok
+test_block_jacobi_preconditioner_dtype_coverage_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_block_jacobi_preconditioner_dtype_coverage_cpu)
+Verify "direct"/"sequential" succeed for float16, unlike "block_jacobi_tile". ... Module _invert_diagonal_blocks_qr_806794e2 b35f84e load on device 'cpu' took 5542.01 ms  (compiled)
+Module _block_diag_mv_inverse_5a86f704 59df473 load on device 'cpu' took 1705.89 ms  (compiled)
+Module _invert_diagonal_blocks_qr_806794e2 4078559 load on device 'cpu' took 6708.38 ms  (compiled)
+Module _block_diag_mv_inverse_5a86f704 bbd9e36 load on device 'cpu' took 1836.17 ms  (compiled)
+Module _ldlt_diagonal_blocks_9c547f3e 60613aa load on device 'cpu' took 2533.71 ms  (compiled)
+Module _block_diag_mv_ldlt_85995636 fb50d95 load on device 'cpu' took 2233.78 ms  (compiled)
+ok
+test_block_jacobi_preconditioner_dtype_coverage_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_block_jacobi_preconditioner_dtype_coverage_cuda_0)
+Verify "direct"/"sequential" succeed for float16, unlike "block_jacobi_tile". ... Module _invert_diagonal_blocks_qr_806794e2 4e15b9b load on device 'cuda:0' took 61022.25 ms  (compiled)
+Module _block_diag_mv_inverse_5a86f704 3060dd7 load on device 'cuda:0' took 3295.97 ms  (compiled)
+Module _ldlt_diagonal_blocks_9c547f3e c7ae424 load on device 'cuda:0' took 8841.39 ms  (compiled)
+Module _block_diag_mv_ldlt_85995636 adf2da0 load on device 'cuda:0' took 5381.01 ms  (compiled)
+ok
+test_block_jacobi_preconditioner_errors_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_block_jacobi_preconditioner_errors_cpu)
+Verify non-square matrices and blocks, non-BsrMatrix input, and bad ptypes are rejected. ... ok
+test_block_jacobi_preconditioner_errors_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_block_jacobi_preconditioner_errors_cuda_0)
+Verify non-square matrices and blocks, non-BsrMatrix input, and bad ptypes are rejected. ... ok
+test_block_jacobi_preconditioner_rank_deficient_block_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_block_jacobi_preconditioner_rank_deficient_block_cpu)
+Verify a rank-deficient (but not exactly-zero) block falls back to the identity. ... Module _invert_diagonal_blocks_qr_806794e2 c9eda0d load on device 'cpu' took 7254.15 ms  (compiled)
+Module _block_diag_mv_inverse_5a86f704 edc57ac load on device 'cpu' took 3059.46 ms  (compiled)
+Module _invert_diagonal_blocks_qr_806794e2 54b62b3 load on device 'cpu' took 10937.57 ms  (compiled)
+Module _block_diag_mv_inverse_5a86f704 35cdd39 load on device 'cpu' took 2190.24 ms  (compiled)
+ok
+test_block_jacobi_preconditioner_rank_deficient_block_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_block_jacobi_preconditioner_rank_deficient_block_cuda_0)
+Verify a rank-deficient (but not exactly-zero) block falls back to the identity. ... Module _invert_diagonal_blocks_qr_806794e2 eca7f27 load on device 'cuda:0' took 154640.97 ms  (compiled)
+Module _block_diag_mv_inverse_5a86f704 7177e62 load on device 'cuda:0' took 29885.76 ms  (compiled)
+ok
+test_block_jacobi_preconditioner_rank_deficient_ldlt_block_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_block_jacobi_preconditioner_rank_deficient_ldlt_block_cpu)
+Verify a rank-deficient (but not exactly non-positive) block falls back to the identity. ... Module _ldlt_diagonal_blocks_9c547f3e c2c8e8f load on device 'cpu' took 22413.39 ms  (compiled)
+Module _block_diag_mv_ldlt_85995636 8f75cb7 load on device 'cpu' took 22795.50 ms  (compiled)
+Module _ldlt_diagonal_blocks_9c547f3e 31cbaf7 load on device 'cpu' took 26997.08 ms  (compiled)
+Module _block_diag_mv_ldlt_85995636 48c3df3 load on device 'cpu' took 26899.08 ms  (compiled)
+Module _ldlt_diagonal_blocks_9c547f3e e811ae5 load on device 'cpu' took 30990.24 ms  (compiled)
+Module _block_diag_mv_ldlt_85995636 85afaef load on device 'cpu' took 27796.15 ms  (compiled)
+ok
+test_block_jacobi_preconditioner_rank_deficient_ldlt_block_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_block_jacobi_preconditioner_rank_deficient_ldlt_block_cuda_0)
+Verify a rank-deficient (but not exactly non-positive) block falls back to the identity. ... Module _ldlt_diagonal_blocks_9c547f3e 55276b2 load on device 'cuda:0' took 91509.18 ms  (compiled)
+Module _block_diag_mv_ldlt_85995636 ba28abe load on device 'cuda:0' took 22200.01 ms  (compiled)
+ok
+test_block_jacobi_preconditioner_scalar_fallback_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_block_jacobi_preconditioner_scalar_fallback_cpu)
+Verify 1x1-block (CSR) matrices fall back to scalar Jacobi, for every ptype string. ... Module _extract_inverse_diagonal_blocked_23cffb22 86a3187 load on device 'cpu' took 4690.79 ms  (compiled)
+ok
+test_block_jacobi_preconditioner_scalar_fallback_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_block_jacobi_preconditioner_scalar_fallback_cuda_0)
+Verify 1x1-block (CSR) matrices fall back to scalar Jacobi, for every ptype string. ... Module _extract_inverse_diagonal_blocked_23cffb22 d9588d6 load on device 'cuda:0' took 14295.72 ms  (compiled)
+ok
+test_block_jacobi_preconditioner_singular_block_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_block_jacobi_preconditioner_singular_block_cpu)
+Verify singular/non-SPD blocks fall back to the identity instead of raising or NaN-ing. ... Module _ldlt_diagonal_blocks_9c547f3e 118335e load on device 'cpu' took 33398.13 ms  (compiled)
+Module _block_diag_mv_ldlt_85995636 db2c20d load on device 'cpu' took 29893.49 ms  (compiled)
+ok
+test_block_jacobi_preconditioner_singular_block_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_block_jacobi_preconditioner_singular_block_cuda_0)
+Verify singular/non-SPD blocks fall back to the identity instead of raising or NaN-ing. ... Module _ldlt_diagonal_blocks_9c547f3e 2f3644d load on device 'cuda:0' took 102603.65 ms  (compiled)
+Module _block_diag_mv_ldlt_85995636 9b9a41c load on device 'cuda:0' took 41196.86 ms  (compiled)
+ok
+test_block_jacobi_preconditioner_unsupported_dtype_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_block_jacobi_preconditioner_unsupported_dtype_cpu)
+Verify "block_jacobi_tile" fails fast on an unsupported scalar type. ... ok
+test_block_jacobi_preconditioner_unsupported_dtype_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_block_jacobi_preconditioner_unsupported_dtype_cuda_0)
+Verify "block_jacobi_tile" fails fast on an unsupported scalar type. ... ok
+test_block_jacobi_preconditioner_well_conditioned_scaled_block_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_block_jacobi_preconditioner_well_conditioned_scaled_block_cpu)
+Verify a well-conditioned but differently-scaled block is inverted, not mistaken for singular. ... ok
+test_block_jacobi_preconditioner_well_conditioned_scaled_block_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_block_jacobi_preconditioner_well_conditioned_scaled_block_cuda_0)
+Verify a well-conditioned but differently-scaled block is inverted, not mistaken for singular. ... ok
+test_cg_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_cg_cpu) ... ok
+test_cg_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_cg_cuda_0) ... ok
+test_cg_restart_float32_drift_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_cg_restart_float32_drift_cpu) ... ok
+test_cg_restart_float32_drift_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_cg_restart_float32_drift_cuda_0) ... Module _dense_mv_kernel_84fbc2cf ff18ee3 load on device 'cuda:0' took 3497.52 ms  (compiled)
+Module _create_segmented_tiled_dot_kernels__locals__plan_offsets_kernel_2c0f7f55 27c2b7c load on device 'cuda:0' took 3504.28 ms  (compiled)
+Module _create_segmented_tiled_dot_kernels__locals__segmented_block_dot_kernel_541fc0d0 19978ba load on device 'cuda:0' took 2793.23 ms  (compiled)
+Module _create_segmented_tiled_dot_kernels__locals__segmented_block_sum_kernel_39b5870d 294c78d load on device 'cuda:0' took 1594.93 ms  (compiled)
+Module _dense_mv_kernel_84fbc2cf 4f5c285 load on device 'cuda:0' took 1999.96 ms  (compiled)
+ok
+test_conjugate_solver_restart_conditional_graph_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_conjugate_solver_restart_conditional_graph_cuda_0) ... ok
+test_conjugate_solver_restart_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_conjugate_solver_restart_cpu) ... ok
+test_conjugate_solver_restart_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_conjugate_solver_restart_cuda_0) ... ok
+test_conjugate_solver_restart_validation_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_conjugate_solver_restart_validation_cpu) ... ok
+test_cr_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_cr_cpu) ... ok
+test_cr_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_cr_cuda_0) ... ok
+test_functor_compat_errors_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_functor_compat_errors_cpu) ... ok
+test_functor_compat_errors_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_functor_compat_errors_cuda_0) ... ok
+test_functor_iteration_buffer_reuse_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_functor_iteration_buffer_reuse_cpu) ... Module _create_update_condition_kernel__locals___update_condition_bba29a29 9ef2cfd load on device 'cpu' took 5107.56 ms  (compiled)
+ok
+test_functor_iteration_buffer_reuse_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_functor_iteration_buffer_reuse_cuda_0) ... ok
+test_functor_preconditioner_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_functor_preconditioner_cpu)
+Toggle CG and CR preconditioners between solver calls. ... ok
+test_functor_preconditioner_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_functor_preconditioner_cuda_0)
+Toggle CG and CR preconditioners between solver calls. ... ok
+test_functor_reuse_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_functor_reuse_cpu)
+Reuse preallocated solver functors with compatible systems. ... ok
+test_functor_reuse_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_functor_reuse_cuda_0)
+Reuse preallocated solver functors with compatible systems. ... Module warp.optim.linear a2dc537 load on device 'cuda:0' took 18498.24 ms  (compiled)
+ok
+test_gmres_conditional_graph_cycle_iterations_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_gmres_conditional_graph_cycle_iterations_cuda_0) ... ok
+test_gmres_cpu (warp.tests.test_linear_solvers.TestLinearSolvers.test_gmres_cpu) ... ok
+test_gmres_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_gmres_cuda_0) ... Module make_gmres_solve_least_squares_kernel_tiled__locals__gmres_solve_least_squares_tiled_0e40e3f4 81c04c3 load on device 'cuda:0' took 5903.18 ms  (compiled)
+Module warp.optim.linear 66931b3 load on device 'cuda:0' took 19505.26 ms  (compiled)
+Module make_gmres_solve_least_squares_kernel_tiled__locals__gmres_solve_least_squares_tiled_0e40e3f4 bb9bb4d load on device 'cuda:0' took 4995.60 ms  (compiled)
+ok
+test_tiled_dot_batched_tree_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_tiled_dot_batched_tree_cuda_0) ... ok
+test_tiled_dot_large_single_batch_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_tiled_dot_large_single_batch_cuda_0) ... ok
+test_tiled_dot_max_batch_length_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_tiled_dot_max_batch_length_cuda_0) ... ok
+test_tiled_dot_plan_offsets_int_max_cuda_0 (warp.tests.test_linear_solvers.TestLinearSolvers.test_tiled_dot_plan_offsets_int_max_cuda_0) ... ok
+test_tile_argmax_cpu_blocks_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_argmax_cpu_blocks_cpu) ... Module warp.tests.tile.test_tile_reduce 370d50c load on device 'cpu' took 75901.30 ms  (compiled)
+ok
+test_tile_argmin_cpu_blocks_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_argmin_cpu_blocks_cpu) ... ok
+test_tile_atomic_add_unsupported_dtype_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_atomic_add_unsupported_dtype_cpu)
+Reject ``tile_atomic_add`` on bool and narrow-integer dtypes with a clear error. ... Module test_tile_atomic_add_unsupported_dtype__locals__atomic_add_int8_kernel_51076f01 9d05870 load on device 'cpu' took 81.98 ms  (error)
+Module test_tile_atomic_add_unsupported_dtype__locals__atomic_add_bool_kernel_e3800367 8bfc4ae load on device 'cpu' took 0.57 ms  (error)
+ok
+test_tile_atomic_add_unsupported_dtype_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_atomic_add_unsupported_dtype_cuda_0)
+Reject ``tile_atomic_add`` on bool and narrow-integer dtypes with a clear error. ... Module test_tile_atomic_add_unsupported_dtype__locals__atomic_add_int8_kernel_51076f01 c0b931c load on device 'cuda:0' took 1.23 ms  (error)
+Module test_tile_atomic_add_unsupported_dtype__locals__atomic_add_bool_kernel_e3800367 6bf39af load on device 'cuda:0' took 0.65 ms  (error)
+ok
+test_tile_max_cpu_blocks_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_max_cpu_blocks_cpu) ... ok
+test_tile_max_strided_loop_handles_short_input_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_max_strided_loop_handles_short_input_cpu)
+Find the maximum of a short input through a block-strided tile loop. ... Module tile_strided_loop_kernel_8e99e54a acad8aa load on device 'cpu' took 1804.81 ms  (compiled)
+ok
+test_tile_max_strided_loop_handles_short_input_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_max_strided_loop_handles_short_input_cuda_0)
+Find the maximum of a short input through a block-strided tile loop. ... Module tile_strided_loop_kernel_8e99e54a 87fce26 load on device 'cuda:0' took 3713.85 ms  (compiled)
+ok
+test_tile_min_cpu_blocks_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_min_cpu_blocks_cpu) ... ok
+test_tile_reduce_argmax_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_argmax_cpu) ... Module warp.tests.tile.test_tile_reduce 3e6906b load on device 'cpu' took 45703.53 ms  (compiled)
+ok
+test_tile_reduce_argmax_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_argmax_cuda_0) ... Module warp.tests.tile.test_tile_reduce 370d50c load on device 'cuda:0' took 152001.48 ms  (compiled)
+ok
+test_tile_reduce_argmin_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_argmin_cpu) ... ok
+test_tile_reduce_argmin_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_argmin_cuda_0) ... ok
+test_tile_reduce_axis_empty_custom_slices_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_axis_empty_custom_slices_cpu) ... ok
+test_tile_reduce_axis_empty_partial_slices_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_axis_empty_partial_slices_cpu) ... ok
+test_tile_reduce_axis_lengths_33_to_256_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_axis_lengths_33_to_256_cpu)
+Reduce axes from 33 through 256 elements across dimensions and gradients. ... ok
+test_tile_reduce_axis_lengths_33_to_256_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_axis_lengths_33_to_256_cuda_0)
+Reduce axes from 33 through 256 elements across dimensions and gradients. ... ok
+test_tile_reduce_axis_lengths_33_to_256_single_warp_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_axis_lengths_33_to_256_single_warp_cpu)
+Reduce axes from 33 through 256 elements across dimensions and gradients. ... ok
+test_tile_reduce_axis_lengths_33_to_256_single_warp_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_axis_lengths_33_to_256_single_warp_cuda_0)
+Reduce axes from 33 through 256 elements across dimensions and gradients. ... Module warp.tests.tile.test_tile_reduce 20d7565 load on device 'cuda:0' took 135092.70 ms  (compiled)
+ok
+test_tile_reduce_axis_lengths_over_256_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_axis_lengths_over_256_cpu)
+Reduce axes longer than 256 elements across dimensions and gradients. ... ok
+test_tile_reduce_axis_lengths_over_256_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_axis_lengths_over_256_cuda_0)
+Reduce axes longer than 256 elements across dimensions and gradients. ... ok
+test_tile_reduce_axis_lengths_over_256_single_warp_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_axis_lengths_over_256_single_warp_cpu)
+Reduce axes longer than 256 elements across dimensions and gradients. ... ok
+test_tile_reduce_axis_lengths_over_256_single_warp_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_axis_lengths_over_256_single_warp_cuda_0)
+Reduce axes longer than 256 elements across dimensions and gradients. ... ok
+test_tile_reduce_axis_lengths_up_to_32_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_axis_lengths_up_to_32_cpu)
+Reduce axes no longer than 32 elements across dimensions and gradients. ... ok
+test_tile_reduce_axis_lengths_up_to_32_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_axis_lengths_up_to_32_cuda_0)
+Reduce axes no longer than 32 elements across dimensions and gradients. ... ok
+test_tile_reduce_axis_lengths_up_to_32_single_warp_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_axis_lengths_up_to_32_single_warp_cpu)
+Reduce axes no longer than 32 elements across dimensions and gradients. ... ok
+test_tile_reduce_axis_lengths_up_to_32_single_warp_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_axis_lengths_up_to_32_single_warp_cuda_0)
+Reduce axes no longer than 32 elements across dimensions and gradients. ... ok
+test_tile_reduce_axis_partial_block_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_axis_partial_block_cpu) ... ok
+test_tile_reduce_axis_partial_warp_block_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_axis_partial_warp_block_cpu)
+Check tier 2 axis sums and gradients from blocks whose warps are not all full. ... Module tile_reduce_axis_tier2_partial_warp_kernel_bcf6a652 f87c4e3 load on device 'cpu' took 4997.45 ms  (compiled)
+ok
+test_tile_reduce_axis_partial_warp_block_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_axis_partial_warp_block_cuda_0)
+Check tier 2 axis sums and gradients from blocks whose warps are not all full. ... Module tile_reduce_axis_tier2_partial_warp_kernel_bcf6a652 bee89f0 load on device 'cuda:0' took 32503.96 ms  (compiled)
+Module tile_reduce_axis_tier2_partial_warp_kernel_bcf6a652 efaa6fb load on device 'cuda:0' took 16599.20 ms  (compiled)
+Module tile_reduce_axis_tier2_partial_warp_kernel_bcf6a652 1ffe6a7 load on device 'cuda:0' took 16895.61 ms  (compiled)
+Module tile_reduce_axis_tier2_partial_warp_kernel_bcf6a652 87d7d7d load on device 'cuda:0' took 7303.90 ms  (compiled)
+Module tile_reduce_axis_tier2_partial_warp_kernel_bcf6a652 ed4dfd8 load on device 'cuda:0' took 11606.51 ms  (compiled)
+Module tile_reduce_axis_tier2_partial_warp_kernel_bcf6a652 1601b80 load on device 'cuda:0' took 6799.30 ms  (compiled)
+Module tile_reduce_axis_tier2_partial_warp_kernel_bcf6a652 542f0a9 load on device 'cuda:0' took 5809.34 ms  (compiled)
+Module tile_reduce_axis_tier2_partial_warp_kernel_bcf6a652 fa36e81 load on device 'cuda:0' took 6599.33 ms  (compiled)
+Module tile_reduce_axis_tier2_partial_warp_kernel_bcf6a652 e0f7383 load on device 'cuda:0' took 6011.43 ms  (compiled)
+ok
+test_tile_reduce_custom_struct_argmax_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_custom_struct_argmax_cpu)
+Select the largest keyed struct with a custom tile reduction. ... Module create_tile_reduce_custom_struct_kernel__locals__tile_reduce_custom_struct_kernel_246eed86 58440f8 load on device 'cpu' took 1290.28 ms  (compiled)
+ok
+test_tile_reduce_custom_struct_argmax_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_custom_struct_argmax_cuda_0)
+Select the largest keyed struct with a custom tile reduction. ... Module warp.tests.tile.test_tile_reduce 53f3e9b load on device 'cuda:0' took 53004.30 ms  (compiled)
+Module create_tile_reduce_custom_struct_kernel__locals__tile_reduce_custom_struct_kernel_246eed86 17eb7bd load on device 'cuda:0' took 957.89 ms  (compiled)
+ok
+test_tile_reduce_custom_struct_argmax_single_warp_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_custom_struct_argmax_single_warp_cpu)
+Select the largest keyed struct with a custom tile reduction. ... Module create_tile_reduce_custom_struct_kernel__locals__tile_reduce_custom_struct_kernel_61e120d0 74749e5 load on device 'cpu' took 398.59 ms  (compiled)
+ok
+test_tile_reduce_custom_struct_argmax_single_warp_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_custom_struct_argmax_single_warp_cuda_0)
+Select the largest keyed struct with a custom tile reduction. ... Module create_tile_reduce_custom_struct_kernel__locals__tile_reduce_custom_struct_kernel_61e120d0 78ee2d4 load on device 'cuda:0' took 533.70 ms  (compiled)
+ok
+test_tile_reduce_grouped_sum_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_grouped_sum_cpu) ... ok
+test_tile_reduce_grouped_sum_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_grouped_sum_cuda_0) ... ok
+test_tile_reduce_has_no_dynamic_shared_initialization (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_has_no_dynamic_shared_initialization)
+Compile a vector reduction without dynamic shared-memory initialization. ... ok
+test_tile_reduce_matrix_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_matrix_cpu) ... ok
+test_tile_reduce_matrix_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_matrix_cuda_0) ... ok
+test_tile_reduce_matrix_single_warp_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_matrix_single_warp_cpu) ... ok
+test_tile_reduce_matrix_single_warp_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_matrix_single_warp_cuda_0) ... ok
+test_tile_reduce_max_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_max_cpu) ... ok
+test_tile_reduce_max_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_max_cuda_0) ... ok
+test_tile_reduce_min_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_min_cpu) ... ok
+test_tile_reduce_min_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_min_cuda_0) ... ok
+test_tile_reduce_narrow_int_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_narrow_int_cpu)
+Verify load, store, and reduction on narrow-integer tiles compile and run. ... ok
+test_tile_reduce_narrow_int_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_narrow_int_cuda_0)
+Verify load, store, and reduction on narrow-integer tiles compile and run. ... ok
+test_tile_reduce_product_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_product_cpu)
+Reduce tiles with multiplication across the requested block dimension. ... Module create_tile_reduce_custom_kernel__locals__tile_reduce_custom_kernel_4f621200 523d63b load on device 'cpu' took 371.28 ms  (compiled)
+ok
+test_tile_reduce_product_cpu_block_31_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_product_cpu_block_31_cpu)
+Reduce tiles with multiplication across the requested block dimension. ... Module create_tile_reduce_custom_kernel__locals__tile_reduce_custom_kernel_7883be66 b7e046f load on device 'cpu' took 3688.52 ms  (compiled)
+ok
+test_tile_reduce_product_cpu_block_32_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_product_cpu_block_32_cpu)
+Reduce tiles with multiplication across the requested block dimension. ... Module create_tile_reduce_custom_kernel__locals__tile_reduce_custom_kernel_33704f28 b308e73 load on device 'cpu' took 3064.36 ms  (compiled)
+ok
+test_tile_reduce_product_cpu_block_63_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_product_cpu_block_63_cpu)
+Reduce tiles with multiplication across the requested block dimension. ... Module create_tile_reduce_custom_kernel__locals__tile_reduce_custom_kernel_f4700fdd b06802a load on device 'cpu' took 10173.92 ms  (compiled)
+ok
+test_tile_reduce_product_cpu_block_64_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_product_cpu_block_64_cpu)
+Reduce tiles with multiplication across the requested block dimension. ... Module create_tile_reduce_custom_kernel__locals__tile_reduce_custom_kernel_4f621200 3271f73 load on device 'cpu' took 831.29 ms  (compiled)
+ok
+test_tile_reduce_product_cpu_block_65_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_product_cpu_block_65_cpu)
+Reduce tiles with multiplication across the requested block dimension. ... Module create_tile_reduce_custom_kernel__locals__tile_reduce_custom_kernel_cd2539a3 6807f6b load on device 'cpu' took 10213.28 ms  (compiled)
+ok
+test_tile_reduce_product_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_product_cuda_0)
+Reduce tiles with multiplication across the requested block dimension. ... Module create_tile_reduce_custom_kernel__locals__tile_reduce_custom_kernel_4f621200 3271f73 load on device 'cuda:0' took 1151.07 ms  (compiled)
+ok
+test_tile_reduce_product_single_warp_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_product_single_warp_cpu)
+Reduce tiles with multiplication across the requested block dimension. ... Module create_tile_reduce_custom_kernel__locals__tile_reduce_custom_kernel_33704f28 6699a11 load on device 'cpu' took 897.17 ms  (compiled)
+ok
+test_tile_reduce_product_single_warp_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_product_single_warp_cuda_0)
+Reduce tiles with multiplication across the requested block dimension. ... Module create_tile_reduce_custom_kernel__locals__tile_reduce_custom_kernel_33704f28 b308e73 load on device 'cuda:0' took 1384.64 ms  (compiled)
+ok
+test_tile_reduce_simt_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_simt_cpu) ... ok
+test_tile_reduce_simt_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_simt_cuda_0) ... ok
+test_tile_reduce_sum_bfloat16_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_sum_bfloat16_cpu)
+Sum a bfloat16 tile and verify the reduction stays exact. ... ok
+test_tile_reduce_sum_bfloat16_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_sum_bfloat16_cuda_0)
+Sum a bfloat16 tile and verify the reduction stays exact. ... ok
+test_tile_reduce_sum_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_sum_cpu) ... ok
+test_tile_reduce_sum_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_sum_cuda_0) ... ok
+test_tile_reduce_sum_float16_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_sum_float16_cpu)
+Sum a float16 tile and verify the reduction stays exact. ... ok
+test_tile_reduce_sum_float16_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_sum_float16_cuda_0)
+Sum a float16 tile and verify the reduction stays exact. ... ok
+test_tile_reduce_vector_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_vector_cpu) ... ok
+test_tile_reduce_vector_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_vector_cuda_0) ... ok
+test_tile_reduce_vector_single_warp_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_vector_single_warp_cpu) ... ok
+test_tile_reduce_vector_single_warp_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_reduce_vector_single_warp_cuda_0) ... ok
+test_tile_scan_exclusive_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_scan_exclusive_cpu) ... Module create_tile_scan_exclusive_kernel__locals__tile_scan_exclusive_kernel_bd3ec6ce c8ba69b load on device 'cpu' took 1107.16 ms  (compiled)
+ok
+test_tile_scan_exclusive_cpu_blocks_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_scan_exclusive_cpu_blocks_cpu) ... Module create_tile_scan_exclusive_kernel__locals__tile_scan_exclusive_kernel_bd3ec6ce 1dc73ed load on device 'cpu' took 1015.79 ms  (compiled)
+ok
+test_tile_scan_exclusive_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_scan_exclusive_cuda_0) ... Module create_tile_scan_exclusive_kernel__locals__tile_scan_exclusive_kernel_bd3ec6ce 1dc73ed load on device 'cuda:0' took 1207.35 ms  (compiled)
+ok
+test_tile_scan_inclusive_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_scan_inclusive_cpu) ... Module create_tile_scan_inclusive_kernel__locals__tile_scan_inclusive_kernel_18395953 8951cff load on device 'cpu' took 561.29 ms  (compiled)
+ok
+test_tile_scan_inclusive_cpu_blocks_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_scan_inclusive_cpu_blocks_cpu) ... Module create_tile_scan_inclusive_kernel__locals__tile_scan_inclusive_kernel_18395953 5a66ab2 load on device 'cpu' took 509.49 ms  (compiled)
+ok
+test_tile_scan_inclusive_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_scan_inclusive_cuda_0) ... Module create_tile_scan_inclusive_kernel__locals__tile_scan_inclusive_kernel_18395953 5a66ab2 load on device 'cuda:0' took 922.42 ms  (compiled)
+ok
+test_tile_scan_max_inclusive_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_scan_max_inclusive_cpu) ... Module create_tile_scan_max_inclusive_kernel__locals__tile_scan_max_inclusive_kernel_0a522668 bcdd42a load on device 'cpu' took 393.74 ms  (compiled)
+ok
+test_tile_scan_max_inclusive_cpu_blocks_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_scan_max_inclusive_cpu_blocks_cpu) ... Module create_tile_scan_max_inclusive_kernel__locals__tile_scan_max_inclusive_kernel_0a522668 e4b7c62 load on device 'cpu' took 1054.27 ms  (compiled)
+ok
+test_tile_scan_max_inclusive_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_scan_max_inclusive_cuda_0) ... Module create_tile_scan_max_inclusive_kernel__locals__tile_scan_max_inclusive_kernel_0a522668 e4b7c62 load on device 'cuda:0' took 2212.40 ms  (compiled)
+ok
+test_tile_scan_min_inclusive_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_scan_min_inclusive_cpu) ... Module create_tile_scan_min_inclusive_kernel__locals__tile_scan_min_inclusive_kernel_ace0d7f6 5b27568 load on device 'cpu' took 385.20 ms  (compiled)
+ok
+test_tile_scan_min_inclusive_cpu_blocks_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_scan_min_inclusive_cpu_blocks_cpu) ... Module create_tile_scan_min_inclusive_kernel__locals__tile_scan_min_inclusive_kernel_ace0d7f6 ebe0a91 load on device 'cpu' took 565.41 ms  (compiled)
+ok
+test_tile_scan_min_inclusive_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_scan_min_inclusive_cuda_0) ... Module create_tile_scan_min_inclusive_kernel__locals__tile_scan_min_inclusive_kernel_ace0d7f6 ebe0a91 load on device 'cuda:0' took 1546.94 ms  (compiled)
+ok
+test_tile_scan_min_max_inclusive_float_extremes_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_scan_min_max_inclusive_float_extremes_cpu) ... Module create_tile_scan_min_max_inclusive_kernel__locals__tile_scan_min_max_inclusive_kernel_1464df0a 3b594ef load on device 'cpu' took 1560.03 ms  (compiled)
+ok
+test_tile_scan_min_max_inclusive_float_extremes_cpu_blocks_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_scan_min_max_inclusive_float_extremes_cpu_blocks_cpu) ... Module create_tile_scan_min_max_inclusive_kernel__locals__tile_scan_min_max_inclusive_kernel_1464df0a 460d9d8 load on device 'cpu' took 1613.63 ms  (compiled)
+ok
+test_tile_scan_min_max_inclusive_float_extremes_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_scan_min_max_inclusive_float_extremes_cuda_0) ... Module create_tile_scan_min_max_inclusive_kernel__locals__tile_scan_min_max_inclusive_kernel_1464df0a 460d9d8 load on device 'cuda:0' took 2040.84 ms  (compiled)
+ok
+test_tile_scan_min_max_inclusive_integer_extremes_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_scan_min_max_inclusive_integer_extremes_cpu) ... Module create_tile_scan_min_max_inclusive_kernel__locals__tile_scan_min_max_inclusive_kernel_586baebb d9eae78 load on device 'cpu' took 1110.55 ms  (compiled)
+Module create_tile_scan_min_max_inclusive_kernel__locals__tile_scan_min_max_inclusive_kernel_a5df8b21 59d3a32 load on device 'cpu' took 486.89 ms  (compiled)
+ok
+test_tile_scan_min_max_inclusive_integer_extremes_cpu_blocks_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_scan_min_max_inclusive_integer_extremes_cpu_blocks_cpu) ... Module create_tile_scan_min_max_inclusive_kernel__locals__tile_scan_min_max_inclusive_kernel_586baebb 62eb564 load on device 'cpu' took 429.03 ms  (compiled)
+Module create_tile_scan_min_max_inclusive_kernel__locals__tile_scan_min_max_inclusive_kernel_a5df8b21 622dca1 load on device 'cpu' took 451.30 ms  (compiled)
+ok
+test_tile_scan_min_max_inclusive_integer_extremes_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_scan_min_max_inclusive_integer_extremes_cuda_0) ... Module create_tile_scan_min_max_inclusive_kernel__locals__tile_scan_min_max_inclusive_kernel_586baebb 62eb564 load on device 'cuda:0' took 913.03 ms  (compiled)
+Module create_tile_scan_min_max_inclusive_kernel__locals__tile_scan_min_max_inclusive_kernel_a5df8b21 622dca1 load on device 'cuda:0' took 1084.06 ms  (compiled)
+ok
+test_tile_scan_min_max_inclusive_nan_block_256_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_scan_min_max_inclusive_nan_block_256_cuda_0) ... Module create_tile_scan_min_max_inclusive_kernel__locals__tile_scan_min_max_inclusive_kernel_46970146 4697014 load on device 'cuda:0' took 545.85 ms  (compiled)
+ok
+test_tile_scan_min_max_inclusive_nan_block_32_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_scan_min_max_inclusive_nan_block_32_cuda_0) ... Module create_tile_scan_min_max_inclusive_kernel__locals__tile_scan_min_max_inclusive_kernel_46970146 b74ee6d load on device 'cuda:0' took 914.05 ms  (compiled)
+ok
+test_tile_scan_min_max_inclusive_nan_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_scan_min_max_inclusive_nan_cpu) ... Module create_tile_scan_min_max_inclusive_kernel__locals__tile_scan_min_max_inclusive_kernel_46970146 5e26801 load on device 'cpu' took 329.99 ms  (compiled)
+ok
+test_tile_scan_min_max_inclusive_nan_cpu_blocks_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_scan_min_max_inclusive_nan_cpu_blocks_cpu) ... Module create_tile_scan_min_max_inclusive_kernel__locals__tile_scan_min_max_inclusive_kernel_46970146 36f9e80 load on device 'cpu' took 524.47 ms  (compiled)
+ok
+test_tile_scan_min_max_inclusive_nan_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_scan_min_max_inclusive_nan_cuda_0) ... Module create_tile_scan_min_max_inclusive_kernel__locals__tile_scan_min_max_inclusive_kernel_46970146 36f9e80 load on device 'cuda:0' took 733.22 ms  (compiled)
+ok
+test_tile_scan_partial_block_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_scan_partial_block_cpu) ... ok
+test_tile_sum_axis_broadcast_gradient_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_sum_axis_broadcast_gradient_cpu)
+Verify gradients of tile sums over broadcast views. ... Module warp.tests.tile.test_tile_reduce 20d7565 load on device 'cpu' took 17603.28 ms  (compiled)
+ok
+test_tile_sum_axis_broadcast_gradient_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_sum_axis_broadcast_gradient_cuda_0)
+Verify gradients of tile sums over broadcast views. ... ok
+test_tile_sum_axis_gradients_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_sum_axis_gradients_cpu)
+Verify tile sum gradients for every axis in ranks one through four. ... Module tile_sum_axis_1d_gradient 19d6eb7 load on device 'cpu' took 1200.26 ms  (compiled)
+ok
+test_tile_sum_axis_gradients_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_sum_axis_gradients_cuda_0)
+Verify tile sum gradients for every axis in ranks one through four. ... Module tile_sum_axis_1d_gradient 19d6eb7 load on device 'cuda:0' took 1487.35 ms  (compiled)
+ok
+test_tile_sum_axis_large_cpu_gradient (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_sum_axis_large_cpu_gradient)
+Verify a large CPU tile sum propagates distinct output gradients. ... Module tile_sum_axis0_large_cpu_gradient_kernel_3a753744 0a637ab load on device 'cpu' took 1968.21 ms  (compiled)
+ok
+test_tile_sum_axis_large_gradient_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_sum_axis_large_gradient_cuda_0)
+Verify a large CUDA tile sum propagates distinct output gradients. ... ok
+test_tile_sum_cpu_blocks_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_sum_cpu_blocks_cpu) ... ok
+test_tile_sum_to_shared_cpu (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_sum_to_shared_cpu) ... ok
+test_tile_sum_to_shared_cuda_0 (warp.tests.tile.test_tile_reduce.TestTileReduce.test_tile_sum_to_shared_cuda_0) ... ok
+
+----------------------------------------------------------------------
+Ran 180 tests in 3196.017s
+
+OK

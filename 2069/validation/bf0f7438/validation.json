@@ -1,0 +1,149 @@
+{
+  "pull_request": "https://github.com/NVIDIA/warp/pull/2073",
+  "source_commit": "bf0f7438737212ec35aeeaee139dc49415662f7a",
+  "scope": "Current-commit runtime validation; no new performance-speedup claim.",
+  "environment_file": "environment.json",
+  "commands": [
+    {
+      "name": "2073-build",
+      "command": [
+        "uv",
+        "run",
+        "build_lib.py"
+      ],
+      "started_utc": "2026-10-12T21:56:45.963122+00:00",
+      "finished_utc": "2026-10-12T21:58:22.529125+00:00",
+      "seconds": 96.56600539601641,
+      "exit_code": 0,
+      "source_commit": "bf0f7438737212ec35aeeaee139dc49415662f7a",
+      "cuda_visible_devices": "all",
+      "private_kernel_cache": true,
+      "log_file": "build.log"
+    },
+    {
+      "name": "2073-sync",
+      "command": [
+        "uv",
+        "sync",
+        "--extra",
+        "dev"
+      ],
+      "started_utc": "2026-10-12T21:58:59.459840+00:00",
+      "finished_utc": "2026-10-12T21:59:08.344852+00:00",
+      "seconds": 8.8850207059877,
+      "exit_code": 0,
+      "source_commit": "bf0f7438737212ec35aeeaee139dc49415662f7a",
+      "cuda_visible_devices": "all",
+      "private_kernel_cache": true,
+      "log_file": "sync.log"
+    },
+    {
+      "name": "2073-sparse",
+      "command": [
+        "uv",
+        "run",
+        "--no-sync",
+        "-m",
+        "unittest",
+        "-v",
+        "warp.tests.test_sparse"
+      ],
+      "started_utc": "2026-10-12T21:59:14.720425+00:00",
+      "finished_utc": "2026-10-12T22:00:21.989073+00:00",
+      "seconds": 67.2686593469698,
+      "exit_code": 0,
+      "source_commit": "bf0f7438737212ec35aeeaee139dc49415662f7a",
+      "cuda_visible_devices": "all",
+      "private_kernel_cache": true,
+      "unittest": {
+        "tests_run": 139,
+        "test_seconds": 61.036,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "log_file": "sparse.log"
+    },
+    {
+      "name": "2073-extensions",
+      "command": [
+        "uv",
+        "run",
+        "--no-sync",
+        "-m",
+        "unittest",
+        "-v",
+        "warp.tests.test_linear_solvers",
+        "warp.tests.tile.test_tile_reduce"
+      ],
+      "started_utc": "2026-10-12T22:00:23.776880+00:00",
+      "finished_utc": "2026-10-12T22:53:46.685108+00:00",
+      "seconds": 3202.908244073973,
+      "exit_code": 0,
+      "source_commit": "bf0f7438737212ec35aeeaee139dc49415662f7a",
+      "cuda_visible_devices": "1",
+      "private_kernel_cache": true,
+      "unittest": {
+        "tests_run": 180,
+        "test_seconds": 3196.017,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "log_file": "extensions.log"
+    },
+    {
+      "name": "2073-numerics",
+      "command": [
+        "uv",
+        "run",
+        "--no-sync",
+        "$ASSET_ROOT/2069/numerics.py",
+        "--checkout",
+        ".",
+        "--output",
+        "$ASSET_ROOT/2069/validation/bf0f7438/mixed-numerics.csv"
+      ],
+      "started_utc": "2026-10-12T22:00:25.193643+00:00",
+      "finished_utc": "2026-10-12T22:00:34.135478+00:00",
+      "seconds": 8.94183859898476,
+      "exit_code": 0,
+      "source_commit": "bf0f7438737212ec35aeeaee139dc49415662f7a",
+      "cuda_visible_devices": "all",
+      "private_kernel_cache": true,
+      "log_file": "numerics.log"
+    },
+    {
+      "name": "2073-asv",
+      "command": [
+        "uv",
+        "run",
+        "--no-sync",
+        "$ASSET_ROOT/2069/split/asv_smoke.py",
+        "--packed"
+      ],
+      "started_utc": "2026-10-12T22:00:50.385303+00:00",
+      "finished_utc": "2026-10-12T22:01:11.084747+00:00",
+      "seconds": 20.699451344960835,
+      "exit_code": 0,
+      "source_commit": "bf0f7438737212ec35aeeaee139dc49415662f7a",
+      "cuda_visible_devices": "1",
+      "private_kernel_cache": true,
+      "log_file": "asv.log"
+    }
+  ],
+  "environment_variables": {
+    "WARP_CACHE_PATH": "$CHECKOUT/_build/validation-cache",
+    "WARP_CUDA_PATH": "/usr/local/cuda-13.0",
+    "PYTHONPATH": "$CHECKOUT",
+    "OPENBLAS_NUM_THREADS": "1"
+  },
+  "logs": "Sanitized stdout/stderr. Original workstation logs are retained locally, not published.",
+  "mixed_precision_diagnostics": {
+    "evaluations": 80,
+    "passed": 80,
+    "maximum_absolute_error": 0.0,
+    "scope": "Existing mixed-precision paths; row-packed correctness is covered by the sparse unit tests."
+  },
+  "asv_smoke_combinations": 8
+}

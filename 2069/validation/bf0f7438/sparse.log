@@ -1,0 +1,476 @@
+Sanitized execution log; filesystem roots are replaced with variables.
+warning: `VIRTUAL_ENV=$WORKSPACE/warp/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+Warp 1.19.0.dev0 initialized:
+   CUDA Toolkit 13.0, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA B200" (178 GiB, sm_100, mempool enabled)
+     "cuda:1"   : "NVIDIA B200" (178 GiB, sm_100, mempool enabled)
+   CUDA peer access:
+     Supported fully (all-directional)
+   Kernel cache:
+     $CHECKOUT/_build/validation-cache/1.19.0.dev0
+test_bsr_alloc_cpu (warp.tests.test_sparse.TestSparse.test_bsr_alloc_cpu) ... Module warp.sparse 336fa22 load on device 'cpu' took 1719.74 ms  (compiled)
+Module _bsr_set_from_triplets_padded_accumulate_values_6b9edfae 6105e60 load on device 'cpu' took 146.50 ms  (compiled)
+ok
+test_bsr_alloc_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_alloc_cuda_0) ... Module warp.sparse 628f4a0 load on device 'cuda:0' took 938.85 ms  (compiled)
+Module _bsr_set_from_triplets_padded_accumulate_values_6b9edfae 579575a load on device 'cuda:0' took 164.23 ms  (compiled)
+ok
+test_bsr_alloc_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_alloc_cuda_1) ... Module warp.sparse 628f4a0 load on device 'cuda:1' took 502.38 ms  (cached)
+Module _bsr_set_from_triplets_padded_accumulate_values_6b9edfae 579575a load on device 'cuda:1' took 1.33 ms  (cached)
+ok
+test_bsr_assign_masked_cpu (warp.tests.test_sparse.TestSparse.test_bsr_assign_masked_cpu) ... Module _bsr_accumulate_triplet_values_5520c14c 5f22d31 load on device 'cpu' took 144.20 ms  (compiled)
+Module _bsr_assign_copy_blocks_78aeece8 48dc09c load on device 'cpu' took 197.99 ms  (compiled)
+Module _bsr_get_diag_kernel_7a6beb6f f6efd1b load on device 'cpu' took 132.22 ms  (compiled)
+ok
+test_bsr_assign_masked_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_assign_masked_cuda_0) ... Module _bsr_accumulate_triplet_values_5520c14c a398b74 load on device 'cuda:0' took 464.07 ms  (compiled)
+Module _bsr_assign_copy_blocks_78aeece8 205fdaf load on device 'cuda:0' took 911.79 ms  (compiled)
+Module _bsr_get_diag_kernel_7a6beb6f 1772b98 load on device 'cuda:0' took 207.67 ms  (compiled)
+ok
+test_bsr_assign_masked_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_assign_masked_cuda_1) ... Module _bsr_accumulate_triplet_values_5520c14c a398b74 load on device 'cuda:1' took 5.81 ms  (cached)
+Module _bsr_assign_copy_blocks_78aeece8 205fdaf load on device 'cuda:1' took 130.73 ms  (cached)
+Module _bsr_get_diag_kernel_7a6beb6f 1772b98 load on device 'cuda:1' took 136.22 ms  (cached)
+ok
+test_bsr_axpy_1_3_cpu (warp.tests.test_sparse.TestSparse.test_bsr_axpy_1_3_cpu) ... Module _bsr_axpy_add_block_1a95672c a70784a load on device 'cpu' took 144.65 ms  (compiled)
+Module _bsr_scale_3d_kernel_2c3c7c32 f42e4c8 load on device 'cpu' took 95.32 ms  (compiled)
+Module _bsr_axpy_masked_1bfcd74a caa87a0 load on device 'cpu' took 149.83 ms  (compiled)
+ok
+test_bsr_axpy_1_3_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_axpy_1_3_cuda_0) ... Module _bsr_axpy_add_block_1a95672c 589b49c load on device 'cuda:0' took 228.28 ms  (compiled)
+Module _bsr_scale_3d_kernel_2c3c7c32 e505bc3 load on device 'cuda:0' took 88.64 ms  (compiled)
+Module _bsr_axpy_masked_1bfcd74a 7944468 load on device 'cuda:0' took 120.17 ms  (compiled)
+ok
+test_bsr_axpy_1_3_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_axpy_1_3_cuda_1) ... Module _bsr_axpy_add_block_1a95672c 589b49c load on device 'cuda:1' took 77.06 ms  (cached)
+Module _bsr_scale_3d_kernel_2c3c7c32 e505bc3 load on device 'cuda:1' took 2.66 ms  (cached)
+Module _bsr_axpy_masked_1bfcd74a 7944468 load on device 'cuda:1' took 4.08 ms  (cached)
+ok
+test_bsr_axpy_3_3_cpu (warp.tests.test_sparse.TestSparse.test_bsr_axpy_3_3_cpu) ... Module _bsr_accumulate_triplet_values_5520c14c 1a2274b load on device 'cpu' took 348.69 ms  (compiled)
+Module _bsr_axpy_add_block_1a95672c 628ce20 load on device 'cpu' took 186.47 ms  (compiled)
+Module _bsr_scale_3d_kernel_2c3c7c32 a9f9e4b load on device 'cpu' took 126.81 ms  (compiled)
+Module _bsr_assign_copy_blocks_78aeece8 eb0babe load on device 'cpu' took 582.26 ms  (compiled)
+Module _bsr_axpy_masked_1bfcd74a c5db46b load on device 'cpu' took 235.56 ms  (compiled)
+ok
+test_bsr_axpy_3_3_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_axpy_3_3_cuda_0) ... Module _bsr_accumulate_triplet_values_5520c14c 03bb33a load on device 'cuda:0' took 541.52 ms  (compiled)
+Module _bsr_axpy_add_block_1a95672c f6bf560 load on device 'cuda:0' took 593.61 ms  (compiled)
+Module _bsr_scale_3d_kernel_2c3c7c32 6424459 load on device 'cuda:0' took 194.87 ms  (compiled)
+Module _bsr_assign_copy_blocks_78aeece8 1e38237 load on device 'cuda:0' took 1198.03 ms  (compiled)
+Module _bsr_axpy_masked_1bfcd74a e6c8b2f load on device 'cuda:0' took 540.88 ms  (compiled)
+ok
+test_bsr_axpy_3_3_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_axpy_3_3_cuda_1) ... Module _bsr_accumulate_triplet_values_5520c14c 03bb33a load on device 'cuda:1' took 5.43 ms  (cached)
+Module _bsr_axpy_add_block_1a95672c f6bf560 load on device 'cuda:1' took 116.82 ms  (cached)
+Module _bsr_scale_3d_kernel_2c3c7c32 6424459 load on device 'cuda:1' took 88.20 ms  (cached)
+Module _bsr_assign_copy_blocks_78aeece8 1e38237 load on device 'cuda:1' took 208.39 ms  (cached)
+Module _bsr_axpy_masked_1bfcd74a e6c8b2f load on device 'cuda:1' took 80.24 ms  (cached)
+ok
+test_bsr_compress_compact_capturability_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_compress_compact_capturability_cuda_0)
+Test that native compact BSR compression is graph-capturable. ... ok
+test_bsr_compress_compact_capturability_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_compress_compact_capturability_cuda_1)
+Test that native compact BSR compression is graph-capturable. ... ok
+test_bsr_compress_gradient_cpu (warp.tests.test_sparse.TestSparse.test_bsr_compress_gradient_cpu) ... Module _bsr_compress_accumulate_values_7f2cc8aa a8cfa33 load on device 'cpu' took 173.17 ms  (compiled)
+Module map_add cad67b7 load on device 'cpu' took 93.95 ms  (compiled)
+ok
+test_bsr_compress_gradient_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_compress_gradient_cuda_0) ... Module _bsr_compress_accumulate_values_7f2cc8aa 856fed4 load on device 'cuda:0' took 226.79 ms  (compiled)
+Module map_add 94802d1 load on device 'cuda:0' took 132.49 ms  (compiled)
+ok
+test_bsr_compress_gradient_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_compress_gradient_cuda_1) ... Module _bsr_compress_accumulate_values_7f2cc8aa 856fed4 load on device 'cuda:1' took 69.81 ms  (cached)
+Module map_add 94802d1 load on device 'cuda:1' took 46.23 ms  (cached)
+ok
+test_bsr_compress_trailing_capacity_capturability_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_compress_trailing_capacity_capturability_cuda_0)
+Test that captured compact BSR compression ignores trailing storage capacity. ... ok
+test_bsr_compress_trailing_capacity_capturability_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_compress_trailing_capacity_capturability_cuda_1)
+Test that captured compact BSR compression ignores trailing storage capacity. ... ok
+test_bsr_compress_trailing_capacity_cpu (warp.tests.test_sparse.TestSparse.test_bsr_compress_trailing_capacity_cpu)
+Test that compact BSR compression ignores trailing storage capacity. ... ok
+test_bsr_compress_trailing_capacity_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_compress_trailing_capacity_cuda_0)
+Test that compact BSR compression ignores trailing storage capacity. ... ok
+test_bsr_compress_trailing_capacity_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_compress_trailing_capacity_cuda_1)
+Test that compact BSR compression ignores trailing storage capacity. ... ok
+test_bsr_copy_scale (warp.tests.test_sparse.TestSparse.test_bsr_copy_scale) ... Module _bsr_assign_copy_blocks_78aeece8 9568f05 load on device 'cuda:0' took 1240.71 ms  (compiled)
+ok
+test_bsr_from_triplets_cpu (warp.tests.test_sparse.TestSparse.test_bsr_from_triplets_cpu) ... ok
+test_bsr_from_triplets_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_from_triplets_cuda_0) ... ok
+test_bsr_from_triplets_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_from_triplets_cuda_1) ... ok
+test_bsr_from_triplets_gradient_cpu (warp.tests.test_sparse.TestSparse.test_bsr_from_triplets_gradient_cpu) ... Warp UserWarning: Running the tape backwards may produce incorrect gradients because recorded kernel _bsr_set_from_triplets_padded_scatter_compact_topology is configured with the option 'enable_backward=False'.
+Warp UserWarning: Running the tape backwards may produce incorrect gradients because recorded kernel _bsr_set_from_triplets_padded_scatter_compact_topology is configured with the option 'enable_backward=False'.
+Warp UserWarning: Running the tape backwards may produce incorrect gradients because recorded kernel _bsr_set_from_triplets_padded_scatter_compact_topology is configured with the option 'enable_backward=False'.
+ok
+test_bsr_from_triplets_gradient_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_from_triplets_gradient_cuda_0) ... Warp UserWarning: Running the tape backwards may produce incorrect gradients because recorded kernel _bsr_set_from_triplets_padded_scatter_compact_topology is configured with the option 'enable_backward=False'.
+Warp UserWarning: Running the tape backwards may produce incorrect gradients because recorded kernel _bsr_set_from_triplets_padded_scatter_compact_topology is configured with the option 'enable_backward=False'.
+Warp UserWarning: Running the tape backwards may produce incorrect gradients because recorded kernel _bsr_set_from_triplets_padded_scatter_compact_topology is configured with the option 'enable_backward=False'.
+ok
+test_bsr_from_triplets_gradient_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_from_triplets_gradient_cuda_1) ... Warp UserWarning: Running the tape backwards may produce incorrect gradients because recorded kernel _bsr_set_from_triplets_padded_scatter_compact_topology is configured with the option 'enable_backward=False'.
+Warp UserWarning: Running the tape backwards may produce incorrect gradients because recorded kernel _bsr_set_from_triplets_padded_scatter_compact_topology is configured with the option 'enable_backward=False'.
+Warp UserWarning: Running the tape backwards may produce incorrect gradients because recorded kernel _bsr_set_from_triplets_padded_scatter_compact_topology is configured with the option 'enable_backward=False'.
+ok
+test_bsr_from_triplets_packed_key_boundaries_cpu (warp.tests.test_sparse.TestSparse.test_bsr_from_triplets_packed_key_boundaries_cpu)
+Keep maximum valid coordinates ahead of every pruned triplet key. ... Module _bsr_set_from_triplets_masked_values_d5360f04 8766a0a load on device 'cpu' took 158.20 ms  (compiled)
+ok
+test_bsr_from_triplets_packed_key_boundaries_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_from_triplets_packed_key_boundaries_cuda_0)
+Keep maximum valid coordinates ahead of every pruned triplet key. ... Module _bsr_set_from_triplets_masked_values_d5360f04 2529ab2 load on device 'cuda:0' took 525.06 ms  (compiled)
+ok
+test_bsr_from_triplets_packed_key_boundaries_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_from_triplets_packed_key_boundaries_cuda_1)
+Keep maximum valid coordinates ahead of every pruned triplet key. ... Module _bsr_set_from_triplets_masked_values_d5360f04 2529ab2 load on device 'cuda:1' took 87.23 ms  (cached)
+ok
+test_bsr_from_triplets_prune_numerical_zeros_cpu (warp.tests.test_sparse.TestSparse.test_bsr_from_triplets_prune_numerical_zeros_cpu) ... ok
+test_bsr_from_triplets_prune_numerical_zeros_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_from_triplets_prune_numerical_zeros_cuda_0) ... ok
+test_bsr_from_triplets_prune_numerical_zeros_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_from_triplets_prune_numerical_zeros_cuda_1) ... ok
+test_bsr_gapped_layout_cpu (warp.tests.test_sparse.TestSparse.test_bsr_gapped_layout_cpu) ... Module make_bsr_mv_kernel__locals__bsr_mv_kernel_83c946a6 3484a7e load on device 'cpu' took 100.96 ms  (compiled)
+Module _bsr_assign_copy_blocks_78aeece8 a09d97a load on device 'cpu' took 664.28 ms  (compiled)
+Module _bsr_assign_padded_copy_blocks_27bcb2e3 1c906fa load on device 'cpu' took 158.20 ms  (compiled)
+Module _bsr_axpy_padded_fill_e20b8456 72cba62 load on device 'cpu' took 168.55 ms  (compiled)
+Module _bsr_mm_compute_values_2f2285c3 7137d73 load on device 'cpu' took 146.74 ms  (compiled)
+Module _bsr_transpose_values_657752e3 286f553 load on device 'cpu' took 166.99 ms  (compiled)
+ok
+test_bsr_gapped_layout_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_gapped_layout_cuda_0) ... Module make_bsr_mv_kernel__locals__bsr_mv_kernel_83c946a6 0265331 load on device 'cuda:0' took 203.91 ms  (compiled)
+Module _bsr_assign_padded_copy_blocks_27bcb2e3 fad8372 load on device 'cuda:0' took 186.34 ms  (compiled)
+Module _bsr_axpy_padded_fill_e20b8456 b596485 load on device 'cuda:0' took 177.00 ms  (compiled)
+Module make_bsr_mm_compute_values_tiled_outer__locals__bsr_mm_compute_values_5ea30f45 675d91a load on device 'cuda:0' took 773.81 ms  (compiled)
+Module _bsr_transpose_values_657752e3 ce41d54 load on device 'cuda:0' took 137.80 ms  (compiled)
+ok
+test_bsr_gapped_layout_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_gapped_layout_cuda_1) ... Module make_bsr_mv_kernel__locals__bsr_mv_kernel_83c946a6 0265331 load on device 'cuda:1' took 73.66 ms  (cached)
+Module _bsr_assign_copy_blocks_78aeece8 9568f05 load on device 'cuda:1' took 324.29 ms  (cached)
+Module _bsr_assign_padded_copy_blocks_27bcb2e3 fad8372 load on device 'cuda:1' took 62.07 ms  (cached)
+Module _bsr_axpy_padded_fill_e20b8456 b596485 load on device 'cuda:1' took 50.60 ms  (cached)
+Module make_bsr_mm_compute_values_tiled_outer__locals__bsr_mm_compute_values_5ea30f45 675d91a load on device 'cuda:1' took 55.10 ms  (cached)
+Module _bsr_transpose_values_657752e3 ce41d54 load on device 'cuda:1' took 4.86 ms  (cached)
+ok
+test_bsr_get_diag_cpu (warp.tests.test_sparse.TestSparse.test_bsr_get_diag_cpu) ... Module _bsr_get_diag_kernel_7a6beb6f c4705af load on device 'cpu' took 186.76 ms  (compiled)
+ok
+test_bsr_get_diag_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_get_diag_cuda_0) ... Module _bsr_get_diag_kernel_7a6beb6f bd7f210 load on device 'cuda:0' took 591.91 ms  (compiled)
+ok
+test_bsr_get_diag_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_get_diag_cuda_1) ... Module _bsr_get_diag_kernel_7a6beb6f bd7f210 load on device 'cuda:1' took 128.91 ms  (cached)
+ok
+test_bsr_mm_1_3_cpu (warp.tests.test_sparse.TestSparse.test_bsr_mm_1_3_cpu) ... Module make_bsr_mm_count_coeffs__locals__bsr_mm_count_coeffs_f7fadf8c 150480a load on device 'cpu' took 192.78 ms  (compiled)
+Module _bsr_mm_compute_values_2f2285c3 8a425c5 load on device 'cpu' took 209.73 ms  (compiled)
+Module _bsr_mm_compute_values_2f2285c3 1b1020a load on device 'cpu' took 248.12 ms  (compiled)
+Module _bsr_mm_compute_values_2f2285c3 4e920b9 load on device 'cpu' took 285.67 ms  (compiled)
+ok
+test_bsr_mm_1_3_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_mm_1_3_cuda_0) ... Module make_bsr_mm_count_coeffs__locals__bsr_mm_count_coeffs_f7fadf8c f7fadf8 load on device 'cuda:0' took 340.67 ms  (compiled)
+Module make_bsr_mm_compute_values_tiled_outer__locals__bsr_mm_compute_values_0edae31c ff388c3 load on device 'cuda:0' took 700.79 ms  (compiled)
+ok
+test_bsr_mm_1_3_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_mm_1_3_cuda_1) ... Module make_bsr_mm_count_coeffs__locals__bsr_mm_count_coeffs_f7fadf8c f7fadf8 load on device 'cuda:1' took 80.87 ms  (cached)
+Module make_bsr_mm_compute_values_tiled_outer__locals__bsr_mm_compute_values_0edae31c ff388c3 load on device 'cuda:1' took 2.91 ms  (cached)
+ok
+test_bsr_mm_3_3_cpu (warp.tests.test_sparse.TestSparse.test_bsr_mm_3_3_cpu) ... Module _bsr_mm_compute_values_2f2285c3 72ada7d load on device 'cpu' took 364.63 ms  (compiled)
+ok
+test_bsr_mm_3_3_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_mm_3_3_cuda_0) ... Module make_bsr_mm_compute_values_tiled_outer__locals__bsr_mm_compute_values_f201c091 e365f17 load on device 'cuda:0' took 762.66 ms  (compiled)
+ok
+test_bsr_mm_3_3_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_mm_3_3_cuda_1) ... Module make_bsr_mm_compute_values_tiled_outer__locals__bsr_mm_compute_values_f201c091 e365f17 load on device 'cuda:1' took 75.67 ms  (cached)
+ok
+test_bsr_mm_max_new_nnz_cpu (warp.tests.test_sparse.TestSparse.test_bsr_mm_max_new_nnz_cpu)
+Test BSR matrix multiplication with ``max_new_nnz``. ... ok
+test_bsr_mm_max_new_nnz_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_mm_max_new_nnz_cuda_0)
+Test BSR matrix multiplication with ``max_new_nnz``. ... ok
+test_bsr_mm_max_new_nnz_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_mm_max_new_nnz_cuda_1)
+Test BSR matrix multiplication with ``max_new_nnz``. ... ok
+test_bsr_multiply_deep_2_2_cpu (warp.tests.test_sparse.TestSparse.test_bsr_multiply_deep_2_2_cpu)
+Test BSR matrix multiplication with deep matrices (many columns > 256). ... Module _bsr_transpose_values_657752e3 0613c4e load on device 'cpu' took 226.77 ms  (compiled)
+Module _bsr_mm_compute_values_2f2285c3 ffda507 load on device 'cpu' took 494.08 ms  (compiled)
+Module make_bsr_mv_kernel__locals__bsr_mv_kernel_e90c5206 1e9f194 load on device 'cpu' took 107.13 ms  (compiled)
+Module make_bsr_mv_transpose_kernel__locals__bsr_mv_transpose_kernel_4e43bbbd 76163c3 load on device 'cpu' took 100.51 ms  (compiled)
+ok
+test_bsr_multiply_deep_2_2_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_multiply_deep_2_2_cuda_0)
+Test BSR matrix multiplication with deep matrices (many columns > 256). ... Module _bsr_transpose_values_657752e3 5a98ded load on device 'cuda:0' took 192.71 ms  (compiled)
+Module make_bsr_mm_count_coeffs__locals__bsr_mm_count_coeffs_9e331714 a531193 load on device 'cuda:0' took 415.26 ms  (compiled)
+Module make_bsr_mm_compute_values_tiled_outer__locals__bsr_mm_compute_values_6cec3a5b 8e904d5 load on device 'cuda:0' took 251.36 ms  (compiled)
+Module _bsr_mm_compute_values_2f2285c3 65b6010 load on device 'cuda:0' took 958.03 ms  (compiled)
+Module make_bsr_mv_tiled_kernel__locals__bsr_mv_tiled_kernel_4a95c94e cbeeeb8 load on device 'cuda:0' took 187.63 ms  (compiled)
+Module make_bsr_mv_transpose_kernel__locals__bsr_mv_transpose_kernel_4e43bbbd b9d64ad load on device 'cuda:0' took 106.35 ms  (compiled)
+ok
+test_bsr_multiply_deep_2_2_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_multiply_deep_2_2_cuda_1)
+Test BSR matrix multiplication with deep matrices (many columns > 256). ... Module _bsr_transpose_values_657752e3 5a98ded load on device 'cuda:1' took 5.20 ms  (cached)
+Module make_bsr_mm_count_coeffs__locals__bsr_mm_count_coeffs_9e331714 a531193 load on device 'cuda:1' took 4.75 ms  (cached)
+Module make_bsr_mm_compute_values_tiled_outer__locals__bsr_mm_compute_values_6cec3a5b 8e904d5 load on device 'cuda:1' took 61.56 ms  (cached)
+Module _bsr_mm_compute_values_2f2285c3 65b6010 load on device 'cuda:1' took 8.39 ms  (cached)
+Module make_bsr_mv_tiled_kernel__locals__bsr_mv_tiled_kernel_4a95c94e cbeeeb8 load on device 'cuda:1' took 45.09 ms  (cached)
+Module make_bsr_mv_transpose_kernel__locals__bsr_mv_transpose_kernel_4e43bbbd b9d64ad load on device 'cuda:1' took 2.88 ms  (cached)
+ok
+test_bsr_multiply_deep_30_30_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_multiply_deep_30_30_cuda_0)
+Test BSR matrix multiplication with deep matrices (many columns > 256). ... Module make_bsr_mm_compute_values_tiled_outer__locals__bsr_mm_compute_values_c4319918 b077a7a load on device 'cuda:0' took 1019.92 ms  (compiled)
+Module make_bsr_mv_tiled_kernel__locals__bsr_mv_tiled_kernel_4a95c94e 8a9b382 load on device 'cuda:0' took 266.25 ms  (compiled)
+Module make_bsr_mv_transpose_kernel__locals__bsr_mv_transpose_kernel_d647780b c22c021 load on device 'cuda:0' took 147.33 ms  (compiled)
+ok
+test_bsr_multiply_deep_30_30_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_multiply_deep_30_30_cuda_1)
+Test BSR matrix multiplication with deep matrices (many columns > 256). ... Module make_bsr_mm_compute_values_tiled_outer__locals__bsr_mm_compute_values_c4319918 b077a7a load on device 'cuda:1' took 426.28 ms  (cached)
+Module make_bsr_mv_tiled_kernel__locals__bsr_mv_tiled_kernel_4a95c94e 8a9b382 load on device 'cuda:1' took 80.07 ms  (cached)
+Module make_bsr_mv_transpose_kernel__locals__bsr_mv_transpose_kernel_d647780b c22c021 load on device 'cuda:1' took 2.34 ms  (cached)
+ok
+test_bsr_mv_1_3_cpu (warp.tests.test_sparse.TestSparse.test_bsr_mv_1_3_cpu) ... Module make_bsr_mv_kernel__locals__bsr_mv_kernel_16db86be dba87c4 load on device 'cpu' took 103.36 ms  (compiled)
+Module make_bsr_mv_transpose_kernel__locals__bsr_mv_transpose_kernel_468b629b 47faae2 load on device 'cpu' took 106.10 ms  (compiled)
+ok
+test_bsr_mv_1_3_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_mv_1_3_cuda_0) ... Module make_bsr_mv_kernel__locals__bsr_mv_kernel_16db86be caad58e load on device 'cuda:0' took 163.50 ms  (compiled)
+Module make_bsr_mv_transpose_kernel__locals__bsr_mv_transpose_kernel_468b629b 3685676 load on device 'cuda:0' took 107.63 ms  (compiled)
+ok
+test_bsr_mv_1_3_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_mv_1_3_cuda_1) ... Module make_bsr_mv_kernel__locals__bsr_mv_kernel_16db86be caad58e load on device 'cuda:1' took 2.07 ms  (cached)
+Module make_bsr_mv_transpose_kernel__locals__bsr_mv_transpose_kernel_468b629b 3685676 load on device 'cuda:1' took 23.45 ms  (cached)
+ok
+test_bsr_mv_3_3_cpu (warp.tests.test_sparse.TestSparse.test_bsr_mv_3_3_cpu) ... Module make_bsr_mv_kernel__locals__bsr_mv_kernel_16db86be 21ac15c load on device 'cpu' took 126.29 ms  (compiled)
+Module make_bsr_mv_transpose_kernel__locals__bsr_mv_transpose_kernel_7c5684d5 6016aac load on device 'cpu' took 108.06 ms  (compiled)
+ok
+test_bsr_mv_3_3_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_mv_3_3_cuda_0) ... Module make_bsr_mv_kernel__locals__bsr_mv_kernel_16db86be 49ac8e2 load on device 'cuda:0' took 541.50 ms  (compiled)
+Module make_bsr_mv_transpose_kernel__locals__bsr_mv_transpose_kernel_7c5684d5 49d2a00 load on device 'cuda:0' took 121.04 ms  (compiled)
+ok
+test_bsr_mv_3_3_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_mv_3_3_cuda_1) ... Module make_bsr_mv_kernel__locals__bsr_mv_kernel_16db86be 49ac8e2 load on device 'cuda:1' took 91.25 ms  (cached)
+Module make_bsr_mv_transpose_kernel__locals__bsr_mv_transpose_kernel_7c5684d5 49d2a00 load on device 'cuda:1' took 3.10 ms  (cached)
+ok
+test_bsr_mv_mixed_precision_arithmetic_cpu (warp.tests.test_sparse.TestSparse.test_bsr_mv_mixed_precision_arithmetic_cpu)
+Check that products, reductions, and scaling retain float64 precision. ... Module make_bsr_mv_kernel__locals__bsr_mv_kernel_83c946a6 16c4f6a load on device 'cpu' took 130.39 ms  (compiled)
+Module _bsr_scale_1d_kernel_a1ea8ce3 5b13377 load on device 'cpu' took 98.51 ms  (compiled)
+Module make_bsr_mv_transpose_kernel__locals__bsr_mv_transpose_kernel_468b629b b482e34 load on device 'cpu' took 118.02 ms  (compiled)
+ok
+test_bsr_mv_mixed_precision_arithmetic_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_mv_mixed_precision_arithmetic_cuda_0)
+Check that products, reductions, and scaling retain float64 precision. ... Module make_bsr_mv_kernel__locals__bsr_mv_kernel_83c946a6 a478752 load on device 'cuda:0' took 328.97 ms  (compiled)
+Module make_bsr_mv_tiled_kernel__locals__bsr_mv_tiled_kernel_42985640 8ba417e load on device 'cuda:0' took 186.12 ms  (compiled)
+Module make_bsr_mv_tiled_kernel__locals__bsr_mv_tiled_kernel_4a95c94e ee9d398 load on device 'cuda:0' took 642.38 ms  (compiled)
+Module _bsr_scale_1d_kernel_a1ea8ce3 40984be load on device 'cuda:0' took 121.84 ms  (compiled)
+Module make_bsr_mv_transpose_kernel__locals__bsr_mv_transpose_kernel_468b629b 4d1ea33 load on device 'cuda:0' took 134.55 ms  (compiled)
+ok
+test_bsr_mv_mixed_precision_arithmetic_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_mv_mixed_precision_arithmetic_cuda_1)
+Check that products, reductions, and scaling retain float64 precision. ... Module make_bsr_mv_kernel__locals__bsr_mv_kernel_83c946a6 a478752 load on device 'cuda:1' took 4.93 ms  (cached)
+Module make_bsr_mv_tiled_kernel__locals__bsr_mv_tiled_kernel_42985640 8ba417e load on device 'cuda:1' took 1.83 ms  (cached)
+Module make_bsr_mv_tiled_kernel__locals__bsr_mv_tiled_kernel_4a95c94e ee9d398 load on device 'cuda:1' took 2.68 ms  (cached)
+Module _bsr_scale_1d_kernel_a1ea8ce3 40984be load on device 'cuda:1' took 26.66 ms  (cached)
+Module make_bsr_mv_transpose_kernel__locals__bsr_mv_transpose_kernel_468b629b 4d1ea33 load on device 'cuda:1' took 249.35 ms  (cached)
+ok
+test_bsr_mv_mixed_precision_capture_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_mv_mixed_precision_capture_cuda_0)
+Check replay of captured mixed-precision products with aliased vectors. ... ok
+test_bsr_mv_mixed_precision_capture_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_mv_mixed_precision_capture_cuda_1)
+Check replay of captured mixed-precision products with aliased vectors. ... ok
+test_bsr_mv_mixed_precision_cpu (warp.tests.test_sparse.TestSparse.test_bsr_mv_mixed_precision_cpu)
+Check mixed-precision products for block shapes, padding, and transposition. ... Module make_bsr_mv_kernel__locals__bsr_mv_kernel_16db86be e971c70 load on device 'cpu' took 155.06 ms  (compiled)
+Module make_bsr_mv_transpose_kernel__locals__bsr_mv_transpose_kernel_4e43bbbd 4041e0d load on device 'cpu' took 150.25 ms  (compiled)
+Module make_bsr_mv_transpose_kernel__locals__bsr_mv_transpose_kernel_7c5684d5 b2839c7 load on device 'cpu' took 131.98 ms  (compiled)
+ok
+test_bsr_mv_mixed_precision_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_mv_mixed_precision_cuda_0)
+Check mixed-precision products for block shapes, padding, and transposition. ... Module make_bsr_mv_kernel__locals__bsr_mv_kernel_16db86be 488d8f9 load on device 'cuda:0' took 639.10 ms  (compiled)
+Module make_bsr_mv_transpose_kernel__locals__bsr_mv_transpose_kernel_4e43bbbd 6c3ff90 load on device 'cuda:0' took 148.19 ms  (compiled)
+Module make_bsr_mv_transpose_kernel__locals__bsr_mv_transpose_kernel_7c5684d5 f274fac load on device 'cuda:0' took 184.72 ms  (compiled)
+ok
+test_bsr_mv_mixed_precision_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_mv_mixed_precision_cuda_1)
+Check mixed-precision products for block shapes, padding, and transposition. ... Module make_bsr_mv_kernel__locals__bsr_mv_kernel_16db86be 488d8f9 load on device 'cuda:1' took 138.11 ms  (cached)
+Module make_bsr_mv_transpose_kernel__locals__bsr_mv_transpose_kernel_4e43bbbd 6c3ff90 load on device 'cuda:1' took 5.29 ms  (cached)
+Module make_bsr_mv_transpose_kernel__locals__bsr_mv_transpose_kernel_7c5684d5 f274fac load on device 'cuda:1' took 40.64 ms  (cached)
+ok
+test_bsr_mv_mixed_precision_edges_cpu (warp.tests.test_sparse.TestSparse.test_bsr_mv_mixed_precision_edges_cpu)
+Check mixed-precision aliasing, zero scaling, array views, and type validation. ... ok
+test_bsr_mv_mixed_precision_edges_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_mv_mixed_precision_edges_cuda_0)
+Check mixed-precision aliasing, zero scaling, array views, and type validation. ... ok
+test_bsr_mv_mixed_precision_edges_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_mv_mixed_precision_edges_cuda_1)
+Check mixed-precision aliasing, zero scaling, array views, and type validation. ... ok
+test_bsr_mv_row_packed_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_mv_row_packed_cuda_0)
+Check packed products across scalar types, block shapes, and thread layouts. ... Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_1d4153c8 6728ea7 load on device 'cuda:0' took 154.54 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_c3518f79 05d5362 load on device 'cuda:0' took 377.26 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_0541ad3c 6bf6443 load on device 'cuda:0' took 439.46 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_7c075480 75ffd79 load on device 'cuda:0' took 151.71 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_927b33be d7166a2 load on device 'cuda:0' took 152.11 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_4dfb0f0d 98631fd load on device 'cuda:0' took 375.30 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_18089424 bb03525 load on device 'cuda:0' took 201.61 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_3a64e42a 011e3f1 load on device 'cuda:0' took 156.98 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_61516f84 495027d load on device 'cuda:0' took 142.72 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_64dd4af5 fe01099 load on device 'cuda:0' took 359.57 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_d7bfbd2e 0443f56 load on device 'cuda:0' took 148.91 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_be10d083 993879f load on device 'cuda:0' took 141.02 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_880568aa 3a3eba2 load on device 'cuda:0' took 140.33 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_3fa6ea10 75f809e load on device 'cuda:0' took 134.47 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_491dd411 3591a5d load on device 'cuda:0' took 138.74 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_a9f96c95 dd1ce45 load on device 'cuda:0' took 135.34 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_83aac3d6 7a0deef load on device 'cuda:0' took 143.50 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_93800e03 a10f37f load on device 'cuda:0' took 156.27 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_2eb4d7d0 ffbbdb9 load on device 'cuda:0' took 134.37 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_ed5c85a7 4185df8 load on device 'cuda:0' took 127.99 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_d6e6bcb6 9b9445e load on device 'cuda:0' took 221.43 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_01b1980d 2ca2b2d load on device 'cuda:0' took 146.13 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_30f13ec7 ca8f344 load on device 'cuda:0' took 128.70 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_86dee514 4114f0f load on device 'cuda:0' took 155.22 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_6e0171c3 d17cf0a load on device 'cuda:0' took 143.29 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_03565f3c 48bcf16 load on device 'cuda:0' took 143.55 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_b169819f 23c6605 load on device 'cuda:0' took 135.28 ms  (compiled)
+Module _bsr_set_from_triplets_padded_accumulate_values_6b9edfae 92a4df1 load on device 'cuda:0' took 375.16 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_1d4153c8 0e05e39 load on device 'cuda:0' took 215.72 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_c3518f79 393c4ef load on device 'cuda:0' took 216.16 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_0541ad3c 10862f1 load on device 'cuda:0' took 314.57 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_7c075480 a96bf81 load on device 'cuda:0' took 281.20 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_927b33be 88831f2 load on device 'cuda:0' took 289.51 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_4dfb0f0d 54c3c14 load on device 'cuda:0' took 419.01 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_18089424 8eff711 load on device 'cuda:0' took 267.19 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_3a64e42a 8dfb624 load on device 'cuda:0' took 323.21 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_61516f84 d19834d load on device 'cuda:0' took 305.20 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_64dd4af5 9699892 load on device 'cuda:0' took 253.29 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_d7bfbd2e 30ec10a load on device 'cuda:0' took 309.14 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_be10d083 cb70064 load on device 'cuda:0' took 301.29 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_880568aa 2aadc50 load on device 'cuda:0' took 226.48 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_3fa6ea10 9ac2c55 load on device 'cuda:0' took 292.37 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_491dd411 04ac48d load on device 'cuda:0' took 245.66 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_a9f96c95 8548855 load on device 'cuda:0' took 207.95 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_83aac3d6 9b3d444 load on device 'cuda:0' took 274.14 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_93800e03 8290e93 load on device 'cuda:0' took 250.67 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_2eb4d7d0 63525e0 load on device 'cuda:0' took 221.68 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_ed5c85a7 5d170f6 load on device 'cuda:0' took 455.89 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_d6e6bcb6 ff08957 load on device 'cuda:0' took 294.54 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_01b1980d 56448cd load on device 'cuda:0' took 283.49 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_30f13ec7 a0e9559 load on device 'cuda:0' took 225.94 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_86dee514 f211b3d load on device 'cuda:0' took 436.56 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_6e0171c3 96255b2 load on device 'cuda:0' took 228.41 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_03565f3c f1eab16 load on device 'cuda:0' took 288.09 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_b169819f 702e6ba load on device 'cuda:0' took 286.40 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_1d4153c8 51b979b load on device 'cuda:0' took 594.43 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_c3518f79 79114ee load on device 'cuda:0' took 671.37 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_0541ad3c db2f99a load on device 'cuda:0' took 599.25 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_7c075480 7a46b76 load on device 'cuda:0' took 561.46 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_927b33be f3f8b86 load on device 'cuda:0' took 273.84 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_4dfb0f0d bd2072f load on device 'cuda:0' took 280.63 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_18089424 f37e0ec load on device 'cuda:0' took 268.99 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_3a64e42a 231be96 load on device 'cuda:0' took 270.71 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_61516f84 7f23fc8 load on device 'cuda:0' took 291.90 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_64dd4af5 2c47e6a load on device 'cuda:0' took 332.28 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_d7bfbd2e 7f53aaa load on device 'cuda:0' took 252.00 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_be10d083 686b420 load on device 'cuda:0' took 255.28 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_880568aa 089b020 load on device 'cuda:0' took 585.81 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_3fa6ea10 b22aedd load on device 'cuda:0' took 255.04 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_491dd411 243d4a7 load on device 'cuda:0' took 270.15 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_a9f96c95 1b44794 load on device 'cuda:0' took 258.07 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_83aac3d6 54bdffd load on device 'cuda:0' took 262.94 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_93800e03 8da0f89 load on device 'cuda:0' took 575.79 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_2eb4d7d0 695c852 load on device 'cuda:0' took 263.22 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_ed5c85a7 1ef2842 load on device 'cuda:0' took 259.10 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_d6e6bcb6 b784f8c load on device 'cuda:0' took 270.90 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_01b1980d a2c8e41 load on device 'cuda:0' took 576.19 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_30f13ec7 a18ac03 load on device 'cuda:0' took 279.58 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_86dee514 f4bd9c3 load on device 'cuda:0' took 264.88 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_6e0171c3 7ea54e9 load on device 'cuda:0' took 267.64 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_03565f3c 69ec1ac load on device 'cuda:0' took 271.54 ms  (compiled)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_b169819f ebedd03 load on device 'cuda:0' took 571.89 ms  (compiled)
+ok
+test_bsr_mv_row_packed_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_mv_row_packed_cuda_1)
+Check packed products across scalar types, block shapes, and thread layouts. ... Module _bsr_set_from_triplets_padded_accumulate_values_6b9edfae 92a4df1 load on device 'cuda:1' took 154.20 ms  (cached)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_1d4153c8 51b979b load on device 'cuda:1' took 65.12 ms  (cached)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_c3518f79 79114ee load on device 'cuda:1' took 62.20 ms  (cached)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_0541ad3c db2f99a load on device 'cuda:1' took 8.37 ms  (cached)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_7c075480 7a46b76 load on device 'cuda:1' took 60.20 ms  (cached)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_927b33be f3f8b86 load on device 'cuda:1' took 63.53 ms  (cached)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_4dfb0f0d bd2072f load on device 'cuda:1' took 8.04 ms  (cached)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_18089424 f37e0ec load on device 'cuda:1' took 66.02 ms  (cached)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_3a64e42a 231be96 load on device 'cuda:1' took 64.34 ms  (cached)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_61516f84 7f23fc8 load on device 'cuda:1' took 7.21 ms  (cached)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_64dd4af5 2c47e6a load on device 'cuda:1' took 7.64 ms  (cached)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_d7bfbd2e 7f53aaa load on device 'cuda:1' took 73.23 ms  (cached)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_be10d083 686b420 load on device 'cuda:1' took 68.53 ms  (cached)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_880568aa 089b020 load on device 'cuda:1' took 70.38 ms  (cached)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_3fa6ea10 b22aedd load on device 'cuda:1' took 74.39 ms  (cached)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_491dd411 243d4a7 load on device 'cuda:1' took 7.45 ms  (cached)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_a9f96c95 1b44794 load on device 'cuda:1' took 72.08 ms  (cached)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_83aac3d6 54bdffd load on device 'cuda:1' took 73.08 ms  (cached)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_93800e03 8da0f89 load on device 'cuda:1' took 7.26 ms  (cached)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_2eb4d7d0 695c852 load on device 'cuda:1' took 4.91 ms  (cached)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_ed5c85a7 1ef2842 load on device 'cuda:1' took 69.90 ms  (cached)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_d6e6bcb6 b784f8c load on device 'cuda:1' took 7.42 ms  (cached)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_01b1980d a2c8e41 load on device 'cuda:1' took 68.97 ms  (cached)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_30f13ec7 a18ac03 load on device 'cuda:1' took 69.80 ms  (cached)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_86dee514 f4bd9c3 load on device 'cuda:1' took 67.49 ms  (cached)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_6e0171c3 7ea54e9 load on device 'cuda:1' took 70.04 ms  (cached)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_03565f3c 69ec1ac load on device 'cuda:1' took 6.96 ms  (cached)
+Module make_bsr_mv_row_packed_kernel__locals__bsr_mv_row_packed_kernel_b169819f ebedd03 load on device 'cuda:1' took 4.51 ms  (cached)
+ok
+test_bsr_mv_row_packed_edges_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_mv_row_packed_edges_cuda_0)
+Check packed products with aliasing, graph capture, empty matrices, and strides. ... ok
+test_bsr_mv_row_packed_edges_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_mv_row_packed_edges_cuda_1)
+Check packed products with aliasing, graph capture, empty matrices, and strides. ... ok
+test_bsr_mv_row_packed_invalid_cpu (warp.tests.test_sparse.TestSparse.test_bsr_mv_row_packed_invalid_cpu)
+Check that invalid row-packing requests leave the output unchanged. ... ok
+test_bsr_mv_row_packed_invalid_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_mv_row_packed_invalid_cuda_0)
+Check that invalid row-packing requests leave the output unchanged. ... ok
+test_bsr_mv_row_packed_invalid_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_mv_row_packed_invalid_cuda_1)
+Check that invalid row-packing requests leave the output unchanged. ... ok
+test_bsr_nnz_sync_transfer_cpu (warp.tests.test_sparse.TestSparse.test_bsr_nnz_sync_transfer_cpu)
+Verify nnz transfer resources are opt-in, refreshed, and reused. ... ok
+test_bsr_nnz_sync_transfer_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_nnz_sync_transfer_cuda_0)
+Verify nnz transfer resources are opt-in, refreshed, and reused. ... ok
+test_bsr_nnz_sync_transfer_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_nnz_sync_transfer_cuda_1)
+Verify nnz transfer resources are opt-in, refreshed, and reused. ... ok
+test_bsr_scaled_expression_add_sub_cpu (warp.tests.test_sparse.TestSparse.test_bsr_scaled_expression_add_sub_cpu) ... ok
+test_bsr_scaled_expression_add_sub_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_scaled_expression_add_sub_cuda_0) ... ok
+test_bsr_scaled_expression_add_sub_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_scaled_expression_add_sub_cuda_1) ... ok
+test_bsr_set_zero_row_capacity_after_shrink_cpu (warp.tests.test_sparse.TestSparse.test_bsr_set_zero_row_capacity_after_shrink_cpu) ... ok
+test_bsr_set_zero_row_capacity_after_shrink_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_set_zero_row_capacity_after_shrink_cuda_0) ... ok
+test_bsr_set_zero_row_capacity_after_shrink_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_set_zero_row_capacity_after_shrink_cuda_1) ... ok
+test_bsr_split_merge_cpu (warp.tests.test_sparse.TestSparse.test_bsr_split_merge_cpu) ... ok
+test_bsr_split_merge_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_split_merge_cuda_0) ... ok
+test_bsr_split_merge_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_split_merge_cuda_1) ... ok
+test_bsr_stale_compact_tail_cpu (warp.tests.test_sparse.TestSparse.test_bsr_stale_compact_tail_cpu)
+Verify stale compact tails and their exclusion from BSR copies. ... ok
+test_bsr_stale_compact_tail_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_stale_compact_tail_cuda_0)
+Verify stale compact tails and their exclusion from BSR copies. ... ok
+test_bsr_stale_compact_tail_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_stale_compact_tail_cuda_1)
+Verify stale compact tails and their exclusion from BSR copies. ... ok
+test_bsr_transpose_1_3_cpu (warp.tests.test_sparse.TestSparse.test_bsr_transpose_1_3_cpu) ... Warp UserWarning: Running the tape backwards may produce incorrect gradients because recorded kernel _bsr_assign_list_blocks is configured with the option 'enable_backward=False'.
+ok
+test_bsr_transpose_1_3_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_transpose_1_3_cuda_0) ... Warp UserWarning: Running the tape backwards may produce incorrect gradients because recorded kernel _bsr_assign_list_blocks is configured with the option 'enable_backward=False'.
+ok
+test_bsr_transpose_1_3_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_transpose_1_3_cuda_1) ... Warp UserWarning: Running the tape backwards may produce incorrect gradients because recorded kernel _bsr_assign_list_blocks is configured with the option 'enable_backward=False'.
+ok
+test_bsr_transpose_3_3_cpu (warp.tests.test_sparse.TestSparse.test_bsr_transpose_3_3_cpu) ... Warp UserWarning: Running the tape backwards may produce incorrect gradients because recorded kernel _bsr_assign_list_blocks is configured with the option 'enable_backward=False'.
+ok
+test_bsr_transpose_3_3_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_transpose_3_3_cuda_0) ... Warp UserWarning: Running the tape backwards may produce incorrect gradients because recorded kernel _bsr_assign_list_blocks is configured with the option 'enable_backward=False'.
+ok
+test_bsr_transpose_3_3_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_transpose_3_3_cuda_1) ... Warp UserWarning: Running the tape backwards may produce incorrect gradients because recorded kernel _bsr_assign_list_blocks is configured with the option 'enable_backward=False'.
+ok
+test_bsr_transpose_padded_column_bounds_cpu (warp.tests.test_sparse.TestSparse.test_bsr_transpose_padded_column_bounds_cpu) ... ok
+test_bsr_transpose_padded_column_bounds_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_transpose_padded_column_bounds_cuda_0) ... ok
+test_bsr_transpose_padded_column_bounds_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_transpose_padded_column_bounds_cuda_1) ... ok
+test_bsr_transpose_rebuild_1_1_cpu (warp.tests.test_sparse.TestSparse.test_bsr_transpose_rebuild_1_1_cpu) ... ok
+test_bsr_transpose_rebuild_1_1_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_transpose_rebuild_1_1_cuda_0) ... ok
+test_bsr_transpose_rebuild_1_1_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_transpose_rebuild_1_1_cuda_1) ... ok
+test_bsr_transpose_rebuild_2_3_cpu (warp.tests.test_sparse.TestSparse.test_bsr_transpose_rebuild_2_3_cpu) ... ok
+test_bsr_transpose_rebuild_2_3_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_transpose_rebuild_2_3_cuda_0) ... ok
+test_bsr_transpose_rebuild_2_3_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_transpose_rebuild_2_3_cuda_1) ... ok
+test_bsr_transpose_rebuild_3_3_cpu (warp.tests.test_sparse.TestSparse.test_bsr_transpose_rebuild_3_3_cpu) ... ok
+test_bsr_transpose_rebuild_3_3_cuda_0 (warp.tests.test_sparse.TestSparse.test_bsr_transpose_rebuild_3_3_cuda_0) ... ok
+test_bsr_transpose_rebuild_3_3_cuda_1 (warp.tests.test_sparse.TestSparse.test_bsr_transpose_rebuild_3_3_cuda_1) ... ok
+test_capturability_cuda_0 (warp.tests.test_sparse.TestSparse.test_capturability_cuda_0)
+Test graph capture of BSR operations. ... Module make_bsr_mm_compute_values_tiled_outer__locals__bsr_mm_compute_values_92cab4d7 2a9610c load on device 'cuda:0' took 535.06 ms  (compiled)
+ok
+test_capturability_cuda_1 (warp.tests.test_sparse.TestSparse.test_capturability_cuda_1)
+Test graph capture of BSR operations. ... Module make_bsr_mm_compute_values_tiled_outer__locals__bsr_mm_compute_values_92cab4d7 2a9610c load on device 'cuda:1' took 5.79 ms  (cached)
+ok
+test_csr_axpy_cpu (warp.tests.test_sparse.TestSparse.test_csr_axpy_cpu) ... ok
+test_csr_axpy_cuda_0 (warp.tests.test_sparse.TestSparse.test_csr_axpy_cuda_0) ... ok
+test_csr_axpy_cuda_1 (warp.tests.test_sparse.TestSparse.test_csr_axpy_cuda_1) ... ok
+test_csr_from_triplets_cpu (warp.tests.test_sparse.TestSparse.test_csr_from_triplets_cpu) ... ok
+test_csr_from_triplets_cuda_0 (warp.tests.test_sparse.TestSparse.test_csr_from_triplets_cuda_0) ... ok
+test_csr_from_triplets_cuda_1 (warp.tests.test_sparse.TestSparse.test_csr_from_triplets_cuda_1) ... ok
+test_csr_mm_cpu (warp.tests.test_sparse.TestSparse.test_csr_mm_cpu) ... ok
+test_csr_mm_cuda_0 (warp.tests.test_sparse.TestSparse.test_csr_mm_cuda_0) ... ok
+test_csr_mm_cuda_1 (warp.tests.test_sparse.TestSparse.test_csr_mm_cuda_1) ... ok
+test_csr_mv_cpu (warp.tests.test_sparse.TestSparse.test_csr_mv_cpu) ... ok
+test_csr_mv_cuda_0 (warp.tests.test_sparse.TestSparse.test_csr_mv_cuda_0) ... ok
+test_csr_mv_cuda_1 (warp.tests.test_sparse.TestSparse.test_csr_mv_cuda_1) ... ok
+test_csr_transpose_cpu (warp.tests.test_sparse.TestSparse.test_csr_transpose_cpu) ... Warp UserWarning: Running the tape backwards may produce incorrect gradients because recorded kernel _bsr_assign_list_blocks is configured with the option 'enable_backward=False'.
+ok
+test_csr_transpose_cuda_0 (warp.tests.test_sparse.TestSparse.test_csr_transpose_cuda_0) ... Warp UserWarning: Running the tape backwards may produce incorrect gradients because recorded kernel _bsr_assign_list_blocks is configured with the option 'enable_backward=False'.
+ok
+test_csr_transpose_cuda_1 (warp.tests.test_sparse.TestSparse.test_csr_transpose_cuda_1) ... Warp UserWarning: Running the tape backwards may produce incorrect gradients because recorded kernel _bsr_assign_list_blocks is configured with the option 'enable_backward=False'.
+ok
+test_padded_bsr_capture_constructs_matrix_cuda_0 (warp.tests.test_sparse.TestSparse.test_padded_bsr_capture_constructs_matrix_cuda_0)
+Test that padded BSR matrices can be constructed during CUDA graph capture. ... ok
+test_padded_bsr_capture_constructs_matrix_cuda_1 (warp.tests.test_sparse.TestSparse.test_padded_bsr_capture_constructs_matrix_cuda_1)
+Test that padded BSR matrices can be constructed during CUDA graph capture. ... ok
+test_padded_bsr_capture_per_row_without_nnz_capacity_rejected_cuda_0 (warp.tests.test_sparse.TestSparse.test_padded_bsr_capture_per_row_without_nnz_capacity_rejected_cuda_0)
+Reject padded BSR capture without an explicit nonzero capacity. ... ok
+test_padded_bsr_capture_per_row_without_nnz_capacity_rejected_cuda_1 (warp.tests.test_sparse.TestSparse.test_padded_bsr_capture_per_row_without_nnz_capacity_rejected_cuda_1)
+Reject padded BSR capture without an explicit nonzero capacity. ... ok
+test_padded_bsr_capture_reblock_copy_cuda_0 (warp.tests.test_sparse.TestSparse.test_padded_bsr_capture_reblock_copy_cuda_0)
+Test lazy padded status allocation during captured reblocked BSR copy. ... ok
+test_padded_bsr_capture_reblock_copy_cuda_1 (warp.tests.test_sparse.TestSparse.test_padded_bsr_capture_reblock_copy_cuda_1)
+Test lazy padded status allocation during captured reblocked BSR copy. ... ok
+test_padded_bsr_capture_triplets_and_overflow_cuda_0 (warp.tests.test_sparse.TestSparse.test_padded_bsr_capture_triplets_and_overflow_cuda_0)
+Test padded BSR triplet capture, including row-capacity overflow status. ... ok
+test_padded_bsr_capture_triplets_and_overflow_cuda_1 (warp.tests.test_sparse.TestSparse.test_padded_bsr_capture_triplets_and_overflow_cuda_1)
+Test padded BSR triplet capture, including row-capacity overflow status. ... ok
+test_padded_bsr_status_sync_cuda_capture_rejected_cuda_0 (warp.tests.test_sparse.TestSparse.test_padded_bsr_status_sync_cuda_capture_rejected_cuda_0)
+Test that live CUDA capture rejects padded BSR status readback. ... ok
+test_padded_bsr_status_sync_cuda_capture_rejected_cuda_1 (warp.tests.test_sparse.TestSparse.test_padded_bsr_status_sync_cuda_capture_rejected_cuda_1)
+Test that live CUDA capture rejects padded BSR status readback. ... ok
+
+----------------------------------------------------------------------
+Ran 139 tests in 61.036s
+
+OK

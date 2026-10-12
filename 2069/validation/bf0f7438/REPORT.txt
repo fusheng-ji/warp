@@ -1,0 +1,75 @@
+NVIDIA/warp PR #2073: current-commit validation
+======================================================
+
+Source: bf0f7438737212ec35aeeaee139dc49415662f7a
+PR: https://github.com/NVIDIA/warp/pull/2073
+Native build: uv run build_lib.py (standard, no --quick)
+Separate checkout, environment, native libraries and private kernel cache.
+No tracked source files were modified.
+
+Environment: Linux x86_64; Python 3.12.13; Warp 1.19.0.dev0; NumPy 2.5.3.
+CUDA Toolkit 13.0.88; driver 580.126.20; two available NVIDIA B200 GPUs.
+Full package versions and native library SHA-256 hashes: environment.json.
+
+Fresh execution results
+-----------------------
+Durations include JIT compilation and shared-machine scheduling; they are not kernel benchmarks.
+2073-build: exit 0; wall time 96.566 s; 2026-10-12T21:56:45.963122+00:00 to 2026-10-12T21:58:22.529125+00:00
+2073-sync: exit 0; wall time 8.885 s; 2026-10-12T21:58:59.459840+00:00 to 2026-10-12T21:59:08.344852+00:00
+2073-sparse: exit 0; wall time 67.269 s; 2026-10-12T21:59:14.720425+00:00 to 2026-10-12T22:00:21.989073+00:00; 139 tests, 0 failures, 0 errors, 0 skips
+2073-extensions: exit 0; wall time 3202.908 s; 2026-10-12T22:00:23.776880+00:00 to 2026-10-12T22:53:46.685108+00:00; 180 tests, 0 failures, 0 errors, 0 skips
+2073-numerics: exit 0; wall time 8.942 s; 2026-10-12T22:00:25.193643+00:00 to 2026-10-12T22:00:34.135478+00:00
+2073-asv: exit 0; wall time 20.699 s; 2026-10-12T22:00:50.385303+00:00 to 2026-10-12T22:01:11.084747+00:00
+
+80/80 mixed-precision diagnostics passed; all finite; maximum absolute error 0.
+These deliberately exact diagnostic inputs validate existing mixed-precision paths.
+They are NOT 80 independent random matrices or 80 row-packed diagnostic cases.
+The full sparse suite separately exercises row packing across scalar types, block
+shapes, thread layouts, tails/padding, graph capture, aliasing, strides and rejection.
+8/8 ASV setup/time combinations passed (four mixed-precision, four row-packing).
+ASV timings are smoke checks only; extension tests overlapped this smoke run.
+No speedup estimate or statistical performance conclusion is derived from them.
+
+Device coverage
+---------------
+Sparse suite and numerical diagnostics: CPU, physical GPUs 0 and 1.
+Solver/tile-reduction suite and ASV smoke: CPU as applicable and physical GPU 1.
+CUDA_VISIBLE_DEVICES=1 exposes physical GPU 1 as logical cuda:0.
+
+Historical performance provenance
+---------------------------------
+No complete performance campaign was rerun.
+The original combined implementation 86f766bf was timed before the mechanical split.
+At the split, 589fd121 had the same complete tree as that combined implementation.
+The current complete tree is different. source-comparison.json records the changes:
+the native source tree is identical, and the executable AST of sparse.py,
+test_sparse.py and the matrix-vector benchmark is identical after removing docstrings.
+Other differences concern documentation, dependency lock data and build/CI configuration.
+Historical speedups and slowdowns remain historical measurements, not measurements
+of the current dependency environment. Neither other GPU architectures nor end-to-end
+solver acceleration is established by this bundle.
+
+Reproduce from the frozen source checkout
+-----------------------------------------
+Set ASSET_ROOT to a checkout of the immutable asset commit linked by the PR.
+export WARP_CACHE_PATH="$PWD/_build/validation-cache"
+export PYTHONPATH="$PWD"
+export WARP_CUDA_PATH=/usr/local/cuda-13.0
+export OPENBLAS_NUM_THREADS=1
+uv run build_lib.py
+uv sync --extra dev
+uv run --no-sync -m unittest -v warp.tests.test_sparse
+CUDA_VISIBLE_DEVICES=1 uv run --no-sync -m unittest -v warp.tests.test_linear_solvers warp.tests.tile.test_tile_reduce
+uv run --no-sync "$ASSET_ROOT/2069/numerics.py" --checkout . --output mixed-numerics.csv
+CUDA_VISIBLE_DEVICES=1 uv run --no-sync "$ASSET_ROOT/2069/split/asv_smoke.py" --packed
+
+Publication and privacy
+-----------------------
+This supplemental bundle is published for the existing PR linked above.
+Publication-state statements in older asset reports describe those historical snapshots.
+validation.json records exact commands, UTC timestamps, durations and exit codes.
+Log files retain test results and warnings; workstation filesystem roots are replaced
+with variables. No credentials, hostnames, GPU UUIDs/PCI IDs or private email addresses
+are intentionally included. Native binary hashes identify the locally built artifacts;
+the binaries themselves and original workstation logs are not published.
+SHA256SUMS covers every file in this result directory except the checksum file itself.
