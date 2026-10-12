@@ -1,0 +1,9 @@
+Applicable asset checks; repository source-generation and lockfile hooks do not apply to this asset-only change.
+warp: regenerate generated files..............................................Skipped
+warp: check version consistency and regenerate version.h......................Skipped
+warp: check project skills....................................................Skipped
+ruff (legacy alias)............................................................Passed
+ruff format....................................................................Passed
+uv-lock.......................................................................Skipped
+typos..........................................................................Passed
+clang-format...............................................(no files to check)Skipped

@@ -1,0 +1,7 @@
+device,dtype,evaluations,invalid_passed,invalid_total,zero_passed,zero_total,failed
+cpu,float16,62,58,58,4,4,0
+cpu,float32,62,58,58,4,4,0
+cpu,float64,62,58,58,4,4,0
+cuda:0,float16,62,58,58,4,4,0
+cuda:0,float32,62,58,58,4,4,0
+cuda:0,float64,62,58,58,4,4,0

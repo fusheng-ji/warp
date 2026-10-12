@@ -1,0 +1,78 @@
+NVIDIA/warp PR #2063: current-commit validation
+======================================================
+
+Source: 400ff598db84953495e362d9643cfdbe15b51e36
+PR: https://github.com/NVIDIA/warp/pull/2063
+Native build: uv run build_lib.py (standard, no --quick)
+Separate checkout, environment, native libraries and private kernel cache.
+No tracked source files were modified.
+
+Environment: Linux x86_64; Python 3.12.13; Warp 1.19.0.dev0; NumPy 2.5.3.
+CUDA Toolkit 13.0.88; driver 580.126.20; two available NVIDIA B200 GPUs.
+Full package versions and native library SHA-256 hashes: environment.json.
+
+Fresh execution results
+-----------------------
+Durations include JIT compilation and shared-machine scheduling; they are not kernel benchmarks.
+2063-build: exit 0; wall time 198.860 s; 2026-10-12T22:54:45.675613+00:00 to 2026-10-12T22:58:04.535988+00:00
+2063-sync: exit 0; wall time 17.489 s; 2026-10-12T22:58:12.692135+00:00 to 2026-10-12T22:58:30.180856+00:00
+2063-targeted: exit 0; wall time 23.123 s; 2026-10-12T23:13:02.557706+00:00 to 2026-10-12T23:13:25.681081+00:00; 24 tests, 0 failures, 0 errors, 0 skips
+2063-matrix: exit 0; wall time 102.577 s; 2026-10-12T23:14:03.704239+00:00 to 2026-10-12T23:15:46.281007+00:00; 182 tests, 0 failures, 0 errors, 0 skips
+2063-nonfinite: exit 0; wall time 12.908 s; 2026-10-12T23:14:04.880640+00:00 to 2026-10-12T23:14:17.788865+00:00
+2063-plot: exit 0; wall time 3.711 s; 2026-10-12T23:17:26.689744+00:00 to 2026-10-12T23:17:30.401226+00:00
+
+372/372 evaluations passed: 348 invalid-input checks and 24 zero controls.
+31 inputs x 3 dtypes x 2 calling forms x 2 devices. These are API/input evaluations,
+not independent random samples. CPU and physical GPU 1 were used.
+CUDA_VISIBLE_DEVICES=1 exposes physical GPU 1 as logical cuda:0.
+
+Acceptance rules
+----------------
+Invalid inputs: singular values and reconstructed matrices must each contain
+nonfinite values. No particular NaN/Inf payload or singular-vector basis is required.
+Zero controls: singular values and reconstruction are exactly zero; both factors
+are orthogonal with absolute tolerances 5e-3 / 1e-5 / 1e-12 for FP16/32/64.
+The cases and tolerances match test_svd_nonfinite at the recorded source commit.
+Blank orthogonality fields for invalid inputs mean not applicable, not zero error.
+The sigma CSV field preserves literal NaN/Infinity tokens in array notation.
+
+Scope and historical records
+----------------------------
+The first measurement-script attempt failed during Warp code generation, before
+any evaluations: indexed tuple assignment is unsupported. Three separate array
+assignments corrected the instrumentation; acceptance rules stayed unchanged.
+The failed attempt and its script hash are preserved in measurement-attempt-1.*.
+The subsequent 372-case run passed. Repository tests did not encounter this error.
+
+This is a fresh AFTER-only measurement. No before/after count for the zero-guard
+correction is established by this bundle; an archived baseline run was not located.
+The existing 532-evaluation finite-input CSVs and figures remain unchanged historical
+assets. Their standalone measurement was not rerun here; the current forward unit
+tests and complete matrix module were rerun and are recorded separately.
+The figure summarizes this current run only. No new performance claim is made.
+
+Reproduce from the frozen source checkout
+-----------------------------------------
+Set ASSET_ROOT to a checkout of the immutable asset commit linked by the PR.
+export WARP_CACHE_PATH="$PWD/_build/validation-cache"
+export PYTHONPATH="$PWD"
+export WARP_CUDA_PATH=/usr/local/cuda-13.0
+export OPENBLAS_NUM_THREADS=1
+export CUDA_VISIBLE_DEVICES=1
+uv run build_lib.py
+uv sync --extra dev
+uv run --no-sync -m unittest warp.tests.matrix.test_mat -k test_svd_forward -k test_svd_nonfinite -v
+uv run --no-sync -m unittest warp.tests.matrix.test_mat -v
+uv run --no-sync "$ASSET_ROOT/2055/validation/400ff598/measure_nonfinite.py" --checkout . --expected-commit 400ff598db84953495e362d9643cfdbe15b51e36 --output "$ASSET_ROOT/2055/validation/400ff598/nonfinite.csv"
+uv run --no-sync "$ASSET_ROOT/2055/validation/400ff598/plot_nonfinite.py"
+
+Publication and privacy
+-----------------------
+This supplemental bundle is published for the existing PR linked above.
+Publication-state statements in older asset reports describe those historical snapshots.
+validation.json records exact commands, UTC timestamps, durations and exit codes.
+Log files retain test results and warnings; workstation filesystem roots are replaced
+with variables. No credentials, hostnames, GPU UUIDs/PCI IDs or private email addresses
+are intentionally included. Native binary hashes identify the locally built artifacts;
+the binaries themselves and original workstation logs are not published.
+SHA256SUMS covers every file in this result directory except the checksum file itself.

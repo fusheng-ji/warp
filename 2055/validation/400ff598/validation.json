@@ -1,0 +1,180 @@
+{
+  "pull_request": "https://github.com/NVIDIA/warp/pull/2063",
+  "source_commit": "400ff598db84953495e362d9643cfdbe15b51e36",
+  "scope": "Current-commit runtime validation; no new performance-speedup claim.",
+  "environment_file": "environment.json",
+  "commands": [
+    {
+      "name": "2063-build",
+      "command": [
+        "uv",
+        "run",
+        "build_lib.py"
+      ],
+      "started_utc": "2026-10-12T22:54:45.675613+00:00",
+      "finished_utc": "2026-10-12T22:58:04.535988+00:00",
+      "seconds": 198.8603929990204,
+      "exit_code": 0,
+      "source_commit": "400ff598db84953495e362d9643cfdbe15b51e36",
+      "cuda_visible_devices": "1",
+      "private_kernel_cache": true,
+      "log_file": "build.log"
+    },
+    {
+      "name": "2063-sync",
+      "command": [
+        "uv",
+        "sync",
+        "--extra",
+        "dev"
+      ],
+      "started_utc": "2026-10-12T22:58:12.692135+00:00",
+      "finished_utc": "2026-10-12T22:58:30.180856+00:00",
+      "seconds": 17.488736671977676,
+      "exit_code": 0,
+      "source_commit": "400ff598db84953495e362d9643cfdbe15b51e36",
+      "cuda_visible_devices": "1",
+      "private_kernel_cache": true,
+      "log_file": "sync.log"
+    },
+    {
+      "name": "2063-targeted",
+      "command": [
+        "uv",
+        "run",
+        "--no-sync",
+        "-m",
+        "unittest",
+        "warp.tests.matrix.test_mat",
+        "-k",
+        "test_svd_forward",
+        "-k",
+        "test_svd_nonfinite",
+        "-v"
+      ],
+      "started_utc": "2026-10-12T23:13:02.557706+00:00",
+      "finished_utc": "2026-10-12T23:13:25.681081+00:00",
+      "seconds": 23.123378236952703,
+      "exit_code": 0,
+      "source_commit": "400ff598db84953495e362d9643cfdbe15b51e36",
+      "cuda_visible_devices": "1",
+      "private_kernel_cache": true,
+      "unittest": {
+        "tests_run": 24,
+        "test_seconds": 14.194,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "log_file": "targeted.log"
+    },
+    {
+      "name": "2063-matrix",
+      "command": [
+        "uv",
+        "run",
+        "--no-sync",
+        "-m",
+        "unittest",
+        "warp.tests.matrix.test_mat",
+        "-v"
+      ],
+      "started_utc": "2026-10-12T23:14:03.704239+00:00",
+      "finished_utc": "2026-10-12T23:15:46.281007+00:00",
+      "seconds": 102.57679558801465,
+      "exit_code": 0,
+      "source_commit": "400ff598db84953495e362d9643cfdbe15b51e36",
+      "cuda_visible_devices": "1",
+      "private_kernel_cache": true,
+      "unittest": {
+        "tests_run": 182,
+        "test_seconds": 98.331,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "log_file": "matrix.log"
+    },
+    {
+      "name": "2063-nonfinite",
+      "command": [
+        "uv",
+        "run",
+        "--no-sync",
+        "$ASSET_ROOT/2055/validation/400ff598/measure_nonfinite.py",
+        "--checkout",
+        ".",
+        "--expected-commit",
+        "400ff598db84953495e362d9643cfdbe15b51e36",
+        "--output",
+        "$ASSET_ROOT/2055/validation/400ff598/nonfinite.csv"
+      ],
+      "started_utc": "2026-10-12T23:14:04.880640+00:00",
+      "finished_utc": "2026-10-12T23:14:17.788865+00:00",
+      "seconds": 12.908229398017284,
+      "exit_code": 0,
+      "source_commit": "400ff598db84953495e362d9643cfdbe15b51e36",
+      "cuda_visible_devices": "1",
+      "private_kernel_cache": true,
+      "log_file": "nonfinite.log"
+    },
+    {
+      "name": "2063-plot",
+      "command": [
+        "uv",
+        "run",
+        "--no-sync",
+        "$ASSET_ROOT/2055/validation/400ff598/plot_nonfinite.py"
+      ],
+      "started_utc": "2026-10-12T23:17:26.689744+00:00",
+      "finished_utc": "2026-10-12T23:17:30.401226+00:00",
+      "seconds": 3.7114850470097736,
+      "exit_code": 0,
+      "source_commit": "400ff598db84953495e362d9643cfdbe15b51e36",
+      "cuda_visible_devices": "1",
+      "private_kernel_cache": true,
+      "log_file": "plot.log"
+    }
+  ],
+  "environment_variables": {
+    "WARP_CACHE_PATH": "$CHECKOUT/_build/validation-cache",
+    "WARP_CUDA_PATH": "/usr/local/cuda-13.0",
+    "PYTHONPATH": "$CHECKOUT",
+    "OPENBLAS_NUM_THREADS": "1"
+  },
+  "logs": "Sanitized stdout/stderr. Original workstation logs are retained locally, not published.",
+  "asset_script_checks": {
+    "exit_code": 0,
+    "passed": [
+      "ruff",
+      "ruff-format",
+      "typos"
+    ],
+    "skipped_as_not_applicable": [
+      "warp-check-generated-files",
+      "warp-check-version-consistency",
+      "warp-check-skill-sync",
+      "uv-lock",
+      "clang-format"
+    ],
+    "log_file": "script-checks.log"
+  },
+  "instrumentation_attempts": [
+    {
+      "metadata_file": "measurement-attempt-1.json",
+      "exit_code": 1,
+      "evaluations_completed": 0,
+      "category": "measurement-script code generation",
+      "resolved_by": "Three individual array assignments replaced unsupported indexed tuple assignment."
+    }
+  ],
+  "nonfinite_evaluations": {
+    "total": 372,
+    "passed": 372,
+    "invalid_input_cases": 348,
+    "zero_controls": 24,
+    "physical_cuda_device": 1,
+    "visible_cuda_device": "cuda:0",
+    "before_measurements": "Not rerun; this bundle establishes current-commit behavior only."
+  }
+}

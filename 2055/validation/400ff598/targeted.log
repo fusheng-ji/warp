@@ -1,0 +1,86 @@
+Sanitized execution log; filesystem roots are replaced with variables.
+warning: `VIRTUAL_ENV=$WORKSPACE/warp/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+Warp 1.19.0.dev0 initialized:
+   CUDA Toolkit 13.0, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA B200" (178 GiB, sm_100, mempool enabled)
+   Kernel cache:
+     $CHECKOUT/_build/validation-cache/1.19.0.dev0
+test_svd_forward_output_arguments_float16_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_forward_output_arguments_float16_cpu)
+Check SVD3 factors for degenerate inputs and different matrix scales. ... Module test_svd_forward__locals__decompose_6c979e01 4b175a3 load on device 'cpu' took 4169.68 ms  (compiled)
+ok
+test_svd_forward_output_arguments_float16_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_forward_output_arguments_float16_cuda_0)
+Check SVD3 factors for degenerate inputs and different matrix scales. ... Module test_svd_forward__locals__decompose_6c979e01 6c979e0 load on device 'cuda:0' took 1095.70 ms  (compiled)
+ok
+test_svd_forward_output_arguments_float32_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_forward_output_arguments_float32_cpu)
+Check SVD3 factors for degenerate inputs and different matrix scales. ... Module test_svd_forward__locals__decompose_f3f08283 78254be load on device 'cpu' took 309.32 ms  (compiled)
+ok
+test_svd_forward_output_arguments_float32_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_forward_output_arguments_float32_cuda_0)
+Check SVD3 factors for degenerate inputs and different matrix scales. ... Module test_svd_forward__locals__decompose_f3f08283 f3f0828 load on device 'cuda:0' took 213.13 ms  (compiled)
+ok
+test_svd_forward_output_arguments_float64_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_forward_output_arguments_float64_cpu)
+Check SVD3 factors for degenerate inputs and different matrix scales. ... Module test_svd_forward__locals__decompose_67daec82 6a43192 load on device 'cpu' took 323.72 ms  (compiled)
+ok
+test_svd_forward_output_arguments_float64_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_forward_output_arguments_float64_cuda_0)
+Check SVD3 factors for degenerate inputs and different matrix scales. ... Module test_svd_forward__locals__decompose_67daec82 67daec8 load on device 'cuda:0' took 219.89 ms  (compiled)
+ok
+test_svd_forward_return_values_float16_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_forward_return_values_float16_cpu)
+Check SVD3 factors for degenerate inputs and different matrix scales. ... Module test_svd_forward__locals__decompose_d7862f2d 5db977f load on device 'cpu' took 403.82 ms  (compiled)
+ok
+test_svd_forward_return_values_float16_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_forward_return_values_float16_cuda_0)
+Check SVD3 factors for degenerate inputs and different matrix scales. ... Module test_svd_forward__locals__decompose_d7862f2d d7862f2 load on device 'cuda:0' took 408.48 ms  (compiled)
+ok
+test_svd_forward_return_values_float32_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_forward_return_values_float32_cpu)
+Check SVD3 factors for degenerate inputs and different matrix scales. ... Module test_svd_forward__locals__decompose_30ae1611 44e80c7 load on device 'cpu' took 362.69 ms  (compiled)
+ok
+test_svd_forward_return_values_float32_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_forward_return_values_float32_cuda_0)
+Check SVD3 factors for degenerate inputs and different matrix scales. ... Module test_svd_forward__locals__decompose_30ae1611 30ae161 load on device 'cuda:0' took 262.81 ms  (compiled)
+ok
+test_svd_forward_return_values_float64_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_forward_return_values_float64_cpu)
+Check SVD3 factors for degenerate inputs and different matrix scales. ... Module test_svd_forward__locals__decompose_daf4830f 3596c53 load on device 'cpu' took 368.13 ms  (compiled)
+ok
+test_svd_forward_return_values_float64_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_forward_return_values_float64_cuda_0)
+Check SVD3 factors for degenerate inputs and different matrix scales. ... Module test_svd_forward__locals__decompose_daf4830f daf4830 load on device 'cuda:0' took 458.21 ms  (compiled)
+ok
+test_svd_nonfinite_output_arguments_float16_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_nonfinite_output_arguments_float16_cpu)
+Check that nonfinite inputs cannot produce a finite SVD3 decomposition. ... Module test_svd_nonfinite__locals__decompose_8eef5cf9 f673944 load on device 'cpu' took 406.98 ms  (compiled)
+ok
+test_svd_nonfinite_output_arguments_float16_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_nonfinite_output_arguments_float16_cuda_0)
+Check that nonfinite inputs cannot produce a finite SVD3 decomposition. ... Module test_svd_nonfinite__locals__decompose_8eef5cf9 8eef5cf load on device 'cuda:0' took 397.17 ms  (compiled)
+ok
+test_svd_nonfinite_output_arguments_float32_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_nonfinite_output_arguments_float32_cpu)
+Check that nonfinite inputs cannot produce a finite SVD3 decomposition. ... Module test_svd_nonfinite__locals__decompose_7008583d 79f12b0 load on device 'cpu' took 297.00 ms  (compiled)
+ok
+test_svd_nonfinite_output_arguments_float32_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_nonfinite_output_arguments_float32_cuda_0)
+Check that nonfinite inputs cannot produce a finite SVD3 decomposition. ... Module test_svd_nonfinite__locals__decompose_7008583d 7008583 load on device 'cuda:0' took 347.24 ms  (compiled)
+ok
+test_svd_nonfinite_output_arguments_float64_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_nonfinite_output_arguments_float64_cpu)
+Check that nonfinite inputs cannot produce a finite SVD3 decomposition. ... Module test_svd_nonfinite__locals__decompose_fd48b707 60cea1a load on device 'cpu' took 304.58 ms  (compiled)
+ok
+test_svd_nonfinite_output_arguments_float64_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_nonfinite_output_arguments_float64_cuda_0)
+Check that nonfinite inputs cannot produce a finite SVD3 decomposition. ... Module test_svd_nonfinite__locals__decompose_fd48b707 fd48b70 load on device 'cuda:0' took 228.48 ms  (compiled)
+ok
+test_svd_nonfinite_return_values_float16_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_nonfinite_return_values_float16_cpu)
+Check that nonfinite inputs cannot produce a finite SVD3 decomposition. ... Module test_svd_nonfinite__locals__decompose_90724405 b5ffbca load on device 'cpu' took 414.62 ms  (compiled)
+ok
+test_svd_nonfinite_return_values_float16_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_nonfinite_return_values_float16_cuda_0)
+Check that nonfinite inputs cannot produce a finite SVD3 decomposition. ... Module test_svd_nonfinite__locals__decompose_90724405 9072440 load on device 'cuda:0' took 395.91 ms  (compiled)
+ok
+test_svd_nonfinite_return_values_float32_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_nonfinite_return_values_float32_cpu)
+Check that nonfinite inputs cannot produce a finite SVD3 decomposition. ... Module test_svd_nonfinite__locals__decompose_4ccf0044 c9a771e load on device 'cpu' took 313.99 ms  (compiled)
+ok
+test_svd_nonfinite_return_values_float32_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_nonfinite_return_values_float32_cuda_0)
+Check that nonfinite inputs cannot produce a finite SVD3 decomposition. ... Module test_svd_nonfinite__locals__decompose_4ccf0044 4ccf004 load on device 'cuda:0' took 229.82 ms  (compiled)
+ok
+test_svd_nonfinite_return_values_float64_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_nonfinite_return_values_float64_cpu)
+Check that nonfinite inputs cannot produce a finite SVD3 decomposition. ... Module test_svd_nonfinite__locals__decompose_0a0cf8bd d1c392a load on device 'cpu' took 341.49 ms  (compiled)
+ok
+test_svd_nonfinite_return_values_float64_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_nonfinite_return_values_float64_cuda_0)
+Check that nonfinite inputs cannot produce a finite SVD3 decomposition. ... Module test_svd_nonfinite__locals__decompose_0a0cf8bd 0a0cf8b load on device 'cuda:0' took 378.73 ms  (compiled)
+ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 14.194s
+
+OK

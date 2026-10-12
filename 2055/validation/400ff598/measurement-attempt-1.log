@@ -1,0 +1,59 @@
+Sanitized failed instrumentation attempt; no numerical evaluations completed.
+warning: `VIRTUAL_ENV=$WORKSPACE/warp/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+Warp 1.19.0.dev0 initialized:
+   CUDA Toolkit 13.0, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA B200" (178 GiB, sm_100, mempool enabled)
+   Kernel cache:
+     $CHECKOUT/_build/validation-cache/1.19.0.dev0
+Module collect__locals__decompose_dad55a8c e2940ed load on device 'cpu' took 1.27 ms  (error)
+Traceback (most recent call last):
+  File "$CHECKOUT/$ASSET_ROOT/2055/validation/400ff598/measure_nonfinite.py", line 147, in <module>
+    main()
+  File "$CHECKOUT/$ASSET_ROOT/2055/validation/400ff598/measure_nonfinite.py", line 135, in main
+    rows.extend(collect(wp, dtype, device, output_arguments))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "$CHECKOUT/$ASSET_ROOT/2055/validation/400ff598/measure_nonfinite.py", line 54, in collect
+    wp.launch(decompose, dim=len(cases), inputs=[a], outputs=[u, s, v], device=device)
+  File "$CHECKOUT/warp/_src/context.py", line 11727, in launch
+    module_exec = kernel.module.load(device, block_dim)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "$CHECKOUT/warp/_src/context.py", line 5074, in load
+    raise e
+  File "$CHECKOUT/warp/_src/context.py", line 5071, in load
+    compiled = self._compile(device, module_dir, output_name, output_arch, options=options)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "$CHECKOUT/warp/_src/context.py", line 4822, in _compile
+    source_str, source_code_ext, meta, ltoir_values, fatbin_values = self._run_codegen(options, is_cpu)
+                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "$CHECKOUT/warp/_src/codegen.py", line 1822, in locked_call
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "$CHECKOUT/warp/_src/context.py", line 4692, in _run_codegen
+    builder = ModuleBuilder(
+              ^^^^^^^^^^^^^^
+  File "$CHECKOUT/warp/_src/context.py", line 3430, in __init__
+    self.build_kernel(kernel)
+  File "$CHECKOUT/warp/_src/context.py", line 3549, in build_kernel
+    kernel.adj.build(self)
+  File "$CHECKOUT/warp/_src/codegen.py", line 1822, in locked_call
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "$CHECKOUT/warp/_src/codegen.py", line 2297, in build
+    raise type(original_exc)(*new_args).with_traceback(original_exc.__traceback__) from None
+  File "$CHECKOUT/warp/_src/codegen.py", line 2278, in build
+    adj.eval(adj.tree.body[0])
+  File "$CHECKOUT/warp/_src/codegen.py", line 6493, in eval
+    return emit_node(adj, node)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "$CHECKOUT/warp/_src/codegen.py", line 3489, in emit_FunctionDef
+    adj.eval(f)
+  File "$CHECKOUT/warp/_src/codegen.py", line 6493, in eval
+    return emit_node(adj, node)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "$CHECKOUT/warp/_src/codegen.py", line 5463, in emit_Assign
+    raise WarpCodegenError(
+warp._src.codegen.WarpCodegenError: Error while parsing function "decompose" at $CHECKOUT/$ASSET_ROOT/2055/validation/400ff598/measure_nonfinite.py:34:
+    u[i], s[i], v[i] = U, sigma, V
+;Multiple return functions can only assign to simple variables, e.g.: x, y = func()

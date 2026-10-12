@@ -1,0 +1,22 @@
+Sanitized execution log; filesystem roots are replaced with variables.
+warning: `VIRTUAL_ENV=$WORKSPACE/warp/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+Warp 1.19.0.dev0 initialized:
+   CUDA Toolkit 13.0, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA B200" (178 GiB, sm_100, mempool enabled)
+   Kernel cache:
+     $CHECKOUT/_build/validation-cache/1.19.0.dev0
+Module collect__locals__decompose_af6083b3 adf782f load on device 'cpu' took 3958.42 ms  (compiled)
+Module collect__locals__decompose_5aa8a783 4b849ec load on device 'cpu' took 394.84 ms  (compiled)
+Module collect__locals__decompose_edff7370 3ba0495 load on device 'cpu' took 346.80 ms  (compiled)
+Module collect__locals__decompose_0008f8ff 23473eb load on device 'cpu' took 367.79 ms  (compiled)
+Module collect__locals__decompose_284f2aa9 a6ca7c9 load on device 'cpu' took 373.33 ms  (compiled)
+Module collect__locals__decompose_4f63418b 174c80b load on device 'cpu' took 339.75 ms  (compiled)
+Module collect__locals__decompose_af6083b3 af6083b load on device 'cuda:0' took 1100.40 ms  (compiled)
+Module collect__locals__decompose_5aa8a783 5aa8a78 load on device 'cuda:0' took 386.06 ms  (compiled)
+Module collect__locals__decompose_edff7370 edff737 load on device 'cuda:0' took 319.27 ms  (compiled)
+Module collect__locals__decompose_0008f8ff 0008f8f load on device 'cuda:0' took 312.98 ms  (compiled)
+Module collect__locals__decompose_284f2aa9 284f2aa load on device 'cuda:0' took 386.45 ms  (compiled)
+Module collect__locals__decompose_4f63418b 4f63418 load on device 'cuda:0' took 366.31 ms  (compiled)
+Source 400ff598db84953495e362d9643cfdbe15b51e36: 372 evaluations; 0 failures

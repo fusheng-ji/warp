@@ -1,0 +1,26 @@
+{
+  "name": "2063-nonfinite",
+  "command": [
+    "uv",
+    "run",
+    "--no-sync",
+    "$ASSET_ROOT/2055/validation/400ff598/measure_nonfinite.py",
+    "--checkout",
+    ".",
+    "--expected-commit",
+    "400ff598db84953495e362d9643cfdbe15b51e36",
+    "--output",
+    "$ASSET_ROOT/2055/validation/400ff598/nonfinite.csv"
+  ],
+  "started_utc": "2026-10-12T23:13:14.952701+00:00",
+  "finished_utc": "2026-10-12T23:13:18.645413+00:00",
+  "seconds": 3.6927159570041113,
+  "exit_code": 1,
+  "source_commit": "400ff598db84953495e362d9643cfdbe15b51e36",
+  "cuda_visible_devices": "1",
+  "private_kernel_cache": true,
+  "failure_category": "measurement-script code generation, before any numerical evaluations",
+  "measurement_script_sha256": "a77c3bbd50a8216d20430776a0fc714d42e89ad24d54dfb559fb5a048ee364cc",
+  "correction": "Replace indexed tuple assignment with three individual array assignments; no numerical acceptance rules changed.",
+  "log_file": "measurement-attempt-1.log"
+}
