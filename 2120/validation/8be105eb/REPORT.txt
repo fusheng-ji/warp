@@ -1,0 +1,43 @@
+GH-2120 / PR #2121: isolate the CUDA fallback warning state in its test
+
+Current source: 8be105eb8687218274fc8700feecb0a2374c3985
+Previous source: d619a625db2d7be4ef3def5c9cfa168bea2c0581
+Only warp/tests/test_render_opengl.py changed between these revisions.
+
+Before: the existing test method passed, but starting with warning_shown=False
+left it True. The independent state-preservation check therefore exited 1.
+Starting with True left it True and exited 0. Both original method runs passed;
+the failed check was state restoration, not a failed buffer-copy assertion.
+
+After: entry states False and True both preserve their exact incoming values.
+Each flag subcase patches the warning flag to False, verifies one warning and
+restores the previous value on scope exit. Registration, pinned staging, copies
+and all three access-flag checks remain in the existing test method.
+
+Fresh current-commit results
+- Renderer/context tests: 21 passed; 0 skipped.
+- Default Warp entrypoint: 4 buffer tests passed; 0 skipped.
+  These are the same four new tests, not additional distinct tests.
+- Both warning-state checks, source pre-commit hooks and diff check passed.
+- Source tracked tree was clean before and after every accepted command.
+- Private kernel cache; command records include native-library hashes.
+
+Evidence limits
+Runtime, renderer, native tree, constructor documentation and changelog are
+unchanged, with hashes recorded in validation.json. Native libraries were not
+rebuilt. Actual 40-frame rendering, 15 access-flag hardware cases and strict
+documentation validation remain the previous d619a625 runs at asset 8a23e20c;
+they are not claimed as fresh runs for the current test-only cleanup.
+
+Reproduce from the matching source checkout after installing dev dependencies:
+export WARP_CACHE_PATH="$PWD/_build/warning-review-cache"
+uv run --no-sync /path/to/assets/validate_warning_state.py --initial false --output /path/to/results/false.json
+uv run --no-sync /path/to/assets/validate_warning_state.py --initial true --output /path/to/results/true.json
+uv run --no-sync -m unittest warp.tests.test_render_opengl warp.tests.test_context -v
+uv run --no-sync -m warp.tests -k TestRegisteredGLBuffer --maxjobs 1
+uvx pre-commit run --files warp/_src/context.py warp/tests/test_render_opengl.py warp/tests/unittest_suites.py changelog/2120.fixed.md
+
+The validator reports the test method result and the post-test flag separately.
+On d619a625, the False entry state is expected to fail preservation (exit 1).
+Logs use <CHECKOUT> and <RESULTS> path placeholders; private paths are redacted.
+No public bot reply or review-thread resolution is included in this change.

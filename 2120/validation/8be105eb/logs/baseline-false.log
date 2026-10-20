@@ -1,0 +1,21 @@
+warning: `VIRTUAL_ENV=<WORKSPACE>/warp/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+Warp 1.19.0.dev1 initialized:
+   CUDA Toolkit 13.0, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA B200" (178 GiB, sm_100, mempool enabled)
+     "cuda:1"   : "NVIDIA B200" (178 GiB, sm_100, mempool enabled)
+   CUDA peer access:
+     Supported fully (all-directional)
+   Kernel cache:
+     <CHECKOUT>/_build/contribution-refresh-cache/1.19.0.dev1
+{
+  "source_commit": "d619a625db2d7be4ef3def5c9cfa168bea2c0581",
+  "initial_warning_shown": false,
+  "warning_shown_after_test": true,
+  "test_method_passed": true,
+  "test_methods_run": 1,
+  "state_preserved": false,
+  "failures": [],
+  "errors": []
+}

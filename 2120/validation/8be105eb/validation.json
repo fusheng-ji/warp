@@ -1,0 +1,74 @@
+{
+  "source_commit": "8be105eb8687218274fc8700feecb0a2374c3985",
+  "previous_head": "d619a625db2d7be4ef3def5c9cfa168bea2c0581",
+  "changed_files_since_previous_head": [
+    "warp/tests/test_render_opengl.py"
+  ],
+  "test_counts": {
+    "unit": {
+      "tests_run": 21,
+      "skipped": 0
+    },
+    "default-suite": {
+      "tests_run": 4,
+      "skipped": 0
+    }
+  },
+  "warning_state_cases": {
+    "baseline-false": {
+      "source_commit": "d619a625db2d7be4ef3def5c9cfa168bea2c0581",
+      "initial_warning_shown": false,
+      "warning_shown_after_test": true,
+      "test_method_passed": true,
+      "test_methods_run": 1,
+      "state_preserved": false,
+      "failures": [],
+      "errors": []
+    },
+    "baseline-true": {
+      "source_commit": "d619a625db2d7be4ef3def5c9cfa168bea2c0581",
+      "initial_warning_shown": true,
+      "warning_shown_after_test": true,
+      "test_method_passed": true,
+      "test_methods_run": 1,
+      "state_preserved": true,
+      "failures": [],
+      "errors": []
+    },
+    "isolation-false": {
+      "source_commit": "8be105eb8687218274fc8700feecb0a2374c3985",
+      "initial_warning_shown": false,
+      "warning_shown_after_test": false,
+      "test_method_passed": true,
+      "test_methods_run": 1,
+      "state_preserved": true,
+      "failures": [],
+      "errors": []
+    },
+    "isolation-true": {
+      "source_commit": "8be105eb8687218274fc8700feecb0a2374c3985",
+      "initial_warning_shown": true,
+      "warning_shown_after_test": true,
+      "test_method_passed": true,
+      "test_methods_run": 1,
+      "state_preserved": true,
+      "failures": [],
+      "errors": []
+    }
+  },
+  "unchanged_file_sha256": {
+    "warp/_src/context.py": "8b588c0488923cfef380dfac92fd213f9a734f102aa1056b109dbfa1bbb183bc",
+    "warp/_src/render/render_opengl.py": "c06554fdf766a4f3f9dd2ee71923d7acff830514d3693dd74a1c57fb873fb71c",
+    "warp/tests/unittest_suites.py": "bdafa252f9fc796ad9fb6c0bbd5c65025e1ec1d60769b77169ba3cd880d50e78",
+    "changelog/2120.fixed.md": "8782ddfd8adf1c8bd1ccb91db3c35ae487bb9ae47b67d2b4f20fbe6095dcf5e4"
+  },
+  "native_tree_hashes": {
+    "d619a625db2d7be4ef3def5c9cfa168bea2c0581": "aec82847540d599560d0f747881b6b3228efac18",
+    "8be105eb8687218274fc8700feecb0a2374c3985": "aec82847540d599560d0f747881b6b3228efac18"
+  },
+  "native_build_repeated": false,
+  "gpu_rendering_repeated": false,
+  "documentation_build_repeated": false,
+  "historical_integration_assets": "8a23e20cccb4c3aebec2601ce7246e0603f73bde/2120/validation/d619a625",
+  "review_thread": "https://github.com/NVIDIA/warp/pull/2121#discussion_r4327742803"
+}

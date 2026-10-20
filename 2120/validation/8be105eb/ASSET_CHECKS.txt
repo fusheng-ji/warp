@@ -1,0 +1,1 @@
+Applicable hooks passed for the reproduction script, handwritten report and asset index. Machine-generated JSON/log records are preserved except for private path redaction; all files are checksummed. Source-code hooks are recorded separately under logs/.

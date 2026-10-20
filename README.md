@@ -12,7 +12,7 @@ Numerical reports, figures, data, and reproduction scripts for contributions to 
 | [NVIDIA/warp#2054](https://github.com/NVIDIA/warp/issues/2054) | [SVD gradient validation](2054/) | [Numerical report](2054/REPORT.txt) | [Before / after gradients](2054/svd-gradient-comparison.png) |
 | [NVIDIA/warp#2055](https://github.com/NVIDIA/warp/issues/2055) | [SVD3 forward validation](2055/) | [Numerical report](2055/REPORT.txt) | [Before / after comparison](2055/svd3-validation.png) |
 | [NVIDIA/warp#2069](https://github.com/NVIDIA/warp/issues/2069) | [Mixed-precision and row-packed BSR products](2069/) | [Validation report](2069/report.html), [Split validation](2069/split/REPORT.txt) | [Row packing](2069/row-packing-speedup.png), [FEM comparison](2069/fem-speedup.png) |
-| [NVIDIA/warp#2120](https://github.com/NVIDIA/warp/issues/2120) | [CPU/OpenGL host buffer fix](2120/validation/d619a625/) | [Current validation](2120/validation/d619a625/REPORT.txt) | [Actual CPU/CUDA captures](2120/validation/d619a625/render-comparison.png) |
+| [NVIDIA/warp#2120](https://github.com/NVIDIA/warp/issues/2120) | [CPU/OpenGL host buffer fix](2120/validation/d619a625/) | [Runtime validation](2120/validation/d619a625/REPORT.txt), [Warning-state cleanup](2120/validation/8be105eb/REPORT.txt) | [Actual CPU/CUDA captures](2120/validation/d619a625/render-comparison.png) |
 
 Keep each contribution in its issue-number directory. PR descriptions should use links pinned to an asset commit so their evidence remains reproducible as this branch grows. Published evidence excludes private environment identifiers; newer bundles include complete diagnostic output with filesystem paths redacted.
 
