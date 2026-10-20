@@ -2704,6 +2704,20 @@ Instances: {len(self._instances)}"""
             return True
         return False
 
+    def _update_shape_instance_geometry(self, name, shape):
+        """Rebind an existing instance to geometry without changing its ID."""
+        if name not in self._instances:
+            return False
+
+        instance, body, old_shape, transform, scale, color1, color2, visible = self._instances[name]
+        if old_shape != shape:
+            self._shape_instances[old_shape].remove(instance)
+            self._shape_instances[shape].append(instance)
+            self._instance_shape[instance] = shape
+            self._instances[name] = (instance, body, shape, transform, scale, color1, color2, visible)
+            self._add_shape_instances = True
+        return True
+
     def update_shape_instances(self):
         """Rebuild instance buffers after instance updates."""
         with self._shape_shader:
@@ -3055,6 +3069,14 @@ Instances: {len(self._instances)}"""
             v_scaling=1.0,
         )
 
+    @staticmethod
+    def _validate_segments(segments):
+        if isinstance(segments, (bool, np.bool_)) or not isinstance(segments, (int, np.integer)):
+            raise TypeError("segments must be an integer")
+        if segments < 3:
+            raise ValueError("segments must be greater than or equal to 3")
+        return int(segments)
+
     def render_sphere(
         self,
         name: str,
@@ -3065,6 +3087,8 @@ Instances: {len(self._instances)}"""
         is_template: bool = False,
         color: tuple[float, float, float] | None = None,
         visible: bool = True,
+        *,
+        segments: int = default_num_segments,
     ):
         """Add a sphere for visualization
 
@@ -3077,18 +3101,22 @@ Instances: {len(self._instances)}"""
             is_template: Whether the sphere is a template
             color: The color of the sphere
             visible: Whether the sphere is visible
+            segments: Number of latitude and longitude subdivisions, at least 3.
+                Changing this value for an existing name replaces its geometry while preserving its instance ID.
         """
-        geo_hash = hash(("sphere", radius))
+        segments = self._validate_segments(segments)
+        geo_hash = hash(("sphere", radius, segments))
         if geo_hash in self._shape_geo_hash:
             shape = self._shape_geo_hash[geo_hash]
-            if self.update_shape_instance(name, pos, rot, color1=color, color2=color):
-                return shape
         else:
-            vertices, indices = self._create_sphere_mesh(radius)
+            vertices, indices = self._create_sphere_mesh(radius, num_latitudes=segments, num_longitudes=segments)
             shape = self.register_shape(geo_hash, vertices, indices, color1=color, color2=color)
         if not is_template:
-            body = self._resolve_body_id(parent_body)
-            self.add_shape_instance(name, shape, body, pos, rot, color1=color, color2=color)
+            if self._update_shape_instance_geometry(name, shape):
+                self.update_shape_instance(name, pos, rot, color1=color, color2=color)
+            else:
+                body = self._resolve_body_id(parent_body)
+                self.add_shape_instance(name, shape, body, pos, rot, color1=color, color2=color)
         return shape
 
     def render_capsule(
@@ -3103,6 +3131,8 @@ Instances: {len(self._instances)}"""
         up_axis: int = 1,
         color: tuple[float, float, float] | None = None,
         visible: bool = True,
+        *,
+        segments: int = default_num_segments,
     ):
         """Add a capsule for visualization
 
@@ -3117,18 +3147,22 @@ Instances: {len(self._instances)}"""
             up_axis: The axis of the capsule that points up (0: x, 1: y, 2: z)
             color: The color of the capsule
             visible: Whether the capsule is visible
+            segments: Number of subdivisions used to generate the capsule mesh, at least 3.
+                Changing this value for an existing name replaces its geometry while preserving its instance ID.
         """
-        geo_hash = hash(("capsule", radius, half_height, up_axis))
+        segments = self._validate_segments(segments)
+        geo_hash = hash(("capsule", radius, half_height, up_axis, segments))
         if geo_hash in self._shape_geo_hash:
             shape = self._shape_geo_hash[geo_hash]
-            if self.update_shape_instance(name, pos, rot):
-                return shape
         else:
-            vertices, indices = self._create_capsule_mesh(radius, half_height, up_axis=up_axis)
+            vertices, indices = self._create_capsule_mesh(radius, half_height, up_axis=up_axis, segments=segments)
             shape = self.register_shape(geo_hash, vertices, indices, color1=color, color2=color)
         if not is_template:
-            body = self._resolve_body_id(parent_body)
-            self.add_shape_instance(name, shape, body, pos, rot)
+            if self._update_shape_instance_geometry(name, shape):
+                self.update_shape_instance(name, pos, rot)
+            else:
+                body = self._resolve_body_id(parent_body)
+                self.add_shape_instance(name, shape, body, pos, rot)
         return shape
 
     def render_cylinder(
@@ -3143,6 +3177,8 @@ Instances: {len(self._instances)}"""
         up_axis: int = 1,
         color: tuple[float, float, float] | None = None,
         visible: bool = True,
+        *,
+        segments: int = default_num_segments,
     ):
         """Add a cylinder for visualization
 
@@ -3157,18 +3193,22 @@ Instances: {len(self._instances)}"""
             up_axis: The axis of the cylinder that points up (0: x, 1: y, 2: z)
             color: The color of the cylinder
             visible: Whether the cylinder is visible
+            segments: Number of subdivisions around the cylinder, at least 3.
+                Changing this value for an existing name replaces its geometry while preserving its instance ID.
         """
-        geo_hash = hash(("cylinder", radius, half_height, up_axis))
+        segments = self._validate_segments(segments)
+        geo_hash = hash(("cylinder", radius, half_height, up_axis, segments))
         if geo_hash in self._shape_geo_hash:
             shape = self._shape_geo_hash[geo_hash]
-            if self.update_shape_instance(name, pos, rot):
-                return shape
         else:
-            vertices, indices = self._create_cylinder_mesh(radius, half_height, up_axis=up_axis)
+            vertices, indices = self._create_cylinder_mesh(radius, half_height, up_axis=up_axis, segments=segments)
             shape = self.register_shape(geo_hash, vertices, indices, color1=color, color2=color)
         if not is_template:
-            body = self._resolve_body_id(parent_body)
-            self.add_shape_instance(name, shape, body, pos, rot)
+            if self._update_shape_instance_geometry(name, shape):
+                self.update_shape_instance(name, pos, rot)
+            else:
+                body = self._resolve_body_id(parent_body)
+                self.add_shape_instance(name, shape, body, pos, rot)
         return shape
 
     def render_cone(
@@ -3183,6 +3223,8 @@ Instances: {len(self._instances)}"""
         up_axis: int = 1,
         color: tuple[float, float, float] | None = None,
         visible: bool = True,
+        *,
+        segments: int = default_num_segments,
     ):
         """Add a cone for visualization
 
@@ -3197,18 +3239,22 @@ Instances: {len(self._instances)}"""
             up_axis: The axis of the cone that points up (0: x, 1: y, 2: z)
             color: The color of the cone
             visible: Whether the cone is visible
+            segments: Number of subdivisions around the cone, at least 3.
+                Changing this value for an existing name replaces its geometry while preserving its instance ID.
         """
-        geo_hash = hash(("cone", radius, half_height, up_axis))
+        segments = self._validate_segments(segments)
+        geo_hash = hash(("cone", radius, half_height, up_axis, segments))
         if geo_hash in self._shape_geo_hash:
             shape = self._shape_geo_hash[geo_hash]
-            if self.update_shape_instance(name, pos, rot):
-                return shape
         else:
-            vertices, indices = self._create_cone_mesh(radius, half_height, up_axis=up_axis)
+            vertices, indices = self._create_cone_mesh(radius, half_height, up_axis=up_axis, segments=segments)
             shape = self.register_shape(geo_hash, vertices, indices, color1=color, color2=color)
         if not is_template:
-            body = self._resolve_body_id(parent_body)
-            self.add_shape_instance(name, shape, body, pos, rot)
+            if self._update_shape_instance_geometry(name, shape):
+                self.update_shape_instance(name, pos, rot)
+            else:
+                body = self._resolve_body_id(parent_body)
+                self.add_shape_instance(name, shape, body, pos, rot)
         return shape
 
     def render_box(
@@ -3426,6 +3472,8 @@ Instances: {len(self._instances)}"""
         up_axis: int = 1,
         color: tuple[float, float, float] | None = None,
         visible: bool = True,
+        *,
+        segments: int = default_num_segments,
     ):
         """Add an arrow for visualization
 
@@ -3442,20 +3490,24 @@ Instances: {len(self._instances)}"""
             up_axis: The axis of the arrow that points up (0: x, 1: y, 2: z)
             color: The color of the arrow
             visible: Whether the arrow is visible
+            segments: Number of subdivisions around both the base and cap, at least 3.
+                Changing this value for an existing name replaces its geometry while preserving its instance ID.
         """
-        geo_hash = hash(("arrow", base_radius, base_height, cap_radius, cap_height, up_axis))
+        segments = self._validate_segments(segments)
+        geo_hash = hash(("arrow", base_radius, base_height, cap_radius, cap_height, up_axis, segments))
         if geo_hash in self._shape_geo_hash:
             shape = self._shape_geo_hash[geo_hash]
-            if self.update_shape_instance(name, pos, rot, color1=color, color2=color):
-                return shape
         else:
             vertices, indices = self._create_arrow_mesh(
-                base_radius, base_height, cap_radius, cap_height, up_axis=up_axis
+                base_radius, base_height, cap_radius, cap_height, up_axis=up_axis, segments=segments
             )
             shape = self.register_shape(geo_hash, vertices, indices, color1=color, color2=color)
         if not is_template:
-            body = self._resolve_body_id(parent_body)
-            self.add_shape_instance(name, shape, body, pos, rot, color1=color, color2=color)
+            if self._update_shape_instance_geometry(name, shape):
+                self.update_shape_instance(name, pos, rot, color1=color, color2=color)
+            else:
+                body = self._resolve_body_id(parent_body)
+                self.add_shape_instance(name, shape, body, pos, rot, color1=color, color2=color)
         return shape
 
     def render_ref(
