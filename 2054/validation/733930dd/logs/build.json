@@ -1,0 +1,22 @@
+{
+  "name": "build",
+  "command": [
+    "uv",
+    "run",
+    "build_lib.py"
+  ],
+  "source_commit": "733930ddf3ebe55f422cf1fbd7b59be2029ec15d",
+  "source_commit_after": "733930ddf3ebe55f422cf1fbd7b59be2029ec15d",
+  "tracked_tree_dirty_before": false,
+  "tracked_tree_dirty_after": false,
+  "started_utc": "2026-10-20T16:18:40.312207+00:00",
+  "finished_utc": "2026-10-20T16:20:54.342951+00:00",
+  "seconds": 134.0307483349461,
+  "exit_code": 0,
+  "cuda_visible_devices": "<unset>",
+  "private_kernel_cache": true,
+  "native_library_sha256": {
+    "warp-clang.so": "44084761f7548793d9685a129b15b7767cb4b68a3f65caffdd4c71a71bfacecc",
+    "warp.so": "54a87578504ff978c4ffe2a55f78aaf8ddb7a65d11271ca2a713fa837ddb9f9f"
+  }
+}

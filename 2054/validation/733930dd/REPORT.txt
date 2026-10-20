@@ -1,0 +1,37 @@
+Zero-adjoint SVD gradient validation (GH-2054, PR #2064)
+Current source: 733930ddf3ebe55f422cf1fbd7b59be2029ec15d
+Official main base: 0382a97e2c72911c1f6bba45274e12833a19d8e2
+Superseded merged head: 091d1e84c3869d01ac6747316ce152f8fa6ce0b7
+
+Current clean-commit validation
+- Independent standard build: uv run build_lib.py, exit 0.
+- SVD tests: 78 passed, 0 skipped.
+- Full matrix module: 295 passed, 0 skipped.
+- Measurement: 540/540 passed; all losses and gradients finite.
+- CPU and two NVIDIA B200 GPUs; both SVD dimensions, both calling forms,
+  FP16/32/64, five scenarios, three batch elements per case.
+- Tolerances unchanged: atol=rtol=1e-2 / 1e-5 / 1e-10 for FP16 / FP32 / FP64.
+- CSV reference formulas, finite values and pass flags independently recomputed.
+- Applicable pre-commit hooks and git diff --check passed.
+
+These are API/scenario/seed evaluations on A=2I, not independent random matrices.
+The existing nonzero U/V finite-difference and small-seed tests are included in
+the SVD test run. Source SHA, clean tree, dependency versions, native-library
+hashes, commands, exit codes and complete sanitized output are included.
+The libraries were built and loaded from this isolated checkout. The native
+patch does not include the independent GH-2055 forward fix.
+
+Historical results
+The unchanged 40f663c6/2054 assets compare c47fe4c8 with e6185ac3: 540 evaluations
+per version, 144 FP16 failures before and zero failures after. They were not
+remeasured here. The historical baseline unit-test failure counts have no
+located raw log and are not used as newly verified conclusions. Current unit
+test counts above come directly from the complete logs in this bundle.
+
+Reproduce
+Check out the stated source SHA, install dev dependencies, and run the commands
+in REPRODUCE.txt using an independent environment/private kernel cache.
+Filesystem prefixes are replaced by <CHECKOUT>, <RESULTS>, <ASSETS_WORKTREE>
+and <USER_HOME>; substitute local locations when replaying recorded commands.
+All new conclusions apply to this source SHA, not to older assets or a future
+main revision. No algorithm/API changes beyond the original focused patch.

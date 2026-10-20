@@ -1,0 +1,35 @@
+CPU/OpenGL fix (GH-2120)
+
+Use an isolated checkout of official main 0382a97e2c72911c1f6bba45274e12833a19d8e2.
+Apply cpu-gl.patch with git am. The patch contains the complete local fix and DCO.
+Set ASSET_DIR to this asset directory and RESULT_DIR to a new output directory.
+Run from the source checkout; keep assets and results outside its tracked tree.
+
+uv sync --extra dev --extra docs
+WARP_CUDA_PATH=/usr/local/cuda-13.0 uv run build_lib.py
+export WARP_CACHE_PATH="$PWD/_build/private-validation-cache"
+uv run --no-sync -m unittest warp.tests.test_render_opengl warp.tests.test_context -v
+uv run --no-sync -m warp.tests -k TestRegisteredGLBuffer --maxjobs 1
+CUDA_VISIBLE_DEVICES=0 uv run --no-sync "$ASSET_DIR/cpu_gl_repro.py"
+
+Run each scenario in a separate process/output directory:
+CUDA_VISIBLE_DEVICES=0 uv run --no-sync "$ASSET_DIR/validate_gl.py" --checkout . --output "$RESULT_DIR/render-cpu-visible" --mode render --device cpu
+CUDA_VISIBLE_DEVICES='' uv run --no-sync "$ASSET_DIR/validate_gl.py" --checkout . --output "$RESULT_DIR/render-cpu-hidden" --mode render --device cpu
+CUDA_VISIBLE_DEVICES=0 uv run --no-sync "$ASSET_DIR/validate_gl.py" --checkout . --output "$RESULT_DIR/render-cpu-ambient" --mode render --device cpu --ambient-cuda
+CUDA_VISIBLE_DEVICES=0 uv run --no-sync "$ASSET_DIR/validate_gl.py" --checkout . --output "$RESULT_DIR/render-cuda" --mode render --device cuda:0
+CUDA_VISIBLE_DEVICES=0 uv run --no-sync "$ASSET_DIR/validate_gl.py" --checkout . --output "$RESULT_DIR/buffers-cpu-visible" --mode buffers --device cpu
+CUDA_VISIBLE_DEVICES='' uv run --no-sync "$ASSET_DIR/validate_gl.py" --checkout . --output "$RESULT_DIR/buffers-cpu-hidden" --mode buffers --device cpu
+CUDA_VISIBLE_DEVICES=0 uv run --no-sync "$ASSET_DIR/validate_gl.py" --checkout . --output "$RESULT_DIR/buffers-cpu-ambient" --mode buffers --device cpu --ambient-cuda
+CUDA_VISIBLE_DEVICES=0 uv run --no-sync "$ASSET_DIR/validate_gl.py" --checkout . --output "$RESULT_DIR/buffers-cuda" --mode buffers --device cuda:0
+CUDA_VISIBLE_DEVICES=0 uv run --no-sync "$ASSET_DIR/validate_gl.py" --checkout . --output "$RESULT_DIR/buffers-cuda-copy" --mode buffers --device cuda:0 --force-registration-failure
+
+set -o pipefail
+uv run --no-sync --extra docs build_docs.py --warnings-as-errors 2>&1 | tee "$RESULT_DIR/docs-build.log"
+uvx pre-commit run --files warp/_src/context.py warp/tests/test_render_opengl.py warp/tests/unittest_suites.py changelog/2120.fixed.md
+git diff --check 0382a97e2c72911c1f6bba45274e12833a19d8e2 HEAD
+
+The matching source checkout and CUDA/EGL physical GPU must be selected.
+CUDA-hidden cases still use NVIDIA EGL graphics. No pure software renderer is claimed.
+Raw command records use redacted filesystem placeholders; they are provenance,
+not literal commands to paste without substituting paths. record.py can capture
+commands/logs/exit codes when run with --cwd, --out, --name and -- COMMAND.

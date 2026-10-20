@@ -1,0 +1,33 @@
+warning: `VIRTUAL_ENV=<WORKSPACE>/warp/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+import_dependencies {}
+warp_init {}
+Warp 1.19.0.dev1 initialized:
+   CUDA Toolkit 13.0, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA B200" (178 GiB, sm_100, mempool enabled)
+   Kernel cache:
+     <CHECKOUT>/_build/contribution-refresh-cache/1.19.0.dev1
+create_gl_context {}
+Module warp.render.render_opengl 8cc29e3 load on device 'cpu' took 5.14 ms  (cached)
+create_gl_buffer {'flag': 'NONE'}
+register_gl_buffer {'flag': 'NONE'}
+map_gl_buffer {'flag': 'NONE'}
+read_mapped_data {'flag': 'NONE'}
+write_mapped_data {'flag': 'NONE'}
+unmap_gl_buffer {'flag': 'NONE'}
+read_final_gl_data {'flag': 'NONE'}
+create_gl_buffer {'flag': 'READ_ONLY'}
+register_gl_buffer {'flag': 'READ_ONLY'}
+map_gl_buffer {'flag': 'READ_ONLY'}
+read_mapped_data {'flag': 'READ_ONLY'}
+unmap_gl_buffer {'flag': 'READ_ONLY'}
+read_final_gl_data {'flag': 'READ_ONLY'}
+create_gl_buffer {'flag': 'WRITE_DISCARD'}
+register_gl_buffer {'flag': 'WRITE_DISCARD'}
+map_gl_buffer {'flag': 'WRITE_DISCARD'}
+write_mapped_data {'flag': 'WRITE_DISCARD'}
+unmap_gl_buffer {'flag': 'WRITE_DISCARD'}
+read_final_gl_data {'flag': 'WRITE_DISCARD'}
+close_gl_context {}
+complete {'rows': 3}

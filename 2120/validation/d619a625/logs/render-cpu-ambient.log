@@ -1,0 +1,63 @@
+warning: `VIRTUAL_ENV=<WORKSPACE>/warp/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+import_dependencies {}
+warp_init {}
+Warp 1.19.0.dev1 initialized:
+   CUDA Toolkit 13.0, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA B200" (178 GiB, sm_100, mempool enabled)
+   Kernel cache:
+     <CHECKOUT>/_build/contribution-refresh-cache/1.19.0.dev1
+create_ambient_cuda_context {}
+create_renderer {'primitive': 'sphere', 'cached': False}
+Module warp.render.render_opengl 8cc29e3 load on device 'cpu' took 5.60 ms  (cached)
+begin_frame {'primitive': 'sphere', 'cached': False, 'frame': 0, 'segments': 32}
+end_frame {'primitive': 'sphere', 'cached': False, 'frame': 0}
+get_pixels {'primitive': 'sphere', 'cached': False, 'frame': 0}
+map_transforms {'primitive': 'sphere', 'cached': False, 'frame': 0}
+begin_frame {'primitive': 'sphere', 'cached': False, 'frame': 1, 'segments': 32}
+end_frame {'primitive': 'sphere', 'cached': False, 'frame': 1}
+get_pixels {'primitive': 'sphere', 'cached': False, 'frame': 1}
+map_transforms {'primitive': 'sphere', 'cached': False, 'frame': 1}
+close_renderer {'primitive': 'sphere', 'cached': False}
+create_renderer {'primitive': 'capsule', 'cached': False}
+begin_frame {'primitive': 'capsule', 'cached': False, 'frame': 0, 'segments': 32}
+end_frame {'primitive': 'capsule', 'cached': False, 'frame': 0}
+get_pixels {'primitive': 'capsule', 'cached': False, 'frame': 0}
+map_transforms {'primitive': 'capsule', 'cached': False, 'frame': 0}
+begin_frame {'primitive': 'capsule', 'cached': False, 'frame': 1, 'segments': 32}
+end_frame {'primitive': 'capsule', 'cached': False, 'frame': 1}
+get_pixels {'primitive': 'capsule', 'cached': False, 'frame': 1}
+map_transforms {'primitive': 'capsule', 'cached': False, 'frame': 1}
+close_renderer {'primitive': 'capsule', 'cached': False}
+create_renderer {'primitive': 'cylinder', 'cached': False}
+begin_frame {'primitive': 'cylinder', 'cached': False, 'frame': 0, 'segments': 32}
+end_frame {'primitive': 'cylinder', 'cached': False, 'frame': 0}
+get_pixels {'primitive': 'cylinder', 'cached': False, 'frame': 0}
+map_transforms {'primitive': 'cylinder', 'cached': False, 'frame': 0}
+begin_frame {'primitive': 'cylinder', 'cached': False, 'frame': 1, 'segments': 32}
+end_frame {'primitive': 'cylinder', 'cached': False, 'frame': 1}
+get_pixels {'primitive': 'cylinder', 'cached': False, 'frame': 1}
+map_transforms {'primitive': 'cylinder', 'cached': False, 'frame': 1}
+close_renderer {'primitive': 'cylinder', 'cached': False}
+create_renderer {'primitive': 'cone', 'cached': False}
+begin_frame {'primitive': 'cone', 'cached': False, 'frame': 0, 'segments': 32}
+end_frame {'primitive': 'cone', 'cached': False, 'frame': 0}
+get_pixels {'primitive': 'cone', 'cached': False, 'frame': 0}
+map_transforms {'primitive': 'cone', 'cached': False, 'frame': 0}
+begin_frame {'primitive': 'cone', 'cached': False, 'frame': 1, 'segments': 32}
+end_frame {'primitive': 'cone', 'cached': False, 'frame': 1}
+get_pixels {'primitive': 'cone', 'cached': False, 'frame': 1}
+map_transforms {'primitive': 'cone', 'cached': False, 'frame': 1}
+close_renderer {'primitive': 'cone', 'cached': False}
+create_renderer {'primitive': 'arrow', 'cached': False}
+begin_frame {'primitive': 'arrow', 'cached': False, 'frame': 0, 'segments': 32}
+end_frame {'primitive': 'arrow', 'cached': False, 'frame': 0}
+get_pixels {'primitive': 'arrow', 'cached': False, 'frame': 0}
+map_transforms {'primitive': 'arrow', 'cached': False, 'frame': 0}
+begin_frame {'primitive': 'arrow', 'cached': False, 'frame': 1, 'segments': 32}
+end_frame {'primitive': 'arrow', 'cached': False, 'frame': 1}
+get_pixels {'primitive': 'arrow', 'cached': False, 'frame': 1}
+map_transforms {'primitive': 'arrow', 'cached': False, 'frame': 1}
+close_renderer {'primitive': 'arrow', 'cached': False}
+complete {'rows': 10}

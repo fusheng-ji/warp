@@ -1,0 +1,23 @@
+{
+  "name": "minimal-repro-final",
+  "command": [
+    "uv",
+    "run",
+    "--no-sync",
+    "<RESULTS>/cpu_gl_repro.py"
+  ],
+  "source_commit": "d619a625db2d7be4ef3def5c9cfa168bea2c0581",
+  "source_commit_after": "d619a625db2d7be4ef3def5c9cfa168bea2c0581",
+  "tracked_tree_dirty_before": false,
+  "tracked_tree_dirty_after": false,
+  "started_utc": "2026-10-20T16:32:04.158572+00:00",
+  "finished_utc": "2026-10-20T16:32:08.448365+00:00",
+  "seconds": 4.289792121038772,
+  "exit_code": 0,
+  "cuda_visible_devices": "0",
+  "private_kernel_cache": true,
+  "native_library_sha256": {
+    "warp-clang.so": "44084761f7548793d9685a129b15b7767cb4b68a3f65caffdd4c71a71bfacecc",
+    "warp.so": "102d4e5e853e5cd73ac29fe56957e02cfbc8d93b6e743de7c4ce836a62502b22"
+  }
+}

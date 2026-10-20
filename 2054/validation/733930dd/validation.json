@@ -1,0 +1,97 @@
+{
+  "source_commit": "733930ddf3ebe55f422cf1fbd7b59be2029ec15d",
+  "official_main_base": "0382a97e2c72911c1f6bba45274e12833a19d8e2",
+  "old_remote_head": "091d1e84c3869d01ac6747316ce152f8fa6ce0b7",
+  "source_tests": {
+    "svd-tests": {
+      "tests_run": 78,
+      "skipped": 0,
+      "skip_reasons": []
+    },
+    "matrix-tests": {
+      "tests_run": 295,
+      "skipped": 0,
+      "skip_reasons": []
+    }
+  },
+  "evaluations": 540,
+  "failed": 0,
+  "all_losses_and_gradients_finite": true,
+  "independent_csv_reference_check": true,
+  "summary": [
+    {
+      "device": "cpu",
+      "dtype": "float16",
+      "evaluations": 60,
+      "failed": 0,
+      "max_absolute_gradient_error": 0.01171875,
+      "max_gradient_error_ratio": 0.341796875
+    },
+    {
+      "device": "cpu",
+      "dtype": "float32",
+      "evaluations": 60,
+      "failed": 0,
+      "max_absolute_gradient_error": 2.384185791015625e-06,
+      "max_gradient_error_ratio": 0.0476837158203125
+    },
+    {
+      "device": "cpu",
+      "dtype": "float64",
+      "evaluations": 60,
+      "failed": 0,
+      "max_absolute_gradient_error": 8.881784197001252e-16,
+      "max_gradient_error_ratio": 4.677503646099993e-06
+    },
+    {
+      "device": "cuda:0",
+      "dtype": "float16",
+      "evaluations": 60,
+      "failed": 0,
+      "max_absolute_gradient_error": 0.01171875,
+      "max_gradient_error_ratio": 0.341796875
+    },
+    {
+      "device": "cuda:0",
+      "dtype": "float32",
+      "evaluations": 60,
+      "failed": 0,
+      "max_absolute_gradient_error": 2.1457672119140625e-06,
+      "max_gradient_error_ratio": 0.10435702506583765
+    },
+    {
+      "device": "cuda:0",
+      "dtype": "float64",
+      "evaluations": 60,
+      "failed": 0,
+      "max_absolute_gradient_error": 1.7763568394002505e-15,
+      "max_gradient_error_ratio": 1.3366308967792249e-05
+    },
+    {
+      "device": "cuda:1",
+      "dtype": "float16",
+      "evaluations": 60,
+      "failed": 0,
+      "max_absolute_gradient_error": 0.01171875,
+      "max_gradient_error_ratio": 0.341796875
+    },
+    {
+      "device": "cuda:1",
+      "dtype": "float32",
+      "evaluations": 60,
+      "failed": 0,
+      "max_absolute_gradient_error": 2.1457672119140625e-06,
+      "max_gradient_error_ratio": 0.10435702506583765
+    },
+    {
+      "device": "cuda:1",
+      "dtype": "float64",
+      "evaluations": 60,
+      "failed": 0,
+      "max_absolute_gradient_error": 1.7763568394002505e-15,
+      "max_gradient_error_ratio": 1.3366308967792249e-05
+    }
+  ],
+  "historical_assets": "40f663c67c34b74ec43c5bca197acede3645373f/2054",
+  "historical_baseline_repeated": false
+}

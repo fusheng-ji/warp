@@ -1,0 +1,135 @@
+test_get_pixels_requires_tiled_rendering_setup (warp.tests.test_render_opengl.TestOpenGLRenderer.test_get_pixels_requires_tiled_rendering_setup)
+Verify that tiled pixel reads require configured viewports. ... ok
+test_render_mesh_accepts_empty_indices (warp.tests.test_render_opengl.TestOpenGLRenderer.test_render_mesh_accepts_empty_indices)
+Verify that mesh rendering accepts meshes without faces. ... Warp 1.19.0.dev1 initialized:
+   CUDA Toolkit 13.0, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA B200" (178 GiB, sm_100, mempool enabled)
+     "cuda:1"   : "NVIDIA B200" (178 GiB, sm_100, mempool enabled)
+   CUDA peer access:
+     Supported fully (all-directional)
+   Kernel cache:
+     <CPU_CHECKOUT>/_build/cpu-gl-cache/1.19.0.dev1
+ok
+test_render_mesh_does_not_validate_unchanged_topology (warp.tests.test_render_opengl.TestOpenGLRenderer.test_render_mesh_does_not_validate_unchanged_topology)
+Verify that unchanged topology skips index validation and shading kernels. ... ok
+test_render_mesh_rejects_indices_outside_int32_range (warp.tests.test_render_opengl.TestOpenGLRenderer.test_render_mesh_rejects_indices_outside_int32_range)
+Verify that mesh indices must be representable by Warp's int32 index type. ... ok
+test_render_mesh_rejects_out_of_range_indices (warp.tests.test_render_opengl.TestOpenGLRenderer.test_render_mesh_rejects_out_of_range_indices)
+Verify that mesh rendering rejects indices outside the point array. ... ok
+test_render_mesh_reports_wide_python_indices_as_value_error (warp.tests.test_render_opengl.TestOpenGLRenderer.test_render_mesh_reports_wide_python_indices_as_value_error)
+Verify that wide Python integers raise a mesh index range ValueError. ... ok
+test_setup_tiled_rendering_requires_list (warp.tests.test_render_opengl.TestOpenGLRenderer.test_setup_tiled_rendering_requires_list)
+Verify that tiled rendering rejects a non-list instances container. ... ok
+test_setup_tiled_rendering_requires_list_elements (warp.tests.test_render_opengl.TestOpenGLRenderer.test_setup_tiled_rendering_requires_list_elements)
+Verify that tiled rendering rejects non-list instance entries. ... ok
+test_setup_tiled_rendering_requires_nonempty_instances (warp.tests.test_render_opengl.TestOpenGLRenderer.test_setup_tiled_rendering_requires_nonempty_instances)
+Verify that tiled rendering rejects an empty instances list. ... ok
+test_update_tile_reports_out_of_bounds_index (warp.tests.test_render_opengl.TestOpenGLRenderer.test_update_tile_reports_out_of_bounds_index)
+Verify that updating an invalid tile reports an indexing error. ... ok
+test_cpu_buffer_copy_flags (warp.tests.test_render_opengl.TestRegisteredGLBuffer.test_cpu_buffer_copy_flags) ... 
+  test_cpu_buffer_copy_flags (warp.tests.test_render_opengl.TestRegisteredGLBuffer.test_cpu_buffer_copy_flags) (flags=0) ... FAIL
+  test_cpu_buffer_copy_flags (warp.tests.test_render_opengl.TestRegisteredGLBuffer.test_cpu_buffer_copy_flags) (flags=1) ... FAIL
+  test_cpu_buffer_copy_flags (warp.tests.test_render_opengl.TestRegisteredGLBuffer.test_cpu_buffer_copy_flags) (flags=2) ... FAIL
+test_cpu_buffer_requires_copy_fallback (warp.tests.test_render_opengl.TestRegisteredGLBuffer.test_cpu_buffer_requires_copy_fallback) ... FAIL
+test_cpu_buffer_skips_cuda_registration (warp.tests.test_render_opengl.TestRegisteredGLBuffer.test_cpu_buffer_skips_cuda_registration) ... FAIL
+test_cuda_buffer_copy_fallback (warp.tests.test_render_opengl.TestRegisteredGLBuffer.test_cuda_buffer_copy_fallback) ... ok
+
+======================================================================
+FAIL: test_cpu_buffer_copy_flags (warp.tests.test_render_opengl.TestRegisteredGLBuffer.test_cpu_buffer_copy_flags) (flags=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<CPU_CHECKOUT>/warp/tests/test_render_opengl.py", line 71, in test_cpu_buffer_copy_flags
+    array = buffer.map(wp.float32, (4,))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<CPU_CHECKOUT>/warp/_src/context.py", line 10075, in map
+    self.warp_buffer_cpu = warp.empty(shape, dtype, device="cpu", pinned=True)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<USER_HOME>/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/unittest/mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<USER_HOME>/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/unittest/mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<USER_HOME>/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/unittest/mock.py", line 1204, in _execute_mock_call
+    result = effect(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<CPU_CHECKOUT>/warp/tests/test_render_opengl.py", line 57, in allocate
+    self.assertFalse(kwargs.get("pinned", False))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_cpu_buffer_copy_flags (warp.tests.test_render_opengl.TestRegisteredGLBuffer.test_cpu_buffer_copy_flags) (flags=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<CPU_CHECKOUT>/warp/tests/test_render_opengl.py", line 71, in test_cpu_buffer_copy_flags
+    array = buffer.map(wp.float32, (4,))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<CPU_CHECKOUT>/warp/_src/context.py", line 10075, in map
+    self.warp_buffer_cpu = warp.empty(shape, dtype, device="cpu", pinned=True)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<USER_HOME>/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/unittest/mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<USER_HOME>/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/unittest/mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<USER_HOME>/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/unittest/mock.py", line 1204, in _execute_mock_call
+    result = effect(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<CPU_CHECKOUT>/warp/tests/test_render_opengl.py", line 57, in allocate
+    self.assertFalse(kwargs.get("pinned", False))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_cpu_buffer_copy_flags (warp.tests.test_render_opengl.TestRegisteredGLBuffer.test_cpu_buffer_copy_flags) (flags=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<CPU_CHECKOUT>/warp/tests/test_render_opengl.py", line 71, in test_cpu_buffer_copy_flags
+    array = buffer.map(wp.float32, (4,))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<CPU_CHECKOUT>/warp/_src/context.py", line 10075, in map
+    self.warp_buffer_cpu = warp.empty(shape, dtype, device="cpu", pinned=True)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<USER_HOME>/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/unittest/mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<USER_HOME>/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/unittest/mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<USER_HOME>/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/unittest/mock.py", line 1204, in _execute_mock_call
+    result = effect(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<CPU_CHECKOUT>/warp/tests/test_render_opengl.py", line 57, in allocate
+    self.assertFalse(kwargs.get("pinned", False))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_cpu_buffer_requires_copy_fallback (warp.tests.test_render_opengl.TestRegisteredGLBuffer.test_cpu_buffer_requires_copy_fallback)
+----------------------------------------------------------------------
+RuntimeError: Failed to register OpenGL buffer 17 with CUDA
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<CPU_CHECKOUT>/warp/tests/test_render_opengl.py", line 46, in test_cpu_buffer_requires_copy_fallback
+    with self.assertRaisesRegex(RuntimeError, "CPU.*fallback_to_copy"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "CPU.*fallback_to_copy" does not match "Failed to register OpenGL buffer 17 with CUDA"
+
+======================================================================
+FAIL: test_cpu_buffer_skips_cuda_registration (warp.tests.test_render_opengl.TestRegisteredGLBuffer.test_cpu_buffer_skips_cuda_registration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<CPU_CHECKOUT>/warp/tests/test_render_opengl.py", line 41, in test_cpu_buffer_skips_cuda_registration
+    register.assert_not_called()
+  File "<USER_HOME>/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/unittest/mock.py", line 910, in assert_not_called
+    raise AssertionError(msg)
+AssertionError: Expected 'wp_cuda_graphics_register_gl_buffer' to not have been called. Called 1 times.
+Calls: [call(None, 17, 0)].
+
+----------------------------------------------------------------------
+Ran 14 tests in 1.414s
+
+FAILED (failures=5)

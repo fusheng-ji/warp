@@ -1,0 +1,18 @@
+warning: `VIRTUAL_ENV=<WORKSPACE>/warp/.venv` does not match the project environment path `<CHECKOUT>/.venv` and will be ignored; use `--active` to target the active environment instead
+Warp 1.19.0.dev1 initialized:
+   CUDA Toolkit 13.0, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA B200" (178 GiB, sm_100, mempool enabled)
+   Kernel cache:
+     <BASELINE_CHECKOUT>/_build/contribution-refresh-cache/1.19.0.dev1
+CUDA registration succeeded: True
+Mapped array device: cpu
+Traceback (most recent call last):
+  File "<RESULTS>/cpu_gl_repro.py", line 35, in <module>
+    unittest.TestCase().assertIsNone(registered.resource, "CPU buffer unexpectedly registered with CUDA")
+  File "<USER_HOME>/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/unittest/case.py", line 1281, in assertIsNone
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "<USER_HOME>/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/unittest/case.py", line 715, in fail
+    raise self.failureException(msg)
+AssertionError: 124529856 is not None : CPU buffer unexpectedly registered with CUDA

@@ -1,0 +1,596 @@
+{
+  "status": "passed",
+  "stage": "complete",
+  "arguments": {
+    "mode": "render",
+    "device": "cpu",
+    "egl_device": 0,
+    "ambient_cuda": false,
+    "force_registration_failure": false
+  },
+  "environment": {
+    "source_commit": "d619a625db2d7be4ef3def5c9cfa168bea2c0581",
+    "python": "3.12.13",
+    "platform": "Linux x86_64",
+    "warp": "1.19.0.dev1",
+    "numpy": "2.5.3",
+    "pyglet": "2.1.16",
+    "cuda_visible_devices": "",
+    "device": "cpu",
+    "source_sha256": {
+      "warp/_src/context.py": "8b588c0488923cfef380dfac92fd213f9a734f102aa1056b109dbfa1bbb183bc",
+      "warp/_src/render/render_opengl.py": "c06554fdf766a4f3f9dd2ee71923d7acff830514d3693dd74a1c57fb873fb71c",
+      "warp/tests/test_render_opengl.py": "4867f3f9c174bc6a5a7047ae13f70d347f31b87fbe345bea7daf1ec3d59a3579"
+    },
+    "library_sha256": {
+      "warp-clang.so": "44084761f7548793d9685a129b15b7767cb4b68a3f65caffdd4c71a71bfacecc",
+      "warp.so": "102d4e5e853e5cd73ac29fe56957e02cfbc8d93b6e743de7c4ce836a62502b22"
+    },
+    "script_sha256": "1329d11edf1db632325a51f570e3e9c25aaaeb5a4a13adab066335a7b9229778",
+    "gl_vendor": "NVIDIA Corporation",
+    "gl_renderer": "NVIDIA B200/PCIe/SSE2",
+    "gl_version": [
+      3,
+      3
+    ],
+    "native_registration_attempts": 0
+  },
+  "events": [
+    {
+      "stage": "import_dependencies",
+      "seconds": 0.002007095026783645
+    },
+    {
+      "stage": "warp_init",
+      "seconds": 0.3727181269787252
+    },
+    {
+      "stage": "create_renderer",
+      "seconds": 0.9524036169750616,
+      "primitive": "sphere",
+      "cached": false
+    },
+    {
+      "stage": "begin_frame",
+      "seconds": 1.3707320239627734,
+      "primitive": "sphere",
+      "cached": false,
+      "frame": 0,
+      "segments": 32
+    },
+    {
+      "stage": "end_frame",
+      "seconds": 1.3721185239264742,
+      "primitive": "sphere",
+      "cached": false,
+      "frame": 0
+    },
+    {
+      "stage": "get_pixels",
+      "seconds": 1.3735853679245338,
+      "primitive": "sphere",
+      "cached": false,
+      "frame": 0
+    },
+    {
+      "stage": "map_transforms",
+      "seconds": 1.43175093899481,
+      "primitive": "sphere",
+      "cached": false,
+      "frame": 0
+    },
+    {
+      "stage": "begin_frame",
+      "seconds": 1.4797289689304307,
+      "primitive": "sphere",
+      "cached": false,
+      "frame": 1,
+      "segments": 32
+    },
+    {
+      "stage": "end_frame",
+      "seconds": 1.4827789919218048,
+      "primitive": "sphere",
+      "cached": false,
+      "frame": 1
+    },
+    {
+      "stage": "get_pixels",
+      "seconds": 1.4859532510163262,
+      "primitive": "sphere",
+      "cached": false,
+      "frame": 1
+    },
+    {
+      "stage": "map_transforms",
+      "seconds": 1.5399468539981171,
+      "primitive": "sphere",
+      "cached": false,
+      "frame": 1
+    },
+    {
+      "stage": "close_renderer",
+      "seconds": 1.5497170399175957,
+      "primitive": "sphere",
+      "cached": false
+    },
+    {
+      "stage": "create_renderer",
+      "seconds": 1.5543398780282587,
+      "primitive": "capsule",
+      "cached": false
+    },
+    {
+      "stage": "begin_frame",
+      "seconds": 1.5743618499254808,
+      "primitive": "capsule",
+      "cached": false,
+      "frame": 0,
+      "segments": 32
+    },
+    {
+      "stage": "end_frame",
+      "seconds": 1.5776696560205892,
+      "primitive": "capsule",
+      "cached": false,
+      "frame": 0
+    },
+    {
+      "stage": "get_pixels",
+      "seconds": 1.5807904310058802,
+      "primitive": "capsule",
+      "cached": false,
+      "frame": 0
+    },
+    {
+      "stage": "map_transforms",
+      "seconds": 1.6322333050193265,
+      "primitive": "capsule",
+      "cached": false,
+      "frame": 0
+    },
+    {
+      "stage": "begin_frame",
+      "seconds": 1.6416650699684396,
+      "primitive": "capsule",
+      "cached": false,
+      "frame": 1,
+      "segments": 32
+    },
+    {
+      "stage": "end_frame",
+      "seconds": 1.6435039739590138,
+      "primitive": "capsule",
+      "cached": false,
+      "frame": 1
+    },
+    {
+      "stage": "get_pixels",
+      "seconds": 1.6453154939226806,
+      "primitive": "capsule",
+      "cached": false,
+      "frame": 1
+    },
+    {
+      "stage": "map_transforms",
+      "seconds": 1.7008176129311323,
+      "primitive": "capsule",
+      "cached": false,
+      "frame": 1
+    },
+    {
+      "stage": "close_renderer",
+      "seconds": 1.71117194800172,
+      "primitive": "capsule",
+      "cached": false
+    },
+    {
+      "stage": "create_renderer",
+      "seconds": 1.7157682089600712,
+      "primitive": "cylinder",
+      "cached": false
+    },
+    {
+      "stage": "begin_frame",
+      "seconds": 1.7314398849848658,
+      "primitive": "cylinder",
+      "cached": false,
+      "frame": 0,
+      "segments": 32
+    },
+    {
+      "stage": "end_frame",
+      "seconds": 1.7350874450057745,
+      "primitive": "cylinder",
+      "cached": false,
+      "frame": 0
+    },
+    {
+      "stage": "get_pixels",
+      "seconds": 1.738331474014558,
+      "primitive": "cylinder",
+      "cached": false,
+      "frame": 0
+    },
+    {
+      "stage": "map_transforms",
+      "seconds": 1.7947620309423655,
+      "primitive": "cylinder",
+      "cached": false,
+      "frame": 0
+    },
+    {
+      "stage": "begin_frame",
+      "seconds": 1.8032700319308788,
+      "primitive": "cylinder",
+      "cached": false,
+      "frame": 1,
+      "segments": 32
+    },
+    {
+      "stage": "end_frame",
+      "seconds": 1.8061209289589897,
+      "primitive": "cylinder",
+      "cached": false,
+      "frame": 1
+    },
+    {
+      "stage": "get_pixels",
+      "seconds": 1.8093273360282183,
+      "primitive": "cylinder",
+      "cached": false,
+      "frame": 1
+    },
+    {
+      "stage": "map_transforms",
+      "seconds": 1.8663299389882013,
+      "primitive": "cylinder",
+      "cached": false,
+      "frame": 1
+    },
+    {
+      "stage": "close_renderer",
+      "seconds": 1.873816741979681,
+      "primitive": "cylinder",
+      "cached": false
+    },
+    {
+      "stage": "create_renderer",
+      "seconds": 1.877337176934816,
+      "primitive": "cone",
+      "cached": false
+    },
+    {
+      "stage": "begin_frame",
+      "seconds": 1.8926196679240093,
+      "primitive": "cone",
+      "cached": false,
+      "frame": 0,
+      "segments": 32
+    },
+    {
+      "stage": "end_frame",
+      "seconds": 1.8955728840082884,
+      "primitive": "cone",
+      "cached": false,
+      "frame": 0
+    },
+    {
+      "stage": "get_pixels",
+      "seconds": 1.8983425279147923,
+      "primitive": "cone",
+      "cached": false,
+      "frame": 0
+    },
+    {
+      "stage": "map_transforms",
+      "seconds": 1.9511213470250368,
+      "primitive": "cone",
+      "cached": false,
+      "frame": 0
+    },
+    {
+      "stage": "begin_frame",
+      "seconds": 1.9586548439692706,
+      "primitive": "cone",
+      "cached": false,
+      "frame": 1,
+      "segments": 32
+    },
+    {
+      "stage": "end_frame",
+      "seconds": 1.9619907459709793,
+      "primitive": "cone",
+      "cached": false,
+      "frame": 1
+    },
+    {
+      "stage": "get_pixels",
+      "seconds": 1.9647813909687102,
+      "primitive": "cone",
+      "cached": false,
+      "frame": 1
+    },
+    {
+      "stage": "map_transforms",
+      "seconds": 2.015772138023749,
+      "primitive": "cone",
+      "cached": false,
+      "frame": 1
+    },
+    {
+      "stage": "close_renderer",
+      "seconds": 2.024792484007776,
+      "primitive": "cone",
+      "cached": false
+    },
+    {
+      "stage": "create_renderer",
+      "seconds": 2.028591097914614,
+      "primitive": "arrow",
+      "cached": false
+    },
+    {
+      "stage": "begin_frame",
+      "seconds": 2.0448220199905336,
+      "primitive": "arrow",
+      "cached": false,
+      "frame": 0,
+      "segments": 32
+    },
+    {
+      "stage": "end_frame",
+      "seconds": 2.0473706430057064,
+      "primitive": "arrow",
+      "cached": false,
+      "frame": 0
+    },
+    {
+      "stage": "get_pixels",
+      "seconds": 2.050661403918639,
+      "primitive": "arrow",
+      "cached": false,
+      "frame": 0
+    },
+    {
+      "stage": "map_transforms",
+      "seconds": 2.1048560549970716,
+      "primitive": "arrow",
+      "cached": false,
+      "frame": 0
+    },
+    {
+      "stage": "begin_frame",
+      "seconds": 2.1132523459382355,
+      "primitive": "arrow",
+      "cached": false,
+      "frame": 1,
+      "segments": 32
+    },
+    {
+      "stage": "end_frame",
+      "seconds": 2.116667586029507,
+      "primitive": "arrow",
+      "cached": false,
+      "frame": 1
+    },
+    {
+      "stage": "get_pixels",
+      "seconds": 2.119935240014456,
+      "primitive": "arrow",
+      "cached": false,
+      "frame": 1
+    },
+    {
+      "stage": "map_transforms",
+      "seconds": 2.1776808209251612,
+      "primitive": "arrow",
+      "cached": false,
+      "frame": 1
+    },
+    {
+      "stage": "close_renderer",
+      "seconds": 2.1872277879156172,
+      "primitive": "arrow",
+      "cached": false
+    },
+    {
+      "stage": "complete",
+      "seconds": 2.1920014859642833,
+      "rows": 10
+    }
+  ],
+  "results": [
+    {
+      "mode": "render",
+      "device": "cpu",
+      "primitive": "sphere",
+      "target_pre_cached": false,
+      "tiled": false,
+      "frame": 0,
+      "segments": 32,
+      "vertices": 1089,
+      "triangles": 2048,
+      "instance_id": 0,
+      "instance_count": 2,
+      "cached_meshes": 1,
+      "unique_colors": 506,
+      "restored_pixel_equality_checked": false,
+      "image": "sphere-cached-0-frame-0-segments-32.png",
+      "image_sha256": "aa7b012f158055442d742eb30c03c90043ac22de578e7ec2f19c7eb86de4aff8",
+      "passed": true
+    },
+    {
+      "mode": "render",
+      "device": "cpu",
+      "primitive": "sphere",
+      "target_pre_cached": false,
+      "tiled": false,
+      "frame": 1,
+      "segments": 32,
+      "vertices": 1089,
+      "triangles": 2048,
+      "instance_id": 0,
+      "instance_count": 2,
+      "cached_meshes": 1,
+      "unique_colors": 506,
+      "restored_pixel_equality_checked": true,
+      "image": "sphere-cached-0-frame-1-segments-32.png",
+      "image_sha256": "aa7b012f158055442d742eb30c03c90043ac22de578e7ec2f19c7eb86de4aff8",
+      "passed": true
+    },
+    {
+      "mode": "render",
+      "device": "cpu",
+      "primitive": "capsule",
+      "target_pre_cached": false,
+      "tiled": false,
+      "frame": 0,
+      "segments": 32,
+      "vertices": 1089,
+      "triangles": 2178,
+      "instance_id": 0,
+      "instance_count": 2,
+      "cached_meshes": 1,
+      "unique_colors": 790,
+      "restored_pixel_equality_checked": false,
+      "image": "capsule-cached-0-frame-0-segments-32.png",
+      "image_sha256": "a4abc6380c28e635bf759c5f4dc2b1153120162112c5ce788dc38ba12e05bb62",
+      "passed": true
+    },
+    {
+      "mode": "render",
+      "device": "cpu",
+      "primitive": "capsule",
+      "target_pre_cached": false,
+      "tiled": false,
+      "frame": 1,
+      "segments": 32,
+      "vertices": 1089,
+      "triangles": 2178,
+      "instance_id": 0,
+      "instance_count": 2,
+      "cached_meshes": 1,
+      "unique_colors": 790,
+      "restored_pixel_equality_checked": true,
+      "image": "capsule-cached-0-frame-1-segments-32.png",
+      "image_sha256": "a4abc6380c28e635bf759c5f4dc2b1153120162112c5ce788dc38ba12e05bb62",
+      "passed": true
+    },
+    {
+      "mode": "render",
+      "device": "cpu",
+      "primitive": "cylinder",
+      "target_pre_cached": false,
+      "tiled": false,
+      "frame": 0,
+      "segments": 32,
+      "vertices": 130,
+      "triangles": 128,
+      "instance_id": 0,
+      "instance_count": 2,
+      "cached_meshes": 1,
+      "unique_colors": 180,
+      "restored_pixel_equality_checked": false,
+      "image": "cylinder-cached-0-frame-0-segments-32.png",
+      "image_sha256": "586ff27f98078707eb7df50297689da32561c5f50e156c68de75b38ff6108cf4",
+      "passed": true
+    },
+    {
+      "mode": "render",
+      "device": "cpu",
+      "primitive": "cylinder",
+      "target_pre_cached": false,
+      "tiled": false,
+      "frame": 1,
+      "segments": 32,
+      "vertices": 130,
+      "triangles": 128,
+      "instance_id": 0,
+      "instance_count": 2,
+      "cached_meshes": 1,
+      "unique_colors": 180,
+      "restored_pixel_equality_checked": true,
+      "image": "cylinder-cached-0-frame-1-segments-32.png",
+      "image_sha256": "586ff27f98078707eb7df50297689da32561c5f50e156c68de75b38ff6108cf4",
+      "passed": true
+    },
+    {
+      "mode": "render",
+      "device": "cpu",
+      "primitive": "cone",
+      "target_pre_cached": false,
+      "tiled": false,
+      "frame": 0,
+      "segments": 32,
+      "vertices": 130,
+      "triangles": 128,
+      "instance_id": 0,
+      "instance_count": 2,
+      "cached_meshes": 1,
+      "unique_colors": 163,
+      "restored_pixel_equality_checked": false,
+      "image": "cone-cached-0-frame-0-segments-32.png",
+      "image_sha256": "6e4b0d6db375d8ad17d1f81497a81f9e4b42b18e078ab48c9c9623a3a3c8b066",
+      "passed": true
+    },
+    {
+      "mode": "render",
+      "device": "cpu",
+      "primitive": "cone",
+      "target_pre_cached": false,
+      "tiled": false,
+      "frame": 1,
+      "segments": 32,
+      "vertices": 130,
+      "triangles": 128,
+      "instance_id": 0,
+      "instance_count": 2,
+      "cached_meshes": 1,
+      "unique_colors": 163,
+      "restored_pixel_equality_checked": true,
+      "image": "cone-cached-0-frame-1-segments-32.png",
+      "image_sha256": "6e4b0d6db375d8ad17d1f81497a81f9e4b42b18e078ab48c9c9623a3a3c8b066",
+      "passed": true
+    },
+    {
+      "mode": "render",
+      "device": "cpu",
+      "primitive": "arrow",
+      "target_pre_cached": false,
+      "tiled": false,
+      "frame": 0,
+      "segments": 32,
+      "vertices": 260,
+      "triangles": 256,
+      "instance_id": 0,
+      "instance_count": 2,
+      "cached_meshes": 1,
+      "unique_colors": 235,
+      "restored_pixel_equality_checked": false,
+      "image": "arrow-cached-0-frame-0-segments-32.png",
+      "image_sha256": "f622bbb1ba57f95f299a41e56c1f5d998dbc74b55a88e7d4e2e135046cfba114",
+      "passed": true
+    },
+    {
+      "mode": "render",
+      "device": "cpu",
+      "primitive": "arrow",
+      "target_pre_cached": false,
+      "tiled": false,
+      "frame": 1,
+      "segments": 32,
+      "vertices": 260,
+      "triangles": 256,
+      "instance_id": 0,
+      "instance_count": 2,
+      "cached_meshes": 1,
+      "unique_colors": 235,
+      "restored_pixel_equality_checked": true,
+      "image": "arrow-cached-0-frame-1-segments-32.png",
+      "image_sha256": "f622bbb1ba57f95f299a41e56c1f5d998dbc74b55a88e7d4e2e135046cfba114",
+      "passed": true
+    }
+  ],
+  "elapsed_seconds": 2.1920025430154055
+}

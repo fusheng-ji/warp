@@ -1,0 +1,39 @@
+CPU/OpenGL host buffer fix (GH-2120)
+Source: d619a625db2d7be4ef3def5c9cfa168bea2c0581
+Official main base: 0382a97e2c72911c1f6bba45274e12833a19d8e2
+
+Current clean-commit validation
+- 21 renderer/context tests passed, zero skips.
+- Default Warp test entrypoint collected and passed 4 new buffer tests.
+- 40 rendered frames passed: 10 each for CPU CUDA-visible, CPU CUDA-hidden,
+  CPU with ambient CUDA context, and CUDA native interoperability.
+- 15 buffer flag cases passed: NONE/READ_ONLY/WRITE_DISCARD for all three CPU
+  environments, CUDA interoperability, and forced CUDA copy fallback.
+- Every CPU scenario made zero CUDA graphics registration calls.
+- Strict documentation build, applicable pre-commit hooks and diff check passed.
+
+Evidence and limits
+The safe minimal probe on clean 0382a97e confirms successful CUDA registration
+with an array labelled CPU (exit 1, expected assertion); the final fix passes
+the same probe (exit 0). The earlier actual renderer SIGSEGV (outer exit 139)
+is retained separately under historical/, including its flushed journal.
+The older baseline checkout had added regression tests; the context and renderer
+implementation hashes are preserved. This is not presented as a new crash run.
+One initial refreshed CPU-hidden capture passed rendering checks but recorded a
+dirty tree at process end while documentation generation was also running.
+That capture is retained in historical/collection-attempt-render-cpu-hidden;
+the acceptance capture was repeated with a clean tree before and after.
+No native code changed. The existing standard build and the matching baseline
+native tree/library hashes are retained; no new CPU native build is claimed.
+The earlier #1110 combined run at bf2023e2 is historical and was not repeated.
+CPU means Warp arrays/kernels; actual drawing uses NVIDIA EGL/OpenGL. Hiding CUDA
+does not establish software graphics or a driver-free machine. No FPS claim.
+
+Reproduce
+Apply cpu-gl.patch to the stated main base in an isolated checkout, install its
+dev/docs dependencies, and use the unchanged standard-built native libraries.
+Run the commands in REPRODUCE.txt. Logs preserve commands, exit codes, clean
+source SHA and native library hashes. Filesystem prefixes are redacted using
+<CHECKOUT>, <BASELINE_CHECKOUT>, <RESULTS>, <ASSETS_WORKTREE> and <USER_HOME>.
+Replace placeholders when replaying commands. The source commit is local-only;
+the patch is included so the implementation can be reproduced without a PR.

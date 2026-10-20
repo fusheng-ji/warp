@@ -1,0 +1,89 @@
+warning: `VIRTUAL_ENV=<WORKSPACE>/warp/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+Warp 1.19.0.dev1 initialized:
+   CUDA Toolkit 13.0, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA B200" (178 GiB, sm_100, mempool enabled)
+     "cuda:1"   : "NVIDIA B200" (178 GiB, sm_100, mempool enabled)
+   CUDA peer access:
+     Supported fully (all-directional)
+   Kernel cache:
+     <CHECKOUT>/_build/measurement-refresh-cache/1.19.0.dev1
+Module collect__locals__spectral_ae398121 7e99dd7 load on device 'cpu' took 2046.95 ms  (compiled)
+Module collect__locals__trace_c29be1dc 8248e43 load on device 'cpu' took 141.19 ms  (compiled)
+Module collect__locals__spectral_01b71866 d0a7705 load on device 'cpu' took 563.56 ms  (compiled)
+Module collect__locals__spectral_22936e5d 20da3fd load on device 'cpu' took 2137.00 ms  (compiled)
+Module collect__locals__trace_222fb34c 99678bc load on device 'cpu' took 151.25 ms  (compiled)
+Module collect__locals__spectral_4552632e 1cd8f77 load on device 'cpu' took 1909.05 ms  (compiled)
+Module collect__locals__spectral_78c0fac2 0108792 load on device 'cpu' took 205.11 ms  (compiled)
+Module collect__locals__trace_628d89b1 b8bf17f load on device 'cpu' took 134.63 ms  (compiled)
+Module collect__locals__spectral_841ea6cd 1d55d0d load on device 'cpu' took 189.93 ms  (compiled)
+Module collect__locals__spectral_78256844 db818b4 load on device 'cpu' took 310.83 ms  (compiled)
+Module collect__locals__trace_ac5ad599 145e044 load on device 'cpu' took 155.65 ms  (compiled)
+Module collect__locals__spectral_5e1f4fbb a442a45 load on device 'cpu' took 312.20 ms  (compiled)
+Module collect__locals__spectral_724406ba f9f0427 load on device 'cpu' took 191.93 ms  (compiled)
+Module collect__locals__trace_4d024127 9d7a5cd load on device 'cpu' took 132.78 ms  (compiled)
+Module collect__locals__spectral_dad143b0 1abddd8 load on device 'cpu' took 184.49 ms  (compiled)
+Module collect__locals__spectral_892930a0 3c2f581 load on device 'cpu' took 322.43 ms  (compiled)
+Module collect__locals__trace_5cdb58a0 b24cf72 load on device 'cpu' took 141.70 ms  (compiled)
+Module collect__locals__spectral_dfac7276 f1260d8 load on device 'cpu' took 320.63 ms  (compiled)
+Module collect__locals__spectral_ae398121 ae39812 load on device 'cuda:0' took 1005.92 ms  (compiled)
+Module collect__locals__trace_c29be1dc c29be1d load on device 'cuda:0' took 128.87 ms  (compiled)
+Module collect__locals__spectral_01b71866 01b7186 load on device 'cuda:0' took 312.41 ms  (compiled)
+Module collect__locals__spectral_22936e5d 22936e5 load on device 'cuda:0' took 594.28 ms  (compiled)
+Module collect__locals__trace_222fb34c 222fb34 load on device 'cuda:0' took 139.11 ms  (compiled)
+Module collect__locals__spectral_4552632e 4552632 load on device 'cuda:0' took 948.76 ms  (compiled)
+Module collect__locals__spectral_78c0fac2 78c0fac load on device 'cuda:0' took 232.78 ms  (compiled)
+Module collect__locals__trace_628d89b1 628d89b load on device 'cuda:0' took 157.02 ms  (compiled)
+Module collect__locals__spectral_841ea6cd 841ea6c load on device 'cuda:0' took 222.78 ms  (compiled)
+Module collect__locals__spectral_78256844 7825684 load on device 'cuda:0' took 320.96 ms  (compiled)
+Module collect__locals__trace_ac5ad599 ac5ad59 load on device 'cuda:0' took 168.43 ms  (compiled)
+Module collect__locals__spectral_5e1f4fbb 5e1f4fb load on device 'cuda:0' took 328.97 ms  (compiled)
+Module collect__locals__spectral_724406ba 724406b load on device 'cuda:0' took 260.02 ms  (compiled)
+Module collect__locals__trace_4d024127 4d02412 load on device 'cuda:0' took 135.75 ms  (compiled)
+Module collect__locals__spectral_dad143b0 dad143b load on device 'cuda:0' took 229.07 ms  (compiled)
+Module collect__locals__spectral_892930a0 892930a load on device 'cuda:0' took 643.36 ms  (compiled)
+Module collect__locals__trace_5cdb58a0 5cdb58a load on device 'cuda:0' took 138.05 ms  (compiled)
+Module collect__locals__spectral_dfac7276 dfac727 load on device 'cuda:0' took 355.92 ms  (compiled)
+Module collect__locals__spectral_ae398121 ae39812 load on device 'cuda:1' took 105.02 ms  (cached)
+Module collect__locals__trace_c29be1dc c29be1d load on device 'cuda:1' took 36.82 ms  (cached)
+Module collect__locals__spectral_01b71866 01b7186 load on device 'cuda:1' took 8.03 ms  (cached)
+Module collect__locals__spectral_22936e5d 22936e5 load on device 'cuda:1' took 212.61 ms  (cached)
+Module collect__locals__trace_222fb34c 222fb34 load on device 'cuda:1' took 46.54 ms  (cached)
+Module collect__locals__spectral_4552632e 4552632 load on device 'cuda:1' took 4.84 ms  (cached)
+Module collect__locals__spectral_78c0fac2 78c0fac load on device 'cuda:1' took 49.61 ms  (cached)
+Module collect__locals__trace_628d89b1 628d89b load on device 'cuda:1' took 52.51 ms  (cached)
+Module collect__locals__spectral_841ea6cd 841ea6c load on device 'cuda:1' took 54.32 ms  (cached)
+Module collect__locals__spectral_78256844 7825684 load on device 'cuda:1' took 85.12 ms  (cached)
+Module collect__locals__trace_ac5ad599 ac5ad59 load on device 'cuda:1' took 53.04 ms  (cached)
+Module collect__locals__spectral_5e1f4fbb 5e1f4fb load on device 'cuda:1' took 80.35 ms  (cached)
+Module collect__locals__spectral_724406ba 724406b load on device 'cuda:1' took 64.08 ms  (cached)
+Module collect__locals__trace_4d024127 4d02412 load on device 'cuda:1' took 41.87 ms  (cached)
+Module collect__locals__spectral_dad143b0 dad143b load on device 'cuda:1' took 8.24 ms  (cached)
+Module collect__locals__spectral_892930a0 892930a load on device 'cuda:1' took 124.46 ms  (cached)
+Module collect__locals__trace_5cdb58a0 5cdb58a load on device 'cuda:1' took 46.68 ms  (cached)
+Module collect__locals__spectral_dfac7276 dfac727 load on device 'cuda:1' took 124.20 ms  (cached)
+{
+  "phase": "after",
+  "commit": "733930ddf3ebe55f422cf1fbd7b59be2029ec15d",
+  "python": "3.12.13",
+  "numpy": "2.5.3",
+  "warp": "1.19.0.dev1",
+  "platform": "Linux x86_64",
+  "devices": [
+    {
+      "alias": "cpu",
+      "name": "x86_64"
+    },
+    {
+      "alias": "cuda:0",
+      "name": "NVIDIA B200"
+    },
+    {
+      "alias": "cuda:1",
+      "name": "NVIDIA B200"
+    }
+  ],
+  "evaluations": 540,
+  "failed": 0
+}

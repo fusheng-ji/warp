@@ -1,0 +1,40 @@
+warning: `VIRTUAL_ENV=<WORKSPACE>/warp/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+Warp 1.19.0.dev1 initialized:
+   CUDA Toolkit 13.0, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA B200" (178 GiB, sm_100, mempool enabled)
+   Kernel cache:
+     <CHECKOUT>/_build/contribution-refresh-cache/1.19.0.dev1
+Main process cleared Warp kernel cache: <CHECKOUT>/_build/contribution-refresh-cache/1.19.0.dev1
+Skipping Torch DLPack tests due to exception: No module named 'torch'
+Skipping JAX DLPack tests due to exception: No module named 'jax'
+Skipping Paddle DLPack tests due to exception: No module named 'paddle'
+Skipping JAX tests due to exception: No module named 'jax'
+Skipping Paddle tests due to exception: No module named 'paddle'
+Skipping Torch tests due to exception: No module named 'torch'
+Skipping Array tests that use Torch due to exception: No module named 'torch'
+Skipping Torch tests due to exception: No module named 'torch'
+Selected test suite 'default'
+Running 1 test suites (4 total tests) across 1 processes
+
+test_cpu_buffer_copy_flags (warp.tests.test_render_opengl.TestRegisteredGLBuffer.test_cpu_buffer_copy_flags) ...
+Warp 1.19.0.dev1 initialized:
+   CUDA Toolkit 13.0, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA B200" (178 GiB, sm_100, mempool enabled)
+   Kernel cache:
+     <CHECKOUT>/_build/contribution-refresh-cache/1.19.0.dev1
+test_cpu_buffer_copy_flags (warp.tests.test_render_opengl.TestRegisteredGLBuffer.test_cpu_buffer_copy_flags) ... ok
+test_cpu_buffer_requires_copy_fallback (warp.tests.test_render_opengl.TestRegisteredGLBuffer.test_cpu_buffer_requires_copy_fallback) ...
+test_cpu_buffer_requires_copy_fallback (warp.tests.test_render_opengl.TestRegisteredGLBuffer.test_cpu_buffer_requires_copy_fallback) ... ok
+test_cpu_buffer_skips_cuda_registration (warp.tests.test_render_opengl.TestRegisteredGLBuffer.test_cpu_buffer_skips_cuda_registration) ...
+test_cpu_buffer_skips_cuda_registration (warp.tests.test_render_opengl.TestRegisteredGLBuffer.test_cpu_buffer_skips_cuda_registration) ... ok
+test_cuda_buffer_copy_fallback (warp.tests.test_render_opengl.TestRegisteredGLBuffer.test_cuda_buffer_copy_fallback) ...
+test_cuda_buffer_copy_fallback (warp.tests.test_render_opengl.TestRegisteredGLBuffer.test_cuda_buffer_copy_fallback) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.615s
+
+OK

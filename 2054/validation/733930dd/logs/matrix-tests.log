@@ -1,0 +1,548 @@
+warning: `VIRTUAL_ENV=<WORKSPACE>/warp/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+Warp 1.19.0.dev1 initialized:
+   CUDA Toolkit 13.0, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA B200" (178 GiB, sm_100, mempool enabled)
+     "cuda:1"   : "NVIDIA B200" (178 GiB, sm_100, mempool enabled)
+   CUDA peer access:
+     Supported fully (all-directional)
+   Kernel cache:
+     <CHECKOUT>/_build/contribution-refresh-cache/1.19.0.dev1
+test_determinant_float16_cpu (warp.tests.matrix.test_mat.TestMat.test_determinant_float16_cpu) ... Module warp.tests.matrix.test_mat 7304f61 load on device 'cpu' took 5.11 ms  (cached)
+ok
+test_determinant_float16_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_determinant_float16_cuda_0) ... Module warp.tests.matrix.test_mat 577e6fb load on device 'cuda:0' took 24.64 ms  (cached)
+ok
+test_determinant_float16_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_determinant_float16_cuda_1) ... Module warp.tests.matrix.test_mat 577e6fb load on device 'cuda:1' took 30.56 ms  (cached)
+ok
+test_determinant_float32_cpu (warp.tests.matrix.test_mat.TestMat.test_determinant_float32_cpu) ... ok
+test_determinant_float32_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_determinant_float32_cuda_0) ... ok
+test_determinant_float32_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_determinant_float32_cuda_1) ... ok
+test_determinant_float64_cpu (warp.tests.matrix.test_mat.TestMat.test_determinant_float64_cpu) ... ok
+test_determinant_float64_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_determinant_float64_cuda_0) ... ok
+test_determinant_float64_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_determinant_float64_cuda_1) ... ok
+test_eig_float16_cpu (warp.tests.matrix.test_mat.TestMat.test_eig_float16_cpu) ... ok
+test_eig_float16_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_eig_float16_cuda_0) ... ok
+test_eig_float16_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_eig_float16_cuda_1) ... ok
+test_eig_float32_cpu (warp.tests.matrix.test_mat.TestMat.test_eig_float32_cpu) ... Module warp.tests.matrix.utils 27951fa load on device 'cpu' took 2.15 ms  (cached)
+ok
+test_eig_float32_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_eig_float32_cuda_0) ... Module warp.tests.matrix.utils 2cec3b6 load on device 'cuda:0' took 46.55 ms  (cached)
+ok
+test_eig_float32_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_eig_float32_cuda_1) ... Module warp.tests.matrix.utils 2cec3b6 load on device 'cuda:1' took 46.79 ms  (cached)
+ok
+test_eig_float64_cpu (warp.tests.matrix.test_mat.TestMat.test_eig_float64_cpu) ... ok
+test_eig_float64_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_eig_float64_cuda_0) ... ok
+test_eig_float64_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_eig_float64_cuda_1) ... ok
+test_eig_mixed_gradients_output_arguments_float16_cpu (warp.tests.matrix.test_mat.TestMat.test_eig_mixed_gradients_output_arguments_float16_cpu)
+Check zero and small nonzero eigenvector gradients in the same batch. ... Module test_eig_mixed_gradients__locals__mixed_loss_bb5cd002 e28e918 load on device 'cpu' took 2883.75 ms  (compiled)
+ok
+test_eig_mixed_gradients_output_arguments_float16_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_eig_mixed_gradients_output_arguments_float16_cuda_0)
+Check zero and small nonzero eigenvector gradients in the same batch. ... Module test_eig_mixed_gradients__locals__mixed_loss_bb5cd002 bb5cd00 load on device 'cuda:0' took 754.65 ms  (compiled)
+ok
+test_eig_mixed_gradients_output_arguments_float16_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_eig_mixed_gradients_output_arguments_float16_cuda_1)
+Check zero and small nonzero eigenvector gradients in the same batch. ... Module test_eig_mixed_gradients__locals__mixed_loss_bb5cd002 bb5cd00 load on device 'cuda:1' took 205.49 ms  (cached)
+ok
+test_eig_mixed_gradients_output_arguments_float32_cpu (warp.tests.matrix.test_mat.TestMat.test_eig_mixed_gradients_output_arguments_float32_cpu)
+Check zero and small nonzero eigenvector gradients in the same batch. ... Module test_eig_mixed_gradients__locals__mixed_loss_f383bfe5 eb32562 load on device 'cpu' took 350.16 ms  (compiled)
+ok
+test_eig_mixed_gradients_output_arguments_float32_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_eig_mixed_gradients_output_arguments_float32_cuda_0)
+Check zero and small nonzero eigenvector gradients in the same batch. ... Module test_eig_mixed_gradients__locals__mixed_loss_f383bfe5 f383bfe load on device 'cuda:0' took 590.06 ms  (compiled)
+ok
+test_eig_mixed_gradients_output_arguments_float32_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_eig_mixed_gradients_output_arguments_float32_cuda_1)
+Check zero and small nonzero eigenvector gradients in the same batch. ... Module test_eig_mixed_gradients__locals__mixed_loss_f383bfe5 f383bfe load on device 'cuda:1' took 80.84 ms  (cached)
+ok
+test_eig_mixed_gradients_output_arguments_float64_cpu (warp.tests.matrix.test_mat.TestMat.test_eig_mixed_gradients_output_arguments_float64_cpu)
+Check zero and small nonzero eigenvector gradients in the same batch. ... Module test_eig_mixed_gradients__locals__mixed_loss_762c6fd9 1c178d8 load on device 'cpu' took 341.35 ms  (compiled)
+ok
+test_eig_mixed_gradients_output_arguments_float64_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_eig_mixed_gradients_output_arguments_float64_cuda_0)
+Check zero and small nonzero eigenvector gradients in the same batch. ... Module test_eig_mixed_gradients__locals__mixed_loss_762c6fd9 762c6fd load on device 'cuda:0' took 355.68 ms  (compiled)
+ok
+test_eig_mixed_gradients_output_arguments_float64_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_eig_mixed_gradients_output_arguments_float64_cuda_1)
+Check zero and small nonzero eigenvector gradients in the same batch. ... Module test_eig_mixed_gradients__locals__mixed_loss_762c6fd9 762c6fd load on device 'cuda:1' took 2.09 ms  (cached)
+ok
+test_eig_mixed_gradients_return_values_float16_cpu (warp.tests.matrix.test_mat.TestMat.test_eig_mixed_gradients_return_values_float16_cpu)
+Check zero and small nonzero eigenvector gradients in the same batch. ... Module test_eig_mixed_gradients__locals__mixed_loss_5e68ba6b e716a00 load on device 'cpu' took 1273.25 ms  (compiled)
+ok
+test_eig_mixed_gradients_return_values_float16_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_eig_mixed_gradients_return_values_float16_cuda_0)
+Check zero and small nonzero eigenvector gradients in the same batch. ... Module test_eig_mixed_gradients__locals__mixed_loss_5e68ba6b 5e68ba6 load on device 'cuda:0' took 463.81 ms  (compiled)
+ok
+test_eig_mixed_gradients_return_values_float16_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_eig_mixed_gradients_return_values_float16_cuda_1)
+Check zero and small nonzero eigenvector gradients in the same batch. ... Module test_eig_mixed_gradients__locals__mixed_loss_5e68ba6b 5e68ba6 load on device 'cuda:1' took 186.57 ms  (cached)
+ok
+test_eig_mixed_gradients_return_values_float32_cpu (warp.tests.matrix.test_mat.TestMat.test_eig_mixed_gradients_return_values_float32_cpu)
+Check zero and small nonzero eigenvector gradients in the same batch. ... Module test_eig_mixed_gradients__locals__mixed_loss_2dfc494b 8329b84 load on device 'cpu' took 321.49 ms  (compiled)
+ok
+test_eig_mixed_gradients_return_values_float32_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_eig_mixed_gradients_return_values_float32_cuda_0)
+Check zero and small nonzero eigenvector gradients in the same batch. ... Module test_eig_mixed_gradients__locals__mixed_loss_2dfc494b 2dfc494 load on device 'cuda:0' took 266.38 ms  (compiled)
+ok
+test_eig_mixed_gradients_return_values_float32_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_eig_mixed_gradients_return_values_float32_cuda_1)
+Check zero and small nonzero eigenvector gradients in the same batch. ... Module test_eig_mixed_gradients__locals__mixed_loss_2dfc494b 2dfc494 load on device 'cuda:1' took 82.34 ms  (cached)
+ok
+test_eig_mixed_gradients_return_values_float64_cpu (warp.tests.matrix.test_mat.TestMat.test_eig_mixed_gradients_return_values_float64_cpu)
+Check zero and small nonzero eigenvector gradients in the same batch. ... Module test_eig_mixed_gradients__locals__mixed_loss_3523195f cda4897 load on device 'cpu' took 339.04 ms  (compiled)
+ok
+test_eig_mixed_gradients_return_values_float64_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_eig_mixed_gradients_return_values_float64_cuda_0)
+Check zero and small nonzero eigenvector gradients in the same batch. ... Module test_eig_mixed_gradients__locals__mixed_loss_3523195f 3523195 load on device 'cuda:0' took 375.98 ms  (compiled)
+ok
+test_eig_mixed_gradients_return_values_float64_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_eig_mixed_gradients_return_values_float64_cuda_1)
+Check zero and small nonzero eigenvector gradients in the same batch. ... Module test_eig_mixed_gradients__locals__mixed_loss_3523195f 3523195 load on device 'cuda:1' took 140.32 ms  (cached)
+ok
+test_eig_value_gradients_output_arguments_float16_cpu (warp.tests.matrix.test_mat.TestMat.test_eig_value_gradients_output_arguments_float16_cpu)
+Check eigenvalue-only losses and gradients at repeated and closely spaced eigenvalues. ... Module test_eig_value_gradients__locals__eigenvalue_loss_51b3e8f9 b07a9f7 load on device 'cpu' took 1225.70 ms  (compiled)
+ok
+test_eig_value_gradients_output_arguments_float16_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_eig_value_gradients_output_arguments_float16_cuda_0)
+Check eigenvalue-only losses and gradients at repeated and closely spaced eigenvalues. ... Module test_eig_value_gradients__locals__eigenvalue_loss_51b3e8f9 51b3e8f load on device 'cuda:0' took 413.07 ms  (compiled)
+ok
+test_eig_value_gradients_output_arguments_float16_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_eig_value_gradients_output_arguments_float16_cuda_1)
+Check eigenvalue-only losses and gradients at repeated and closely spaced eigenvalues. ... Module test_eig_value_gradients__locals__eigenvalue_loss_51b3e8f9 51b3e8f load on device 'cuda:1' took 3.68 ms  (cached)
+ok
+test_eig_value_gradients_output_arguments_float32_cpu (warp.tests.matrix.test_mat.TestMat.test_eig_value_gradients_output_arguments_float32_cpu)
+Check eigenvalue-only losses and gradients at repeated and closely spaced eigenvalues. ... Module test_eig_value_gradients__locals__eigenvalue_loss_fe34c058 d452eda load on device 'cpu' took 294.60 ms  (compiled)
+ok
+test_eig_value_gradients_output_arguments_float32_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_eig_value_gradients_output_arguments_float32_cuda_0)
+Check eigenvalue-only losses and gradients at repeated and closely spaced eigenvalues. ... Module test_eig_value_gradients__locals__eigenvalue_loss_fe34c058 fe34c05 load on device 'cuda:0' took 219.32 ms  (compiled)
+ok
+test_eig_value_gradients_output_arguments_float32_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_eig_value_gradients_output_arguments_float32_cuda_1)
+Check eigenvalue-only losses and gradients at repeated and closely spaced eigenvalues. ... Module test_eig_value_gradients__locals__eigenvalue_loss_fe34c058 fe34c05 load on device 'cuda:1' took 70.82 ms  (cached)
+ok
+test_eig_value_gradients_output_arguments_float64_cpu (warp.tests.matrix.test_mat.TestMat.test_eig_value_gradients_output_arguments_float64_cpu)
+Check eigenvalue-only losses and gradients at repeated and closely spaced eigenvalues. ... Module test_eig_value_gradients__locals__eigenvalue_loss_b91e908c 72a034c load on device 'cpu' took 268.84 ms  (compiled)
+ok
+test_eig_value_gradients_output_arguments_float64_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_eig_value_gradients_output_arguments_float64_cuda_0)
+Check eigenvalue-only losses and gradients at repeated and closely spaced eigenvalues. ... Module test_eig_value_gradients__locals__eigenvalue_loss_b91e908c b91e908 load on device 'cuda:0' took 251.87 ms  (compiled)
+ok
+test_eig_value_gradients_output_arguments_float64_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_eig_value_gradients_output_arguments_float64_cuda_1)
+Check eigenvalue-only losses and gradients at repeated and closely spaced eigenvalues. ... Module test_eig_value_gradients__locals__eigenvalue_loss_b91e908c b91e908 load on device 'cuda:1' took 92.24 ms  (cached)
+ok
+test_eig_value_gradients_return_values_float16_cpu (warp.tests.matrix.test_mat.TestMat.test_eig_value_gradients_return_values_float16_cpu)
+Check eigenvalue-only losses and gradients at repeated and closely spaced eigenvalues. ... Module test_eig_value_gradients__locals__eigenvalue_loss_f89b4899 68ee4aa load on device 'cpu' took 1269.19 ms  (compiled)
+ok
+test_eig_value_gradients_return_values_float16_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_eig_value_gradients_return_values_float16_cuda_0)
+Check eigenvalue-only losses and gradients at repeated and closely spaced eigenvalues. ... Module test_eig_value_gradients__locals__eigenvalue_loss_f89b4899 f89b489 load on device 'cuda:0' took 701.75 ms  (compiled)
+ok
+test_eig_value_gradients_return_values_float16_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_eig_value_gradients_return_values_float16_cuda_1)
+Check eigenvalue-only losses and gradients at repeated and closely spaced eigenvalues. ... Module test_eig_value_gradients__locals__eigenvalue_loss_f89b4899 f89b489 load on device 'cuda:1' took 147.96 ms  (cached)
+ok
+test_eig_value_gradients_return_values_float32_cpu (warp.tests.matrix.test_mat.TestMat.test_eig_value_gradients_return_values_float32_cpu)
+Check eigenvalue-only losses and gradients at repeated and closely spaced eigenvalues. ... Module test_eig_value_gradients__locals__eigenvalue_loss_811a5894 9ad7cbd load on device 'cpu' took 312.96 ms  (compiled)
+ok
+test_eig_value_gradients_return_values_float32_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_eig_value_gradients_return_values_float32_cuda_0)
+Check eigenvalue-only losses and gradients at repeated and closely spaced eigenvalues. ... Module test_eig_value_gradients__locals__eigenvalue_loss_811a5894 811a589 load on device 'cuda:0' took 271.89 ms  (compiled)
+ok
+test_eig_value_gradients_return_values_float32_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_eig_value_gradients_return_values_float32_cuda_1)
+Check eigenvalue-only losses and gradients at repeated and closely spaced eigenvalues. ... Module test_eig_value_gradients__locals__eigenvalue_loss_811a5894 811a589 load on device 'cuda:1' took 298.77 ms  (cached)
+ok
+test_eig_value_gradients_return_values_float64_cpu (warp.tests.matrix.test_mat.TestMat.test_eig_value_gradients_return_values_float64_cpu)
+Check eigenvalue-only losses and gradients at repeated and closely spaced eigenvalues. ... Module test_eig_value_gradients__locals__eigenvalue_loss_cb079283 8768d7e load on device 'cpu' took 279.00 ms  (compiled)
+ok
+test_eig_value_gradients_return_values_float64_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_eig_value_gradients_return_values_float64_cuda_0)
+Check eigenvalue-only losses and gradients at repeated and closely spaced eigenvalues. ... Module test_eig_value_gradients__locals__eigenvalue_loss_cb079283 cb07928 load on device 'cuda:0' took 282.82 ms  (compiled)
+ok
+test_eig_value_gradients_return_values_float64_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_eig_value_gradients_return_values_float64_cuda_1)
+Check eigenvalue-only losses and gradients at repeated and closely spaced eigenvalues. ... Module test_eig_value_gradients__locals__eigenvalue_loss_cb079283 cb07928 load on device 'cuda:1' took 100.67 ms  (cached)
+ok
+test_inverse_float16_cpu (warp.tests.matrix.test_mat.TestMat.test_inverse_float16_cpu) ... ok
+test_inverse_float16_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_inverse_float16_cuda_0) ... ok
+test_inverse_float16_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_inverse_float16_cuda_1) ... ok
+test_inverse_float32_cpu (warp.tests.matrix.test_mat.TestMat.test_inverse_float32_cpu) ... ok
+test_inverse_float32_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_inverse_float32_cuda_0) ... ok
+test_inverse_float32_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_inverse_float32_cuda_1) ... ok
+test_inverse_float64_cpu (warp.tests.matrix.test_mat.TestMat.test_inverse_float64_cpu) ... ok
+test_inverse_float64_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_inverse_float64_cuda_0) ... ok
+test_inverse_float64_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_inverse_float64_cuda_1) ... ok
+test_mat_add_inplace_cpu (warp.tests.matrix.test_mat.TestMat.test_mat_add_inplace_cpu) ... ok
+test_mat_add_inplace_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_mat_add_inplace_cuda_0) ... ok
+test_mat_add_inplace_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_mat_add_inplace_cuda_1) ... ok
+test_mat_array_add_inplace_cpu (warp.tests.matrix.test_mat.TestMat.test_mat_array_add_inplace_cpu) ... ok
+test_mat_array_add_inplace_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_mat_array_add_inplace_cuda_0) ... ok
+test_mat_array_add_inplace_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_mat_array_add_inplace_cuda_1) ... ok
+test_mat_array_assign_cpu (warp.tests.matrix.test_mat.TestMat.test_mat_array_assign_cpu) ... ok
+test_mat_array_assign_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_mat_array_assign_cuda_0) ... ok
+test_mat_array_assign_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_mat_array_assign_cuda_1) ... ok
+test_mat_array_extract_cpu (warp.tests.matrix.test_mat.TestMat.test_mat_array_extract_cpu) ... ok
+test_mat_array_extract_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_mat_array_extract_cuda_0) ... ok
+test_mat_array_extract_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_mat_array_extract_cuda_1) ... ok
+test_mat_array_sub_inplace_cpu (warp.tests.matrix.test_mat.TestMat.test_mat_array_sub_inplace_cpu) ... ok
+test_mat_array_sub_inplace_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_mat_array_sub_inplace_cuda_0) ... ok
+test_mat_array_sub_inplace_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_mat_array_sub_inplace_cuda_1) ... ok
+test_mat_assign_cpu (warp.tests.matrix.test_mat.TestMat.test_mat_assign_cpu) ... ok
+test_mat_assign_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_mat_assign_cuda_0) ... ok
+test_mat_assign_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_mat_assign_cuda_1) ... ok
+test_mat_extract_cpu (warp.tests.matrix.test_mat.TestMat.test_mat_extract_cpu) ... ok
+test_mat_extract_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_mat_extract_cuda_0) ... ok
+test_mat_extract_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_mat_extract_cuda_1) ... ok
+test_mat_from_cols_indexing_assign_cpu (warp.tests.matrix.test_mat.TestMat.test_mat_from_cols_indexing_assign_cpu) ... Module test_mat_from_cols_indexing_assign__locals__kernel_7b7e9bd5 50e5d6b load on device 'cpu' took 119.44 ms  (compiled)
+ok
+test_mat_from_cols_indexing_assign_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_mat_from_cols_indexing_assign_cuda_0) ... Module test_mat_from_cols_indexing_assign__locals__kernel_7b7e9bd5 7b7e9bd load on device 'cuda:0' took 127.10 ms  (compiled)
+ok
+test_mat_from_cols_indexing_assign_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_mat_from_cols_indexing_assign_cuda_1) ... Module test_mat_from_cols_indexing_assign__locals__kernel_7b7e9bd5 7b7e9bd load on device 'cuda:1' took 3.21 ms  (cached)
+ok
+test_mat_from_cols_slicing_assign_cpu (warp.tests.matrix.test_mat.TestMat.test_mat_from_cols_slicing_assign_cpu) ... Module test_mat_from_cols_slicing_assign__locals__kernel_892dd48a 892a873 load on device 'cpu' took 668.17 ms  (compiled)
+ok
+test_mat_from_cols_slicing_assign_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_mat_from_cols_slicing_assign_cuda_0) ... Module test_mat_from_cols_slicing_assign__locals__kernel_892dd48a 892dd48 load on device 'cuda:0' took 1074.25 ms  (compiled)
+ok
+test_mat_from_cols_slicing_assign_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_mat_from_cols_slicing_assign_cuda_1) ... Module test_mat_from_cols_slicing_assign__locals__kernel_892dd48a 892dd48 load on device 'cuda:1' took 10.25 ms  (cached)
+ok
+test_mat_from_rows_indexing_assign_cpu (warp.tests.matrix.test_mat.TestMat.test_mat_from_rows_indexing_assign_cpu) ... Module test_mat_from_rows_indexing_assign__locals__kernel_64b687b8 67cd9ed load on device 'cpu' took 119.80 ms  (compiled)
+ok
+test_mat_from_rows_indexing_assign_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_mat_from_rows_indexing_assign_cuda_0) ... Module test_mat_from_rows_indexing_assign__locals__kernel_64b687b8 64b687b load on device 'cuda:0' took 123.83 ms  (compiled)
+ok
+test_mat_from_rows_indexing_assign_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_mat_from_rows_indexing_assign_cuda_1) ... Module test_mat_from_rows_indexing_assign__locals__kernel_64b687b8 64b687b load on device 'cuda:1' took 2.07 ms  (cached)
+ok
+test_mat_from_rows_slicing_assign_cpu (warp.tests.matrix.test_mat.TestMat.test_mat_from_rows_slicing_assign_cpu) ... Module test_mat_from_rows_slicing_assign__locals__kernel_12b9c50e b316ed8 load on device 'cpu' took 1079.15 ms  (compiled)
+ok
+test_mat_from_rows_slicing_assign_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_mat_from_rows_slicing_assign_cuda_0) ... Module test_mat_from_rows_slicing_assign__locals__kernel_12b9c50e 12b9c50 load on device 'cuda:0' took 1139.41 ms  (compiled)
+ok
+test_mat_from_rows_slicing_assign_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_mat_from_rows_slicing_assign_cuda_1) ... Module test_mat_from_rows_slicing_assign__locals__kernel_12b9c50e 12b9c50 load on device 'cuda:1' took 9.80 ms  (cached)
+ok
+test_mat_slicing_assign_backward_cpu (warp.tests.matrix.test_mat.TestMat.test_mat_slicing_assign_backward_cpu) ... Module test_mat_slicing_assign_backward__locals__kernel_5738940b 9d546cb load on device 'cpu' took 360.44 ms  (compiled)
+ok
+test_mat_slicing_assign_backward_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_mat_slicing_assign_backward_cuda_0) ... Module test_mat_slicing_assign_backward__locals__kernel_5738940b 5738940 load on device 'cuda:0' took 222.77 ms  (compiled)
+ok
+test_mat_slicing_assign_backward_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_mat_slicing_assign_backward_cuda_1) ... Module test_mat_slicing_assign_backward__locals__kernel_5738940b 5738940 load on device 'cuda:1' took 36.78 ms  (cached)
+ok
+test_mat_sub_inplace_cpu (warp.tests.matrix.test_mat.TestMat.test_mat_sub_inplace_cpu) ... ok
+test_mat_sub_inplace_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_mat_sub_inplace_cuda_0) ... ok
+test_mat_sub_inplace_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_mat_sub_inplace_cuda_1) ... ok
+test_matmul_float16_cpu (warp.tests.matrix.test_mat.TestMat.test_matmul_float16_cpu) ... ok
+test_matmul_float16_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_matmul_float16_cuda_0) ... ok
+test_matmul_float16_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_matmul_float16_cuda_1) ... ok
+test_matmul_float32_cpu (warp.tests.matrix.test_mat.TestMat.test_matmul_float32_cpu) ... ok
+test_matmul_float32_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_matmul_float32_cuda_0) ... ok
+test_matmul_float32_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_matmul_float32_cuda_1) ... ok
+test_matmul_float64_cpu (warp.tests.matrix.test_mat.TestMat.test_matmul_float64_cpu) ... ok
+test_matmul_float64_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_matmul_float64_cuda_0) ... ok
+test_matmul_float64_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_matmul_float64_cuda_1) ... ok
+test_matmul_int16_cpu (warp.tests.matrix.test_mat.TestMat.test_matmul_int16_cpu) ... ok
+test_matmul_int16_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_matmul_int16_cuda_0) ... ok
+test_matmul_int16_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_matmul_int16_cuda_1) ... ok
+test_matmul_int32_cpu (warp.tests.matrix.test_mat.TestMat.test_matmul_int32_cpu) ... ok
+test_matmul_int32_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_matmul_int32_cuda_0) ... ok
+test_matmul_int32_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_matmul_int32_cuda_1) ... ok
+test_matmul_int64_cpu (warp.tests.matrix.test_mat.TestMat.test_matmul_int64_cpu) ... ok
+test_matmul_int64_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_matmul_int64_cuda_0) ... ok
+test_matmul_int64_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_matmul_int64_cuda_1) ... ok
+test_matmul_int8_cpu (warp.tests.matrix.test_mat.TestMat.test_matmul_int8_cpu) ... ok
+test_matmul_int8_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_matmul_int8_cuda_0) ... ok
+test_matmul_int8_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_matmul_int8_cuda_1) ... ok
+test_matrix_len_cpu (warp.tests.matrix.test_mat.TestMat.test_matrix_len_cpu) ... Module matrix_len_kernel_529e2ffc 4c58342 load on device 'cpu' took 86.31 ms  (compiled)
+ok
+test_matrix_len_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_matrix_len_cuda_0) ... Module matrix_len_kernel_529e2ffc 741b217 load on device 'cuda:0' took 83.75 ms  (compiled)
+ok
+test_matrix_len_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_matrix_len_cuda_1) ... Module matrix_len_kernel_529e2ffc 741b217 load on device 'cuda:1' took 2.39 ms  (cached)
+ok
+test_matrix_mutation_cpu (warp.tests.matrix.test_mat.TestMat.test_matrix_mutation_cpu) ... ok
+test_matrix_mutation_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_matrix_mutation_cuda_0) ... ok
+test_matrix_mutation_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_matrix_mutation_cuda_1) ... ok
+test_negation_float16_cpu (warp.tests.matrix.test_mat.TestMat.test_negation_float16_cpu) ... ok
+test_negation_float16_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_negation_float16_cuda_0) ... ok
+test_negation_float16_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_negation_float16_cuda_1) ... ok
+test_negation_float32_cpu (warp.tests.matrix.test_mat.TestMat.test_negation_float32_cpu) ... ok
+test_negation_float32_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_negation_float32_cuda_0) ... ok
+test_negation_float32_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_negation_float32_cuda_1) ... ok
+test_negation_float64_cpu (warp.tests.matrix.test_mat.TestMat.test_negation_float64_cpu) ... ok
+test_negation_float64_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_negation_float64_cuda_0) ... ok
+test_negation_float64_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_negation_float64_cuda_1) ... ok
+test_negation_int16_cpu (warp.tests.matrix.test_mat.TestMat.test_negation_int16_cpu) ... ok
+test_negation_int16_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_negation_int16_cuda_0) ... ok
+test_negation_int16_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_negation_int16_cuda_1) ... ok
+test_negation_int32_cpu (warp.tests.matrix.test_mat.TestMat.test_negation_int32_cpu) ... ok
+test_negation_int32_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_negation_int32_cuda_0) ... ok
+test_negation_int32_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_negation_int32_cuda_1) ... ok
+test_negation_int64_cpu (warp.tests.matrix.test_mat.TestMat.test_negation_int64_cpu) ... ok
+test_negation_int64_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_negation_int64_cuda_0) ... ok
+test_negation_int64_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_negation_int64_cuda_1) ... ok
+test_negation_int8_cpu (warp.tests.matrix.test_mat.TestMat.test_negation_int8_cpu) ... ok
+test_negation_int8_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_negation_int8_cuda_0) ... ok
+test_negation_int8_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_negation_int8_cuda_1) ... ok
+test_py_arithmetic_ops_float16 (warp.tests.matrix.test_mat.TestMat.test_py_arithmetic_ops_float16) ... ok
+test_py_arithmetic_ops_float32 (warp.tests.matrix.test_mat.TestMat.test_py_arithmetic_ops_float32) ... ok
+test_py_arithmetic_ops_float64 (warp.tests.matrix.test_mat.TestMat.test_py_arithmetic_ops_float64) ... ok
+test_qr_float16_cpu (warp.tests.matrix.test_mat.TestMat.test_qr_float16_cpu) ... ok
+test_qr_float16_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_qr_float16_cuda_0) ... ok
+test_qr_float16_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_qr_float16_cuda_1) ... ok
+test_qr_float32_cpu (warp.tests.matrix.test_mat.TestMat.test_qr_float32_cpu) ... ok
+test_qr_float32_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_qr_float32_cuda_0) ... ok
+test_qr_float32_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_qr_float32_cuda_1) ... ok
+test_qr_float64_cpu (warp.tests.matrix.test_mat.TestMat.test_qr_float64_cpu) ... ok
+test_qr_float64_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_qr_float64_cuda_0) ... ok
+test_qr_float64_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_qr_float64_cuda_1) ... ok
+test_scalar_mat_div_cpu (warp.tests.matrix.test_mat.TestMat.test_scalar_mat_div_cpu) ... ok
+test_scalar_mat_div_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_scalar_mat_div_cuda_0) ... ok
+test_scalar_mat_div_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_scalar_mat_div_cuda_1) ... ok
+test_shape_mismatch_cpu (warp.tests.matrix.test_mat.TestMat.test_shape_mismatch_cpu) ... Module test_shape_mismatch__locals__kernel_79db9349 e5eee8d load on device 'cpu' took 2.04 ms  (error)
+ok
+test_shape_mismatch_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_shape_mismatch_cuda_0) ... Module test_shape_mismatch__locals__kernel_79db9349 79db934 load on device 'cuda:0' took 0.55 ms  (error)
+ok
+test_shape_mismatch_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_shape_mismatch_cuda_1) ... Module test_shape_mismatch__locals__kernel_79db9349 79db934 load on device 'cuda:1' took 0.52 ms  (error)
+ok
+test_skew_float16_cpu (warp.tests.matrix.test_mat.TestMat.test_skew_float16_cpu) ... ok
+test_skew_float16_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_skew_float16_cuda_0) ... ok
+test_skew_float16_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_skew_float16_cuda_1) ... ok
+test_skew_float32_cpu (warp.tests.matrix.test_mat.TestMat.test_skew_float32_cpu) ... ok
+test_skew_float32_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_skew_float32_cuda_0) ... ok
+test_skew_float32_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_skew_float32_cuda_1) ... ok
+test_skew_float64_cpu (warp.tests.matrix.test_mat.TestMat.test_skew_float64_cpu) ... ok
+test_skew_float64_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_skew_float64_cuda_0) ... ok
+test_skew_float64_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_skew_float64_cuda_1) ... ok
+test_subtraction_float16_cpu (warp.tests.matrix.test_mat.TestMat.test_subtraction_float16_cpu) ... ok
+test_subtraction_float16_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_subtraction_float16_cuda_0) ... ok
+test_subtraction_float16_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_subtraction_float16_cuda_1) ... ok
+test_subtraction_float32_cpu (warp.tests.matrix.test_mat.TestMat.test_subtraction_float32_cpu) ... ok
+test_subtraction_float32_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_subtraction_float32_cuda_0) ... ok
+test_subtraction_float32_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_subtraction_float32_cuda_1) ... ok
+test_subtraction_float64_cpu (warp.tests.matrix.test_mat.TestMat.test_subtraction_float64_cpu) ... ok
+test_subtraction_float64_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_subtraction_float64_cuda_0) ... ok
+test_subtraction_float64_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_subtraction_float64_cuda_1) ... ok
+test_subtraction_int16_cpu (warp.tests.matrix.test_mat.TestMat.test_subtraction_int16_cpu) ... ok
+test_subtraction_int16_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_subtraction_int16_cuda_0) ... ok
+test_subtraction_int16_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_subtraction_int16_cuda_1) ... ok
+test_subtraction_int32_cpu (warp.tests.matrix.test_mat.TestMat.test_subtraction_int32_cpu) ... ok
+test_subtraction_int32_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_subtraction_int32_cuda_0) ... ok
+test_subtraction_int32_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_subtraction_int32_cuda_1) ... ok
+test_subtraction_int64_cpu (warp.tests.matrix.test_mat.TestMat.test_subtraction_int64_cpu) ... ok
+test_subtraction_int64_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_subtraction_int64_cuda_0) ... ok
+test_subtraction_int64_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_subtraction_int64_cuda_1) ... ok
+test_subtraction_int8_cpu (warp.tests.matrix.test_mat.TestMat.test_subtraction_int8_cpu) ... ok
+test_subtraction_int8_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_subtraction_int8_cuda_0) ... ok
+test_subtraction_int8_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_subtraction_int8_cuda_1) ... ok
+test_svd_2Dfloat16_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_2Dfloat16_cpu) ... ok
+test_svd_2Dfloat16_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_2Dfloat16_cuda_0) ... ok
+test_svd_2Dfloat16_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_svd_2Dfloat16_cuda_1) ... ok
+test_svd_2Dfloat32_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_2Dfloat32_cpu) ... ok
+test_svd_2Dfloat32_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_2Dfloat32_cuda_0) ... ok
+test_svd_2Dfloat32_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_svd_2Dfloat32_cuda_1) ... ok
+test_svd_2Dfloat64_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_2Dfloat64_cpu) ... ok
+test_svd_2Dfloat64_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_2Dfloat64_cuda_0) ... ok
+test_svd_2Dfloat64_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_svd_2Dfloat64_cuda_1) ... ok
+test_svd_float16_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_float16_cpu) ... ok
+test_svd_float16_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_float16_cuda_0) ... ok
+test_svd_float16_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_svd_float16_cuda_1) ... ok
+test_svd_float32_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_float32_cpu) ... ok
+test_svd_float32_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_float32_cuda_0) ... ok
+test_svd_float32_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_svd_float32_cuda_1) ... ok
+test_svd_float64_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_float64_cpu) ... ok
+test_svd_float64_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_float64_cuda_0) ... ok
+test_svd_float64_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_svd_float64_cuda_1) ... ok
+test_svd_value_gradients_2d_output_arguments_float16_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_value_gradients_2d_output_arguments_float16_cpu)
+Check singular-value losses and unused SVD diagnostics at repeated singular values. ... Module test_svd_value_gradients__locals__svd_loss_fe5201ff a0eeffb load on device 'cpu' took 2.26 ms  (cached)
+Module test_svd_value_gradients__locals__trace_loss_58cf04af 8245a8c load on device 'cpu' took 0.81 ms  (cached)
+ok
+test_svd_value_gradients_2d_output_arguments_float16_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_value_gradients_2d_output_arguments_float16_cuda_0)
+Check singular-value losses and unused SVD diagnostics at repeated singular values. ... Module test_svd_value_gradients__locals__svd_loss_fe5201ff fe5201f load on device 'cuda:0' took 6.80 ms  (cached)
+Module test_svd_value_gradients__locals__trace_loss_58cf04af 58cf04a load on device 'cuda:0' took 4.24 ms  (cached)
+ok
+test_svd_value_gradients_2d_output_arguments_float16_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_svd_value_gradients_2d_output_arguments_float16_cuda_1)
+Check singular-value losses and unused SVD diagnostics at repeated singular values. ... Module test_svd_value_gradients__locals__svd_loss_fe5201ff fe5201f load on device 'cuda:1' took 2.94 ms  (cached)
+Module test_svd_value_gradients__locals__trace_loss_58cf04af 58cf04a load on device 'cuda:1' took 2.34 ms  (cached)
+ok
+test_svd_value_gradients_2d_output_arguments_float32_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_value_gradients_2d_output_arguments_float32_cpu)
+Check singular-value losses and unused SVD diagnostics at repeated singular values. ... Module test_svd_value_gradients__locals__svd_loss_ad41b5d5 ee033d2 load on device 'cpu' took 2.46 ms  (cached)
+Module test_svd_value_gradients__locals__trace_loss_565b2220 1dd5eb7 load on device 'cpu' took 2.16 ms  (cached)
+ok
+test_svd_value_gradients_2d_output_arguments_float32_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_value_gradients_2d_output_arguments_float32_cuda_0)
+Check singular-value losses and unused SVD diagnostics at repeated singular values. ... Module test_svd_value_gradients__locals__svd_loss_ad41b5d5 ad41b5d load on device 'cuda:0' took 58.25 ms  (cached)
+Module test_svd_value_gradients__locals__trace_loss_565b2220 565b222 load on device 'cuda:0' took 7.89 ms  (cached)
+ok
+test_svd_value_gradients_2d_output_arguments_float32_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_svd_value_gradients_2d_output_arguments_float32_cuda_1)
+Check singular-value losses and unused SVD diagnostics at repeated singular values. ... Module test_svd_value_gradients__locals__svd_loss_ad41b5d5 ad41b5d load on device 'cuda:1' took 44.53 ms  (cached)
+Module test_svd_value_gradients__locals__trace_loss_565b2220 565b222 load on device 'cuda:1' took 4.36 ms  (cached)
+ok
+test_svd_value_gradients_2d_output_arguments_float64_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_value_gradients_2d_output_arguments_float64_cpu)
+Check singular-value losses and unused SVD diagnostics at repeated singular values. ... Module test_svd_value_gradients__locals__svd_loss_8a8f89fc 38464d7 load on device 'cpu' took 5.70 ms  (cached)
+Module test_svd_value_gradients__locals__trace_loss_a9696c94 6504393 load on device 'cpu' took 2.41 ms  (cached)
+ok
+test_svd_value_gradients_2d_output_arguments_float64_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_value_gradients_2d_output_arguments_float64_cuda_0)
+Check singular-value losses and unused SVD diagnostics at repeated singular values. ... Module test_svd_value_gradients__locals__svd_loss_8a8f89fc 8a8f89f load on device 'cuda:0' took 71.62 ms  (cached)
+Module test_svd_value_gradients__locals__trace_loss_a9696c94 a9696c9 load on device 'cuda:0' took 47.70 ms  (cached)
+ok
+test_svd_value_gradients_2d_output_arguments_float64_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_svd_value_gradients_2d_output_arguments_float64_cuda_1)
+Check singular-value losses and unused SVD diagnostics at repeated singular values. ... Module test_svd_value_gradients__locals__svd_loss_8a8f89fc 8a8f89f load on device 'cuda:1' took 59.91 ms  (cached)
+Module test_svd_value_gradients__locals__trace_loss_a9696c94 a9696c9 load on device 'cuda:1' took 47.54 ms  (cached)
+ok
+test_svd_value_gradients_2d_return_values_float16_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_value_gradients_2d_return_values_float16_cpu)
+Check singular-value losses and unused SVD diagnostics at repeated singular values. ... Module test_svd_value_gradients__locals__svd_loss_2fccd6e4 4bff631 load on device 'cpu' took 2.74 ms  (cached)
+ok
+test_svd_value_gradients_2d_return_values_float16_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_value_gradients_2d_return_values_float16_cuda_0)
+Check singular-value losses and unused SVD diagnostics at repeated singular values. ... Module test_svd_value_gradients__locals__svd_loss_2fccd6e4 2fccd6e load on device 'cuda:0' took 109.63 ms  (cached)
+ok
+test_svd_value_gradients_2d_return_values_float16_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_svd_value_gradients_2d_return_values_float16_cuda_1)
+Check singular-value losses and unused SVD diagnostics at repeated singular values. ... Module test_svd_value_gradients__locals__svd_loss_2fccd6e4 2fccd6e load on device 'cuda:1' took 103.78 ms  (cached)
+ok
+test_svd_value_gradients_2d_return_values_float32_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_value_gradients_2d_return_values_float32_cpu)
+Check singular-value losses and unused SVD diagnostics at repeated singular values. ... Module test_svd_value_gradients__locals__svd_loss_bb98cc11 355bbed load on device 'cpu' took 1.85 ms  (cached)
+ok
+test_svd_value_gradients_2d_return_values_float32_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_value_gradients_2d_return_values_float32_cuda_0)
+Check singular-value losses and unused SVD diagnostics at repeated singular values. ... Module test_svd_value_gradients__locals__svd_loss_bb98cc11 bb98cc1 load on device 'cuda:0' took 5.40 ms  (cached)
+ok
+test_svd_value_gradients_2d_return_values_float32_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_svd_value_gradients_2d_return_values_float32_cuda_1)
+Check singular-value losses and unused SVD diagnostics at repeated singular values. ... Module test_svd_value_gradients__locals__svd_loss_bb98cc11 bb98cc1 load on device 'cuda:1' took 2.77 ms  (cached)
+ok
+test_svd_value_gradients_2d_return_values_float64_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_value_gradients_2d_return_values_float64_cpu)
+Check singular-value losses and unused SVD diagnostics at repeated singular values. ... Module test_svd_value_gradients__locals__svd_loss_83145f1d d2ca0b2 load on device 'cpu' took 2.20 ms  (cached)
+ok
+test_svd_value_gradients_2d_return_values_float64_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_value_gradients_2d_return_values_float64_cuda_0)
+Check singular-value losses and unused SVD diagnostics at repeated singular values. ... Module test_svd_value_gradients__locals__svd_loss_83145f1d 83145f1 load on device 'cuda:0' took 77.18 ms  (cached)
+ok
+test_svd_value_gradients_2d_return_values_float64_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_svd_value_gradients_2d_return_values_float64_cuda_1)
+Check singular-value losses and unused SVD diagnostics at repeated singular values. ... Module test_svd_value_gradients__locals__svd_loss_83145f1d 83145f1 load on device 'cuda:1' took 76.79 ms  (cached)
+ok
+test_svd_value_gradients_3d_output_arguments_float16_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_value_gradients_3d_output_arguments_float16_cpu)
+Check singular-value losses and unused SVD diagnostics at repeated singular values. ... Module test_svd_value_gradients__locals__svd_loss_2ff7806e 772e5c2 load on device 'cpu' took 3.05 ms  (cached)
+Module test_svd_value_gradients__locals__trace_loss_0ad16c63 3d727a4 load on device 'cpu' took 3.63 ms  (cached)
+ok
+test_svd_value_gradients_3d_output_arguments_float16_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_value_gradients_3d_output_arguments_float16_cuda_0)
+Check singular-value losses and unused SVD diagnostics at repeated singular values. ... Module test_svd_value_gradients__locals__svd_loss_2ff7806e 2ff7806 load on device 'cuda:0' took 5.59 ms  (cached)
+Module test_svd_value_gradients__locals__trace_loss_0ad16c63 0ad16c6 load on device 'cuda:0' took 47.73 ms  (cached)
+ok
+test_svd_value_gradients_3d_output_arguments_float16_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_svd_value_gradients_3d_output_arguments_float16_cuda_1)
+Check singular-value losses and unused SVD diagnostics at repeated singular values. ... Module test_svd_value_gradients__locals__svd_loss_2ff7806e 2ff7806 load on device 'cuda:1' took 3.46 ms  (cached)
+Module test_svd_value_gradients__locals__trace_loss_0ad16c63 0ad16c6 load on device 'cuda:1' took 32.36 ms  (cached)
+ok
+test_svd_value_gradients_3d_output_arguments_float32_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_value_gradients_3d_output_arguments_float32_cpu)
+Check singular-value losses and unused SVD diagnostics at repeated singular values. ... Module test_svd_value_gradients__locals__svd_loss_05711243 ca96161 load on device 'cpu' took 2.93 ms  (cached)
+Module test_svd_value_gradients__locals__trace_loss_9494dcd6 289d551 load on device 'cpu' took 2.56 ms  (cached)
+ok
+test_svd_value_gradients_3d_output_arguments_float32_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_value_gradients_3d_output_arguments_float32_cuda_0)
+Check singular-value losses and unused SVD diagnostics at repeated singular values. ... Module test_svd_value_gradients__locals__svd_loss_05711243 0571124 load on device 'cuda:0' took 4.99 ms  (cached)
+Module test_svd_value_gradients__locals__trace_loss_9494dcd6 9494dcd load on device 'cuda:0' took 4.21 ms  (cached)
+ok
+test_svd_value_gradients_3d_output_arguments_float32_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_svd_value_gradients_3d_output_arguments_float32_cuda_1)
+Check singular-value losses and unused SVD diagnostics at repeated singular values. ... Module test_svd_value_gradients__locals__svd_loss_05711243 0571124 load on device 'cuda:1' took 3.76 ms  (cached)
+Module test_svd_value_gradients__locals__trace_loss_9494dcd6 9494dcd load on device 'cuda:1' took 2.81 ms  (cached)
+ok
+test_svd_value_gradients_3d_output_arguments_float64_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_value_gradients_3d_output_arguments_float64_cpu)
+Check singular-value losses and unused SVD diagnostics at repeated singular values. ... Module test_svd_value_gradients__locals__svd_loss_19a8d231 bf4c6d7 load on device 'cpu' took 7.85 ms  (cached)
+Module test_svd_value_gradients__locals__trace_loss_dcf983a5 a004b89 load on device 'cpu' took 2.38 ms  (cached)
+ok
+test_svd_value_gradients_3d_output_arguments_float64_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_value_gradients_3d_output_arguments_float64_cuda_0)
+Check singular-value losses and unused SVD diagnostics at repeated singular values. ... Module test_svd_value_gradients__locals__svd_loss_19a8d231 19a8d23 load on device 'cuda:0' took 5.73 ms  (cached)
+Module test_svd_value_gradients__locals__trace_loss_dcf983a5 dcf983a load on device 'cuda:0' took 5.14 ms  (cached)
+ok
+test_svd_value_gradients_3d_output_arguments_float64_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_svd_value_gradients_3d_output_arguments_float64_cuda_1)
+Check singular-value losses and unused SVD diagnostics at repeated singular values. ... Module test_svd_value_gradients__locals__svd_loss_19a8d231 19a8d23 load on device 'cuda:1' took 2.39 ms  (cached)
+Module test_svd_value_gradients__locals__trace_loss_dcf983a5 dcf983a load on device 'cuda:1' took 1.91 ms  (cached)
+ok
+test_svd_value_gradients_3d_return_values_float16_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_value_gradients_3d_return_values_float16_cpu)
+Check singular-value losses and unused SVD diagnostics at repeated singular values. ... Module test_svd_value_gradients__locals__svd_loss_b549025e d538d9d load on device 'cpu' took 2.29 ms  (cached)
+ok
+test_svd_value_gradients_3d_return_values_float16_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_value_gradients_3d_return_values_float16_cuda_0)
+Check singular-value losses and unused SVD diagnostics at repeated singular values. ... Module test_svd_value_gradients__locals__svd_loss_b549025e b549025 load on device 'cuda:0' took 227.15 ms  (cached)
+ok
+test_svd_value_gradients_3d_return_values_float16_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_svd_value_gradients_3d_return_values_float16_cuda_1)
+Check singular-value losses and unused SVD diagnostics at repeated singular values. ... Module test_svd_value_gradients__locals__svd_loss_b549025e b549025 load on device 'cuda:1' took 231.30 ms  (cached)
+ok
+test_svd_value_gradients_3d_return_values_float32_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_value_gradients_3d_return_values_float32_cpu)
+Check singular-value losses and unused SVD diagnostics at repeated singular values. ... Module test_svd_value_gradients__locals__svd_loss_7731e219 730fea1 load on device 'cpu' took 4.29 ms  (cached)
+ok
+test_svd_value_gradients_3d_return_values_float32_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_value_gradients_3d_return_values_float32_cuda_0)
+Check singular-value losses and unused SVD diagnostics at repeated singular values. ... Module test_svd_value_gradients__locals__svd_loss_7731e219 7731e21 load on device 'cuda:0' took 93.17 ms  (cached)
+ok
+test_svd_value_gradients_3d_return_values_float32_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_svd_value_gradients_3d_return_values_float32_cuda_1)
+Check singular-value losses and unused SVD diagnostics at repeated singular values. ... Module test_svd_value_gradients__locals__svd_loss_7731e219 7731e21 load on device 'cuda:1' took 87.54 ms  (cached)
+ok
+test_svd_value_gradients_3d_return_values_float64_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_value_gradients_3d_return_values_float64_cpu)
+Check singular-value losses and unused SVD diagnostics at repeated singular values. ... Module test_svd_value_gradients__locals__svd_loss_7470499c c2a416e load on device 'cpu' took 0.72 ms  (cached)
+ok
+test_svd_value_gradients_3d_return_values_float64_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_value_gradients_3d_return_values_float64_cuda_0)
+Check singular-value losses and unused SVD diagnostics at repeated singular values. ... Module test_svd_value_gradients__locals__svd_loss_7470499c 7470499 load on device 'cuda:0' took 133.69 ms  (cached)
+ok
+test_svd_value_gradients_3d_return_values_float64_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_svd_value_gradients_3d_return_values_float64_cuda_1)
+Check singular-value losses and unused SVD diagnostics at repeated singular values. ... Module test_svd_value_gradients__locals__svd_loss_7470499c 7470499 load on device 'cuda:1' took 141.22 ms  (cached)
+ok
+test_svd_vector_gradients_2d_output_arguments_float32_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_vector_gradients_2d_output_arguments_float32_cpu)
+Check that exact-zero branches preserve small nonzero singular-vector adjoints. ... Module test_svd_vector_gradients__locals__decompose_168d4cfd 27fd738 load on device 'cpu' took 3.40 ms  (cached)
+ok
+test_svd_vector_gradients_2d_output_arguments_float32_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_vector_gradients_2d_output_arguments_float32_cuda_0)
+Check that exact-zero branches preserve small nonzero singular-vector adjoints. ... Module test_svd_vector_gradients__locals__decompose_168d4cfd 168d4cf load on device 'cuda:0' took 4.14 ms  (cached)
+ok
+test_svd_vector_gradients_2d_output_arguments_float32_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_svd_vector_gradients_2d_output_arguments_float32_cuda_1)
+Check that exact-zero branches preserve small nonzero singular-vector adjoints. ... Module test_svd_vector_gradients__locals__decompose_168d4cfd 168d4cf load on device 'cuda:1' took 2.22 ms  (cached)
+ok
+test_svd_vector_gradients_2d_output_arguments_float64_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_vector_gradients_2d_output_arguments_float64_cpu)
+Check that exact-zero branches preserve small nonzero singular-vector adjoints. ... Module test_svd_vector_gradients__locals__decompose_4caf22e0 e09a36e load on device 'cpu' took 1.73 ms  (cached)
+ok
+test_svd_vector_gradients_2d_output_arguments_float64_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_vector_gradients_2d_output_arguments_float64_cuda_0)
+Check that exact-zero branches preserve small nonzero singular-vector adjoints. ... Module test_svd_vector_gradients__locals__decompose_4caf22e0 4caf22e load on device 'cuda:0' took 3.91 ms  (cached)
+ok
+test_svd_vector_gradients_2d_output_arguments_float64_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_svd_vector_gradients_2d_output_arguments_float64_cuda_1)
+Check that exact-zero branches preserve small nonzero singular-vector adjoints. ... Module test_svd_vector_gradients__locals__decompose_4caf22e0 4caf22e load on device 'cuda:1' took 2.01 ms  (cached)
+ok
+test_svd_vector_gradients_2d_return_values_float32_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_vector_gradients_2d_return_values_float32_cpu)
+Check that exact-zero branches preserve small nonzero singular-vector adjoints. ... Module test_svd_vector_gradients__locals__decompose_1f51ca7f be6eaf0 load on device 'cpu' took 1.46 ms  (cached)
+ok
+test_svd_vector_gradients_2d_return_values_float32_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_vector_gradients_2d_return_values_float32_cuda_0)
+Check that exact-zero branches preserve small nonzero singular-vector adjoints. ... Module test_svd_vector_gradients__locals__decompose_1f51ca7f 1f51ca7 load on device 'cuda:0' took 65.31 ms  (cached)
+ok
+test_svd_vector_gradients_2d_return_values_float32_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_svd_vector_gradients_2d_return_values_float32_cuda_1)
+Check that exact-zero branches preserve small nonzero singular-vector adjoints. ... Module test_svd_vector_gradients__locals__decompose_1f51ca7f 1f51ca7 load on device 'cuda:1' took 48.24 ms  (cached)
+ok
+test_svd_vector_gradients_2d_return_values_float64_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_vector_gradients_2d_return_values_float64_cpu)
+Check that exact-zero branches preserve small nonzero singular-vector adjoints. ... Module test_svd_vector_gradients__locals__decompose_d3f94f9f 7452b56 load on device 'cpu' took 0.99 ms  (cached)
+ok
+test_svd_vector_gradients_2d_return_values_float64_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_vector_gradients_2d_return_values_float64_cuda_0)
+Check that exact-zero branches preserve small nonzero singular-vector adjoints. ... Module test_svd_vector_gradients__locals__decompose_d3f94f9f d3f94f9 load on device 'cuda:0' took 80.03 ms  (cached)
+ok
+test_svd_vector_gradients_2d_return_values_float64_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_svd_vector_gradients_2d_return_values_float64_cuda_1)
+Check that exact-zero branches preserve small nonzero singular-vector adjoints. ... Module test_svd_vector_gradients__locals__decompose_d3f94f9f d3f94f9 load on device 'cuda:1' took 80.78 ms  (cached)
+ok
+test_svd_vector_gradients_3d_output_arguments_float32_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_vector_gradients_3d_output_arguments_float32_cpu)
+Check that exact-zero branches preserve small nonzero singular-vector adjoints. ... Module test_svd_vector_gradients__locals__decompose_aa3b3c13 be79eca load on device 'cpu' took 1.17 ms  (cached)
+ok
+test_svd_vector_gradients_3d_output_arguments_float32_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_vector_gradients_3d_output_arguments_float32_cuda_0)
+Check that exact-zero branches preserve small nonzero singular-vector adjoints. ... Module test_svd_vector_gradients__locals__decompose_aa3b3c13 aa3b3c1 load on device 'cuda:0' took 110.84 ms  (cached)
+ok
+test_svd_vector_gradients_3d_output_arguments_float32_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_svd_vector_gradients_3d_output_arguments_float32_cuda_1)
+Check that exact-zero branches preserve small nonzero singular-vector adjoints. ... Module test_svd_vector_gradients__locals__decompose_aa3b3c13 aa3b3c1 load on device 'cuda:1' took 110.52 ms  (cached)
+ok
+test_svd_vector_gradients_3d_output_arguments_float64_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_vector_gradients_3d_output_arguments_float64_cpu)
+Check that exact-zero branches preserve small nonzero singular-vector adjoints. ... Module test_svd_vector_gradients__locals__decompose_d0372198 dab6662 load on device 'cpu' took 3.80 ms  (cached)
+ok
+test_svd_vector_gradients_3d_output_arguments_float64_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_vector_gradients_3d_output_arguments_float64_cuda_0)
+Check that exact-zero branches preserve small nonzero singular-vector adjoints. ... Module test_svd_vector_gradients__locals__decompose_d0372198 d037219 load on device 'cuda:0' took 146.42 ms  (cached)
+ok
+test_svd_vector_gradients_3d_output_arguments_float64_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_svd_vector_gradients_3d_output_arguments_float64_cuda_1)
+Check that exact-zero branches preserve small nonzero singular-vector adjoints. ... Module test_svd_vector_gradients__locals__decompose_d0372198 d037219 load on device 'cuda:1' took 147.39 ms  (cached)
+ok
+test_svd_vector_gradients_3d_return_values_float32_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_vector_gradients_3d_return_values_float32_cpu)
+Check that exact-zero branches preserve small nonzero singular-vector adjoints. ... Module test_svd_vector_gradients__locals__decompose_d5e25c26 b1287da load on device 'cpu' took 1.98 ms  (cached)
+ok
+test_svd_vector_gradients_3d_return_values_float32_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_vector_gradients_3d_return_values_float32_cuda_0)
+Check that exact-zero branches preserve small nonzero singular-vector adjoints. ... Module test_svd_vector_gradients__locals__decompose_d5e25c26 d5e25c2 load on device 'cuda:0' took 100.94 ms  (cached)
+ok
+test_svd_vector_gradients_3d_return_values_float32_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_svd_vector_gradients_3d_return_values_float32_cuda_1)
+Check that exact-zero branches preserve small nonzero singular-vector adjoints. ... Module test_svd_vector_gradients__locals__decompose_d5e25c26 d5e25c2 load on device 'cuda:1' took 100.37 ms  (cached)
+ok
+test_svd_vector_gradients_3d_return_values_float64_cpu (warp.tests.matrix.test_mat.TestMat.test_svd_vector_gradients_3d_return_values_float64_cpu)
+Check that exact-zero branches preserve small nonzero singular-vector adjoints. ... Module test_svd_vector_gradients__locals__decompose_fa3a2691 d2f41a5 load on device 'cpu' took 2.66 ms  (cached)
+ok
+test_svd_vector_gradients_3d_return_values_float64_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_svd_vector_gradients_3d_return_values_float64_cuda_0)
+Check that exact-zero branches preserve small nonzero singular-vector adjoints. ... Module test_svd_vector_gradients__locals__decompose_fa3a2691 fa3a269 load on device 'cuda:0' took 3.98 ms  (cached)
+ok
+test_svd_vector_gradients_3d_return_values_float64_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_svd_vector_gradients_3d_return_values_float64_cuda_1)
+Check that exact-zero branches preserve small nonzero singular-vector adjoints. ... Module test_svd_vector_gradients__locals__decompose_fa3a2691 fa3a269 load on device 'cuda:1' took 2.28 ms  (cached)
+ok
+test_tpl_ops_with_anon (warp.tests.matrix.test_mat.TestMat.test_tpl_ops_with_anon) ... ok
+test_transform_point_float16_cpu (warp.tests.matrix.test_mat.TestMat.test_transform_point_float16_cpu) ... ok
+test_transform_point_float16_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_transform_point_float16_cuda_0) ... ok
+test_transform_point_float16_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_transform_point_float16_cuda_1) ... ok
+test_transform_point_float32_cpu (warp.tests.matrix.test_mat.TestMat.test_transform_point_float32_cpu) ... ok
+test_transform_point_float32_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_transform_point_float32_cuda_0) ... ok
+test_transform_point_float32_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_transform_point_float32_cuda_1) ... ok
+test_transform_point_float64_cpu (warp.tests.matrix.test_mat.TestMat.test_transform_point_float64_cpu) ... ok
+test_transform_point_float64_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_transform_point_float64_cuda_0) ... ok
+test_transform_point_float64_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_transform_point_float64_cuda_1) ... ok
+test_transform_vector_float16_cpu (warp.tests.matrix.test_mat.TestMat.test_transform_vector_float16_cpu) ... ok
+test_transform_vector_float16_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_transform_vector_float16_cuda_0) ... ok
+test_transform_vector_float16_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_transform_vector_float16_cuda_1) ... ok
+test_transform_vector_float32_cpu (warp.tests.matrix.test_mat.TestMat.test_transform_vector_float32_cpu) ... ok
+test_transform_vector_float32_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_transform_vector_float32_cuda_0) ... ok
+test_transform_vector_float32_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_transform_vector_float32_cuda_1) ... ok
+test_transform_vector_float64_cpu (warp.tests.matrix.test_mat.TestMat.test_transform_vector_float64_cpu) ... ok
+test_transform_vector_float64_cuda_0 (warp.tests.matrix.test_mat.TestMat.test_transform_vector_float64_cuda_0) ... ok
+test_transform_vector_float64_cuda_1 (warp.tests.matrix.test_mat.TestMat.test_transform_vector_float64_cuda_1) ... ok
+
+----------------------------------------------------------------------
+Ran 295 tests in 26.537s
+
+OK

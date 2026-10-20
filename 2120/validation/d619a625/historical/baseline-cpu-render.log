@@ -1,0 +1,33 @@
+import_dependencies {}
+warp_init {}
+Warp 1.19.0.dev1 initialized:
+   CUDA Toolkit 13.0, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA B200" (178 GiB, sm_100, mempool enabled)
+   Kernel cache:
+     <CPU_CHECKOUT>/_build/cpu-gl-cache/1.19.0.dev1
+create_renderer {'primitive': 'sphere', 'cached': False}
+Module warp.render.render_opengl 8cc29e3 load on device 'cpu' took 2139.02 ms  (compiled)
+native_registration_attempt {'count': 1, 'forced_failure': False}
+Warp CUDA error 201: invalid device context (in function wp_cuda_graphics_register_gl_buffer, <CPU_CHECKOUT>/warp/native/warp.cu:6017)
+Warp UserWarning: Could not register GL buffer since CUDA/OpenGL interoperability is not available. Falling back to copy operations between the Warp array and the OpenGL buffer.
+native_registration_attempt {'count': 2, 'forced_failure': False}
+Warp CUDA error 201: invalid device context (in function wp_cuda_graphics_register_gl_buffer, <CPU_CHECKOUT>/warp/native/warp.cu:6017)
+begin_frame {'primitive': 'sphere', 'cached': False, 'frame': 0, 'segments': 32}
+native_registration_attempt {'count': 3, 'forced_failure': False}
+Warp CUDA error 201: invalid device context (in function wp_cuda_graphics_register_gl_buffer, <CPU_CHECKOUT>/warp/native/warp.cu:6017)
+end_frame {'primitive': 'sphere', 'cached': False, 'frame': 0}
+get_pixels {'primitive': 'sphere', 'cached': False, 'frame': 0}
+native_registration_attempt {'count': 4, 'forced_failure': False}
+Fatal Python error: Segmentation fault
+
+Current thread 0x00007ffff7ca0740 (most recent call first):
+  File "<CPU_CHECKOUT>/warp/_src/context.py", line 11123 in invoke
+  File "<CPU_CHECKOUT>/warp/_src/context.py", line 12046 in launch
+  File "<CPU_CHECKOUT>/warp/_src/render/render_opengl.py", line 2901 in get_pixels
+  File "<CPU_CHECKOUT>/../warp-cpu-gl-results/validate_gl.py", line 233 in validate_render
+  File "<CPU_CHECKOUT>/../warp-cpu-gl-results/validate_gl.py", line 392 in main
+  File "<CPU_CHECKOUT>/../warp-cpu-gl-results/validate_gl.py", line 409 in <module>
+
+Extension modules: numpy._core._multiarray_umath, numpy.linalg._umath_linalg, PIL._imaging (total: 3)

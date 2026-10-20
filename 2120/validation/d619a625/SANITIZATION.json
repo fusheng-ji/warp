@@ -1,0 +1,8 @@
+{
+  "filesystem_prefixes_redacted": true,
+  "private_paths_host_ids_and_credentials_detected": false,
+  "public_noreply_attribution_preserved": true,
+  "dco_preserved": true,
+  "ai_coauthor_added": false,
+  "machine_diagnostics_preserved_except_path_redaction": true
+}

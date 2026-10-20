@@ -1,0 +1,27 @@
+SVD gradient fix (GH-2054, PR #2064)
+
+Use an isolated checkout of 733930ddf3ebe55f422cf1fbd7b59be2029ec15d.
+Set ASSET_DIR to this asset directory and RESULT_DIR to a new output directory.
+Run from the source checkout; keep assets and results outside its tracked tree.
+
+uv sync --extra dev
+WARP_CUDA_PATH=/usr/local/cuda-13.0 uv run build_lib.py
+export WARP_CACHE_PATH="$PWD/_build/private-validation-cache"
+uv run --no-sync -m unittest warp.tests.matrix.test_mat -k test_svd -v
+uv run --no-sync -m unittest warp.tests.matrix.test_mat -v
+uv run --no-sync "$ASSET_DIR/measure.py" --phase after --expected-commit 733930ddf3ebe55f422cf1fbd7b59be2029ec15d --output "$RESULT_DIR" --cache "$PWD/_build/private-measurement-cache" --devices cpu cuda:0 cuda:1
+uvx pre-commit run --files warp/native/svd.h warp/tests/matrix/test_mat.py changelog/2054.fixed.md
+git diff --check 0382a97e2c72911c1f6bba45274e12833a19d8e2 HEAD
+
+Require 540 evaluations, zero failures, and finite losses/gradients. measure.py
+writes pass flags and failed count; inspect them rather than relying solely on
+the script's exit code. All expected references/tolerances are retained in CSV.
+Generate the current plot with:
+uv run --with matplotlib "$ASSET_DIR/plot_results.py" --csv "$RESULT_DIR/after.csv" --output "$RESULT_DIR"
+
+environment.py asserts libraries load from this checkout and records hashes.
+record.py captures source cleanliness, SHA, command, exit status and library
+hashes when invoked with --cwd, --out, --name and -- COMMAND.
+Recorded commands contain redacted filesystem placeholders; substitute paths.
+Historical c47fe4c8/e6185ac3 measurements remain in the original pinned assets;
+they are not current-build measurements or fresh baseline test runs.

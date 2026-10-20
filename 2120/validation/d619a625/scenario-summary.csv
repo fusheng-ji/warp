@@ -1,0 +1,10 @@
+scenario,device,rows,status,native_registration_attempts
+buffers-cpu-ambient,cpu,3,passed,0
+buffers-cpu-hidden,cpu,3,passed,0
+buffers-cpu-visible,cpu,3,passed,0
+buffers-cuda,cuda:0,3,passed,4
+buffers-cuda-copy,cuda:0,3,passed,4
+render-cpu-ambient,cpu,10,passed,0
+render-cpu-hidden,cpu,10,passed,0
+render-cpu-visible,cpu,10,passed,0
+render-cuda,cuda:0,10,passed,25

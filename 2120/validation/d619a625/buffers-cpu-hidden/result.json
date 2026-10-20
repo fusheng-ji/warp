@@ -1,0 +1,195 @@
+{
+  "status": "passed",
+  "stage": "complete",
+  "arguments": {
+    "mode": "buffers",
+    "device": "cpu",
+    "egl_device": 0,
+    "ambient_cuda": false,
+    "force_registration_failure": false
+  },
+  "environment": {
+    "source_commit": "d619a625db2d7be4ef3def5c9cfa168bea2c0581",
+    "python": "3.12.13",
+    "platform": "Linux x86_64",
+    "warp": "1.19.0.dev1",
+    "numpy": "2.5.3",
+    "pyglet": "2.1.16",
+    "cuda_visible_devices": "",
+    "device": "cpu",
+    "source_sha256": {
+      "warp/_src/context.py": "8b588c0488923cfef380dfac92fd213f9a734f102aa1056b109dbfa1bbb183bc",
+      "warp/_src/render/render_opengl.py": "c06554fdf766a4f3f9dd2ee71923d7acff830514d3693dd74a1c57fb873fb71c",
+      "warp/tests/test_render_opengl.py": "4867f3f9c174bc6a5a7047ae13f70d347f31b87fbe345bea7daf1ec3d59a3579"
+    },
+    "library_sha256": {
+      "warp-clang.so": "44084761f7548793d9685a129b15b7767cb4b68a3f65caffdd4c71a71bfacecc",
+      "warp.so": "102d4e5e853e5cd73ac29fe56957e02cfbc8d93b6e743de7c4ce836a62502b22"
+    },
+    "script_sha256": "1329d11edf1db632325a51f570e3e9c25aaaeb5a4a13adab066335a7b9229778",
+    "gl_vendor": "NVIDIA Corporation",
+    "gl_renderer": "NVIDIA B200/PCIe/SSE2",
+    "gl_version": [
+      3,
+      3
+    ],
+    "native_registration_attempts": 0
+  },
+  "events": [
+    {
+      "stage": "import_dependencies",
+      "seconds": 0.00176356197334826
+    },
+    {
+      "stage": "warp_init",
+      "seconds": 0.3746848850278184
+    },
+    {
+      "stage": "create_gl_context",
+      "seconds": 0.8977554680313915
+    },
+    {
+      "stage": "create_gl_buffer",
+      "seconds": 1.2752228419994935,
+      "flag": "NONE"
+    },
+    {
+      "stage": "register_gl_buffer",
+      "seconds": 1.2765819969354197,
+      "flag": "NONE"
+    },
+    {
+      "stage": "map_gl_buffer",
+      "seconds": 1.2775832320330665,
+      "flag": "NONE"
+    },
+    {
+      "stage": "read_mapped_data",
+      "seconds": 1.278578559984453,
+      "flag": "NONE"
+    },
+    {
+      "stage": "write_mapped_data",
+      "seconds": 1.3018320099217817,
+      "flag": "NONE"
+    },
+    {
+      "stage": "unmap_gl_buffer",
+      "seconds": 1.3031522439559922,
+      "flag": "NONE"
+    },
+    {
+      "stage": "read_final_gl_data",
+      "seconds": 1.3047535489313304,
+      "flag": "NONE"
+    },
+    {
+      "stage": "create_gl_buffer",
+      "seconds": 1.331409408012405,
+      "flag": "READ_ONLY"
+    },
+    {
+      "stage": "register_gl_buffer",
+      "seconds": 1.3359314949484542,
+      "flag": "READ_ONLY"
+    },
+    {
+      "stage": "map_gl_buffer",
+      "seconds": 1.3397993789985776,
+      "flag": "READ_ONLY"
+    },
+    {
+      "stage": "read_mapped_data",
+      "seconds": 1.3436574839288369,
+      "flag": "READ_ONLY"
+    },
+    {
+      "stage": "unmap_gl_buffer",
+      "seconds": 1.347567560034804,
+      "flag": "READ_ONLY"
+    },
+    {
+      "stage": "read_final_gl_data",
+      "seconds": 1.3514264159603044,
+      "flag": "READ_ONLY"
+    },
+    {
+      "stage": "create_gl_buffer",
+      "seconds": 1.3853144539752975,
+      "flag": "WRITE_DISCARD"
+    },
+    {
+      "stage": "register_gl_buffer",
+      "seconds": 1.387960008927621,
+      "flag": "WRITE_DISCARD"
+    },
+    {
+      "stage": "map_gl_buffer",
+      "seconds": 1.3900759150274098,
+      "flag": "WRITE_DISCARD"
+    },
+    {
+      "stage": "write_mapped_data",
+      "seconds": 1.3922598300268874,
+      "flag": "WRITE_DISCARD"
+    },
+    {
+      "stage": "unmap_gl_buffer",
+      "seconds": 1.3945645639905706,
+      "flag": "WRITE_DISCARD"
+    },
+    {
+      "stage": "read_final_gl_data",
+      "seconds": 1.3966616049874574,
+      "flag": "WRITE_DISCARD"
+    },
+    {
+      "stage": "close_gl_context",
+      "seconds": 1.414905622950755
+    },
+    {
+      "stage": "complete",
+      "seconds": 1.421060174005106,
+      "rows": 3
+    }
+  ],
+  "results": [
+    {
+      "mode": "buffers",
+      "device": "cpu",
+      "flag": "NONE",
+      "transfer": "copy",
+      "count": 32,
+      "read_checked": true,
+      "write_checked": true,
+      "source_sha256": "3821349132fe09fbb63b3218e60d31ae34c5b07c3e5a9ec28621eaabd20017aa",
+      "result_sha256": "05ab14757eee302e750624cf9692cc4c467574ba7a6044890c1a01bc627444e3",
+      "passed": true
+    },
+    {
+      "mode": "buffers",
+      "device": "cpu",
+      "flag": "READ_ONLY",
+      "transfer": "copy",
+      "count": 32,
+      "read_checked": true,
+      "write_checked": false,
+      "source_sha256": "3821349132fe09fbb63b3218e60d31ae34c5b07c3e5a9ec28621eaabd20017aa",
+      "result_sha256": "3821349132fe09fbb63b3218e60d31ae34c5b07c3e5a9ec28621eaabd20017aa",
+      "passed": true
+    },
+    {
+      "mode": "buffers",
+      "device": "cpu",
+      "flag": "WRITE_DISCARD",
+      "transfer": "copy",
+      "count": 32,
+      "read_checked": false,
+      "write_checked": true,
+      "source_sha256": "3821349132fe09fbb63b3218e60d31ae34c5b07c3e5a9ec28621eaabd20017aa",
+      "result_sha256": "05ab14757eee302e750624cf9692cc4c467574ba7a6044890c1a01bc627444e3",
+      "passed": true
+    }
+  ],
+  "elapsed_seconds": 1.4210610239533707
+}

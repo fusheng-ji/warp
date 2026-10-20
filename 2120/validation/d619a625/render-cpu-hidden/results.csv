@@ -1,0 +1,11 @@
+mode,device,primitive,target_pre_cached,tiled,frame,segments,vertices,triangles,instance_id,instance_count,cached_meshes,unique_colors,restored_pixel_equality_checked,image,image_sha256,passed
+render,cpu,sphere,False,False,0,32,1089,2048,0,2,1,506,False,sphere-cached-0-frame-0-segments-32.png,aa7b012f158055442d742eb30c03c90043ac22de578e7ec2f19c7eb86de4aff8,True
+render,cpu,sphere,False,False,1,32,1089,2048,0,2,1,506,True,sphere-cached-0-frame-1-segments-32.png,aa7b012f158055442d742eb30c03c90043ac22de578e7ec2f19c7eb86de4aff8,True
+render,cpu,capsule,False,False,0,32,1089,2178,0,2,1,790,False,capsule-cached-0-frame-0-segments-32.png,a4abc6380c28e635bf759c5f4dc2b1153120162112c5ce788dc38ba12e05bb62,True
+render,cpu,capsule,False,False,1,32,1089,2178,0,2,1,790,True,capsule-cached-0-frame-1-segments-32.png,a4abc6380c28e635bf759c5f4dc2b1153120162112c5ce788dc38ba12e05bb62,True
+render,cpu,cylinder,False,False,0,32,130,128,0,2,1,180,False,cylinder-cached-0-frame-0-segments-32.png,586ff27f98078707eb7df50297689da32561c5f50e156c68de75b38ff6108cf4,True
+render,cpu,cylinder,False,False,1,32,130,128,0,2,1,180,True,cylinder-cached-0-frame-1-segments-32.png,586ff27f98078707eb7df50297689da32561c5f50e156c68de75b38ff6108cf4,True
+render,cpu,cone,False,False,0,32,130,128,0,2,1,163,False,cone-cached-0-frame-0-segments-32.png,6e4b0d6db375d8ad17d1f81497a81f9e4b42b18e078ab48c9c9623a3a3c8b066,True
+render,cpu,cone,False,False,1,32,130,128,0,2,1,163,True,cone-cached-0-frame-1-segments-32.png,6e4b0d6db375d8ad17d1f81497a81f9e4b42b18e078ab48c9c9623a3a3c8b066,True
+render,cpu,arrow,False,False,0,32,260,256,0,2,1,235,False,arrow-cached-0-frame-0-segments-32.png,f622bbb1ba57f95f299a41e56c1f5d998dbc74b55a88e7d4e2e135046cfba114,True
+render,cpu,arrow,False,False,1,32,260,256,0,2,1,235,True,arrow-cached-0-frame-1-segments-32.png,f622bbb1ba57f95f299a41e56c1f5d998dbc74b55a88e7d4e2e135046cfba114,True

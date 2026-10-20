@@ -1,0 +1,91 @@
+{
+  "source_commit": "d619a625db2d7be4ef3def5c9cfa168bea2c0581",
+  "official_main_base": "0382a97e2c72911c1f6bba45274e12833a19d8e2",
+  "issue": 2120,
+  "tests": {
+    "unit": {
+      "tests_run": 21,
+      "skipped": 0,
+      "skip_reasons": []
+    },
+    "default_suite": {
+      "tests_run": 4,
+      "skipped": 0,
+      "skip_reasons": []
+    }
+  },
+  "rendering_frames": 40,
+  "buffer_flag_cases": 15,
+  "scenario_summary": [
+    {
+      "scenario": "buffers-cpu-ambient",
+      "device": "cpu",
+      "rows": 3,
+      "status": "passed",
+      "native_registration_attempts": 0
+    },
+    {
+      "scenario": "buffers-cpu-hidden",
+      "device": "cpu",
+      "rows": 3,
+      "status": "passed",
+      "native_registration_attempts": 0
+    },
+    {
+      "scenario": "buffers-cpu-visible",
+      "device": "cpu",
+      "rows": 3,
+      "status": "passed",
+      "native_registration_attempts": 0
+    },
+    {
+      "scenario": "buffers-cuda",
+      "device": "cuda:0",
+      "rows": 3,
+      "status": "passed",
+      "native_registration_attempts": 4
+    },
+    {
+      "scenario": "buffers-cuda-copy",
+      "device": "cuda:0",
+      "rows": 3,
+      "status": "passed",
+      "native_registration_attempts": 4
+    },
+    {
+      "scenario": "render-cpu-ambient",
+      "device": "cpu",
+      "rows": 10,
+      "status": "passed",
+      "native_registration_attempts": 0
+    },
+    {
+      "scenario": "render-cpu-hidden",
+      "device": "cpu",
+      "rows": 10,
+      "status": "passed",
+      "native_registration_attempts": 0
+    },
+    {
+      "scenario": "render-cpu-visible",
+      "device": "cpu",
+      "rows": 10,
+      "status": "passed",
+      "native_registration_attempts": 0
+    },
+    {
+      "scenario": "render-cuda",
+      "device": "cuda:0",
+      "rows": 10,
+      "status": "passed",
+      "native_registration_attempts": 25
+    }
+  ],
+  "native_tree_hashes": {
+    "0382a97e2c72911c1f6bba45274e12833a19d8e2": "aec82847540d599560d0f747881b6b3228efac18",
+    "d619a625db2d7be4ef3def5c9cfa168bea2c0581": "aec82847540d599560d0f747881b6b3228efac18"
+  },
+  "native_build": "Reuse the existing standard build: Python/docs/changelog-only refresh; native trees and loaded-library hashes match.",
+  "historical_combined_commit": "bf2023e27518e434314e571dfc222335497e27f3",
+  "combined_validation_repeated": false
+}

@@ -1,0 +1,24 @@
+{
+  "name": "baseline-tests",
+  "command": [
+    "uv",
+    "run",
+    "--no-sync",
+    "-m",
+    "unittest",
+    "warp.tests.test_render_opengl",
+    "-v"
+  ],
+  "started_utc": "2026-10-20T11:16:21.193406+00:00",
+  "source_commit": "0382a97e2c72911c1f6bba45274e12833a19d8e2",
+  "worktree_dirty": true,
+  "cuda_visible_devices": "not set",
+  "private_kernel_cache": true,
+  "source_sha256": {
+    "warp/_src/context.py": "7df3e250cf3cb76dc6f6560ad0613b82a704a07d63e0ee7d7677b8455d23ba08",
+    "warp/tests/test_render_opengl.py": "cb03568e408a636d41847715e4e7418e5ed4ab7df8bec4aaf6f0948b95170a02",
+    "warp/_src/render/render_opengl.py": "c06554fdf766a4f3f9dd2ee71923d7acff830514d3693dd74a1c57fb873fb71c"
+  },
+  "seconds": 5.671577974921092,
+  "exit_code": 1
+}

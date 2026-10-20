@@ -1,0 +1,299 @@
+warp: regenerate generated files...............................................Passed
+warp: check version consistency and regenerate version.h.......................Passed
+warp: check project skills.................................(no files to check)Skipped
+ruff (legacy alias)............................................................Failed
+- hook id: ruff
+- exit code: 1
+
+S101 Use of `assert` detected
+  --> <ASSETS_WORKTREE>/2054/validation/733930dd/environment.py:13:1
+   |
+11 | root = Path.cwd().resolve()
+12 | runtime = wp.RegisteredGLBuffer.__init__.__globals__['runtime']
+13 | assert Path(wp.__file__).resolve().parent == root/'warp'
+   | ^^^^^^
+14 | assert Path(runtime.core._name).resolve() == root/'warp/bin/warp.so'
+15 | assert Path(runtime.llvm._name).resolve() == root/'warp/bin/warp-clang.so'
+   |
+
+S101 Use of `assert` detected
+  --> <ASSETS_WORKTREE>/2054/validation/733930dd/environment.py:14:1
+   |
+12 | runtime = wp.RegisteredGLBuffer.__init__.__globals__['runtime']
+13 | assert Path(wp.__file__).resolve().parent == root/'warp'
+14 | assert Path(runtime.core._name).resolve() == root/'warp/bin/warp.so'
+   | ^^^^^^
+15 | assert Path(runtime.llvm._name).resolve() == root/'warp/bin/warp-clang.so'
+16 | def git(*args):
+   |
+
+S101 Use of `assert` detected
+  --> <ASSETS_WORKTREE>/2054/validation/733930dd/environment.py:15:1
+   |
+13 | assert Path(wp.__file__).resolve().parent == root/'warp'
+14 | assert Path(runtime.core._name).resolve() == root/'warp/bin/warp.so'
+15 | assert Path(runtime.llvm._name).resolve() == root/'warp/bin/warp-clang.so'
+   | ^^^^^^
+16 | def git(*args):
+17 |     return subprocess.check_output(['git', *args], text=True).strip()
+   |
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> <ASSETS_WORKTREE>/2054/validation/733930dd/environment.py:22:10
+   |
+20 |   files = ['warp/native/svd.h', 'warp/_src/context.py', 'warp/tests/matrix/test_mat.py',
+21 |            'warp/tests/test_render_opengl.py', 'warp/tests/unittest_suites.py']
+22 |   result = dict(source_commit=git('rev-parse','HEAD'),
+   |  __________^
+23 | |               tracked_tree_clean=not bool(git('status','--porcelain','--untracked-files=no')),
+24 | |               loaded_libraries_from_this_checkout=True,
+25 | |               python=platform.python_version(), system=platform.system(), architecture=platform.machine(),
+26 | |               warp=wp.__version__,
+27 | |               packages={d.metadata['Name']:d.version for d in importlib.metadata.distributions()},
+28 | |               source_sha256={f:digest(root/f) for f in files},
+29 | |               native_library_sha256={p.name:digest(p) for p in sorted((root/'warp/bin').glob('*.so'))},
+30 | |               gpus=subprocess.check_output(['nvidia-smi','--query-gpu=index,name,driver_version','--format=csv,noheader'],text=True)…
+31 | |               cuda_compiler=subprocess.check_output(['/usr/local/cuda-13.0/bin/nvcc','--version'],text=True).splitlines()[-2:])
+   | |_______________________________________________________________________________________________________________________________^
+32 |   print('ENVIRONMENT_JSON='+json.dumps(result,sort_keys=True))
+   |
+help: Rewrite as a literal
+
+PLW1510 `subprocess.run` without explicit `check` argument
+  --> <ASSETS_WORKTREE>/2054/validation/733930dd/record.py:42:13
+   |
+40 |     tick = time.monotonic()
+41 |     with (out / (a.name + '.log')).open('w') as stream:
+42 |         r = subprocess.run(command, cwd=root, env=env, stdout=stream, stderr=subprocess.STDOUT)
+   |             ^^^^^^^^^^^^^^
+43 |     result = dict(name=a.name, command=command, source_commit=before,
+44 |                   source_commit_after=git('rev-parse', 'HEAD'), tracked_tree_dirty_before=dirty,
+   |
+help: Add explicit `check=False`
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> <ASSETS_WORKTREE>/2054/validation/733930dd/record.py:43:14
+   |
+41 |       with (out / (a.name + '.log')).open('w') as stream:
+42 |           r = subprocess.run(command, cwd=root, env=env, stdout=stream, stderr=subprocess.STDOUT)
+43 |       result = dict(name=a.name, command=command, source_commit=before,
+   |  ______________^
+44 | |                   source_commit_after=git('rev-parse', 'HEAD'), tracked_tree_dirty_before=dirty,
+45 | |                   tracked_tree_dirty_after=bool(git('status', '--porcelain', '--untracked-files=no')),
+46 | |                   started_utc=started, finished_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),
+47 | |                   seconds=time.monotonic()-tick, exit_code=r.returncode,
+48 | |                   cuda_visible_devices=env.get('CUDA_VISIBLE_DEVICES', '<unset>'), private_kernel_cache=True,
+49 | |                   native_library_sha256={x.name: digest(x) for x in sorted((root/'warp/bin').glob('*.so'))})
+   | |____________________________________________________________________________________________________________^
+50 |       (out / (a.name + '.json')).write_text(json.dumps(result, indent=2) + '\n')
+51 |       print(json.dumps(result), flush=True)
+   |
+help: Rewrite as a literal
+
+E402 Module level import not at top of file
+  --> <ASSETS_WORKTREE>/2120/validation/d619a625/cpu_gl_repro.py:11:1
+   |
+ 9 | pyglet.options["headless_device"] = 0
+10 |
+11 | from pyglet import gl
+   | ^^^^^^^^^^^^^^^^^^^^^
+12 |
+13 | import warp as wp
+   |
+help: Move module level imports to top of file
+
+E402 Module level import not at top of file
+  --> <ASSETS_WORKTREE>/2120/validation/d619a625/cpu_gl_repro.py:13:1
+   |
+11 | from pyglet import gl
+12 |
+13 | import warp as wp
+   | ^^^^^^^^^^^^^^^^^
+14 |
+15 | wp.init()
+   |
+help: Move module level imports to top of file
+
+S101 Use of `assert` detected
+  --> <ASSETS_WORKTREE>/2120/validation/d619a625/cpu_gl_repro.py:35:13
+   |
+33 |             print("Mapped array device:", mapped.device, flush=True)
+34 |             # Never dereference a potentially mislabelled CUDA device pointer.
+35 |             assert registered.resource is None, "CPU buffer unexpectedly registered with CUDA"
+   |             ^^^^^^
+36 |             np.testing.assert_array_equal(mapped.numpy(), data)
+37 |         finally:
+   |
+
+S101 Use of `assert` detected
+  --> <ASSETS_WORKTREE>/2120/validation/d619a625/environment.py:13:1
+   |
+11 | root = Path.cwd().resolve()
+12 | runtime = wp.RegisteredGLBuffer.__init__.__globals__['runtime']
+13 | assert Path(wp.__file__).resolve().parent == root/'warp'
+   | ^^^^^^
+14 | assert Path(runtime.core._name).resolve() == root/'warp/bin/warp.so'
+15 | assert Path(runtime.llvm._name).resolve() == root/'warp/bin/warp-clang.so'
+   |
+
+S101 Use of `assert` detected
+  --> <ASSETS_WORKTREE>/2120/validation/d619a625/environment.py:14:1
+   |
+12 | runtime = wp.RegisteredGLBuffer.__init__.__globals__['runtime']
+13 | assert Path(wp.__file__).resolve().parent == root/'warp'
+14 | assert Path(runtime.core._name).resolve() == root/'warp/bin/warp.so'
+   | ^^^^^^
+15 | assert Path(runtime.llvm._name).resolve() == root/'warp/bin/warp-clang.so'
+16 | def git(*args):
+   |
+
+S101 Use of `assert` detected
+  --> <ASSETS_WORKTREE>/2120/validation/d619a625/environment.py:15:1
+   |
+13 | assert Path(wp.__file__).resolve().parent == root/'warp'
+14 | assert Path(runtime.core._name).resolve() == root/'warp/bin/warp.so'
+15 | assert Path(runtime.llvm._name).resolve() == root/'warp/bin/warp-clang.so'
+   | ^^^^^^
+16 | def git(*args):
+17 |     return subprocess.check_output(['git', *args], text=True).strip()
+   |
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> <ASSETS_WORKTREE>/2120/validation/d619a625/environment.py:22:10
+   |
+20 |   files = ['warp/native/svd.h', 'warp/_src/context.py', 'warp/tests/matrix/test_mat.py',
+21 |            'warp/tests/test_render_opengl.py', 'warp/tests/unittest_suites.py']
+22 |   result = dict(source_commit=git('rev-parse','HEAD'),
+   |  __________^
+23 | |               tracked_tree_clean=not bool(git('status','--porcelain','--untracked-files=no')),
+24 | |               loaded_libraries_from_this_checkout=True,
+25 | |               python=platform.python_version(), system=platform.system(), architecture=platform.machine(),
+26 | |               warp=wp.__version__,
+27 | |               packages={d.metadata['Name']:d.version for d in importlib.metadata.distributions()},
+28 | |               source_sha256={f:digest(root/f) for f in files},
+29 | |               native_library_sha256={p.name:digest(p) for p in sorted((root/'warp/bin').glob('*.so'))},
+30 | |               gpus=subprocess.check_output(['nvidia-smi','--query-gpu=index,name,driver_version','--format=csv,noheader'],text=True)…
+31 | |               cuda_compiler=subprocess.check_output(['/usr/local/cuda-13.0/bin/nvcc','--version'],text=True).splitlines()[-2:])
+   | |_______________________________________________________________________________________________________________________________^
+32 |   print('ENVIRONMENT_JSON='+json.dumps(result,sort_keys=True))
+   |
+help: Rewrite as a literal
+
+S101 Use of `assert` detected
+  --> <ASSETS_WORKTREE>/2120/validation/d619a625/make_render_contact_sheet.py:32:13
+   |
+30 |         for column, shape in enumerate(shapes):
+31 |             image = Image.open(args.root / name / f"{shape}-cached-0-frame-0-segments-32.png").convert("RGB")
+32 |             assert image.size == (384, 256)
+   |             ^^^^^^
+33 |             sheet.paste(image, (column * 384, y + 35))
+34 |     sheet.save(args.root / "render-comparison.png")
+   |
+
+PLW1510 `subprocess.run` without explicit `check` argument
+  --> <ASSETS_WORKTREE>/2120/validation/d619a625/record.py:42:13
+   |
+40 |     tick = time.monotonic()
+41 |     with (out / (a.name + '.log')).open('w') as stream:
+42 |         r = subprocess.run(command, cwd=root, env=env, stdout=stream, stderr=subprocess.STDOUT)
+   |             ^^^^^^^^^^^^^^
+43 |     result = dict(name=a.name, command=command, source_commit=before,
+44 |                   source_commit_after=git('rev-parse', 'HEAD'), tracked_tree_dirty_before=dirty,
+   |
+help: Add explicit `check=False`
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> <ASSETS_WORKTREE>/2120/validation/d619a625/record.py:43:14
+   |
+41 |       with (out / (a.name + '.log')).open('w') as stream:
+42 |           r = subprocess.run(command, cwd=root, env=env, stdout=stream, stderr=subprocess.STDOUT)
+43 |       result = dict(name=a.name, command=command, source_commit=before,
+   |  ______________^
+44 | |                   source_commit_after=git('rev-parse', 'HEAD'), tracked_tree_dirty_before=dirty,
+45 | |                   tracked_tree_dirty_after=bool(git('status', '--porcelain', '--untracked-files=no')),
+46 | |                   started_utc=started, finished_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),
+47 | |                   seconds=time.monotonic()-tick, exit_code=r.returncode,
+48 | |                   cuda_visible_devices=env.get('CUDA_VISIBLE_DEVICES', '<unset>'), private_kernel_cache=True,
+49 | |                   native_library_sha256={x.name: digest(x) for x in sorted((root/'warp/bin').glob('*.so'))})
+   | |____________________________________________________________________________________________________________^
+50 |       (out / (a.name + '.json')).write_text(json.dumps(result, indent=2) + '\n')
+51 |       print(json.dumps(result), flush=True)
+   |
+help: Rewrite as a literal
+
+Found 20 errors (4 fixed, 16 remaining).
+No fixes available (4 hidden fixes can be enabled with the `--unsafe-fixes` option).
+
+ruff format....................................................................Passed
+uv-lock....................................................(no files to check)Skipped
+typos..........................................................................Failed
+- hook id: typos
+- exit code: 2
+
+error: `ba` should be `by`, `be`
+   ╭▸ ../warp-pr-asset/2054/validation/733930dd/logs/matrix-tests.log:64:131
+   │
+64 │ …tch. ... Module test_eig_mixed_gradients__locals__mixed_loss_5e68ba6b e716a00 load on device 'cpu' took 1273.25 ms  (compiled)
+   ╰╴                                                                  ━━
+error: `ba` should be `by`, `be`
+   ╭▸ ../warp-pr-asset/2054/validation/733930dd/logs/matrix-tests.log:67:131
+   │
+67 │ …tch. ... Module test_eig_mixed_gradients__locals__mixed_loss_5e68ba6b 5e68ba6 load on device 'cuda:0' took 463.81 ms  (compiled)
+   ╰╴                                                                  ━━
+error: `ba` should be `by`, `be`
+   ╭▸ ../warp-pr-asset/2054/validation/733930dd/logs/matrix-tests.log:67:140
+   │
+67 │ …Module test_eig_mixed_gradients__locals__mixed_loss_5e68ba6b 5e68ba6 load on device 'cuda:0' took 463.81 ms  (compiled)
+   ╰╴                                                                  ━━
+error: `ba` should be `by`, `be`
+   ╭▸ ../warp-pr-asset/2054/validation/733930dd/logs/matrix-tests.log:70:131
+   │
+70 │ …tch. ... Module test_eig_mixed_gradients__locals__mixed_loss_5e68ba6b 5e68ba6 load on device 'cuda:1' took 186.57 ms  (cached)
+   ╰╴                                                                  ━━
+error: `ba` should be `by`, `be`
+   ╭▸ ../warp-pr-asset/2054/validation/733930dd/logs/matrix-tests.log:70:140
+   │
+70 │ …Module test_eig_mixed_gradients__locals__mixed_loss_5e68ba6b 5e68ba6 load on device 'cuda:1' took 186.57 ms  (cached)
+   ╰╴                                                                  ━━
+error: `certifi` should be `certify`, `certifies`, `certified`
+   ╭▸ ../warp-pr-asset/2054/validation/733930dd/logs/environment.log:12:701
+   │
+12 │ …el": "2.18.0", "beautifulsoup4": "4.15.0", "blosc": "1.11.4", "certifi": "2026.7.22", "cfgv": "3.5.0", "charset-normalizer": "3.5.1",…
+   ╰╴                                                                ━━━━━━━
+error: `certifi` should be `certify`, `certifies`, `certified`
+   ╭▸ ../warp-pr-asset/2120/validation/d619a625/logs/environment.log:12:701
+   │
+12 │ …el": "2.18.0", "beautifulsoup4": "4.15.0", "blosc": "1.11.4", "certifi": "2026.7.22", "cfgv": "3.5.0", "charset-normalizer": "3.5.1",…
+   ╰╴                                                                ━━━━━━━
+error: `transformd` should be `transforms`, `transformed`
+    ╭▸ ../warp-pr-asset/2120/validation/d619a625/logs/docs.log:452:56
+    │
+452 │ writing output... [ 56%] api_reference/_generated/warp.transformd .. api_reference/_generated/warp.types.is_array
+    ╰╴                                                       ━━━━━━━━━━
+error: `certifi` should be `certify`, `certifies`, `certified`
+   ╭▸ ../warp-pr-asset/2120/validation/d619a625/environment.json:27:6
+   │
+27 │     "certifi": "2026.7.22",
+   ╰╴     ━━━━━━━
+error: `ba` should be `by`, `be`
+   ╭▸ ../warp-pr-asset/2054/validation/733930dd/logs/measurement.log:24:40
+   │
+24 │ Module collect__locals__spectral_724406ba f9f0427 load on device 'cpu' took 191.93 ms  (compiled)
+   ╰╴                                       ━━
+error: `ba` should be `by`, `be`
+   ╭▸ ../warp-pr-asset/2054/validation/733930dd/logs/measurement.log:42:40
+   │
+42 │ Module collect__locals__spectral_724406ba 724406b load on device 'cuda:0' took 260.02 ms  (compiled)
+   ╰╴                                       ━━
+error: `ba` should be `by`, `be`
+   ╭▸ ../warp-pr-asset/2054/validation/733930dd/logs/measurement.log:60:40
+   │
+60 │ Module collect__locals__spectral_724406ba 724406b load on device 'cuda:1' took 64.08 ms  (cached)
+   ╰╴                                       ━━
+error: `certifi` should be `certify`, `certifies`, `certified`
+   ╭▸ ../warp-pr-asset/2054/validation/733930dd/environment.json:27:6
+   │
+27 │     "certifi": "2026.7.22",
+   ╰╴     ━━━━━━━
+
+clang-format...............................................(no files to check)Skipped
