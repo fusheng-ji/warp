@@ -1,0 +1,50 @@
+[
+  {
+    "query": "repo:NVIDIA/warp is:pr is:open segments",
+    "total": 4,
+    "items": [
+      {
+        "number": 2105,
+        "title": "Fix arrays from lists of float16 and bfloat16 vectors",
+        "url": "https://github.com/NVIDIA/warp/pull/2105"
+      },
+      {
+        "number": 1795,
+        "title": "Add wp.graph_set_conditional() for user-owned conditional graph nodes",
+        "url": "https://github.com/NVIDIA/warp/pull/1795"
+      },
+      {
+        "number": 1788,
+        "title": "capture_end: add skip_leaf_join to opt out of the broad leaf-join pass",
+        "url": "https://github.com/NVIDIA/warp/pull/1788"
+      },
+      {
+        "number": 1305,
+        "title": "Add adjoints for `texture_sample` for all address modes",
+        "url": "https://github.com/NVIDIA/warp/pull/1305"
+      }
+    ]
+  },
+  {
+    "query": "repo:NVIDIA/warp is:pr is:open \"primitive resolution\"",
+    "total": 1,
+    "items": [
+      {
+        "number": 2121,
+        "title": "Fix CPU OpenGL buffer mappings (GH-2120)",
+        "url": "https://github.com/NVIDIA/warp/pull/2121"
+      }
+    ]
+  },
+  {
+    "query": "repo:NVIDIA/warp is:pr is:open \"1110\"",
+    "total": 1,
+    "items": [
+      {
+        "number": 2121,
+        "title": "Fix CPU OpenGL buffer mappings (GH-2120)",
+        "url": "https://github.com/NVIDIA/warp/pull/2121"
+      }
+    ]
+  }
+]

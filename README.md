@@ -20,3 +20,5 @@ Keep each contribution in its issue-number directory. PR descriptions should use
 The [current GH-2054 validation](2054/validation/733930dd/REPORT.txt) covers source `733930dd`, rebuilt on official main `0382a97e`. The original GH-2054 CSVs and figures above remain historical evidence for `c47fe4c8` / `e6185ac3`.
 
 For #2069, separate [mixed-precision](2069/pr-drafts/mixed-precision.md) and [row-packing](2069/pr-drafts/row-packed.md) PR body drafts are available, with [titles and branch dependency notes](2069/pr-drafts/README.txt).
+
+For #1110, the [proposed PR body](1110/pr-drafts/render-shape-segments.md) and [title/status notes](1110/pr-drafts/README.txt) accompany the frozen feature validation. No feature PR has been opened; #2121 remains the separate CPU/OpenGL fix.
