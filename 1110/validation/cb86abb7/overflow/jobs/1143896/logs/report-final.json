@@ -1,0 +1,28 @@
+{
+  "name": "report-final",
+  "command": [
+    "uv",
+    "run",
+    "--no-sync",
+    "<RESULTS>/finish_report.py",
+    "--input",
+    "<RESULTS>"
+  ],
+  "started_utc": "2026-10-20T18:24:56.237417+00:00",
+  "source_commit": "cb86abb75d123876d80c6832d8d360f4cda0cc10",
+  "dirty_before": "",
+  "cuda_visible_devices": "0",
+  "private_cache": true,
+  "experiment_scripts_sha256": {
+    "benchmark_capsules.py": "55ea256d5c65eeac755753b7f82c306e60b5a6662ba5eafe2495171eb1051c4d",
+    "finish_report.py": "785f3a499ebd420ce89da4b409c652346ae2935df35065cbae39b4bfa41ba19a",
+    "run_record.py": "a968a322819f910b7978b95721f893b2b55c846aca3f8a744e72eacfc7747f59",
+    "select_device.py": "1ad668b0794be897b61f82f1c1196ae9d82b658072cebf59c297be242a9b04b8",
+    "summarize.py": "a638685282d3f92b95ad3e1a382a8fcfc4570507611ba6258c3c613e272b7cfa",
+    "validate_filled.py": "59f19082b1a5b5d965590517f3ccde2b10e4a503d5a8d918e1a2d1af8bcb7377",
+    "worker.py": "26afb21200676d961f8e4d38d4063307b45781e8fcf1a74f07bd32b23385289d"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.21021142229437828,
+  "dirty_after": ""
+}

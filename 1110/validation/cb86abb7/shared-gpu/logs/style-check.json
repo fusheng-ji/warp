@@ -1,0 +1,28 @@
+{
+  "name": "style-check",
+  "command": [
+    "uvx",
+    "ruff",
+    "check",
+    "--config",
+    "pyproject.toml",
+    "../warp-1110-supplement-20261020/benchmark_capsules.py",
+    "../warp-1110-supplement-20261020/validate_filled.py",
+    "../warp-1110-supplement-20261020/summarize.py",
+    "../warp-1110-supplement-20261020/run_record.py"
+  ],
+  "started_utc": "2026-10-20T18:13:01.755988+00:00",
+  "source_commit": "cb86abb75d123876d80c6832d8d360f4cda0cc10",
+  "dirty_before": "",
+  "cuda_visible_devices": "1",
+  "private_cache": true,
+  "experiment_scripts_sha256": {
+    "benchmark_capsules.py": "d36e4ddb0a1189f5151d76651fa48c601da743759aa60ec2605a66616d9da4e9",
+    "run_record.py": "3ffd0820dc6e307ff39ca19752d8c721a8b88df83ac0df6d66bac9388b777c8b",
+    "summarize.py": "d60e0478e527961a2835a6333d9b4828f2e841c1bc72cfb2626777a5f312fc5c",
+    "validate_filled.py": "59f19082b1a5b5d965590517f3ccde2b10e4a503d5a8d918e1a2d1af8bcb7377"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.1091353700030595,
+  "dirty_after": ""
+}

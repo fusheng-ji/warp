@@ -1,0 +1,36 @@
+warp: regenerate generated files...............................................Passed
+warp: check version consistency and regenerate version.h.......................Passed
+warp: check project skills.................................(no files to check)Skipped
+ruff (legacy alias)............................................................Failed
+- hook id: ruff
+- exit code: 1
+
+RUF012 Mutable default value for class attribute
+  --> warp/tests/test_render_opengl.py:17:28
+   |
+16 |   class TestOpenGLRenderer(unittest.TestCase):
+17 |       primitive_parameters = {
+   |  ____________________________^
+18 | |         "sphere": {"radius": 0.5},
+19 | |         "capsule": {"radius": 0.5, "half_height": 0.8},
+20 | |         "cylinder": {"radius": 0.5, "half_height": 0.8},
+21 | |         "cone": {"radius": 0.5, "half_height": 0.8},
+22 | |         "arrow": {"base_radius": 0.2, "base_height": 0.8},
+23 | |     }
+   | |_____^
+24 |
+25 |       @staticmethod
+   |
+help: Consider initializing in `__init__` or annotating with `typing.ClassVar`
+
+Found 1 error.
+
+ruff format....................................................................Failed
+- hook id: ruff-format
+- files were modified by this hook
+
+1 file reformatted, 2 files left unchanged
+
+uv-lock....................................................(no files to check)Skipped
+typos..........................................................................Passed
+clang-format...............................................(no files to check)Skipped

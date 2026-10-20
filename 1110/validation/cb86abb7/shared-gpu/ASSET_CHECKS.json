@@ -1,0 +1,11 @@
+{
+  "source_sha": "cb86abb75d123876d80c6832d8d360f4cda0cc10",
+  "source_clean": true,
+  "source_hashes_match": true,
+  "library_hashes_match": true,
+  "measurement_scripts_match": true,
+  "all_recorded_exit_codes_zero": true,
+  "sensitive_pattern_hits": [],
+  "sanitization": "Known checkout/home paths, private email and common credential/private-key patterns checked; no machine hostname or GPU UUID collected.",
+  "publication": "Local only; no remote asset or PR updates."
+}

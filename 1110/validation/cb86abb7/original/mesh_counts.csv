@@ -1,0 +1,6 @@
+primitive,vertices_32,vertices_8,triangles_32,triangles_8,restored_pixels_exact
+sphere,1089,81,2048,128,True
+capsule,1089,81,2178,162,True
+cylinder,130,34,128,32,True
+cone,130,34,128,32,True
+arrow,260,68,256,64,True

@@ -1,0 +1,58 @@
+{
+  "status": "passed",
+  "source": "cb86abb75d123876d80c6832d8d360f4cda0cc10",
+  "primary_jobs": [
+    "1144767",
+    "1144768",
+    "1144769"
+  ],
+  "primary_totals": {
+    "filled_frames": 120,
+    "restored_images_exact": 30,
+    "timed_frames": 6840,
+    "measurement_blocks": 270
+  },
+  "datasets": [
+    {
+      "directory": "shared-gpu",
+      "primary": false,
+      "frames": 2280,
+      "blocks": 90,
+      "filled_frames": 40,
+      "restored_exact": 10
+    },
+    {
+      "directory": "overflow/jobs/1143896",
+      "primary": false,
+      "frames": 2280,
+      "blocks": 90,
+      "filled_frames": 40,
+      "restored_exact": 10
+    },
+    {
+      "directory": "overflow/jobs/1144767",
+      "primary": true,
+      "frames": 2280,
+      "blocks": 90,
+      "filled_frames": 40,
+      "restored_exact": 10
+    },
+    {
+      "directory": "overflow/jobs/1144768",
+      "primary": true,
+      "frames": 2280,
+      "blocks": 90,
+      "filled_frames": 40,
+      "restored_exact": 10
+    },
+    {
+      "directory": "overflow/jobs/1144769",
+      "primary": true,
+      "frames": 2280,
+      "blocks": 90,
+      "filled_frames": 40,
+      "restored_exact": 10
+    }
+  ],
+  "statistics": "Recomputed from every raw timing row; all saved block, job, percentile, paired-ratio and across-job summaries checked at 1e-12 absolute/relative tolerance; all restored PNG pixels checked exactly."
+}

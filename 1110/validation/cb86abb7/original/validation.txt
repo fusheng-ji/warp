@@ -1,0 +1,93 @@
+Warp #1110: local implementation and validation
+
+Branch: fusheng-ji/render-shape-segments
+Base: 0382a97e2c72911c1f6bba45274e12833a19d8e2
+Tested commit: cb86abb75d123876d80c6832d8d360f4cda0cc10
+Commit: Add OpenGL primitive resolution (GH-1110)
+Date: 2026-10-20 (UTC)
+
+Scope
+Five OpenGL primitive APIs accept keyword-only segments (default 32, minimum 3).
+Sphere latitude/longitude and arrow base/cap share the supplied resolution.
+Cached meshes can be switched by the same instance name, preserving IDs and attributes.
+Points, lines, USD, visibility/deletion behavior and mesh generators are outside this change.
+
+Accepted results on the committed source
+- 14/14 context-free renderer unittest methods passed; no skips.
+- 30/30 real B200 CUDA/OpenGL rendered frames passed; no skips.
+  5 shapes x 2 cache scenarios x 3 frames (32 -> 8 -> 32).
+  The pre-cached scenario also uses tiled rendering with instance-ID selection.
+  Identity, memberships, custom ID, body, scale, mapped GPU transforms, GL error status,
+  pixel reads and exact restored images were checked. All 10 restored images equal frame 0.
+- HTML documentation built successfully with --warnings-as-errors.
+- Final changed-file pre-commit checks passed.
+- AST inspection confirms all 6 existing mesh generators and all 5 positional signatures are unchanged.
+- Standard independent native build passed in 85.380 s; no native source changes or post-fix rebuild.
+
+Environment
+Linux x86_64; Python 3.12.13; Warp 1.19.0.dev1; NumPy 2.5.3; Pyglet 2.1.16.
+GPU: NVIDIA B200, physical index 0; driver 580.126.20; CUDA Toolkit 13.0.88.
+OpenGL vendor: NVIDIA Corporation; renderer: NVIDIA B200/PCIe/SSE2; version 3.3.
+Each checkout uses its own .venv, native build artifacts and private kernel cache.
+Source/library hashes and stage commands, exit codes and timing are in validation.json.
+
+Before / after
+The unmodified base was tested with the new regression tests: original 10 tests passed;
+the 4 new test methods produced 55 error subtests, all due to the missing segments keyword.
+The final committed source passes all 14 methods. Earlier successful pre-commit runs
+are archived as attempts/gpu-precommit and are excluded from the final 30-frame count.
+Records whose source_commit is the base SHA ran with the uncommitted patch. Final unit/GPU
+records explicitly identify the clean tested commit; file hashes connect earlier checks.
+
+Mesh counts (existing generators; triangles = index_count / 3)
+primitive  vertices 32->8  triangles 32->8
+sphere     1089->81         2048->128
+capsule    1089->81         2178->162
+cylinder    130->34          128->32
+cone        130->34          128->32
+arrow       260->68          256->64
+
+Reproduce from the final checkout
+  WARP_CUDA_PATH=/usr/local/cuda-13.0 WARP_CACHE_PATH="$PWD/_build/1110-cache" uv run build_lib.py
+  uv sync --extra dev
+  WARP_CACHE_PATH="$PWD/_build/1110-cache" uv run --no-sync -m unittest warp.tests.test_render_opengl -v
+  WARP_CACHE_PATH="$PWD/_build/1110-cache" uv run --no-sync ../warp-1110-results/validate_render.py --checkout . --output ../warp-1110-results/reproduced-gpu
+  uv run --no-sync ../warp-1110-results/plot_results.py --input ../warp-1110-results/reproduced-gpu --output ../warp-1110-results/reproduced-plot
+  uv run --extra docs build_docs.py --warnings-as-errors
+  uvx pre-commit run --files warp/_src/render/render_opengl.py warp/tests/test_render_opengl.py docs/domain_modules/render.rst changelog/1110.added.md
+Set Pyglet headless before importing warp.render and use a matching CUDA ScopedDevice,
+as the supplied validation script does. The GPU script also explicitly supplies parent transforms.
+
+Failed attempts retained
+- Initial sync failed because native libraries were missing; build then sync succeeded.
+- Initial pre-commit failed on the fixture ClassVar annotation and formatting; final run passed.
+- First GPU harness failed on 3 restored pixels because it omitted parent transforms.
+  The log, original script and partial 2-frame data are retained. No library fix or
+  relaxed pixel tolerance was used to resolve that harness error.
+- Planning-stage actual CPU rendering in older checkout 400ff598 crashed with exit 139
+  after CUDA error 201. This was not rerun or claimed fixed; only CPU logic tests passed.
+  No raw log was archived for that planning probe.
+- No FPS/performance benchmark was run.
+
+Delivery
+Local code commit only. No push, PR, public claim comment, reviewer or assignee changes.
+Independent investigation; no downstream production use or maintainer assignment is claimed.
+DCO uses the public noreply address and the commit contains no AI co-author trailer.
+Public coordination should follow CONTRIBUTING.md before publishing the feature PR.
+
+Files
+validation.json: machine-readable provenance and command records.
+gpu/results.csv: final 30 frame evaluations; gpu/environment.json: versions and hashes.
+resolution_comparison.png: five-shape 32 -> 8 -> 32 wireframe comparisons.
+mesh_counts.csv: compact numerical summary; source.patch: the focused code patch.
+logs/: sanitized build, baseline, final tests, GPU and documentation records.
+attempts/: partial failed GPU run and earlier successful uncommitted run.
+SHA256SUMS: hashes of all other files in this bundle.
+
+CPU follow-up (2026-10-20)
+Independent CPU fix: ed66e726b54939efa3d3874a66bc06d1ffa139bc
+Combined tested commit: bf2023e27518e434314e571dfc222335497e27f3
+90 CPU and 30 CUDA combined frames passed, with exact restored images.
+CPU-visible, CUDA-hidden and ambient-CUDA CPU scenarios all passed.
+The original feature-only commit remains cb86abb7; it does not include this fix.
+See ../warp-cpu-gl-results/validation.txt for the complete follow-up and preserved crash logs.

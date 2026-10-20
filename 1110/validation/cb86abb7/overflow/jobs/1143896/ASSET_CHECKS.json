@@ -1,0 +1,10 @@
+{
+  "job_id": "1143896",
+  "slurm_state": "COMPLETED",
+  "slurm_exit_code": "0:0",
+  "elapsed": "00:00:53",
+  "allocation_passed": true,
+  "measurement_source": "cb86abb75d123876d80c6832d8d360f4cda0cc10",
+  "original_worker_manifest_entries": 84,
+  "sensitive_hits": []
+}

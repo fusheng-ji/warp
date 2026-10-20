@@ -1,0 +1,14 @@
+{
+  "name": "sync",
+  "command": [
+    "uv",
+    "sync",
+    "--extra",
+    "dev"
+  ],
+  "started_utc": "2026-10-20T10:36:25.922453+00:00",
+  "seconds": 3.8253705370007083,
+  "exit_code": 1,
+  "source_commit": "0382a97e2c72911c1f6bba45274e12833a19d8e2",
+  "private_kernel_cache": true
+}

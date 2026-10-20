@@ -1,0 +1,18 @@
+{
+  "name": "committed-gpu-render",
+  "command": [
+    "uv",
+    "run",
+    "--no-sync",
+    "../warp-1110-results/validate_render.py",
+    "--checkout",
+    ".",
+    "--output",
+    "../warp-1110-results/gpu"
+  ],
+  "started_utc": "2026-10-20T10:46:28.100509+00:00",
+  "seconds": 5.451942302985117,
+  "exit_code": 0,
+  "source_commit": "cb86abb75d123876d80c6832d8d360f4cda0cc10",
+  "private_kernel_cache": true
+}

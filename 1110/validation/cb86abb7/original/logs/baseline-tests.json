@@ -1,0 +1,17 @@
+{
+  "name": "baseline-tests",
+  "command": [
+    "uv",
+    "run",
+    "--no-sync",
+    "-m",
+    "unittest",
+    "warp.tests.test_render_opengl",
+    "-v"
+  ],
+  "started_utc": "2026-10-20T10:38:41.638323+00:00",
+  "seconds": 4.808843703940511,
+  "exit_code": 1,
+  "source_commit": "0382a97e2c72911c1f6bba45274e12833a19d8e2",
+  "private_kernel_cache": true
+}

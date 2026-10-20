@@ -1,0 +1,474 @@
+diff --git a/changelog/1110.added.md b/changelog/1110.added.md
+new file mode 100644
+index 00000000..210316f8
+--- /dev/null
++++ b/changelog/1110.added.md
+@@ -0,0 +1 @@
++Add configurable mesh resolution to OpenGL spheres, capsules, cylinders, cones, and arrows through a keyword-only `segments` argument, including switching existing instances between cached resolutions while preserving their IDs.
+diff --git a/docs/domain_modules/render.rst b/docs/domain_modules/render.rst
+index cdd68440..0fc9355c 100644
+--- a/docs/domain_modules/render.rst
++++ b/docs/domain_modules/render.rst
+@@ -12,7 +12,53 @@ The :class:`OpenGLRenderer <warp.render.OpenGLRenderer>` provides an interactive
+ whereas more sophisticated rendering can be achieved with the help of the :class:`UsdRenderer <warp.render.UsdRenderer>`, which allows exporting the scene to
+ a USD file that can then be rendered in an external 3D application or renderer of your choice.
+ 
++Primitive Mesh Resolution
++^^^^^^^^^^^^^^^^^^^^^^^^^
+ 
++The OpenGL methods ``render_sphere()``, ``render_capsule()``, ``render_cylinder()``,
++``render_cone()``, and ``render_arrow()`` accept a keyword-only ``segments`` argument
++to control mesh resolution. The default is 32; lower values reduce the number of
++triangles at the cost of a coarser silhouette. The value must be an integer of at
++least 3. For spheres it controls both latitude and longitude subdivisions, and for
++arrows it controls both the cylindrical base and the conical cap.
++
++For example, with an existing ``OpenGLRenderer``:
++
++.. code-block:: python
++
++    renderer.render_capsule(
++        "capsule",
++        pos=(0.0, 0.0, 0.0),
++        rot=(0.0, 0.0, 0.0, 1.0),
++        radius=0.5,
++        half_height=0.8,
++        segments=8,
++    )
++
++The same name can be reused with a different resolution in subsequent frames.
++The renderer switches the instance to the requested mesh while preserving its
++instance ID, parent body, and scale:
++
++.. code-block:: python
++
++    for frame, segments in enumerate((32, 8, 32)):
++        renderer.begin_frame(frame / 60.0)
++        renderer.render_capsule(
++            "capsule",
++            pos=(0.0, 0.0, 0.0),
++            rot=(0.0, 0.0, 0.0, 1.0),
++            radius=0.5,
++            half_height=0.8,
++            segments=segments,
++        )
++        renderer.end_frame()
++
++Instances with matching shape parameters and resolution share a cached mesh.
++Changing resolution leaves other instances using the old mesh unchanged, and
++switching back reuses the cached mesh. Each distinct mesh remains cached until
++the renderer is cleared, so use a bounded set of resolutions for dynamic scenes.
++Calls with ``is_template=True`` create or reuse geometry without changing an
++existing instance.
+ 
+ CUDA Graphics Interface
+ -----------------------
+diff --git a/warp/_src/render/render_opengl.py b/warp/_src/render/render_opengl.py
+index daacbd60..f4bcc074 100644
+--- a/warp/_src/render/render_opengl.py
++++ b/warp/_src/render/render_opengl.py
+@@ -2704,6 +2704,20 @@ Instances: {len(self._instances)}"""
+             return True
+         return False
+ 
++    def _update_shape_instance_geometry(self, name, shape):
++        """Rebind an existing instance to geometry without changing its ID."""
++        if name not in self._instances:
++            return False
++
++        instance, body, old_shape, transform, scale, color1, color2, visible = self._instances[name]
++        if old_shape != shape:
++            self._shape_instances[old_shape].remove(instance)
++            self._shape_instances[shape].append(instance)
++            self._instance_shape[instance] = shape
++            self._instances[name] = (instance, body, shape, transform, scale, color1, color2, visible)
++            self._add_shape_instances = True
++        return True
++
+     def update_shape_instances(self):
+         """Rebuild instance buffers after instance updates."""
+         with self._shape_shader:
+@@ -3055,6 +3069,14 @@ Instances: {len(self._instances)}"""
+             v_scaling=1.0,
+         )
+ 
++    @staticmethod
++    def _validate_segments(segments):
++        if isinstance(segments, (bool, np.bool_)) or not isinstance(segments, (int, np.integer)):
++            raise TypeError("segments must be an integer")
++        if segments < 3:
++            raise ValueError("segments must be greater than or equal to 3")
++        return int(segments)
++
+     def render_sphere(
+         self,
+         name: str,
+@@ -3065,6 +3087,8 @@ Instances: {len(self._instances)}"""
+         is_template: bool = False,
+         color: tuple[float, float, float] | None = None,
+         visible: bool = True,
++        *,
++        segments: int = default_num_segments,
+     ):
+         """Add a sphere for visualization
+ 
+@@ -3077,18 +3101,22 @@ Instances: {len(self._instances)}"""
+             is_template: Whether the sphere is a template
+             color: The color of the sphere
+             visible: Whether the sphere is visible
++            segments: Number of latitude and longitude subdivisions, at least 3.
++                Changing this value for an existing name replaces its geometry while preserving its instance ID.
+         """
+-        geo_hash = hash(("sphere", radius))
++        segments = self._validate_segments(segments)
++        geo_hash = hash(("sphere", radius, segments))
+         if geo_hash in self._shape_geo_hash:
+             shape = self._shape_geo_hash[geo_hash]
+-            if self.update_shape_instance(name, pos, rot, color1=color, color2=color):
+-                return shape
+         else:
+-            vertices, indices = self._create_sphere_mesh(radius)
++            vertices, indices = self._create_sphere_mesh(radius, num_latitudes=segments, num_longitudes=segments)
+             shape = self.register_shape(geo_hash, vertices, indices, color1=color, color2=color)
+         if not is_template:
+-            body = self._resolve_body_id(parent_body)
+-            self.add_shape_instance(name, shape, body, pos, rot, color1=color, color2=color)
++            if self._update_shape_instance_geometry(name, shape):
++                self.update_shape_instance(name, pos, rot, color1=color, color2=color)
++            else:
++                body = self._resolve_body_id(parent_body)
++                self.add_shape_instance(name, shape, body, pos, rot, color1=color, color2=color)
+         return shape
+ 
+     def render_capsule(
+@@ -3103,6 +3131,8 @@ Instances: {len(self._instances)}"""
+         up_axis: int = 1,
+         color: tuple[float, float, float] | None = None,
+         visible: bool = True,
++        *,
++        segments: int = default_num_segments,
+     ):
+         """Add a capsule for visualization
+ 
+@@ -3117,18 +3147,22 @@ Instances: {len(self._instances)}"""
+             up_axis: The axis of the capsule that points up (0: x, 1: y, 2: z)
+             color: The color of the capsule
+             visible: Whether the capsule is visible
++            segments: Number of subdivisions used to generate the capsule mesh, at least 3.
++                Changing this value for an existing name replaces its geometry while preserving its instance ID.
+         """
+-        geo_hash = hash(("capsule", radius, half_height, up_axis))
++        segments = self._validate_segments(segments)
++        geo_hash = hash(("capsule", radius, half_height, up_axis, segments))
+         if geo_hash in self._shape_geo_hash:
+             shape = self._shape_geo_hash[geo_hash]
+-            if self.update_shape_instance(name, pos, rot):
+-                return shape
+         else:
+-            vertices, indices = self._create_capsule_mesh(radius, half_height, up_axis=up_axis)
++            vertices, indices = self._create_capsule_mesh(radius, half_height, up_axis=up_axis, segments=segments)
+             shape = self.register_shape(geo_hash, vertices, indices, color1=color, color2=color)
+         if not is_template:
+-            body = self._resolve_body_id(parent_body)
+-            self.add_shape_instance(name, shape, body, pos, rot)
++            if self._update_shape_instance_geometry(name, shape):
++                self.update_shape_instance(name, pos, rot)
++            else:
++                body = self._resolve_body_id(parent_body)
++                self.add_shape_instance(name, shape, body, pos, rot)
+         return shape
+ 
+     def render_cylinder(
+@@ -3143,6 +3177,8 @@ Instances: {len(self._instances)}"""
+         up_axis: int = 1,
+         color: tuple[float, float, float] | None = None,
+         visible: bool = True,
++        *,
++        segments: int = default_num_segments,
+     ):
+         """Add a cylinder for visualization
+ 
+@@ -3157,18 +3193,22 @@ Instances: {len(self._instances)}"""
+             up_axis: The axis of the cylinder that points up (0: x, 1: y, 2: z)
+             color: The color of the cylinder
+             visible: Whether the cylinder is visible
++            segments: Number of subdivisions around the cylinder, at least 3.
++                Changing this value for an existing name replaces its geometry while preserving its instance ID.
+         """
+-        geo_hash = hash(("cylinder", radius, half_height, up_axis))
++        segments = self._validate_segments(segments)
++        geo_hash = hash(("cylinder", radius, half_height, up_axis, segments))
+         if geo_hash in self._shape_geo_hash:
+             shape = self._shape_geo_hash[geo_hash]
+-            if self.update_shape_instance(name, pos, rot):
+-                return shape
+         else:
+-            vertices, indices = self._create_cylinder_mesh(radius, half_height, up_axis=up_axis)
++            vertices, indices = self._create_cylinder_mesh(radius, half_height, up_axis=up_axis, segments=segments)
+             shape = self.register_shape(geo_hash, vertices, indices, color1=color, color2=color)
+         if not is_template:
+-            body = self._resolve_body_id(parent_body)
+-            self.add_shape_instance(name, shape, body, pos, rot)
++            if self._update_shape_instance_geometry(name, shape):
++                self.update_shape_instance(name, pos, rot)
++            else:
++                body = self._resolve_body_id(parent_body)
++                self.add_shape_instance(name, shape, body, pos, rot)
+         return shape
+ 
+     def render_cone(
+@@ -3183,6 +3223,8 @@ Instances: {len(self._instances)}"""
+         up_axis: int = 1,
+         color: tuple[float, float, float] | None = None,
+         visible: bool = True,
++        *,
++        segments: int = default_num_segments,
+     ):
+         """Add a cone for visualization
+ 
+@@ -3197,18 +3239,22 @@ Instances: {len(self._instances)}"""
+             up_axis: The axis of the cone that points up (0: x, 1: y, 2: z)
+             color: The color of the cone
+             visible: Whether the cone is visible
++            segments: Number of subdivisions around the cone, at least 3.
++                Changing this value for an existing name replaces its geometry while preserving its instance ID.
+         """
+-        geo_hash = hash(("cone", radius, half_height, up_axis))
++        segments = self._validate_segments(segments)
++        geo_hash = hash(("cone", radius, half_height, up_axis, segments))
+         if geo_hash in self._shape_geo_hash:
+             shape = self._shape_geo_hash[geo_hash]
+-            if self.update_shape_instance(name, pos, rot):
+-                return shape
+         else:
+-            vertices, indices = self._create_cone_mesh(radius, half_height, up_axis=up_axis)
++            vertices, indices = self._create_cone_mesh(radius, half_height, up_axis=up_axis, segments=segments)
+             shape = self.register_shape(geo_hash, vertices, indices, color1=color, color2=color)
+         if not is_template:
+-            body = self._resolve_body_id(parent_body)
+-            self.add_shape_instance(name, shape, body, pos, rot)
++            if self._update_shape_instance_geometry(name, shape):
++                self.update_shape_instance(name, pos, rot)
++            else:
++                body = self._resolve_body_id(parent_body)
++                self.add_shape_instance(name, shape, body, pos, rot)
+         return shape
+ 
+     def render_box(
+@@ -3426,6 +3472,8 @@ Instances: {len(self._instances)}"""
+         up_axis: int = 1,
+         color: tuple[float, float, float] | None = None,
+         visible: bool = True,
++        *,
++        segments: int = default_num_segments,
+     ):
+         """Add an arrow for visualization
+ 
+@@ -3442,20 +3490,24 @@ Instances: {len(self._instances)}"""
+             up_axis: The axis of the arrow that points up (0: x, 1: y, 2: z)
+             color: The color of the arrow
+             visible: Whether the arrow is visible
++            segments: Number of subdivisions around both the base and cap, at least 3.
++                Changing this value for an existing name replaces its geometry while preserving its instance ID.
+         """
+-        geo_hash = hash(("arrow", base_radius, base_height, cap_radius, cap_height, up_axis))
++        segments = self._validate_segments(segments)
++        geo_hash = hash(("arrow", base_radius, base_height, cap_radius, cap_height, up_axis, segments))
+         if geo_hash in self._shape_geo_hash:
+             shape = self._shape_geo_hash[geo_hash]
+-            if self.update_shape_instance(name, pos, rot, color1=color, color2=color):
+-                return shape
+         else:
+             vertices, indices = self._create_arrow_mesh(
+-                base_radius, base_height, cap_radius, cap_height, up_axis=up_axis
++                base_radius, base_height, cap_radius, cap_height, up_axis=up_axis, segments=segments
+             )
+             shape = self.register_shape(geo_hash, vertices, indices, color1=color, color2=color)
+         if not is_template:
+-            body = self._resolve_body_id(parent_body)
+-            self.add_shape_instance(name, shape, body, pos, rot, color1=color, color2=color)
++            if self._update_shape_instance_geometry(name, shape):
++                self.update_shape_instance(name, pos, rot, color1=color, color2=color)
++            else:
++                body = self._resolve_body_id(parent_body)
++                self.add_shape_instance(name, shape, body, pos, rot, color1=color, color2=color)
+         return shape
+ 
+     def render_ref(
+diff --git a/warp/tests/test_render_opengl.py b/warp/tests/test_render_opengl.py
+index 5539135a..740830e8 100644
+--- a/warp/tests/test_render_opengl.py
++++ b/warp/tests/test_render_opengl.py
+@@ -4,6 +4,8 @@
+ """Test OpenGL renderer logic that does not require a display or OpenGL context."""
+ 
+ import unittest
++from collections import defaultdict
++from typing import ClassVar
+ from unittest import mock
+ 
+ import numpy as np
+@@ -13,6 +15,14 @@ from warp.render import OpenGLRenderer
+ 
+ 
+ class TestOpenGLRenderer(unittest.TestCase):
++    primitive_parameters: ClassVar[dict[str, dict[str, float]]] = {
++        "sphere": {"radius": 0.5},
++        "capsule": {"radius": 0.5, "half_height": 0.8},
++        "cylinder": {"radius": 0.5, "half_height": 0.8},
++        "cone": {"radius": 0.5, "half_height": 0.8},
++        "arrow": {"base_radius": 0.2, "base_height": 0.8},
++    }
++
+     @staticmethod
+     def _make_renderer():
+         renderer = OpenGLRenderer.__new__(OpenGLRenderer)
+@@ -22,6 +32,148 @@ class TestOpenGLRenderer(unittest.TestCase):
+         renderer.register_shape = mock.Mock(return_value=0)
+         return renderer
+ 
++    @classmethod
++    def _make_primitive_renderer(cls):
++        renderer = cls._make_renderer()
++        renderer._shapes = []
++        renderer._shape_instances = defaultdict(list)
++        renderer._shape_gl_buffers = {}
++        renderer._instance_shape = {}
++        renderer._instance_custom_ids = {}
++        renderer._body_name = {"body": 0}
++        renderer._instance_count = 0
++        renderer._add_shape_instances = False
++        renderer._update_shape_instances = False
++        renderer._switch_context = mock.Mock()
++        renderer.update_instance_colors = mock.Mock()
++
++        def register_shape(geo_hash, vertices, indices, color1=None, color2=None):
++            shape = len(renderer._shapes)
++            renderer._shapes.append((vertices, indices, color1, color2, geo_hash))
++            renderer._shape_geo_hash[geo_hash] = shape
++            renderer._shape_gl_buffers[shape] = (shape, None, None, len(indices), None)
++            return shape
++
++        renderer.register_shape = mock.Mock(side_effect=register_shape)
++        return renderer
++
++    def _render_primitive(self, renderer, kind, name="primitive", pos=(0.0, 0.0, 0.0), **kwargs):
++        return getattr(renderer, f"render_{kind}")(
++            name, pos, (0.0, 0.0, 0.0, 1.0), **self.primitive_parameters[kind], **kwargs
++        )
++
++    def test_render_primitive_segments_geometry(self):
++        """Verify default geometry and valid meshes at different resolutions."""
++        for kind, parameters in self.primitive_parameters.items():
++            expected_vertices, expected_indices = getattr(OpenGLRenderer, f"_create_{kind}_mesh")(**parameters)
++            for segments in (None, 32, 8, 3, np.int64(8)):
++                with self.subTest(kind=kind, segments=segments):
++                    renderer = self._make_primitive_renderer()
++                    options = {} if segments is None else {"segments": segments}
++                    shape = self._render_primitive(renderer, kind, is_template=True, **options)
++                    vertices, indices = renderer._shapes[shape][:2]
++                    n = 32 if segments is None else int(segments)
++                    if kind in ("sphere", "capsule"):
++                        vertex_count = (n + 1) ** 2
++                        triangle_count = 2 * (n if kind == "sphere" else n + 1) ** 2
++                    else:
++                        factor = 2 if kind == "arrow" else 1
++                        vertex_count = factor * (4 * n + 2)
++                        triangle_count = factor * 4 * n
++                    self.assertEqual(vertices.shape, (vertex_count, 8))
++                    self.assertEqual(indices.size, 3 * triangle_count)
++                    self.assertTrue(np.isfinite(vertices).all())
++                    self.assertLess(int(indices.max()), vertex_count)
++                    self.assertEqual(indices.dtype, np.uint32)
++                    if n == 32:
++                        np.testing.assert_array_equal(vertices, expected_vertices)
++                        np.testing.assert_array_equal(indices, expected_indices)
++
++    def test_render_primitive_segments_validation(self):
++        """Verify invalid resolutions do not change geometry or instance state."""
++        invalid_values = (
++            (TypeError, True),
++            (TypeError, np.bool_(True)),
++            (TypeError, 8.0),
++            (TypeError, "8"),
++            (TypeError, None),
++            (ValueError, -1),
++            (ValueError, 0),
++            (ValueError, 1),
++            (ValueError, np.int64(2)),
++        )
++        for kind in self.primitive_parameters:
++            for error, segments in invalid_values:
++                with self.subTest(kind=kind, segments=segments):
++                    renderer = self._make_primitive_renderer()
++                    with self.assertRaisesRegex(error, "segments"):
++                        self._render_primitive(renderer, kind, segments=segments)
++                    renderer.register_shape.assert_not_called()
++                    self.assertEqual(renderer._instances, {})
++                    self.assertEqual(renderer._shape_geo_hash, {})
++                    self.assertFalse(renderer._add_shape_instances)
++
++    def test_render_primitive_segments_cache_and_templates(self):
++        """Verify geometry sharing, distinct resolutions, and template isolation."""
++        with mock.patch.object(OpenGLRenderer, "gl", mock.Mock()):
++            for kind in self.primitive_parameters:
++                with self.subTest(kind=kind):
++                    renderer = self._make_primitive_renderer()
++                    high = self._render_primitive(renderer, kind, is_template=True)
++                    self.assertEqual(self._render_primitive(renderer, kind, segments=32, is_template=True), high)
++                    low = self._render_primitive(renderer, kind, segments=8, is_template=True)
++                    self.assertNotEqual(low, high)
++                    self.assertEqual(renderer._instances, {})
++                    for name in ("first", "second"):
++                        self.assertEqual(self._render_primitive(renderer, kind, name, segments=32), high)
++                    self.assertEqual(self._render_primitive(renderer, kind, "third", segments=8), low)
++                    self._render_primitive(renderer, kind, "first", segments=8, is_template=True)
++                    self.assertEqual(renderer._instances["first"][2], high)
++                    self.assertEqual(len(renderer._instances), 3)
++                    self.assertEqual(renderer.register_shape.call_count, 2)
++
++    def test_render_primitive_segments_switch(self):
++        """Verify changing resolution preserves identity and shared instances."""
++        with mock.patch.object(OpenGLRenderer, "gl", mock.Mock()):
++            for kind in self.primitive_parameters:
++                for cached in (False, True):
++                    with self.subTest(kind=kind, cached=cached):
++                        renderer = self._make_primitive_renderer()
++                        high = self._render_primitive(renderer, kind, "first", segments=32, parent_body="body")
++                        self._render_primitive(renderer, kind, "second", segments=32)
++                        if cached:
++                            self._render_primitive(renderer, kind, segments=8, is_template=True)
++                        renderer.update_shape_instance("first", scale=(2.0, 3.0, 4.0), visible=False)
++                        before = renderer._instances["first"]
++                        instance_id = before[0]
++                        renderer._instance_custom_ids[instance_id] = 17
++
++                        for segments in (8, 32, 32):
++                            renderer._add_shape_instances = False
++                            old_shape = renderer._instances["first"][2]
++                            shape = self._render_primitive(
++                                renderer, kind, "first", pos=(1.0, 2.0, 3.0), segments=segments
++                            )
++                            after = renderer._instances["first"]
++                            self.assertEqual(after[:2], before[:2])
++                            self.assertEqual(after[2], shape)
++                            np.testing.assert_array_equal(after[3][:3], (1.0, 2.0, 3.0))
++                            np.testing.assert_array_equal(after[3][3:], before[3][3:])
++                            self.assertEqual(after[4:], before[4:])
++                            self.assertEqual(renderer._instance_custom_ids[instance_id], 17)
++                            self.assertEqual(renderer._instance_shape[instance_id], shape)
++                            self.assertEqual(renderer._instances["second"][2], high)
++                            self.assertEqual(renderer._instance_count, 2)
++                            self.assertEqual(len(renderer._instances), 2)
++                            memberships = [i for group in renderer._shape_instances.values() for i in group]
++                            self.assertCountEqual(memberships, (0, 1))
++                            self.assertIn(instance_id, renderer._shape_instances[shape])
++                            self.assertIn(1, renderer._shape_instances[high])
++                            self.assertEqual(renderer._add_shape_instances, shape != old_shape)
++                            if segments == 32:
++                                self.assertEqual(shape, high)
++                        self.assertEqual(renderer.register_shape.call_count, 2)
++
+     def test_render_mesh_rejects_out_of_range_indices(self):
+         """Verify that mesh rendering rejects indices outside the point array."""
+         points = np.array(

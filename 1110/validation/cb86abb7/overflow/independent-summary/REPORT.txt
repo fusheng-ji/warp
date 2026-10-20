@@ -1,0 +1,48 @@
+Warp #1110: three additional independent Slurm allocations
+Source: cb86abb75d123876d80c6832d8d360f4cda0cc10
+No code, native artifacts or measurement thresholds were changed.
+Only the random case-order seed differs between the three benchmark runs.
+Partition overflow; one full B200 GPU per allocation, eight CPU cores; nodes may be shared.
+Three distinct nodes were selected; public records label them A/B/C instead of disclosing hostnames.
+
+Job 1144767, node group A, seed 1121: COMPLETED, exit 0:0, elapsed 00:00:52
+Job 1144768, node group B, seed 1132: COMPLETED, exit 0:0, elapsed 00:01:25
+Job 1144769, node group C, seed 1143: COMPLETED, exit 0:0, elapsed 00:00:49
+
+New totals: 120 filled frames, 30 exact restored images, 6840 timed frames, 270 measurement blocks.
+The earlier allocation 1143896 and shared-GPU measurements are excluded from these new totals.
+Source, native-library hashes, benchmark script, versions and thread settings match across all three jobs.
+Each job independently verifies native CUDA/EGL interop, one visible CUDA device, MIG disabled and no preexisting GPU process.
+
+Static latency: median across three job summaries (ms/frame), with job minimum/maximum:
+64 instances, 3 segments: 0.411554 [0.409646, 0.413492]
+64 instances, 8 segments: 0.429214 [0.428608, 0.430141]
+64 instances, 16 segments: 0.482866 [0.479798, 0.483615]
+64 instances, 32 segments: 0.610340 [0.607208, 0.610464]
+512 instances, 3 segments: 0.428243 [0.427635, 0.431217]
+512 instances, 8 segments: 0.543505 [0.541703, 0.544999]
+512 instances, 16 segments: 0.829167 [0.828631, 0.831049]
+512 instances, 32 segments: 1.757455 [1.755514, 1.759045]
+4096 instances, 3 segments: 0.626788 [0.625437, 0.628175]
+4096 instances, 8 segments: 1.385412 [1.382882, 1.386915]
+4096 instances, 16 segments: 3.337877 [3.332636, 3.340937]
+4096 instances, 32 segments: 10.915295 [10.906282, 10.922217]
+
+All-instance dynamic switching (ms/frame):
+64 instances, 32/3: 1.628078 [1.625007, 1.683318]
+64 instances, 32/8: 1.699775 [1.592847, 1.718117]
+512 instances, 32/3: 4.135965 [4.054450, 4.519821]
+512 instances, 32/8: 4.458303 [4.434770, 4.537999]
+4096 instances, 32/3: 24.848492 [24.747781, 26.560040]
+4096 instances, 32/8: 26.270505 [25.049453, 27.904506]
+
+Method: each job performs five seeded randomized repeats, eight warmup frames per case, 32 static or 12 dynamic measured frames per block.
+Wall-clock timing waits for GL completion on every frame. Pixel reads, creation, initial upload and warmup are excluded.
+A job summary is the median of five block medians. Across-jobs results use the median and full observed range of the three job summaries.
+No frame is removed for being slow. Raw per-frame and block data, including tails, remain in the individual job directories.
+There are three independent allocations, not 6840 independent statistical samples. Error bars are not confidence intervals.
+Nodes and other GPUs can be shared; CPU/node activity, device variation, clocks and thermal state can affect results. No clocks were locked.
+Lower resolution changes fidelity. Reciprocals of frame latency do not establish application or display FPS.
+No GitHub publications are performed. Full Slurm output with hostnames stays in private-slurm; public accounting uses node-group labels.
+
+Files: per_job_summary.csv, across_jobs.csv, across_jobs.png/.svg, validation.json, ACCOUNTING.csv, SHA256SUMS.

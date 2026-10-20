@@ -1,0 +1,101 @@
+Warp 1.19.0.dev1 initialized:
+   CUDA Toolkit 13.0, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA B200" (178 GiB, sm_100, mempool enabled)
+   Kernel cache:
+     <PRIVATE_CACHE>/1.19.0.dev1
+Module warp.render.render_opengl 4267418 load on device 'cuda:0' took 11.91 ms  (cached)
+prepared 64
+prepared 512
+prepared 4096
+case 0 steady 64 8 0.43231200000000003
+case 0 switch_all 64 3 1.86992
+case 0 switch_all 512 8 4.43477
+case 0 steady 4096 32 10.9206465
+case 0 steady 4096 3 0.62881
+case 0 steady 512 32 1.7594815000000001
+case 0 steady 512 3 0.430419
+case 0 steady 64 3 0.4136415
+case 0 steady 64 16 0.4801655
+case 0 steady 4096 16 3.3409375
+case 0 steady 512 16 0.827511
+case 0 switch_all 512 3 4.1359645
+case 0 switch_all 64 8 1.6510634999999998
+case 0 steady 4096 8 1.3869145
+case 0 switch_all 4096 3 26.278446000000002
+case 0 steady 64 32 0.6102795
+case 0 steady 512 8 0.5435045000000001
+case 0 switch_all 4096 8 29.797922
+case 1 steady 512 8 0.5462119999999999
+case 1 steady 4096 32 10.922217
+case 1 steady 512 32 1.760304
+case 1 switch_all 64 3 1.6967745
+case 1 switch_all 512 3 4.4397185
+case 1 switch_all 512 8 4.7533685000000006
+case 1 switch_all 4096 3 26.560039500000002
+case 1 switch_all 64 8 1.7113580000000002
+case 1 switch_all 4096 8 30.4353895
+case 1 steady 64 16 0.48368500000000003
+case 1 steady 64 8 0.4312005
+case 1 steady 512 16 0.8319595
+case 1 steady 512 3 0.4281875
+case 1 steady 64 3 0.4147645
+case 1 steady 4096 3 0.6281749999999999
+case 1 steady 64 32 0.6114265
+case 1 steady 4096 16 3.3427385000000003
+case 1 steady 4096 8 1.3836135
+case 2 switch_all 4096 8 26.8846995
+case 2 switch_all 512 3 4.1538235
+case 2 steady 4096 3 0.6279435
+case 2 steady 64 8 0.430141
+case 2 steady 4096 16 3.3351205
+case 2 steady 64 16 0.4836145
+case 2 steady 4096 8 1.3883255
+case 2 steady 64 3 0.411412
+case 2 switch_all 64 8 1.7234675
+case 2 steady 512 16 0.8281864999999999
+case 2 switch_all 4096 3 29.806703
+case 2 steady 512 3 0.430228
+case 2 steady 4096 32 10.923213
+case 2 steady 64 32 0.61034
+case 2 switch_all 512 8 4.1854685
+case 2 steady 512 32 1.7561985
+case 2 steady 512 8 0.5469900000000001
+case 2 switch_all 64 3 1.6161765
+case 3 steady 512 3 0.4275215
+case 3 switch_all 512 8 4.5847225
+case 3 steady 64 8 0.42931949999999997
+case 3 switch_all 4096 3 29.803188
+case 3 steady 4096 16 3.3414245
+case 3 steady 512 8 0.5427595
+case 3 steady 512 32 1.757094
+case 3 steady 512 16 0.830978
+case 3 switch_all 4096 8 26.098370000000003
+case 3 steady 4096 3 0.6291785
+case 3 steady 64 32 0.6087965
+case 3 switch_all 64 3 1.6086260000000001
+case 3 steady 64 16 0.48237
+case 3 steady 4096 32 10.91987
+case 3 steady 64 3 0.4121065
+case 3 switch_all 64 8 2.096761
+case 3 switch_all 512 3 4.1337485
+case 3 steady 4096 8 1.3873829999999998
+case 4 switch_all 64 8 1.718117
+case 4 steady 512 3 0.42824300000000004
+case 4 steady 64 32 0.6130515
+case 4 switch_all 64 3 1.6250065
+case 4 steady 512 8 0.541838
+case 4 steady 4096 3 0.6280509999999999
+case 4 steady 64 8 0.430102
+case 4 steady 64 3 0.41349199999999997
+case 4 switch_all 512 3 4.1313865000000005
+case 4 steady 512 16 0.829167
+case 4 switch_all 512 8 4.2052055
+case 4 switch_all 4096 8 27.904505999999998
+case 4 switch_all 4096 3 26.454274499999997
+case 4 steady 4096 32 10.923893
+case 4 steady 4096 8 1.3843455
+case 4 steady 512 32 1.759045
+case 4 steady 64 16 0.4851505
+case 4 steady 4096 16 3.338876

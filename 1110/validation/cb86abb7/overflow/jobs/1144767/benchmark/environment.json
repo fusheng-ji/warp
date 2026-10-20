@@ -1,0 +1,4084 @@
+{
+  "status": "passed",
+  "source_commit": "cb86abb75d123876d80c6832d8d360f4cda0cc10",
+  "source_dirty_before": "",
+  "arguments": {
+    "egl_device": 0,
+    "counts": [
+      64,
+      512,
+      4096
+    ],
+    "segments": [
+      3,
+      8,
+      16,
+      32
+    ],
+    "repeats": 5,
+    "frames": 32,
+    "dynamic_frames": 12,
+    "warmup": 8,
+    "seed": 1121
+  },
+  "environment": {
+    "python": "3.12.13",
+    "platform": "Linux x86_64",
+    "warp": "1.19.0.dev1",
+    "numpy": "2.5.3",
+    "pyglet": "2.1.16",
+    "cuda_visible_devices": "0",
+    "cuda_device": "NVIDIA B200",
+    "private_kernel_cache": true,
+    "thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1"
+    },
+    "slurm_job_id": "1144767",
+    "slurm_partition": "overflow",
+    "slurm_job_gpus": "5",
+    "slurm_gres": "gpu:b200:1 (exclusive full-GPU GRES; node may be shared)",
+    "gl_vendor": "NVIDIA Corporation",
+    "gl_renderer": "NVIDIA B200/PCIe/SSE2",
+    "gl_version": [
+      3,
+      3
+    ]
+  },
+  "source_sha256": {
+    "warp/_src/render/render_opengl.py": "a4fdbed58309d64e3cc067313f6c291817af6dbd18733010f3fc78f6d619fe87",
+    "warp/_src/context.py": "7df3e250cf3cb76dc6f6560ad0613b82a704a07d63e0ee7d7677b8455d23ba08"
+  },
+  "library_sha256": {
+    "warp-clang.so": "44084761f7548793d9685a129b15b7767cb4b68a3f65caffdd4c71a71bfacecc",
+    "warp.so": "6f5e8b0094e1c6b44e57b37b58a7299807ff4c6fd4a1cecc4242b676251749c7"
+  },
+  "script_sha256": "55ea256d5c65eeac755753b7f82c306e60b5a6662ba5eafe2495171eb1051c4d",
+  "telemetry_before": {
+    "fields": [
+      "index",
+      "utilization.gpu",
+      "utilization.memory",
+      "memory.used",
+      "clocks.sm",
+      "clocks.gr",
+      "power.draw",
+      "temperature.gpu"
+    ],
+    "rows": [
+      "0, 0, 0, 4, 1965, 1965, 253.49, 36"
+    ],
+    "exit_code": 0
+  },
+  "cases": [
+    {
+      "repeat": 0,
+      "order": 0,
+      "mode": "steady",
+      "instances": 4096,
+      "low_segments": 32,
+      "measured_frames": 32,
+      "foreground_pixels": 173247,
+      "wall_median_ms": 10.915294500000002,
+      "gl_median_ms": 10.85544,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 18, 0, 754, 1965, 1965, 254.75, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 21, 0, 754, 1965, 1965, 256.92, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 0,
+      "order": 1,
+      "mode": "steady",
+      "instances": 64,
+      "low_segments": 16,
+      "measured_frames": 32,
+      "foreground_pixels": 162262,
+      "wall_median_ms": 0.4840335,
+      "gl_median_ms": 0.429408,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 21, 0, 754, 1965, 1965, 256.92, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 21, 0, 754, 1965, 1965, 257.14, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 0,
+      "order": 2,
+      "mode": "steady",
+      "instances": 512,
+      "low_segments": 16,
+      "measured_frames": 32,
+      "foreground_pixels": 164038,
+      "wall_median_ms": 0.8332005,
+      "gl_median_ms": 0.776288,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 21, 0, 754, 1965, 1965, 257.14, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 14, 0, 754, 1965, 1965, 257.29, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 0,
+      "order": 3,
+      "mode": "steady",
+      "instances": 512,
+      "low_segments": 3,
+      "measured_frames": 32,
+      "foreground_pixels": 84844,
+      "wall_median_ms": 0.4320095,
+      "gl_median_ms": 0.376784,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 14, 0, 754, 1965, 1965, 257.29, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 4, 0, 754, 1965, 1965, 257.16, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 0,
+      "order": 4,
+      "mode": "switch_all",
+      "instances": 4096,
+      "low_segments": 8,
+      "measured_frames": 12,
+      "foreground_pixels": 159507,
+      "wall_median_ms": 28.779771500000003,
+      "gl_median_ms": 6.588992,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 16, 0, 754, 1965, 1965, 255.73, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 25, 0, 754, 1965, 1965, 254.99, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 0,
+      "order": 5,
+      "mode": "switch_all",
+      "instances": 64,
+      "low_segments": 8,
+      "measured_frames": 12,
+      "foreground_pixels": 151490,
+      "wall_median_ms": 1.8206405,
+      "gl_median_ms": 0.789152,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 15, 0, 754, 1965, 1965, 255.03, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 15, 0, 754, 1965, 1965, 254.91, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 0,
+      "order": 6,
+      "mode": "switch_all",
+      "instances": 512,
+      "low_segments": 8,
+      "measured_frames": 12,
+      "foreground_pixels": 152738,
+      "wall_median_ms": 4.734865,
+      "gl_median_ms": 1.385088,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 12, 0, 754, 1965, 1965, 255.04, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 12, 0, 754, 1965, 1965, 255.13, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 0,
+      "order": 7,
+      "mode": "steady",
+      "instances": 64,
+      "low_segments": 3,
+      "measured_frames": 32,
+      "foreground_pixels": 84053,
+      "wall_median_ms": 0.4152695,
+      "gl_median_ms": 0.35984,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 12, 0, 754, 1965, 1965, 255.13, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 17, 0, 754, 1965, 1965, 255.11, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 0,
+      "order": 8,
+      "mode": "steady",
+      "instances": 64,
+      "low_segments": 32,
+      "measured_frames": 32,
+      "foreground_pixels": 164861,
+      "wall_median_ms": 0.6094725000000001,
+      "gl_median_ms": 0.556784,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 17, 0, 754, 1965, 1965, 255.11, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 17, 0, 754, 1965, 1965, 255.27, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 0,
+      "order": 9,
+      "mode": "steady",
+      "instances": 512,
+      "low_segments": 8,
+      "measured_frames": 32,
+      "foreground_pixels": 152738,
+      "wall_median_ms": 0.5477194999999999,
+      "gl_median_ms": 0.490896,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 24, 0, 754, 1965, 1965, 255.28, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 24, 0, 754, 1965, 1965, 255.23, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 0,
+      "order": 10,
+      "mode": "switch_all",
+      "instances": 4096,
+      "low_segments": 3,
+      "measured_frames": 12,
+      "foreground_pixels": 88697,
+      "wall_median_ms": 24.8255855,
+      "gl_median_ms": 6.076896,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 0, 0, 754, 1965, 1965, 255.08, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 25, 0, 754, 1965, 1965, 255.17, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 0,
+      "order": 11,
+      "mode": "switch_all",
+      "instances": 64,
+      "low_segments": 3,
+      "measured_frames": 12,
+      "foreground_pixels": 84053,
+      "wall_median_ms": 1.6064825,
+      "gl_median_ms": 0.710912,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 25, 0, 754, 1965, 1965, 255.17, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 14, 0, 754, 1965, 1965, 255.20, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 0,
+      "order": 12,
+      "mode": "switch_all",
+      "instances": 512,
+      "low_segments": 3,
+      "measured_frames": 12,
+      "foreground_pixels": 84844,
+      "wall_median_ms": 4.753794,
+      "gl_median_ms": 1.955552,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 14, 0, 754, 1965, 1965, 255.24, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 22, 0, 754, 1965, 1965, 255.28, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 0,
+      "order": 13,
+      "mode": "steady",
+      "instances": 4096,
+      "low_segments": 8,
+      "measured_frames": 32,
+      "foreground_pixels": 159507,
+      "wall_median_ms": 1.3838415,
+      "gl_median_ms": 1.3313760000000001,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 22, 0, 754, 1965, 1965, 255.28, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 53, 0, 754, 1965, 1965, 255.63, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 0,
+      "order": 14,
+      "mode": "steady",
+      "instances": 4096,
+      "low_segments": 16,
+      "measured_frames": 32,
+      "foreground_pixels": 170394,
+      "wall_median_ms": 3.3378765,
+      "gl_median_ms": 3.280672,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 53, 0, 754, 1965, 1965, 255.63, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 67, 0, 754, 1965, 1965, 256.30, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 0,
+      "order": 15,
+      "mode": "steady",
+      "instances": 4096,
+      "low_segments": 3,
+      "measured_frames": 32,
+      "foreground_pixels": 88697,
+      "wall_median_ms": 0.6299055,
+      "gl_median_ms": 0.5742560000000001,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 67, 0, 754, 1965, 1965, 256.22, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 5, 0, 754, 1965, 1965, 256.25, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 0,
+      "order": 16,
+      "mode": "steady",
+      "instances": 64,
+      "low_segments": 8,
+      "measured_frames": 32,
+      "foreground_pixels": 151490,
+      "wall_median_ms": 0.4314555,
+      "gl_median_ms": 0.37769600000000003,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 5, 0, 754, 1965, 1965, 256.25, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 5, 0, 754, 1965, 1965, 256.16, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 0,
+      "order": 17,
+      "mode": "steady",
+      "instances": 512,
+      "low_segments": 32,
+      "measured_frames": 32,
+      "foreground_pixels": 165135,
+      "wall_median_ms": 1.7573615,
+      "gl_median_ms": 1.703472,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 17, 0, 754, 1965, 1965, 256.00, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 55, 0, 754, 1965, 1965, 256.29, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 1,
+      "order": 0,
+      "mode": "switch_all",
+      "instances": 4096,
+      "low_segments": 8,
+      "measured_frames": 12,
+      "foreground_pixels": 159507,
+      "wall_median_ms": 25.1497085,
+      "gl_median_ms": 6.347328,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 26, 0, 754, 1965, 1965, 256.06, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 26, 0, 754, 1965, 1965, 255.50, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 1,
+      "order": 1,
+      "mode": "switch_all",
+      "instances": 512,
+      "low_segments": 3,
+      "measured_frames": 12,
+      "foreground_pixels": 84844,
+      "wall_median_ms": 4.099732,
+      "gl_median_ms": 1.294192,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 26, 0, 754, 1965, 1965, 255.50, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 26, 0, 754, 1965, 1965, 255.57, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 1,
+      "order": 2,
+      "mode": "steady",
+      "instances": 64,
+      "low_segments": 32,
+      "measured_frames": 32,
+      "foreground_pixels": 164861,
+      "wall_median_ms": 0.611178,
+      "gl_median_ms": 0.556928,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 26, 0, 754, 1965, 1965, 255.68, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 26, 0, 754, 1965, 1965, 255.74, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 1,
+      "order": 3,
+      "mode": "steady",
+      "instances": 4096,
+      "low_segments": 8,
+      "measured_frames": 32,
+      "foreground_pixels": 159507,
+      "wall_median_ms": 1.3841945,
+      "gl_median_ms": 1.331008,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 26, 0, 754, 1965, 1965, 255.74, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 28, 0, 754, 1965, 1965, 255.56, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 1,
+      "order": 4,
+      "mode": "steady",
+      "instances": 512,
+      "low_segments": 3,
+      "measured_frames": 32,
+      "foreground_pixels": 84844,
+      "wall_median_ms": 0.4307745,
+      "gl_median_ms": 0.376592,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 28, 0, 754, 1965, 1965, 255.56, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 28, 0, 754, 1965, 1965, 255.77, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 1,
+      "order": 5,
+      "mode": "steady",
+      "instances": 4096,
+      "low_segments": 16,
+      "measured_frames": 32,
+      "foreground_pixels": 170394,
+      "wall_median_ms": 3.33689,
+      "gl_median_ms": 3.280688,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 17, 0, 754, 1965, 1965, 255.84, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 17, 0, 754, 1965, 1965, 256.22, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 1,
+      "order": 6,
+      "mode": "switch_all",
+      "instances": 512,
+      "low_segments": 8,
+      "measured_frames": 12,
+      "foreground_pixels": 152738,
+      "wall_median_ms": 4.298004499999999,
+      "gl_median_ms": 1.484192,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 97, 0, 754, 1965, 1965, 256.54, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 97, 0, 754, 1965, 1965, 256.49, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 1,
+      "order": 7,
+      "mode": "switch_all",
+      "instances": 64,
+      "low_segments": 8,
+      "measured_frames": 12,
+      "foreground_pixels": 151490,
+      "wall_median_ms": 1.6567515,
+      "gl_median_ms": 0.720832,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 21, 0, 754, 1965, 1965, 256.54, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 21, 0, 754, 1965, 1965, 256.54, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 1,
+      "order": 8,
+      "mode": "steady",
+      "instances": 512,
+      "low_segments": 32,
+      "measured_frames": 32,
+      "foreground_pixels": 165135,
+      "wall_median_ms": 1.7581015,
+      "gl_median_ms": 1.70336,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 21, 0, 754, 1965, 1965, 256.53, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 16, 0, 754, 1965, 1965, 256.87, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 1,
+      "order": 9,
+      "mode": "steady",
+      "instances": 512,
+      "low_segments": 8,
+      "measured_frames": 32,
+      "foreground_pixels": 152738,
+      "wall_median_ms": 0.5425225,
+      "gl_median_ms": 0.490736,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 16, 0, 754, 1965, 1965, 256.78, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 5, 0, 754, 1965, 1965, 256.61, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 1,
+      "order": 10,
+      "mode": "steady",
+      "instances": 64,
+      "low_segments": 16,
+      "measured_frames": 32,
+      "foreground_pixels": 162262,
+      "wall_median_ms": 0.483179,
+      "gl_median_ms": 0.42932800000000004,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 5, 0, 754, 1965, 1965, 256.61, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 5, 0, 754, 1965, 1965, 256.40, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 1,
+      "order": 11,
+      "mode": "steady",
+      "instances": 64,
+      "low_segments": 3,
+      "measured_frames": 32,
+      "foreground_pixels": 84053,
+      "wall_median_ms": 0.4115535,
+      "gl_median_ms": 0.35951999999999995,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 19, 0, 754, 1965, 1965, 256.21, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 19, 0, 754, 1965, 1965, 255.74, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 1,
+      "order": 12,
+      "mode": "steady",
+      "instances": 512,
+      "low_segments": 16,
+      "measured_frames": 32,
+      "foreground_pixels": 164038,
+      "wall_median_ms": 0.8310489999999999,
+      "gl_median_ms": 0.7764800000000001,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 19, 0, 754, 1965, 1965, 255.74, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 12, 0, 754, 1965, 1965, 255.41, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 1,
+      "order": 13,
+      "mode": "switch_all",
+      "instances": 64,
+      "low_segments": 3,
+      "measured_frames": 12,
+      "foreground_pixels": 84053,
+      "wall_median_ms": 1.6954915000000002,
+      "gl_median_ms": 0.71256,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 12, 0, 754, 1965, 1965, 255.41, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 12, 0, 754, 1965, 1965, 255.56, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 1,
+      "order": 14,
+      "mode": "steady",
+      "instances": 4096,
+      "low_segments": 3,
+      "measured_frames": 32,
+      "foreground_pixels": 88697,
+      "wall_median_ms": 0.6262475000000001,
+      "gl_median_ms": 0.574352,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 20, 0, 754, 1965, 1965, 255.46, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 20, 0, 754, 1965, 1965, 255.46, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 1,
+      "order": 15,
+      "mode": "switch_all",
+      "instances": 4096,
+      "low_segments": 3,
+      "measured_frames": 12,
+      "foreground_pixels": 88697,
+      "wall_median_ms": 25.286172,
+      "gl_median_ms": 5.967472,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 11, 0, 754, 1965, 1965, 255.15, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 25, 0, 754, 1965, 1965, 255.28, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 1,
+      "order": 16,
+      "mode": "steady",
+      "instances": 4096,
+      "low_segments": 32,
+      "measured_frames": 32,
+      "foreground_pixels": 173247,
+      "wall_median_ms": 10.915701,
+      "gl_median_ms": 10.855056000000001,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 13, 0, 754, 1965, 1965, 255.62, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 100, 0, 754, 1965, 1965, 257.40, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 1,
+      "order": 17,
+      "mode": "steady",
+      "instances": 64,
+      "low_segments": 8,
+      "measured_frames": 32,
+      "foreground_pixels": 151490,
+      "wall_median_ms": 0.4292135,
+      "gl_median_ms": 0.377776,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 100, 0, 754, 1965, 1965, 257.43, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 100, 0, 754, 1965, 1965, 257.43, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 2,
+      "order": 0,
+      "mode": "steady",
+      "instances": 64,
+      "low_segments": 32,
+      "measured_frames": 32,
+      "foreground_pixels": 164861,
+      "wall_median_ms": 0.6133845,
+      "gl_median_ms": 0.556896,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 17, 0, 754, 1965, 1965, 257.46, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 17, 0, 754, 1965, 1965, 257.46, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 2,
+      "order": 1,
+      "mode": "steady",
+      "instances": 64,
+      "low_segments": 8,
+      "measured_frames": 32,
+      "foreground_pixels": 151490,
+      "wall_median_ms": 0.428807,
+      "gl_median_ms": 0.37758400000000003,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 17, 0, 754, 1965, 1965, 257.50, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 17, 0, 754, 1965, 1965, 257.50, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 2,
+      "order": 2,
+      "mode": "switch_all",
+      "instances": 4096,
+      "low_segments": 3,
+      "measured_frames": 12,
+      "foreground_pixels": 88697,
+      "wall_median_ms": 25.015454499999997,
+      "gl_median_ms": 6.5367999999999995,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 25, 0, 754, 1965, 1965, 257.35, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 25, 0, 754, 1965, 1965, 255.85, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 2,
+      "order": 3,
+      "mode": "steady",
+      "instances": 4096,
+      "low_segments": 16,
+      "measured_frames": 32,
+      "foreground_pixels": 170394,
+      "wall_median_ms": 3.3417145,
+      "gl_median_ms": 3.281056,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 25, 0, 754, 1965, 1965, 255.34, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 79, 0, 754, 1965, 1965, 256.21, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 2,
+      "order": 4,
+      "mode": "switch_all",
+      "instances": 4096,
+      "low_segments": 8,
+      "measured_frames": 12,
+      "foreground_pixels": 159507,
+      "wall_median_ms": 25.046981000000002,
+      "gl_median_ms": 6.344768,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 26, 0, 754, 1965, 1965, 256.25, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 26, 0, 754, 1965, 1965, 256.38, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 2,
+      "order": 5,
+      "mode": "steady",
+      "instances": 512,
+      "low_segments": 16,
+      "measured_frames": 32,
+      "foreground_pixels": 164038,
+      "wall_median_ms": 0.830874,
+      "gl_median_ms": 0.776432,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 26, 0, 754, 1965, 1965, 256.38, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 26, 0, 754, 1965, 1965, 256.40, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 2,
+      "order": 6,
+      "mode": "switch_all",
+      "instances": 64,
+      "low_segments": 3,
+      "measured_frames": 12,
+      "foreground_pixels": 84053,
+      "wall_median_ms": 1.6280785,
+      "gl_median_ms": 0.712064,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 26, 0, 754, 1965, 1965, 256.40, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 26, 0, 754, 1965, 1965, 256.41, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 2,
+      "order": 7,
+      "mode": "switch_all",
+      "instances": 64,
+      "low_segments": 8,
+      "measured_frames": 12,
+      "foreground_pixels": 151490,
+      "wall_median_ms": 1.6221260000000002,
+      "gl_median_ms": 0.719552,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 26, 0, 754, 1965, 1965, 256.19, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 26, 0, 754, 1965, 1965, 256.19, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 2,
+      "order": 8,
+      "mode": "switch_all",
+      "instances": 512,
+      "low_segments": 8,
+      "measured_frames": 12,
+      "foreground_pixels": 152738,
+      "wall_median_ms": 4.1587045,
+      "gl_median_ms": 1.3524479999999999,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 20, 0, 754, 1965, 1965, 255.53, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 20, 0, 754, 1965, 1965, 255.67, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 2,
+      "order": 9,
+      "mode": "switch_all",
+      "instances": 512,
+      "low_segments": 3,
+      "measured_frames": 12,
+      "foreground_pixels": 84844,
+      "wall_median_ms": 4.5868804999999995,
+      "gl_median_ms": 1.296384,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 20, 0, 754, 1965, 1965, 255.68, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 20, 0, 754, 1965, 1965, 255.74, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 2,
+      "order": 10,
+      "mode": "steady",
+      "instances": 64,
+      "low_segments": 3,
+      "measured_frames": 32,
+      "foreground_pixels": 84053,
+      "wall_median_ms": 0.4114865,
+      "gl_median_ms": 0.359408,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 20, 0, 754, 1965, 1965, 255.74, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 15, 0, 754, 1965, 1965, 255.69, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 2,
+      "order": 11,
+      "mode": "steady",
+      "instances": 512,
+      "low_segments": 3,
+      "measured_frames": 32,
+      "foreground_pixels": 84844,
+      "wall_median_ms": 0.43121699999999996,
+      "gl_median_ms": 0.376832,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 15, 0, 754, 1965, 1965, 255.69, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 15, 0, 754, 1965, 1965, 255.62, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 2,
+      "order": 12,
+      "mode": "steady",
+      "instances": 4096,
+      "low_segments": 8,
+      "measured_frames": 32,
+      "foreground_pixels": 159507,
+      "wall_median_ms": 1.3857715000000002,
+      "gl_median_ms": 1.3309600000000001,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 15, 0, 754, 1965, 1965, 255.62, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 13, 0, 754, 1965, 1965, 255.58, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 2,
+      "order": 13,
+      "mode": "steady",
+      "instances": 64,
+      "low_segments": 16,
+      "measured_frames": 32,
+      "foreground_pixels": 162262,
+      "wall_median_ms": 0.48024500000000003,
+      "gl_median_ms": 0.429312,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 13, 0, 754, 1965, 1965, 255.76, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 13, 0, 754, 1965, 1965, 255.76, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 2,
+      "order": 14,
+      "mode": "steady",
+      "instances": 512,
+      "low_segments": 8,
+      "measured_frames": 32,
+      "foreground_pixels": 152738,
+      "wall_median_ms": 0.546036,
+      "gl_median_ms": 0.49107199999999995,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 5, 0, 754, 1965, 1965, 255.78, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 5, 0, 754, 1965, 1965, 255.80, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 2,
+      "order": 15,
+      "mode": "steady",
+      "instances": 4096,
+      "low_segments": 3,
+      "measured_frames": 32,
+      "foreground_pixels": 88697,
+      "wall_median_ms": 0.625456,
+      "gl_median_ms": 0.574208,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 5, 0, 754, 1965, 1965, 255.80, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 21, 0, 754, 1965, 1965, 255.79, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 2,
+      "order": 16,
+      "mode": "steady",
+      "instances": 4096,
+      "low_segments": 32,
+      "measured_frames": 32,
+      "foreground_pixels": 173247,
+      "wall_median_ms": 10.915397,
+      "gl_median_ms": 10.854944,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 21, 0, 754, 1965, 1965, 255.70, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 100, 0, 754, 1965, 1965, 257.54, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 2,
+      "order": 17,
+      "mode": "steady",
+      "instances": 512,
+      "low_segments": 32,
+      "measured_frames": 32,
+      "foreground_pixels": 165135,
+      "wall_median_ms": 1.758257,
+      "gl_median_ms": 1.70352,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 100, 0, 754, 1965, 1965, 257.76, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 100, 0, 754, 1965, 1965, 257.64, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 3,
+      "order": 0,
+      "mode": "steady",
+      "instances": 64,
+      "low_segments": 8,
+      "measured_frames": 32,
+      "foreground_pixels": 151490,
+      "wall_median_ms": 0.4292,
+      "gl_median_ms": 0.37784,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 55, 0, 754, 1965, 1965, 257.96, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 55, 0, 754, 1965, 1965, 257.96, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 3,
+      "order": 1,
+      "mode": "switch_all",
+      "instances": 4096,
+      "low_segments": 3,
+      "measured_frames": 12,
+      "foreground_pixels": 88697,
+      "wall_median_ms": 24.77242,
+      "gl_median_ms": 5.969312,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 11, 0, 754, 1965, 1965, 257.94, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 25, 0, 754, 1965, 1965, 256.55, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 3,
+      "order": 2,
+      "mode": "switch_all",
+      "instances": 64,
+      "low_segments": 3,
+      "measured_frames": 12,
+      "foreground_pixels": 84053,
+      "wall_median_ms": 1.617299,
+      "gl_median_ms": 0.7130240000000001,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 25, 0, 754, 1965, 1965, 255.98, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 10, 0, 754, 1965, 1965, 255.81, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 3,
+      "order": 3,
+      "mode": "steady",
+      "instances": 64,
+      "low_segments": 32,
+      "measured_frames": 32,
+      "foreground_pixels": 164861,
+      "wall_median_ms": 0.6091405,
+      "gl_median_ms": 0.556816,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 10, 0, 754, 1965, 1965, 255.81, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 10, 0, 754, 1965, 1965, 255.71, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 3,
+      "order": 4,
+      "mode": "steady",
+      "instances": 64,
+      "low_segments": 16,
+      "measured_frames": 32,
+      "foreground_pixels": 162262,
+      "wall_median_ms": 0.4824405,
+      "gl_median_ms": 0.42924799999999996,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 10, 0, 754, 1965, 1965, 255.71, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 19, 0, 754, 1965, 1965, 255.40, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 3,
+      "order": 5,
+      "mode": "switch_all",
+      "instances": 4096,
+      "low_segments": 8,
+      "measured_frames": 12,
+      "foreground_pixels": 159507,
+      "wall_median_ms": 26.387287,
+      "gl_median_ms": 6.379696,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 17, 0, 754, 1965, 1965, 255.43, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 26, 0, 754, 1965, 1965, 255.47, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 3,
+      "order": 6,
+      "mode": "steady",
+      "instances": 4096,
+      "low_segments": 8,
+      "measured_frames": 32,
+      "foreground_pixels": 159507,
+      "wall_median_ms": 1.385412,
+      "gl_median_ms": 1.331152,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 26, 0, 754, 1965, 1965, 255.41, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 22, 0, 754, 1965, 1965, 255.58, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 3,
+      "order": 7,
+      "mode": "steady",
+      "instances": 512,
+      "low_segments": 32,
+      "measured_frames": 32,
+      "foreground_pixels": 165135,
+      "wall_median_ms": 1.757455,
+      "gl_median_ms": 1.703648,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 22, 0, 754, 1965, 1965, 255.58, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 22, 0, 754, 1965, 1965, 255.75, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 3,
+      "order": 8,
+      "mode": "switch_all",
+      "instances": 512,
+      "low_segments": 8,
+      "measured_frames": 12,
+      "foreground_pixels": 152738,
+      "wall_median_ms": 4.745642,
+      "gl_median_ms": 1.352624,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 67, 0, 754, 1965, 1965, 255.97, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 67, 0, 754, 1965, 1965, 256.06, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 3,
+      "order": 9,
+      "mode": "steady",
+      "instances": 4096,
+      "low_segments": 32,
+      "measured_frames": 32,
+      "foreground_pixels": 173247,
+      "wall_median_ms": 10.914703,
+      "gl_median_ms": 10.854832,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 20, 0, 754, 1965, 1965, 256.51, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 98, 0, 754, 1965, 1965, 258.36, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 3,
+      "order": 10,
+      "mode": "steady",
+      "instances": 512,
+      "low_segments": 3,
+      "measured_frames": 32,
+      "foreground_pixels": 84844,
+      "wall_median_ms": 0.432401,
+      "gl_median_ms": 0.37681600000000004,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 98, 0, 754, 1965, 1965, 258.36, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 42, 0, 754, 1965, 1965, 258.05, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 3,
+      "order": 11,
+      "mode": "steady",
+      "instances": 4096,
+      "low_segments": 3,
+      "measured_frames": 32,
+      "foreground_pixels": 88697,
+      "wall_median_ms": 0.6267885,
+      "gl_median_ms": 0.574176,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 42, 0, 754, 1965, 1965, 258.05, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 42, 0, 754, 1965, 1965, 257.87, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 3,
+      "order": 12,
+      "mode": "steady",
+      "instances": 4096,
+      "low_segments": 16,
+      "measured_frames": 32,
+      "foreground_pixels": 170394,
+      "wall_median_ms": 3.3380935,
+      "gl_median_ms": 3.280944,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 25, 0, 754, 1965, 1965, 257.56, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 77, 0, 754, 1965, 1965, 258.29, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 3,
+      "order": 13,
+      "mode": "steady",
+      "instances": 512,
+      "low_segments": 8,
+      "measured_frames": 32,
+      "foreground_pixels": 152738,
+      "wall_median_ms": 0.5421400000000001,
+      "gl_median_ms": 0.490768,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 77, 0, 754, 1965, 1965, 258.29, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 77, 0, 754, 1965, 1965, 257.83, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 3,
+      "order": 14,
+      "mode": "switch_all",
+      "instances": 512,
+      "low_segments": 3,
+      "measured_frames": 12,
+      "foreground_pixels": 84844,
+      "wall_median_ms": 4.519821,
+      "gl_median_ms": 1.2951519999999999,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 77, 0, 754, 1965, 1965, 257.83, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 17, 0, 754, 1965, 1965, 257.04, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 3,
+      "order": 15,
+      "mode": "switch_all",
+      "instances": 64,
+      "low_segments": 8,
+      "measured_frames": 12,
+      "foreground_pixels": 151490,
+      "wall_median_ms": 1.6997749999999998,
+      "gl_median_ms": 0.72024,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 10, 0, 754, 1965, 1965, 256.46, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 10, 0, 754, 1965, 1965, 256.04, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 3,
+      "order": 16,
+      "mode": "steady",
+      "instances": 64,
+      "low_segments": 3,
+      "measured_frames": 32,
+      "foreground_pixels": 84053,
+      "wall_median_ms": 0.4103195,
+      "gl_median_ms": 0.359632,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 10, 0, 754, 1965, 1965, 256.04, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 12, 0, 754, 1965, 1965, 255.96, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 3,
+      "order": 17,
+      "mode": "steady",
+      "instances": 512,
+      "low_segments": 16,
+      "measured_frames": 32,
+      "foreground_pixels": 164038,
+      "wall_median_ms": 0.831596,
+      "gl_median_ms": 0.7765599999999999,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 12, 0, 754, 1965, 1965, 255.96, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 12, 0, 754, 1965, 1965, 255.99, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 4,
+      "order": 0,
+      "mode": "steady",
+      "instances": 4096,
+      "low_segments": 32,
+      "measured_frames": 32,
+      "foreground_pixels": 173247,
+      "wall_median_ms": 10.9144455,
+      "gl_median_ms": 10.854704,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 33, 0, 754, 1965, 1965, 256.15, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 100, 0, 754, 1965, 1965, 257.42, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 4,
+      "order": 1,
+      "mode": "steady",
+      "instances": 64,
+      "low_segments": 8,
+      "measured_frames": 32,
+      "foreground_pixels": 151490,
+      "wall_median_ms": 0.43138350000000003,
+      "gl_median_ms": 0.377712,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 100, 0, 754, 1965, 1965, 257.42, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 67, 0, 754, 1965, 1965, 257.52, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 4,
+      "order": 2,
+      "mode": "steady",
+      "instances": 4096,
+      "low_segments": 8,
+      "measured_frames": 32,
+      "foreground_pixels": 159507,
+      "wall_median_ms": 1.387315,
+      "gl_median_ms": 1.331344,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 67, 0, 754, 1965, 1965, 257.41, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 27, 0, 754, 1965, 1965, 257.89, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 4,
+      "order": 3,
+      "mode": "switch_all",
+      "instances": 4096,
+      "low_segments": 8,
+      "measured_frames": 12,
+      "foreground_pixels": 159507,
+      "wall_median_ms": 26.2705055,
+      "gl_median_ms": 6.374096,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 26, 0, 754, 1965, 1965, 257.84, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 26, 0, 754, 1965, 1965, 256.31, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 4,
+      "order": 4,
+      "mode": "steady",
+      "instances": 512,
+      "low_segments": 8,
+      "measured_frames": 32,
+      "foreground_pixels": 152738,
+      "wall_median_ms": 0.544999,
+      "gl_median_ms": 0.49086399999999997,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 26, 0, 754, 1965, 1965, 256.31, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 26, 0, 754, 1965, 1965, 255.63, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 4,
+      "order": 5,
+      "mode": "steady",
+      "instances": 64,
+      "low_segments": 16,
+      "measured_frames": 32,
+      "foreground_pixels": 162262,
+      "wall_median_ms": 0.482866,
+      "gl_median_ms": 0.429344,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 26, 0, 754, 1965, 1965, 255.63, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 22, 0, 754, 1965, 1965, 255.56, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 4,
+      "order": 6,
+      "mode": "steady",
+      "instances": 512,
+      "low_segments": 3,
+      "measured_frames": 32,
+      "foreground_pixels": 84844,
+      "wall_median_ms": 0.430357,
+      "gl_median_ms": 0.376912,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 22, 0, 754, 1965, 1965, 255.56, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 22, 0, 754, 1965, 1965, 255.65, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 4,
+      "order": 7,
+      "mode": "switch_all",
+      "instances": 64,
+      "low_segments": 3,
+      "measured_frames": 12,
+      "foreground_pixels": 84053,
+      "wall_median_ms": 1.7097194999999998,
+      "gl_median_ms": 0.806704,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 22, 0, 754, 1965, 1965, 255.34, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 17, 0, 754, 1965, 1965, 255.34, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 4,
+      "order": 8,
+      "mode": "switch_all",
+      "instances": 4096,
+      "low_segments": 3,
+      "measured_frames": 12,
+      "foreground_pixels": 88697,
+      "wall_median_ms": 24.848492,
+      "gl_median_ms": 5.967632,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 13, 0, 754, 1965, 1965, 255.38, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 25, 0, 754, 1965, 1965, 255.38, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 4,
+      "order": 9,
+      "mode": "steady",
+      "instances": 4096,
+      "low_segments": 16,
+      "measured_frames": 32,
+      "foreground_pixels": 170394,
+      "wall_median_ms": 3.335226,
+      "gl_median_ms": 3.280544,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 25, 0, 754, 1965, 1965, 255.37, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 25, 0, 754, 1965, 1965, 256.17, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 4,
+      "order": 10,
+      "mode": "switch_all",
+      "instances": 64,
+      "low_segments": 8,
+      "measured_frames": 12,
+      "foreground_pixels": 151490,
+      "wall_median_ms": 1.7085059999999999,
+      "gl_median_ms": 0.808752,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 25, 0, 754, 1965, 1965, 256.17, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 45, 0, 754, 1965, 1965, 256.12, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 4,
+      "order": 11,
+      "mode": "switch_all",
+      "instances": 512,
+      "low_segments": 3,
+      "measured_frames": 12,
+      "foreground_pixels": 84844,
+      "wall_median_ms": 4.108145,
+      "gl_median_ms": 1.295184,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 45, 0, 754, 1965, 1965, 256.16, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 16, 0, 754, 1965, 1965, 256.33, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 4,
+      "order": 12,
+      "mode": "steady",
+      "instances": 512,
+      "low_segments": 32,
+      "measured_frames": 32,
+      "foreground_pixels": 165135,
+      "wall_median_ms": 1.7562145,
+      "gl_median_ms": 1.7036319999999998,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 16, 0, 754, 1965, 1965, 256.33, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 16, 0, 754, 1965, 1965, 256.36, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 4,
+      "order": 13,
+      "mode": "steady",
+      "instances": 64,
+      "low_segments": 3,
+      "measured_frames": 32,
+      "foreground_pixels": 84053,
+      "wall_median_ms": 0.412675,
+      "gl_median_ms": 0.359392,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 65, 0, 754, 1965, 1965, 256.66, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 65, 0, 754, 1965, 1965, 256.66, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 4,
+      "order": 14,
+      "mode": "steady",
+      "instances": 4096,
+      "low_segments": 3,
+      "measured_frames": 32,
+      "foreground_pixels": 88697,
+      "wall_median_ms": 0.630322,
+      "gl_median_ms": 0.574144,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 65, 0, 754, 1965, 1965, 256.64, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 16, 0, 754, 1965, 1965, 256.64, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 4,
+      "order": 15,
+      "mode": "steady",
+      "instances": 512,
+      "low_segments": 16,
+      "measured_frames": 32,
+      "foreground_pixels": 164038,
+      "wall_median_ms": 0.830416,
+      "gl_median_ms": 0.776528,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 16, 0, 754, 1965, 1965, 256.64, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 16, 0, 754, 1965, 1965, 256.63, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 4,
+      "order": 16,
+      "mode": "steady",
+      "instances": 64,
+      "low_segments": 32,
+      "measured_frames": 32,
+      "foreground_pixels": 164861,
+      "wall_median_ms": 0.6104635,
+      "gl_median_ms": 0.557024,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 16, 0, 754, 1965, 1965, 256.63, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 33, 0, 754, 1965, 1965, 256.64, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    },
+    {
+      "repeat": 4,
+      "order": 17,
+      "mode": "switch_all",
+      "instances": 512,
+      "low_segments": 8,
+      "measured_frames": 12,
+      "foreground_pixels": 152738,
+      "wall_median_ms": 4.5379985000000005,
+      "gl_median_ms": 1.357264,
+      "telemetry_before": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 33, 0, 754, 1965, 1965, 256.19, 36"
+        ],
+        "exit_code": 0
+      },
+      "telemetry_after": {
+        "fields": [
+          "index",
+          "utilization.gpu",
+          "utilization.memory",
+          "memory.used",
+          "clocks.sm",
+          "clocks.gr",
+          "power.draw",
+          "temperature.gpu"
+        ],
+        "rows": [
+          "0, 14, 0, 754, 1965, 1965, 256.26, 36"
+        ],
+        "exit_code": 0
+      },
+      "passed": true
+    }
+  ],
+  "controls": [
+    {
+      "count": 64,
+      "default_equals_explicit_32_pixels": true,
+      "instance_count": 64,
+      "cached_meshes": 4
+    },
+    {
+      "count": 512,
+      "default_equals_explicit_32_pixels": true,
+      "instance_count": 512,
+      "cached_meshes": 4
+    },
+    {
+      "count": 4096,
+      "default_equals_explicit_32_pixels": true,
+      "instance_count": 4096,
+      "cached_meshes": 4
+    }
+  ],
+  "method": {
+    "drawing": "filled, 1280x720, no grid/sky/axis/overlay, vsync disabled",
+    "steady": "begin_frame + end_frame; pre-existing static instances; no per-object API calls",
+    "switch_all": "begin_frame + render_capsule for every instance + end_frame; alternating cached 32 and low resolution",
+    "wall_ms": "perf_counter_ns through glFinish after each frame; includes host work and completed GL work",
+    "gl_ms": "GPU timeline across frame commands; may include idle time waiting for host submission; not draw-only or CUDA kernel time",
+    "excluded": "renderer/mesh creation, initial instance upload, warmup, pixel reads, telemetry and query-result retrieval",
+    "order": "seeded random case order separately in each repeat; both resolutions warmed before switch timing",
+    "limits": "Slurm exclusive GPU allocation, no clock locking; latency reciprocal is not application or display FPS; lower LOD changes fidelity"
+  },
+  "source_dirty_after": "",
+  "telemetry_after": {
+    "fields": [
+      "index",
+      "utilization.gpu",
+      "utilization.memory",
+      "memory.used",
+      "clocks.sm",
+      "clocks.gr",
+      "power.draw",
+      "temperature.gpu"
+    ],
+    "rows": [
+      "0, 0, 0, 754, 1965, 1965, 254.31, 36"
+    ],
+    "exit_code": 0
+  },
+  "measured_frames": 2280
+}

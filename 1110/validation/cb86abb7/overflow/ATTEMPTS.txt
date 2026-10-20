@@ -1,0 +1,24 @@
+Overflow exclusive-GPU reruns of Warp #1110
+
+Frozen product source: cb86abb75d123876d80c6832d8d360f4cda0cc10.
+
+1143879: failed before rendering/timing (exit 1). Both a NVIDIA CUDA EGL device
+and a Mesa DRM device matched different selection rules; selection was rejected.
+
+1143894: failed before rendering/timing (exit 1). PCI-only preference selected a
+Mesa DRM device; it had no accessible standard GL configuration in the Slurm cgroup.
+
+The selector now restricts selection to CUDA-capable EGL devices, prefers a PCI
+match within that set, otherwise uses the CUDA physical-device attribute. It
+requires exactly one candidate and verifies native interop with copy fallback
+disabled. It never changes cgroup permissions or opens an unallocated GPU as
+a trial. Product source and measurement tolerances are unchanged.
+
+1143896: COMPLETED, exit 0:0, elapsed 53 seconds. The corrected vendor-aware
+selector and strict interop probe passed, followed by 40 filled frames, 2280
+timed frames, 90 blocks and ten exact restored images. Results, comparisons,
+figures, sanitized logs, accounting and verified checksums are in jobs/1143896.
+
+Raw Slurm stdout/stderr in private-slurm contain internal paths/node identifiers.
+They are kept separately from sanitized job result bundles and must not be
+published without redaction. No GitHub updates are performed by this workflow.

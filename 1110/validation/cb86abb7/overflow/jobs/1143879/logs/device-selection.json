@@ -1,0 +1,29 @@
+{
+  "name": "device-selection",
+  "command": [
+    "uv",
+    "run",
+    "--no-sync",
+    "<CHECKOUT>-overflow-20261020/jobs/1143879/select_device.py",
+    "--checkout",
+    "<CHECKOUT>",
+    "--output",
+    "<CHECKOUT>-overflow-20261020/jobs/1143879/device.json"
+  ],
+  "started_utc": "2026-10-20T18:21:06.733893+00:00",
+  "source_commit": "cb86abb75d123876d80c6832d8d360f4cda0cc10",
+  "dirty_before": "",
+  "cuda_visible_devices": "0",
+  "private_cache": true,
+  "experiment_scripts_sha256": {
+    "benchmark_capsules.py": "55ea256d5c65eeac755753b7f82c306e60b5a6662ba5eafe2495171eb1051c4d",
+    "run_record.py": "3ffd0820dc6e307ff39ca19752d8c721a8b88df83ac0df6d66bac9388b777c8b",
+    "select_device.py": "09bcf5831fa527b124e97dcb28a9cb6fb81a0b3e1828c250519cc1ce1302e832",
+    "summarize.py": "a638685282d3f92b95ad3e1a382a8fcfc4570507611ba6258c3c613e272b7cfa",
+    "validate_filled.py": "59f19082b1a5b5d965590517f3ccde2b10e4a503d5a8d918e1a2d1af8bcb7377",
+    "worker.py": "6cb7b2aadecc96d7b3d3b7db65e4380e49799e6d3ff83475e0c54ea3b2ee0cbf"
+  },
+  "exit_code": 1,
+  "elapsed_seconds": 1.5115852486342192,
+  "dirty_after": ""
+}

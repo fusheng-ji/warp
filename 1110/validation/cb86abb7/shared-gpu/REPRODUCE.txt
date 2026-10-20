@@ -1,0 +1,36 @@
+Use a clean checkout of cb86abb75d123876d80c6832d8d360f4cda0cc10.
+Place this bundle next to that checkout, named warp-1110-supplement-20261020.
+Commands below run from the feature checkout. They require its dev environment
+and native libraries; if missing, use uv sync --extra dev and the standard
+uv run build_lib.py build first. This task reused existing feature artifacts.
+
+Match the recorded Python/NumPy/Pyglet versions in REPORT.txt. EGL device 1 and
+CUDA_VISIBLE_DEVICES=1 must select the same physical GPU. Adapt BOTH together
+on another machine; record that the resulting hardware is different.
+
+export CUDA_VISIBLE_DEVICES=1
+export WARP_CACHE_PATH="$PWD/_build/1110-supplement-cache"
+
+# Write new output directories; preserve the accepted data in this bundle.
+uv run --no-sync ../warp-1110-supplement-20261020/validate_filled.py --checkout . --output ../warp-1110-supplement-20261020/reproduced-filled --mode switch --device cuda:0 --egl-device 1
+uv run --no-sync ../warp-1110-supplement-20261020/benchmark_capsules.py --checkout . --output ../warp-1110-supplement-20261020/reproduced-benchmark --egl-device 1
+
+# For the archived data, regenerate the CSV summaries and plots:
+uv run --no-sync ../warp-1110-supplement-20261020/summarize.py --input ../warp-1110-supplement-20261020
+
+# The saved command records used run_record.py --name NAME -- COMMAND ...
+# This captures sanitized logs, exit codes and clean source state. To capture
+# reproductions too, choose distinct names so archived logs are not overwritten.
+
+# Inspect style from any Warp checkout with pyproject.toml:
+uvx ruff check --config pyproject.toml ../warp-1110-supplement-20261020/*.py
+uvx ruff format --check --config pyproject.toml ../warp-1110-supplement-20261020/*.py
+
+# Inspect file integrity from the bundle directory:
+sha256sum --check SHA256SUMS
+
+summarize.py checks the accepted full configuration: 40 correctness frames,
+90 benchmark blocks, 2280 timed frames and ten exact restored images. It
+intentionally rejects partial or smoke data. For a new full measurement,
+place its two result directories under a new root named filled/ and benchmark/
+before running the analysis there. No timing-based pass threshold is used.

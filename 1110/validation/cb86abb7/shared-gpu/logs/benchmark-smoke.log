@@ -1,0 +1,14 @@
+Warp 1.19.0.dev1 initialized:
+   CUDA Toolkit 13.0, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA B200" (178 GiB, sm_100, mempool enabled)
+   Kernel cache:
+     <PRIVATE_CACHE>/1.19.0.dev1
+Module warp.render.render_opengl 4267418 load on device 'cuda:0' took 6.03 ms  (cached)
+prepared 16
+case 0 switch_all 16 8 10.1223975
+case 0 steady 16 3 0.42131850000000004
+case 0 steady 16 32 0.5008425000000001
+case 0 steady 16 8 0.432096
+case 0 switch_all 16 3 2.1238885

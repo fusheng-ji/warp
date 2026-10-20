@@ -1,0 +1,12 @@
+Run from the frozen feature checkout with its existing dev environment:
+
+uv run --no-sync ../warp-1110-overflow-20261020/aggregate_jobs.py --root ../warp-1110-overflow-20261020
+
+The three original jobs remain separately under jobs/<ID> with their own
+measurement scripts, reproduction commands, raw frames and verified manifests.
+The root independent-submissions.json and independent-accounting.csv identify
+this series. Full scheduler accounting with hostnames stays in private-slurm.
+Public accounting maps the three actual distinct nodes to labels A, B and C.
+
+This summary is descriptive: job medians/ranges, without confidence intervals.
+The prior single allocation and shared-GPU runs are excluded from new totals.

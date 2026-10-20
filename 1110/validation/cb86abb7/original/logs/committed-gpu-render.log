@@ -1,0 +1,39 @@
+Warp 1.19.0.dev1 initialized:
+   CUDA Toolkit 13.0, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA B200" (178 GiB, sm_100, mempool enabled)
+   Kernel cache:
+     <CHECKOUT>/_build/1110-cache/1.19.0.dev1
+Module warp.render.render_opengl 4267418 load on device 'cuda:0' took 7.86 ms  (cached)
+sphere cached False frame 0 segments 32 PASS
+sphere cached False frame 1 segments 8 PASS
+sphere cached False frame 2 segments 32 PASS
+sphere cached True frame 0 segments 32 PASS
+sphere cached True frame 1 segments 8 PASS
+sphere cached True frame 2 segments 32 PASS
+capsule cached False frame 0 segments 32 PASS
+capsule cached False frame 1 segments 8 PASS
+capsule cached False frame 2 segments 32 PASS
+capsule cached True frame 0 segments 32 PASS
+capsule cached True frame 1 segments 8 PASS
+capsule cached True frame 2 segments 32 PASS
+cylinder cached False frame 0 segments 32 PASS
+cylinder cached False frame 1 segments 8 PASS
+cylinder cached False frame 2 segments 32 PASS
+cylinder cached True frame 0 segments 32 PASS
+cylinder cached True frame 1 segments 8 PASS
+cylinder cached True frame 2 segments 32 PASS
+cone cached False frame 0 segments 32 PASS
+cone cached False frame 1 segments 8 PASS
+cone cached False frame 2 segments 32 PASS
+cone cached True frame 0 segments 32 PASS
+cone cached True frame 1 segments 8 PASS
+cone cached True frame 2 segments 32 PASS
+arrow cached False frame 0 segments 32 PASS
+arrow cached False frame 1 segments 8 PASS
+arrow cached False frame 2 segments 32 PASS
+arrow cached True frame 0 segments 32 PASS
+arrow cached True frame 1 segments 8 PASS
+arrow cached True frame 2 segments 32 PASS
+Passed 30 rendered frames across 5 primitive types.

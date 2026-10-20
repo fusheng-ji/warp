@@ -1,0 +1,3 @@
+primitive,target_pre_cached,tiled,frame,segments,vertices,triangles,instance_id,instance_count,cached_meshes,image,passed
+sphere,False,False,0,32,1089,2048,0,2,1,sphere-cached-0-frame-0-segments-32.png,True
+sphere,False,False,1,8,81,128,0,2,2,sphere-cached-0-frame-1-segments-8.png,True

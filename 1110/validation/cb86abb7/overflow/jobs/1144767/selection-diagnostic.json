@@ -1,0 +1,22 @@
+{
+  "allocated_physical_gpu_index": 0,
+  "egl_devices_enumerated": 10,
+  "pci_candidates": [],
+  "ordinal_candidates": [
+    0
+  ],
+  "evidence": [
+    {
+      "egl_index": 0,
+      "drm_pci_match": false,
+      "cuda_physical_index_match": true,
+      "cuda_capable_egl_device": true
+    },
+    {
+      "egl_index": 3,
+      "drm_pci_match": true,
+      "cuda_physical_index_match": false,
+      "cuda_capable_egl_device": false
+    }
+  ]
+}

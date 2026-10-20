@@ -1,0 +1,22 @@
+{
+  "source": "cb86abb75d123876d80c6832d8d360f4cda0cc10",
+  "source_clean": true,
+  "job_manifests": [
+    {
+      "job_id": "1144767",
+      "verified_files": 84
+    },
+    {
+      "job_id": "1144768",
+      "verified_files": 84
+    },
+    {
+      "job_id": "1144769",
+      "verified_files": 84
+    }
+  ],
+  "distinct_nodes_verified_from_private_sacct": 3,
+  "sensitive_pattern_hits": [],
+  "aggregate_script_sha256": "ba55a01e96b81ef96b2165731a6938223d1720d7d65cc37471829166214fe3a0",
+  "publication": "Local only; no public updates."
+}

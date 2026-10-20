@@ -1,0 +1,18 @@
+{
+  "name": "precommit",
+  "command": [
+    "uvx",
+    "pre-commit",
+    "run",
+    "--files",
+    "warp/_src/render/render_opengl.py",
+    "warp/tests/test_render_opengl.py",
+    "docs/domain_modules/render.rst",
+    "changelog/1110.added.md"
+  ],
+  "started_utc": "2026-10-20T10:41:32.496101+00:00",
+  "seconds": 7.520391213009134,
+  "exit_code": 1,
+  "source_commit": "0382a97e2c72911c1f6bba45274e12833a19d8e2",
+  "private_kernel_cache": true
+}

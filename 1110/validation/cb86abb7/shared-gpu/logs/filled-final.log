@@ -1,0 +1,311 @@
+import_dependencies {}
+warp_init {}
+Warp 1.19.0.dev1 initialized:
+   CUDA Toolkit 13.0, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA B200" (178 GiB, sm_100, mempool enabled)
+   Kernel cache:
+     <PRIVATE_CACHE>/1.19.0.dev1
+create_renderer {'primitive': 'sphere', 'cached': False}
+Module warp.render.render_opengl 4267418 load on device 'cuda:0' took 830.35 ms  (compiled)
+native_registration_attempt {'count': 1, 'forced_failure': False}
+native_registration_attempt {'count': 2, 'forced_failure': False}
+begin_frame {'primitive': 'sphere', 'cached': False, 'frame': 0, 'segments': 32}
+native_registration_attempt {'count': 3, 'forced_failure': False}
+end_frame {'primitive': 'sphere', 'cached': False, 'frame': 0}
+get_pixels {'primitive': 'sphere', 'cached': False, 'frame': 0}
+native_registration_attempt {'count': 4, 'forced_failure': False}
+map_transforms {'primitive': 'sphere', 'cached': False, 'frame': 0}
+begin_frame {'primitive': 'sphere', 'cached': False, 'frame': 1, 'segments': 8}
+native_registration_attempt {'count': 5, 'forced_failure': False}
+native_registration_attempt {'count': 6, 'forced_failure': False}
+end_frame {'primitive': 'sphere', 'cached': False, 'frame': 1}
+get_pixels {'primitive': 'sphere', 'cached': False, 'frame': 1}
+native_registration_attempt {'count': 7, 'forced_failure': False}
+map_transforms {'primitive': 'sphere', 'cached': False, 'frame': 1}
+begin_frame {'primitive': 'sphere', 'cached': False, 'frame': 2, 'segments': 3}
+native_registration_attempt {'count': 8, 'forced_failure': False}
+native_registration_attempt {'count': 9, 'forced_failure': False}
+end_frame {'primitive': 'sphere', 'cached': False, 'frame': 2}
+get_pixels {'primitive': 'sphere', 'cached': False, 'frame': 2}
+native_registration_attempt {'count': 10, 'forced_failure': False}
+map_transforms {'primitive': 'sphere', 'cached': False, 'frame': 2}
+begin_frame {'primitive': 'sphere', 'cached': False, 'frame': 3, 'segments': 32}
+native_registration_attempt {'count': 11, 'forced_failure': False}
+end_frame {'primitive': 'sphere', 'cached': False, 'frame': 3}
+get_pixels {'primitive': 'sphere', 'cached': False, 'frame': 3}
+native_registration_attempt {'count': 12, 'forced_failure': False}
+map_transforms {'primitive': 'sphere', 'cached': False, 'frame': 3}
+close_renderer {'primitive': 'sphere', 'cached': False}
+create_renderer {'primitive': 'sphere', 'cached': True}
+native_registration_attempt {'count': 13, 'forced_failure': False}
+native_registration_attempt {'count': 14, 'forced_failure': False}
+native_registration_attempt {'count': 15, 'forced_failure': False}
+native_registration_attempt {'count': 16, 'forced_failure': False}
+begin_frame {'primitive': 'sphere', 'cached': True, 'frame': 0, 'segments': 32}
+native_registration_attempt {'count': 17, 'forced_failure': False}
+end_frame {'primitive': 'sphere', 'cached': True, 'frame': 0}
+get_pixels {'primitive': 'sphere', 'cached': True, 'frame': 0}
+native_registration_attempt {'count': 18, 'forced_failure': False}
+map_transforms {'primitive': 'sphere', 'cached': True, 'frame': 0}
+begin_frame {'primitive': 'sphere', 'cached': True, 'frame': 1, 'segments': 8}
+native_registration_attempt {'count': 19, 'forced_failure': False}
+end_frame {'primitive': 'sphere', 'cached': True, 'frame': 1}
+get_pixels {'primitive': 'sphere', 'cached': True, 'frame': 1}
+native_registration_attempt {'count': 20, 'forced_failure': False}
+map_transforms {'primitive': 'sphere', 'cached': True, 'frame': 1}
+begin_frame {'primitive': 'sphere', 'cached': True, 'frame': 2, 'segments': 3}
+native_registration_attempt {'count': 21, 'forced_failure': False}
+end_frame {'primitive': 'sphere', 'cached': True, 'frame': 2}
+get_pixels {'primitive': 'sphere', 'cached': True, 'frame': 2}
+native_registration_attempt {'count': 22, 'forced_failure': False}
+map_transforms {'primitive': 'sphere', 'cached': True, 'frame': 2}
+begin_frame {'primitive': 'sphere', 'cached': True, 'frame': 3, 'segments': 32}
+native_registration_attempt {'count': 23, 'forced_failure': False}
+end_frame {'primitive': 'sphere', 'cached': True, 'frame': 3}
+get_pixels {'primitive': 'sphere', 'cached': True, 'frame': 3}
+native_registration_attempt {'count': 24, 'forced_failure': False}
+map_transforms {'primitive': 'sphere', 'cached': True, 'frame': 3}
+close_renderer {'primitive': 'sphere', 'cached': True}
+create_renderer {'primitive': 'capsule', 'cached': False}
+native_registration_attempt {'count': 25, 'forced_failure': False}
+native_registration_attempt {'count': 26, 'forced_failure': False}
+begin_frame {'primitive': 'capsule', 'cached': False, 'frame': 0, 'segments': 32}
+native_registration_attempt {'count': 27, 'forced_failure': False}
+end_frame {'primitive': 'capsule', 'cached': False, 'frame': 0}
+get_pixels {'primitive': 'capsule', 'cached': False, 'frame': 0}
+native_registration_attempt {'count': 28, 'forced_failure': False}
+map_transforms {'primitive': 'capsule', 'cached': False, 'frame': 0}
+begin_frame {'primitive': 'capsule', 'cached': False, 'frame': 1, 'segments': 8}
+native_registration_attempt {'count': 29, 'forced_failure': False}
+native_registration_attempt {'count': 30, 'forced_failure': False}
+end_frame {'primitive': 'capsule', 'cached': False, 'frame': 1}
+get_pixels {'primitive': 'capsule', 'cached': False, 'frame': 1}
+native_registration_attempt {'count': 31, 'forced_failure': False}
+map_transforms {'primitive': 'capsule', 'cached': False, 'frame': 1}
+begin_frame {'primitive': 'capsule', 'cached': False, 'frame': 2, 'segments': 3}
+native_registration_attempt {'count': 32, 'forced_failure': False}
+native_registration_attempt {'count': 33, 'forced_failure': False}
+end_frame {'primitive': 'capsule', 'cached': False, 'frame': 2}
+get_pixels {'primitive': 'capsule', 'cached': False, 'frame': 2}
+native_registration_attempt {'count': 34, 'forced_failure': False}
+map_transforms {'primitive': 'capsule', 'cached': False, 'frame': 2}
+begin_frame {'primitive': 'capsule', 'cached': False, 'frame': 3, 'segments': 32}
+native_registration_attempt {'count': 35, 'forced_failure': False}
+end_frame {'primitive': 'capsule', 'cached': False, 'frame': 3}
+get_pixels {'primitive': 'capsule', 'cached': False, 'frame': 3}
+native_registration_attempt {'count': 36, 'forced_failure': False}
+map_transforms {'primitive': 'capsule', 'cached': False, 'frame': 3}
+close_renderer {'primitive': 'capsule', 'cached': False}
+create_renderer {'primitive': 'capsule', 'cached': True}
+native_registration_attempt {'count': 37, 'forced_failure': False}
+native_registration_attempt {'count': 38, 'forced_failure': False}
+native_registration_attempt {'count': 39, 'forced_failure': False}
+native_registration_attempt {'count': 40, 'forced_failure': False}
+begin_frame {'primitive': 'capsule', 'cached': True, 'frame': 0, 'segments': 32}
+native_registration_attempt {'count': 41, 'forced_failure': False}
+end_frame {'primitive': 'capsule', 'cached': True, 'frame': 0}
+get_pixels {'primitive': 'capsule', 'cached': True, 'frame': 0}
+native_registration_attempt {'count': 42, 'forced_failure': False}
+map_transforms {'primitive': 'capsule', 'cached': True, 'frame': 0}
+begin_frame {'primitive': 'capsule', 'cached': True, 'frame': 1, 'segments': 8}
+native_registration_attempt {'count': 43, 'forced_failure': False}
+end_frame {'primitive': 'capsule', 'cached': True, 'frame': 1}
+get_pixels {'primitive': 'capsule', 'cached': True, 'frame': 1}
+native_registration_attempt {'count': 44, 'forced_failure': False}
+map_transforms {'primitive': 'capsule', 'cached': True, 'frame': 1}
+begin_frame {'primitive': 'capsule', 'cached': True, 'frame': 2, 'segments': 3}
+native_registration_attempt {'count': 45, 'forced_failure': False}
+end_frame {'primitive': 'capsule', 'cached': True, 'frame': 2}
+get_pixels {'primitive': 'capsule', 'cached': True, 'frame': 2}
+native_registration_attempt {'count': 46, 'forced_failure': False}
+map_transforms {'primitive': 'capsule', 'cached': True, 'frame': 2}
+begin_frame {'primitive': 'capsule', 'cached': True, 'frame': 3, 'segments': 32}
+native_registration_attempt {'count': 47, 'forced_failure': False}
+end_frame {'primitive': 'capsule', 'cached': True, 'frame': 3}
+get_pixels {'primitive': 'capsule', 'cached': True, 'frame': 3}
+native_registration_attempt {'count': 48, 'forced_failure': False}
+map_transforms {'primitive': 'capsule', 'cached': True, 'frame': 3}
+close_renderer {'primitive': 'capsule', 'cached': True}
+create_renderer {'primitive': 'cylinder', 'cached': False}
+native_registration_attempt {'count': 49, 'forced_failure': False}
+native_registration_attempt {'count': 50, 'forced_failure': False}
+begin_frame {'primitive': 'cylinder', 'cached': False, 'frame': 0, 'segments': 32}
+native_registration_attempt {'count': 51, 'forced_failure': False}
+end_frame {'primitive': 'cylinder', 'cached': False, 'frame': 0}
+get_pixels {'primitive': 'cylinder', 'cached': False, 'frame': 0}
+native_registration_attempt {'count': 52, 'forced_failure': False}
+map_transforms {'primitive': 'cylinder', 'cached': False, 'frame': 0}
+begin_frame {'primitive': 'cylinder', 'cached': False, 'frame': 1, 'segments': 8}
+native_registration_attempt {'count': 53, 'forced_failure': False}
+native_registration_attempt {'count': 54, 'forced_failure': False}
+end_frame {'primitive': 'cylinder', 'cached': False, 'frame': 1}
+get_pixels {'primitive': 'cylinder', 'cached': False, 'frame': 1}
+native_registration_attempt {'count': 55, 'forced_failure': False}
+map_transforms {'primitive': 'cylinder', 'cached': False, 'frame': 1}
+begin_frame {'primitive': 'cylinder', 'cached': False, 'frame': 2, 'segments': 3}
+native_registration_attempt {'count': 56, 'forced_failure': False}
+native_registration_attempt {'count': 57, 'forced_failure': False}
+end_frame {'primitive': 'cylinder', 'cached': False, 'frame': 2}
+get_pixels {'primitive': 'cylinder', 'cached': False, 'frame': 2}
+native_registration_attempt {'count': 58, 'forced_failure': False}
+map_transforms {'primitive': 'cylinder', 'cached': False, 'frame': 2}
+begin_frame {'primitive': 'cylinder', 'cached': False, 'frame': 3, 'segments': 32}
+native_registration_attempt {'count': 59, 'forced_failure': False}
+end_frame {'primitive': 'cylinder', 'cached': False, 'frame': 3}
+get_pixels {'primitive': 'cylinder', 'cached': False, 'frame': 3}
+native_registration_attempt {'count': 60, 'forced_failure': False}
+map_transforms {'primitive': 'cylinder', 'cached': False, 'frame': 3}
+close_renderer {'primitive': 'cylinder', 'cached': False}
+create_renderer {'primitive': 'cylinder', 'cached': True}
+native_registration_attempt {'count': 61, 'forced_failure': False}
+native_registration_attempt {'count': 62, 'forced_failure': False}
+native_registration_attempt {'count': 63, 'forced_failure': False}
+native_registration_attempt {'count': 64, 'forced_failure': False}
+begin_frame {'primitive': 'cylinder', 'cached': True, 'frame': 0, 'segments': 32}
+native_registration_attempt {'count': 65, 'forced_failure': False}
+end_frame {'primitive': 'cylinder', 'cached': True, 'frame': 0}
+get_pixels {'primitive': 'cylinder', 'cached': True, 'frame': 0}
+native_registration_attempt {'count': 66, 'forced_failure': False}
+map_transforms {'primitive': 'cylinder', 'cached': True, 'frame': 0}
+begin_frame {'primitive': 'cylinder', 'cached': True, 'frame': 1, 'segments': 8}
+native_registration_attempt {'count': 67, 'forced_failure': False}
+end_frame {'primitive': 'cylinder', 'cached': True, 'frame': 1}
+get_pixels {'primitive': 'cylinder', 'cached': True, 'frame': 1}
+native_registration_attempt {'count': 68, 'forced_failure': False}
+map_transforms {'primitive': 'cylinder', 'cached': True, 'frame': 1}
+begin_frame {'primitive': 'cylinder', 'cached': True, 'frame': 2, 'segments': 3}
+native_registration_attempt {'count': 69, 'forced_failure': False}
+end_frame {'primitive': 'cylinder', 'cached': True, 'frame': 2}
+get_pixels {'primitive': 'cylinder', 'cached': True, 'frame': 2}
+native_registration_attempt {'count': 70, 'forced_failure': False}
+map_transforms {'primitive': 'cylinder', 'cached': True, 'frame': 2}
+begin_frame {'primitive': 'cylinder', 'cached': True, 'frame': 3, 'segments': 32}
+native_registration_attempt {'count': 71, 'forced_failure': False}
+end_frame {'primitive': 'cylinder', 'cached': True, 'frame': 3}
+get_pixels {'primitive': 'cylinder', 'cached': True, 'frame': 3}
+native_registration_attempt {'count': 72, 'forced_failure': False}
+map_transforms {'primitive': 'cylinder', 'cached': True, 'frame': 3}
+close_renderer {'primitive': 'cylinder', 'cached': True}
+create_renderer {'primitive': 'cone', 'cached': False}
+native_registration_attempt {'count': 73, 'forced_failure': False}
+native_registration_attempt {'count': 74, 'forced_failure': False}
+begin_frame {'primitive': 'cone', 'cached': False, 'frame': 0, 'segments': 32}
+native_registration_attempt {'count': 75, 'forced_failure': False}
+end_frame {'primitive': 'cone', 'cached': False, 'frame': 0}
+get_pixels {'primitive': 'cone', 'cached': False, 'frame': 0}
+native_registration_attempt {'count': 76, 'forced_failure': False}
+map_transforms {'primitive': 'cone', 'cached': False, 'frame': 0}
+begin_frame {'primitive': 'cone', 'cached': False, 'frame': 1, 'segments': 8}
+native_registration_attempt {'count': 77, 'forced_failure': False}
+native_registration_attempt {'count': 78, 'forced_failure': False}
+end_frame {'primitive': 'cone', 'cached': False, 'frame': 1}
+get_pixels {'primitive': 'cone', 'cached': False, 'frame': 1}
+native_registration_attempt {'count': 79, 'forced_failure': False}
+map_transforms {'primitive': 'cone', 'cached': False, 'frame': 1}
+begin_frame {'primitive': 'cone', 'cached': False, 'frame': 2, 'segments': 3}
+native_registration_attempt {'count': 80, 'forced_failure': False}
+native_registration_attempt {'count': 81, 'forced_failure': False}
+end_frame {'primitive': 'cone', 'cached': False, 'frame': 2}
+get_pixels {'primitive': 'cone', 'cached': False, 'frame': 2}
+native_registration_attempt {'count': 82, 'forced_failure': False}
+map_transforms {'primitive': 'cone', 'cached': False, 'frame': 2}
+begin_frame {'primitive': 'cone', 'cached': False, 'frame': 3, 'segments': 32}
+native_registration_attempt {'count': 83, 'forced_failure': False}
+end_frame {'primitive': 'cone', 'cached': False, 'frame': 3}
+get_pixels {'primitive': 'cone', 'cached': False, 'frame': 3}
+native_registration_attempt {'count': 84, 'forced_failure': False}
+map_transforms {'primitive': 'cone', 'cached': False, 'frame': 3}
+close_renderer {'primitive': 'cone', 'cached': False}
+create_renderer {'primitive': 'cone', 'cached': True}
+native_registration_attempt {'count': 85, 'forced_failure': False}
+native_registration_attempt {'count': 86, 'forced_failure': False}
+native_registration_attempt {'count': 87, 'forced_failure': False}
+native_registration_attempt {'count': 88, 'forced_failure': False}
+begin_frame {'primitive': 'cone', 'cached': True, 'frame': 0, 'segments': 32}
+native_registration_attempt {'count': 89, 'forced_failure': False}
+end_frame {'primitive': 'cone', 'cached': True, 'frame': 0}
+get_pixels {'primitive': 'cone', 'cached': True, 'frame': 0}
+native_registration_attempt {'count': 90, 'forced_failure': False}
+map_transforms {'primitive': 'cone', 'cached': True, 'frame': 0}
+begin_frame {'primitive': 'cone', 'cached': True, 'frame': 1, 'segments': 8}
+native_registration_attempt {'count': 91, 'forced_failure': False}
+end_frame {'primitive': 'cone', 'cached': True, 'frame': 1}
+get_pixels {'primitive': 'cone', 'cached': True, 'frame': 1}
+native_registration_attempt {'count': 92, 'forced_failure': False}
+map_transforms {'primitive': 'cone', 'cached': True, 'frame': 1}
+begin_frame {'primitive': 'cone', 'cached': True, 'frame': 2, 'segments': 3}
+native_registration_attempt {'count': 93, 'forced_failure': False}
+end_frame {'primitive': 'cone', 'cached': True, 'frame': 2}
+get_pixels {'primitive': 'cone', 'cached': True, 'frame': 2}
+native_registration_attempt {'count': 94, 'forced_failure': False}
+map_transforms {'primitive': 'cone', 'cached': True, 'frame': 2}
+begin_frame {'primitive': 'cone', 'cached': True, 'frame': 3, 'segments': 32}
+native_registration_attempt {'count': 95, 'forced_failure': False}
+end_frame {'primitive': 'cone', 'cached': True, 'frame': 3}
+get_pixels {'primitive': 'cone', 'cached': True, 'frame': 3}
+native_registration_attempt {'count': 96, 'forced_failure': False}
+map_transforms {'primitive': 'cone', 'cached': True, 'frame': 3}
+close_renderer {'primitive': 'cone', 'cached': True}
+create_renderer {'primitive': 'arrow', 'cached': False}
+native_registration_attempt {'count': 97, 'forced_failure': False}
+native_registration_attempt {'count': 98, 'forced_failure': False}
+begin_frame {'primitive': 'arrow', 'cached': False, 'frame': 0, 'segments': 32}
+native_registration_attempt {'count': 99, 'forced_failure': False}
+end_frame {'primitive': 'arrow', 'cached': False, 'frame': 0}
+get_pixels {'primitive': 'arrow', 'cached': False, 'frame': 0}
+native_registration_attempt {'count': 100, 'forced_failure': False}
+map_transforms {'primitive': 'arrow', 'cached': False, 'frame': 0}
+begin_frame {'primitive': 'arrow', 'cached': False, 'frame': 1, 'segments': 8}
+native_registration_attempt {'count': 101, 'forced_failure': False}
+native_registration_attempt {'count': 102, 'forced_failure': False}
+end_frame {'primitive': 'arrow', 'cached': False, 'frame': 1}
+get_pixels {'primitive': 'arrow', 'cached': False, 'frame': 1}
+native_registration_attempt {'count': 103, 'forced_failure': False}
+map_transforms {'primitive': 'arrow', 'cached': False, 'frame': 1}
+begin_frame {'primitive': 'arrow', 'cached': False, 'frame': 2, 'segments': 3}
+native_registration_attempt {'count': 104, 'forced_failure': False}
+native_registration_attempt {'count': 105, 'forced_failure': False}
+end_frame {'primitive': 'arrow', 'cached': False, 'frame': 2}
+get_pixels {'primitive': 'arrow', 'cached': False, 'frame': 2}
+native_registration_attempt {'count': 106, 'forced_failure': False}
+map_transforms {'primitive': 'arrow', 'cached': False, 'frame': 2}
+begin_frame {'primitive': 'arrow', 'cached': False, 'frame': 3, 'segments': 32}
+native_registration_attempt {'count': 107, 'forced_failure': False}
+end_frame {'primitive': 'arrow', 'cached': False, 'frame': 3}
+get_pixels {'primitive': 'arrow', 'cached': False, 'frame': 3}
+native_registration_attempt {'count': 108, 'forced_failure': False}
+map_transforms {'primitive': 'arrow', 'cached': False, 'frame': 3}
+close_renderer {'primitive': 'arrow', 'cached': False}
+create_renderer {'primitive': 'arrow', 'cached': True}
+native_registration_attempt {'count': 109, 'forced_failure': False}
+native_registration_attempt {'count': 110, 'forced_failure': False}
+native_registration_attempt {'count': 111, 'forced_failure': False}
+native_registration_attempt {'count': 112, 'forced_failure': False}
+begin_frame {'primitive': 'arrow', 'cached': True, 'frame': 0, 'segments': 32}
+native_registration_attempt {'count': 113, 'forced_failure': False}
+end_frame {'primitive': 'arrow', 'cached': True, 'frame': 0}
+get_pixels {'primitive': 'arrow', 'cached': True, 'frame': 0}
+native_registration_attempt {'count': 114, 'forced_failure': False}
+map_transforms {'primitive': 'arrow', 'cached': True, 'frame': 0}
+begin_frame {'primitive': 'arrow', 'cached': True, 'frame': 1, 'segments': 8}
+native_registration_attempt {'count': 115, 'forced_failure': False}
+end_frame {'primitive': 'arrow', 'cached': True, 'frame': 1}
+get_pixels {'primitive': 'arrow', 'cached': True, 'frame': 1}
+native_registration_attempt {'count': 116, 'forced_failure': False}
+map_transforms {'primitive': 'arrow', 'cached': True, 'frame': 1}
+begin_frame {'primitive': 'arrow', 'cached': True, 'frame': 2, 'segments': 3}
+native_registration_attempt {'count': 117, 'forced_failure': False}
+end_frame {'primitive': 'arrow', 'cached': True, 'frame': 2}
+get_pixels {'primitive': 'arrow', 'cached': True, 'frame': 2}
+native_registration_attempt {'count': 118, 'forced_failure': False}
+map_transforms {'primitive': 'arrow', 'cached': True, 'frame': 2}
+begin_frame {'primitive': 'arrow', 'cached': True, 'frame': 3, 'segments': 32}
+native_registration_attempt {'count': 119, 'forced_failure': False}
+end_frame {'primitive': 'arrow', 'cached': True, 'frame': 3}
+get_pixels {'primitive': 'arrow', 'cached': True, 'frame': 3}
+native_registration_attempt {'count': 120, 'forced_failure': False}
+map_transforms {'primitive': 'arrow', 'cached': True, 'frame': 3}
+close_renderer {'primitive': 'arrow', 'cached': True}
+complete {'rows': 40}

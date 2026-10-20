@@ -1,0 +1,5 @@
+# Preserve archived diagnostic streams, patch context and generated SVG paths.
+# Publication prose, CSV/JSON data and Python tools retain normal checks.
+*.log -whitespace
+*.patch -whitespace
+*.svg -whitespace

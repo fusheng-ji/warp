@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "visible_cuda_devices": 1,
+  "allocated_physical_gpu_index": 0,
+  "egl_device_index": 0,
+  "egl_devices_enumerated": 10,
+  "selection_evidence": [
+    {
+      "egl_index": 0,
+      "drm_pci_match": false,
+      "cuda_physical_index_match": true,
+      "cuda_capable_egl_device": true
+    },
+    {
+      "egl_index": 7,
+      "drm_pci_match": true,
+      "cuda_physical_index_match": false,
+      "cuda_capable_egl_device": false
+    }
+  ],
+  "gpu": "NVIDIA B200",
+  "driver": "580.126.20",
+  "mig_mode": "Disabled",
+  "preexisting_compute_or_graphics_processes": 0,
+  "native_cuda_gl_interop_verified": true,
+  "graphics": {
+    "vendor": "NVIDIA Corporation",
+    "renderer": "NVIDIA B200/PCIe/SSE2"
+  },
+  "slurm_job_id": "1144769",
+  "slurm_partition": "overflow"
+}

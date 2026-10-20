@@ -1,0 +1,420 @@
+{
+  "issue": 1110,
+  "branch": "fusheng-ji/render-shape-segments",
+  "base_commit": "0382a97e2c72911c1f6bba45274e12833a19d8e2",
+  "tested_commit": "cb86abb75d123876d80c6832d8d360f4cda0cc10",
+  "generated_utc": "2026-10-20T10:49:42.369626+00:00",
+  "sources_sha256": {
+    "changelog/1110.added.md": "55a2b2b06376d6213c7ec9c74616258e7f77259bf9dc597b4e062abf957b82da",
+    "docs/domain_modules/render.rst": "03bc409665c18cb22d529906d67eb3ace531bfbaeb64b429765f3bae6629c0fd",
+    "warp/_src/render/render_opengl.py": "a4fdbed58309d64e3cc067313f6c291817af6dbd18733010f3fc78f6d619fe87",
+    "warp/tests/test_render_opengl.py": "27b414b5a36a765e648ffdac23155e1e1c2ead8cf2ff681f39a72ef453726539"
+  },
+  "environment": {
+    "source_commit": "cb86abb75d123876d80c6832d8d360f4cda0cc10",
+    "python": "3.12.13",
+    "platform": "Linux x86_64",
+    "warp": "1.19.0.dev1",
+    "numpy": "2.5.3",
+    "pyglet": "2.1.16",
+    "physical_gpu_index": 0,
+    "gpu": "NVIDIA B200",
+    "gpu_driver": "580.126.20",
+    "sources_sha256": {
+      "warp/_src/render/render_opengl.py": "a4fdbed58309d64e3cc067313f6c291817af6dbd18733010f3fc78f6d619fe87",
+      "warp/tests/test_render_opengl.py": "27b414b5a36a765e648ffdac23155e1e1c2ead8cf2ff681f39a72ef453726539"
+    },
+    "libraries_sha256": {
+      "warp-clang.so": "44084761f7548793d9685a129b15b7767cb4b68a3f65caffdd4c71a71bfacecc",
+      "warp.so": "6f5e8b0094e1c6b44e57b37b58a7299807ff4c6fd4a1cecc4242b676251749c7"
+    },
+    "gl_vendor": "NVIDIA Corporation",
+    "gl_renderer": "NVIDIA B200/PCIe/SSE2",
+    "gl_version": [
+      3,
+      3
+    ]
+  },
+  "build": {
+    "name": "build",
+    "command": [
+      "uv",
+      "run",
+      "build_lib.py"
+    ],
+    "started_utc": "2026-10-20T10:36:59.639584+00:00",
+    "seconds": 85.38010790001135,
+    "exit_code": 0,
+    "source_commit": "0382a97e2c72911c1f6bba45274e12833a19d8e2",
+    "private_kernel_cache": true
+  },
+  "acceptance": {
+    "unit_tests": {
+      "run": 14,
+      "passed": 14,
+      "skipped": 0,
+      "record": "logs/committed-tests.json"
+    },
+    "gpu_frames": {
+      "run": 30,
+      "passed": 30,
+      "skipped": 0,
+      "record": "logs/committed-gpu-render.json",
+      "csv": "gpu/results.csv",
+      "restored_pixels": "exactly equal in all 10 round trips"
+    },
+    "docs": {
+      "command": [
+        "uv",
+        "run",
+        "--extra",
+        "docs",
+        "build_docs.py",
+        "--warnings-as-errors"
+      ],
+      "exit_code": 0,
+      "log": "logs/docs.log",
+      "note": "Built the identical source files before committing; final source hashes identify the tested patch."
+    },
+    "pre_commit": {
+      "name": "precommit-final",
+      "command": [
+        "uvx",
+        "pre-commit",
+        "run",
+        "--files",
+        "warp/_src/render/render_opengl.py",
+        "warp/tests/test_render_opengl.py",
+        "docs/domain_modules/render.rst",
+        "changelog/1110.added.md"
+      ],
+      "started_utc": "2026-10-20T10:42:04.132870+00:00",
+      "seconds": 2.5930167679907754,
+      "exit_code": 0,
+      "source_commit": "0382a97e2c72911c1f6bba45274e12833a19d8e2",
+      "private_kernel_cache": true
+    }
+  },
+  "compatibility_inspection": {
+    "unchanged_mesh_generator_asts": 6,
+    "unchanged_existing_positional_signatures": 5,
+    "native_source_changes": false
+  },
+  "baseline": {
+    "commit": "0382a97e2c72911c1f6bba45274e12833a19d8e2",
+    "existing_tests_passed": 10,
+    "new_test_methods": 4,
+    "error_subtests": 55,
+    "exit_code": 1,
+    "reason": "Public methods do not accept the segments keyword."
+  },
+  "records": [
+    {
+      "name": "baseline-tests",
+      "command": [
+        "uv",
+        "run",
+        "--no-sync",
+        "-m",
+        "unittest",
+        "warp.tests.test_render_opengl",
+        "-v"
+      ],
+      "started_utc": "2026-10-20T10:38:41.638323+00:00",
+      "seconds": 4.808843703940511,
+      "exit_code": 1,
+      "source_commit": "0382a97e2c72911c1f6bba45274e12833a19d8e2",
+      "private_kernel_cache": true
+    },
+    {
+      "name": "build",
+      "command": [
+        "uv",
+        "run",
+        "build_lib.py"
+      ],
+      "started_utc": "2026-10-20T10:36:59.639584+00:00",
+      "seconds": 85.38010790001135,
+      "exit_code": 0,
+      "source_commit": "0382a97e2c72911c1f6bba45274e12833a19d8e2",
+      "private_kernel_cache": true
+    },
+    {
+      "name": "committed-gpu-render",
+      "command": [
+        "uv",
+        "run",
+        "--no-sync",
+        "../warp-1110-results/validate_render.py",
+        "--checkout",
+        ".",
+        "--output",
+        "../warp-1110-results/gpu"
+      ],
+      "started_utc": "2026-10-20T10:46:28.100509+00:00",
+      "seconds": 5.451942302985117,
+      "exit_code": 0,
+      "source_commit": "cb86abb75d123876d80c6832d8d360f4cda0cc10",
+      "private_kernel_cache": true
+    },
+    {
+      "name": "committed-plot",
+      "command": [
+        "uv",
+        "run",
+        "--no-sync",
+        "../warp-1110-results/plot_results.py",
+        "--input",
+        "../warp-1110-results/gpu",
+        "--output",
+        "../warp-1110-results"
+      ],
+      "started_utc": "2026-10-20T10:47:29.748051+00:00",
+      "seconds": 1.4291152460500598,
+      "exit_code": 0,
+      "source_commit": "cb86abb75d123876d80c6832d8d360f4cda0cc10",
+      "private_kernel_cache": true
+    },
+    {
+      "name": "committed-tests",
+      "command": [
+        "uv",
+        "run",
+        "--no-sync",
+        "-m",
+        "unittest",
+        "warp.tests.test_render_opengl",
+        "-v"
+      ],
+      "started_utc": "2026-10-20T10:46:28.102586+00:00",
+      "seconds": 2.486122903996147,
+      "exit_code": 0,
+      "source_commit": "cb86abb75d123876d80c6832d8d360f4cda0cc10",
+      "private_kernel_cache": true
+    },
+    {
+      "name": "gpu-render-final",
+      "command": [
+        "uv",
+        "run",
+        "--no-sync",
+        "../warp-1110-results/validate_render.py",
+        "--checkout",
+        ".",
+        "--output",
+        "../warp-1110-results/gpu-final"
+      ],
+      "started_utc": "2026-10-20T10:44:13.726966+00:00",
+      "seconds": 5.355898807058111,
+      "exit_code": 0,
+      "source_commit": "0382a97e2c72911c1f6bba45274e12833a19d8e2",
+      "private_kernel_cache": true
+    },
+    {
+      "name": "gpu-render",
+      "command": [
+        "uv",
+        "run",
+        "--no-sync",
+        "../warp-1110-results/validate_render.py",
+        "--checkout",
+        ".",
+        "--output",
+        "../warp-1110-results/gpu"
+      ],
+      "started_utc": "2026-10-20T10:42:47.090135+00:00",
+      "seconds": 6.992963914992288,
+      "exit_code": 1,
+      "source_commit": "0382a97e2c72911c1f6bba45274e12833a19d8e2",
+      "private_kernel_cache": true
+    },
+    {
+      "name": "implementation-tests",
+      "command": [
+        "uv",
+        "run",
+        "--no-sync",
+        "-m",
+        "unittest",
+        "warp.tests.test_render_opengl",
+        "-v"
+      ],
+      "started_utc": "2026-10-20T10:39:58.538684+00:00",
+      "seconds": 2.2446923349052668,
+      "exit_code": 0,
+      "source_commit": "0382a97e2c72911c1f6bba45274e12833a19d8e2",
+      "private_kernel_cache": true
+    },
+    {
+      "name": "plot-checked",
+      "command": [
+        "uv",
+        "run",
+        "--no-sync",
+        "../warp-1110-results/plot_results.py",
+        "--input",
+        "../warp-1110-results/gpu",
+        "--output",
+        "../warp-1110-results"
+      ],
+      "started_utc": "2026-10-20T10:48:25.640677+00:00",
+      "seconds": 1.6015641409903765,
+      "exit_code": 0,
+      "source_commit": "cb86abb75d123876d80c6832d8d360f4cda0cc10",
+      "private_kernel_cache": true
+    },
+    {
+      "name": "plot",
+      "command": [
+        "uv",
+        "run",
+        "--no-sync",
+        "../warp-1110-results/plot_results.py",
+        "--input",
+        "../warp-1110-results/gpu-final",
+        "--output",
+        "../warp-1110-results"
+      ],
+      "started_utc": "2026-10-20T10:45:10.653477+00:00",
+      "seconds": 8.201966552063823,
+      "exit_code": 0,
+      "source_commit": "0382a97e2c72911c1f6bba45274e12833a19d8e2",
+      "private_kernel_cache": true
+    },
+    {
+      "name": "precommit-final",
+      "command": [
+        "uvx",
+        "pre-commit",
+        "run",
+        "--files",
+        "warp/_src/render/render_opengl.py",
+        "warp/tests/test_render_opengl.py",
+        "docs/domain_modules/render.rst",
+        "changelog/1110.added.md"
+      ],
+      "started_utc": "2026-10-20T10:42:04.132870+00:00",
+      "seconds": 2.5930167679907754,
+      "exit_code": 0,
+      "source_commit": "0382a97e2c72911c1f6bba45274e12833a19d8e2",
+      "private_kernel_cache": true
+    },
+    {
+      "name": "precommit",
+      "command": [
+        "uvx",
+        "pre-commit",
+        "run",
+        "--files",
+        "warp/_src/render/render_opengl.py",
+        "warp/tests/test_render_opengl.py",
+        "docs/domain_modules/render.rst",
+        "changelog/1110.added.md"
+      ],
+      "started_utc": "2026-10-20T10:41:32.496101+00:00",
+      "seconds": 7.520391213009134,
+      "exit_code": 1,
+      "source_commit": "0382a97e2c72911c1f6bba45274e12833a19d8e2",
+      "private_kernel_cache": true
+    },
+    {
+      "name": "sync-after-build",
+      "command": [
+        "uv",
+        "sync",
+        "--extra",
+        "dev"
+      ],
+      "started_utc": "2026-10-20T10:38:28.417294+00:00",
+      "seconds": 9.413032321957871,
+      "exit_code": 0,
+      "source_commit": "0382a97e2c72911c1f6bba45274e12833a19d8e2",
+      "private_kernel_cache": true
+    },
+    {
+      "name": "sync",
+      "command": [
+        "uv",
+        "sync",
+        "--extra",
+        "dev"
+      ],
+      "started_utc": "2026-10-20T10:36:25.922453+00:00",
+      "seconds": 3.8253705370007083,
+      "exit_code": 1,
+      "source_commit": "0382a97e2c72911c1f6bba45274e12833a19d8e2",
+      "private_kernel_cache": true
+    },
+    {
+      "name": "tests-final",
+      "command": [
+        "uv",
+        "run",
+        "--no-sync",
+        "-m",
+        "unittest",
+        "warp.tests.test_render_opengl",
+        "-v"
+      ],
+      "started_utc": "2026-10-20T10:44:13.725692+00:00",
+      "seconds": 2.113681434071623,
+      "exit_code": 0,
+      "source_commit": "0382a97e2c72911c1f6bba45274e12833a19d8e2",
+      "private_kernel_cache": true
+    }
+  ],
+  "failures_and_limitations": [
+    {
+      "stage": "initial dependency sync",
+      "exit_code": 1,
+      "cause": "Fresh checkout has no native libraries; editable installation requires build_lib.py first.",
+      "resolution": "Standard build followed by sync-after-build succeeded."
+    },
+    {
+      "stage": "first pre-commit",
+      "exit_code": 1,
+      "cause": "Mutable class test fixture needed ClassVar; formatter also reformatted one test.",
+      "resolution": "Fixed annotation; final pre-commit succeeded."
+    },
+    {
+      "stage": "first GPU harness",
+      "exit_code": 1,
+      "cause": "The harness attached the first instance to a parent but did not supply parent transforms; the GPU transform kernel returns without writing that instance. A 3-pixel (9-channel) restored image mismatch exposed the incorrect setup.",
+      "resolution": "Supply identity parent transforms before drawing and explicitly verify the mapped GPU transform matrix. Exact pixel equality retained; library code unchanged.",
+      "partial_data": "attempts/gpu-first",
+      "harness": "attempts/validate-render-first-attempt.py",
+      "script_sha256": "fca2ff4994151169273a0e17af52808473c54ffe42cf21b0c52c9f2213ee060a",
+      "log": "logs/gpu-render.log"
+    },
+    {
+      "stage": "planning CPU renderer probe",
+      "source_commit": "400ff598db84953495e362d9643cfdbe15b51e36",
+      "exit_code": 139,
+      "cause": "CUDA error 201 (invalid device context) followed by a crash while probing actual CPU-device rendering in an older checkout.",
+      "note": "Observed during planning, without an archived raw log. Not rerun on this final checkout. CPU acceptance covers context-free logic tests only."
+    },
+    {
+      "stage": "performance",
+      "note": "No FPS benchmark or speedup experiment was run. Mesh counts are submitted index triples, not a throughput measurement."
+    }
+  ],
+  "publication": {
+    "pushed": false,
+    "pull_request_created": false,
+    "claim_comment_posted": false,
+    "maintainer_assignment_claimed": false
+  },
+  "privacy": {
+    "logs": "Absolute checkout and home paths replaced with placeholders. No host identifiers or credentials intentionally collected.",
+    "author": "Public GitHub noreply address; DCO sign-off; no AI co-author trailer."
+  },
+  "cpu_follow_up": {
+    "fix_commit": "ed66e726b54939efa3d3874a66bc06d1ffa139bc",
+    "combined_commit": "bf2023e27518e434314e571dfc222335497e27f3",
+    "standalone_feature_commit": "cb86abb75d123876d80c6832d8d360f4cda0cc10",
+    "combined_cpu_rendered_frames": 90,
+    "combined_cuda_rendered_frames": 30,
+    "report": "../warp-cpu-gl-results/validation.txt",
+    "note": "The CPU fix is a separate contribution. CPU success applies to the combined commit; the original feature-only commit is unchanged."
+  }
+}

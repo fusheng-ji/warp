@@ -1,0 +1,44 @@
+Using CPython 3.12.13
+Creating virtual environment at: .venv
+Resolved 119 packages in 7ms
+   Building warp-lang @ file://<CHECKOUT>
+  × Failed to build `warp-lang @
+  │ file://<CHECKOUT>`
+  ├─▶ The build backend returned an error
+  ╰─▶ Call to `setuptools.build_meta.build_editable` failed (exit status: 1)
+
+      [stderr]
+      <USER_HOME>/.cache/uv/builds-v0/.tmpXv61zA/lib/python3.12/site-packages/wheel/bdist_wheel.py:4:
+      FutureWarning: The 'wheel' package is no longer the canonical location
+      of the 'bdist_wheel' command, and will be removed in a future release.
+      Please update to setuptools v70.1 or later which contains an integrated
+      version of this command.
+        warn(
+      Traceback (most recent call last):
+        File "<string>", line 14, in <module>
+        File
+      "<USER_HOME>/.cache/uv/builds-v0/.tmpXv61zA/lib/python3.12/site-packages/setuptools/build_meta.py",
+      line 481, in get_requires_for_build_editable
+          return self.get_requires_for_build_wheel(config_settings)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File
+      "<USER_HOME>/.cache/uv/builds-v0/.tmpXv61zA/lib/python3.12/site-packages/setuptools/build_meta.py",
+      line 333, in get_requires_for_build_wheel
+          return self._get_build_requires(config_settings, requirements=[])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File
+      "<USER_HOME>/.cache/uv/builds-v0/.tmpXv61zA/lib/python3.12/site-packages/setuptools/build_meta.py",
+      line 301, in _get_build_requires
+          self.run_setup()
+        File
+      "<USER_HOME>/.cache/uv/builds-v0/.tmpXv61zA/lib/python3.12/site-packages/setuptools/build_meta.py",
+      line 317, in run_setup
+          exec(code, locals())  # noqa: S102 # exec is intentional here
+          ^^^^^^^^^^^^^^^^^^^^
+        File "<string>", line 108, in <module>
+        File "<string>", line 103, in detect_warp_libraries
+      Exception: No libraries found in warp/bin. Please run build_lib.py
+      first.
+
+      hint: This usually indicates a problem with the package or the build
+      environment.

@@ -1,0 +1,25 @@
+{
+  "source_commit": "0382a97e2c72911c1f6bba45274e12833a19d8e2",
+  "python": "3.12.13",
+  "platform": "Linux x86_64",
+  "warp": "1.19.0.dev1",
+  "numpy": "2.5.3",
+  "pyglet": "2.1.16",
+  "physical_gpu_index": 0,
+  "gpu": "NVIDIA B200",
+  "gpu_driver": "580.126.20",
+  "sources_sha256": {
+    "warp/_src/render/render_opengl.py": "a4fdbed58309d64e3cc067313f6c291817af6dbd18733010f3fc78f6d619fe87",
+    "warp/tests/test_render_opengl.py": "27b414b5a36a765e648ffdac23155e1e1c2ead8cf2ff681f39a72ef453726539"
+  },
+  "libraries_sha256": {
+    "warp-clang.so": "44084761f7548793d9685a129b15b7767cb4b68a3f65caffdd4c71a71bfacecc",
+    "warp.so": "6f5e8b0094e1c6b44e57b37b58a7299807ff4c6fd4a1cecc4242b676251749c7"
+  },
+  "gl_vendor": "NVIDIA Corporation",
+  "gl_renderer": "NVIDIA B200/PCIe/SSE2",
+  "gl_version": [
+    3,
+    3
+  ]
+}

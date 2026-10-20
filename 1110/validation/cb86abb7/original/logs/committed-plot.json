@@ -1,0 +1,18 @@
+{
+  "name": "committed-plot",
+  "command": [
+    "uv",
+    "run",
+    "--no-sync",
+    "../warp-1110-results/plot_results.py",
+    "--input",
+    "../warp-1110-results/gpu",
+    "--output",
+    "../warp-1110-results"
+  ],
+  "started_utc": "2026-10-20T10:47:29.748051+00:00",
+  "seconds": 1.4291152460500598,
+  "exit_code": 0,
+  "source_commit": "cb86abb75d123876d80c6832d8d360f4cda0cc10",
+  "private_kernel_cache": true
+}

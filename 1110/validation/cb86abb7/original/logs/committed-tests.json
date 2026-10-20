@@ -1,0 +1,17 @@
+{
+  "name": "committed-tests",
+  "command": [
+    "uv",
+    "run",
+    "--no-sync",
+    "-m",
+    "unittest",
+    "warp.tests.test_render_opengl",
+    "-v"
+  ],
+  "started_utc": "2026-10-20T10:46:28.102586+00:00",
+  "seconds": 2.486122903996147,
+  "exit_code": 0,
+  "source_commit": "cb86abb75d123876d80c6832d8d360f4cda0cc10",
+  "private_kernel_cache": true
+}

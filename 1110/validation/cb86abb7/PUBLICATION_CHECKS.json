@@ -1,0 +1,74 @@
+{
+  "status": "passed",
+  "source": "cb86abb75d123876d80c6832d8d360f4cda0cc10",
+  "original_source_hashes_match": true,
+  "original_unit_methods": 14,
+  "original_gpu_wireframe_frames": 30,
+  "strict_original_docs_exit_code": 0,
+  "data_recomputation": {
+    "status": "passed",
+    "source": "cb86abb75d123876d80c6832d8d360f4cda0cc10",
+    "primary_jobs": [
+      "1144767",
+      "1144768",
+      "1144769"
+    ],
+    "primary_totals": {
+      "filled_frames": 120,
+      "restored_images_exact": 30,
+      "timed_frames": 6840,
+      "measurement_blocks": 270
+    },
+    "datasets": [
+      {
+        "directory": "shared-gpu",
+        "primary": false,
+        "frames": 2280,
+        "blocks": 90,
+        "filled_frames": 40,
+        "restored_exact": 10
+      },
+      {
+        "directory": "overflow/jobs/1143896",
+        "primary": false,
+        "frames": 2280,
+        "blocks": 90,
+        "filled_frames": 40,
+        "restored_exact": 10
+      },
+      {
+        "directory": "overflow/jobs/1144767",
+        "primary": true,
+        "frames": 2280,
+        "blocks": 90,
+        "filled_frames": 40,
+        "restored_exact": 10
+      },
+      {
+        "directory": "overflow/jobs/1144768",
+        "primary": true,
+        "frames": 2280,
+        "blocks": 90,
+        "filled_frames": 40,
+        "restored_exact": 10
+      },
+      {
+        "directory": "overflow/jobs/1144769",
+        "primary": true,
+        "frames": 2280,
+        "blocks": 90,
+        "filled_frames": 40,
+        "restored_exact": 10
+      }
+    ],
+    "statistics": "Recomputed from every raw timing row; all saved block, job, percentile, paired-ratio and across-job summaries checked at 1e-12 absolute/relative tolerance; all restored PNG pixels checked exactly."
+  },
+  "asset_precommit_exit_code": 0,
+  "asset_precommit_elapsed_seconds": 1.9063509550178424,
+  "format_scope": "New verifier and publication Markdown/template; immutable measured scripts retained byte-for-byte. Ruff v0.16.10 with Warp configuration and typos v1.51.0. Core code-generation/version/lock hooks do not apply to this asset-only branch.",
+  "sensitive_pattern_hits": [],
+  "source_bundle_verified": true,
+  "new_gpu_runs": 0,
+  "new_native_builds": 0,
+  "archived_whitespace": "Initial diff check flagged retained unittest/log whitespace, patch context and generated SVG paths. Scoped .gitattributes preserves these archived formats; publication prose, CSV/JSON and Python retain normal checks."
+}

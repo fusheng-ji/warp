@@ -1,0 +1,14 @@
+{
+  "name": "sync-after-build",
+  "command": [
+    "uv",
+    "sync",
+    "--extra",
+    "dev"
+  ],
+  "started_utc": "2026-10-20T10:38:28.417294+00:00",
+  "seconds": 9.413032321957871,
+  "exit_code": 0,
+  "source_commit": "0382a97e2c72911c1f6bba45274e12833a19d8e2",
+  "private_kernel_cache": true
+}

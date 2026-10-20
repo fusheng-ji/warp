@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "<CHECKOUT>-overflow-20261020/jobs/1143879/select_device.py", line 157, in <module>
+    main()
+  File "<CHECKOUT>-overflow-20261020/jobs/1143879/select_device.py", line 94, in main
+    check.assertEqual(len(candidates), 1, "Cannot unambiguously map the allocated CUDA GPU to EGL")
+  File "<HOME>/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/unittest/case.py", line 885, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "<HOME>/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/unittest/case.py", line 878, in _baseAssertEqual
+    raise self.failureException(msg)
+AssertionError: 2 != 1 : Cannot unambiguously map the allocated CUDA GPU to EGL

@@ -1,0 +1,39 @@
+Warp #1110: Slurm overflow exclusive-GPU validation
+Job: 1144767; partition: overflow
+Source: cb86abb75d123876d80c6832d8d360f4cda0cc10
+Random case-order seed: 1121
+GPU: NVIDIA B200; driver: 580.126.20
+Allocation: cpu=8,node=1,billing=1,gres/gpu=1,gres/gpu:b200=1
+One full GPU is exclusively allocated by Slurm GRES. The node and other GPUs may be shared.
+MIG is disabled. No preexisting compute or graphics process was present on the selected GPU.
+CUDA/EGL identity was matched and native CUDA/OpenGL interop verified with copy fallback disabled.
+Filled frames: 40; exact restored images: 10
+Timed frames: 2280; blocks: 90
+
+Static filled-scene latency in ms/frame (median of five block medians):
+instances,segments=32,segments=16,segments=8,segments=3
+64,0.610464,0.482866,0.429214,0.411554
+512,1.757455,0.831049,0.544999,0.431217
+4096,10.915295,3.337877,1.385412,0.626788
+
+All-instance switching latency in ms/frame (retained even when slower):
+64 instances, alternating 32/3: 1.628078
+64 instances, alternating 32/8: 1.699775
+512 instances, alternating 32/3: 4.519821
+512 instances, alternating 32/8: 4.537999
+4096 instances, alternating 32/3: 24.848492
+4096 instances, alternating 32/8: 26.270505
+
+Method: filled 1280x720, vsync off, GL completion per frame; cached geometry and warmup excluded.
+Static frames omit per-object calls; switch frames update every capsule and include rebuilding/upload work.
+No clock or power limits were changed. Scheduler exclusivity does not mean whole-node isolation.
+Five randomized repeats; error bars are full ranges of block medians, not confidence intervals.
+Lower resolution changes visual fidelity. Latency reciprocals are not application/display FPS.
+This is a new measurement; earlier shared-GPU data remain separately identified and unmodified.
+Different node, allocation, CPU scheduling and recorded thread settings may affect comparison;
+differences cannot be attributed solely to GPU exclusivity.
+Thread settings: {'OMP_NUM_THREADS': '1', 'OPENBLAS_NUM_THREADS': '1', 'MKL_NUM_THREADS': '1'}
+No native library rebuild or product changes were needed. Hashes identify the reused artifacts.
+All logs and scripts are local delivery; no GitHub comment, PR change or asset publication is performed.
+Raw scheduler output is stored separately from this sanitized, checksum-covered result directory.
+comparison_with_shared.csv contains both observations without causal speedup claims.

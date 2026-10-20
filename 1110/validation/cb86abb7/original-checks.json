@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "archives": [
+    {
+      "archive": "original",
+      "original_sha256_entries": 107
+    },
+    {
+      "archive": "shared-gpu",
+      "original_sha256_entries": 92
+    }
+  ],
+  "overflow_job_ids": [
+    "1143879",
+    "1143894",
+    "1143896",
+    "1144767",
+    "1144768",
+    "1144769"
+  ],
+  "independent_summary_verified": true
+}

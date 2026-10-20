@@ -9,6 +9,7 @@ Numerical reports, figures, data, and reproduction scripts for contributions to 
 
 | Issue | Assets | Report | Figure |
 |---|---|---|---|
+| [NVIDIA/warp#1110](https://github.com/NVIDIA/warp/issues/1110) | [OpenGL primitive resolution](1110/validation/cb86abb7/) | [Validation and provenance](1110/validation/cb86abb7/README.md), [Data tables](1110/validation/cb86abb7/TABLES.md) | [Independent B200 allocations](1110/validation/cb86abb7/overflow/independent-summary/across_jobs.png), [Filled geometry](1110/validation/cb86abb7/overflow/jobs/1144767/filled_comparison.png) |
 | [NVIDIA/warp#2054](https://github.com/NVIDIA/warp/issues/2054) | [SVD gradient validation](2054/) | [Numerical report](2054/REPORT.txt) | [Before / after gradients](2054/svd-gradient-comparison.png) |
 | [NVIDIA/warp#2055](https://github.com/NVIDIA/warp/issues/2055) | [SVD3 forward validation](2055/) | [Numerical report](2055/REPORT.txt) | [Before / after comparison](2055/svd3-validation.png) |
 | [NVIDIA/warp#2069](https://github.com/NVIDIA/warp/issues/2069) | [Mixed-precision and row-packed BSR products](2069/) | [Validation report](2069/report.html), [Split validation](2069/split/REPORT.txt) | [Row packing](2069/row-packing-speedup.png), [FEM comparison](2069/fem-speedup.png) |

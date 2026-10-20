@@ -1,0 +1,37 @@
+Warp 1.19.0.dev1 initialized:
+   CUDA Toolkit 13.0, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA B200" (178 GiB, sm_100, mempool enabled)
+   Kernel cache:
+     <CHECKOUT>/_build/1110-cache/1.19.0.dev1
+Module warp.render.render_opengl 4267418 load on device 'cuda:0' took 1207.53 ms  (compiled)
+sphere cached False frame 0 segments 32 PASS
+sphere cached False frame 1 segments 8 PASS
+Traceback (most recent call last):
+  File "<CHECKOUT>/../warp-1110-results/validate_render.py", line 187, in <module>
+    main()
+  File "<CHECKOUT>/../warp-1110-results/validate_render.py", line 158, in main
+    np.testing.assert_array_equal(pixels, images[0])
+  File "<CHECKOUT>/.venv/lib/python3.12/site-packages/numpy/testing/_private/utils.py", line 1128, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+  File "<CHECKOUT>/.venv/lib/python3.12/site-packages/numpy/testing/_private/utils.py", line 988, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 9 / 294912 (0.00305%)
+First 5 mismatches are at indices:
+ [143, 217, 0]: 33 (ACTUAL), 29 (DESIRED)
+ [143, 217, 1]: 126 (ACTUAL), 111 (DESIRED)
+ [143, 217, 2]: 191 (ACTUAL), 168 (DESIRED)
+ [169, 218, 0]: 40 (ACTUAL), 43 (DESIRED)
+ [169, 218, 1]: 76 (ACTUAL), 83 (DESIRED)
+Max absolute difference among violations: 36
+Max relative difference among violations: 0.33333333
+ ACTUAL: array([[[20, 23, 31],
+        [20, 23, 31],
+        [20, 23, 31],...
+ DESIRED: array([[[20, 23, 31],
+        [20, 23, 31],
+        [20, 23, 31],...

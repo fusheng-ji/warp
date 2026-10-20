@@ -1,0 +1,36 @@
+{
+  "name": "filled-final",
+  "command": [
+    "uv",
+    "run",
+    "--no-sync",
+    "<RESULTS>/validate_filled.py",
+    "--checkout",
+    "<CHECKOUT>",
+    "--output",
+    "<RESULTS>/filled",
+    "--mode",
+    "switch",
+    "--device",
+    "cuda:0",
+    "--egl-device",
+    "0"
+  ],
+  "started_utc": "2026-10-20T19:44:12.955443+00:00",
+  "source_commit": "cb86abb75d123876d80c6832d8d360f4cda0cc10",
+  "dirty_before": "",
+  "cuda_visible_devices": "0",
+  "private_cache": true,
+  "experiment_scripts_sha256": {
+    "benchmark_capsules.py": "55ea256d5c65eeac755753b7f82c306e60b5a6662ba5eafe2495171eb1051c4d",
+    "finish_report.py": "3d19544bb51d56674945e12a47aa92c4bb5a0ba4c2bdc3cd0be2c7d4a9dcbefb",
+    "run_record.py": "a968a322819f910b7978b95721f893b2b55c846aca3f8a744e72eacfc7747f59",
+    "select_device.py": "1ad668b0794be897b61f82f1c1196ae9d82b658072cebf59c297be242a9b04b8",
+    "summarize.py": "a638685282d3f92b95ad3e1a382a8fcfc4570507611ba6258c3c613e272b7cfa",
+    "validate_filled.py": "59f19082b1a5b5d965590517f3ccde2b10e4a503d5a8d918e1a2d1af8bcb7377",
+    "worker.py": "816c111e92799d7b833a9215574b45fd9405c3cd228ba5bcf09b2ae3012e67c5"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 8.948081670328975,
+  "dirty_after": ""
+}

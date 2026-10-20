@@ -1,0 +1,41 @@
+{"allocated_physical_gpu_index": 0, "egl_devices_enumerated": 10, "pci_candidates": [8], "ordinal_candidates": [0], "evidence": [{"egl_index": 0, "drm_pci_match": false, "cuda_physical_index_match": true}, {"egl_index": 8, "drm_pci_match": true, "cuda_physical_index_match": false}]}
+libEGL warning: failed to open /dev/dri/renderD128: Permission denied
+
+libEGL warning: failed to open /dev/dri/renderD128: Permission denied
+
+libEGL warning: failed to open /dev/dri/card1: Permission denied
+
+Warp 1.19.0.dev1 initialized:
+   CUDA Toolkit 13.0, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA B200" (178 GiB, sm_100, mempool enabled)
+   Kernel cache:
+     <PRIVATE_CACHE>/1.19.0.dev1
+Traceback (most recent call last):
+  File "<CHECKOUT>/.venv/lib/python3.12/site-packages/pyglet/__init__.py", line 439, in __getattr__
+    return getattr(self._module, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'Window'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<RESULTS>/select_device.py", line 171, in <module>
+    main()
+  File "<RESULTS>/select_device.py", line 125, in main
+    window = pyglet.window.Window(width=16, height=16, visible=False)
+             ^^^^^^^^^^^^^^^^^^^^
+  File "<CHECKOUT>/.venv/lib/python3.12/site-packages/pyglet/__init__.py", line 445, in __getattr__
+    __import__(import_name)
+  File "<CHECKOUT>/.venv/lib/python3.12/site-packages/pyglet/window/__init__.py", line 1906, in <module>
+    gl._create_shadow_window()  # noqa: SLF001
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<CHECKOUT>/.venv/lib/python3.12/site-packages/pyglet/gl/__init__.py", line 179, in _create_shadow_window
+    _shadow_window = ShadowWindow()
+                     ^^^^^^^^^^^^^^
+  File "<CHECKOUT>/.venv/lib/python3.12/site-packages/pyglet/gl/__init__.py", line 168, in __init__
+    super().__init__(width=1, height=1, visible=False)
+  File "<CHECKOUT>/.venv/lib/python3.12/site-packages/pyglet/window/__init__.py", line 538, in __init__
+    raise NoSuchConfigException(msg)
+pyglet.window.NoSuchConfigException: No standard config is available.

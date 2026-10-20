@@ -1,0 +1,125 @@
+Warp #1110 supplementary experiments: filled drawing, minimum segments and performance
+Date: 2026-10-20 UTC
+
+Frozen source: cb86abb75d123876d80c6832d8d360f4cda0cc10
+Branch: fusheng-ji/render-shape-segments
+Base: 0382a97e2c72911c1f6bba45274e12833a19d8e2
+No product source, tests or Git commits were modified by these experiments.
+All accepted commands started and ended with clean tracked source.
+
+RESULTS
+
+Filled correctness: 40/40 frames passed, no cases skipped.
+Five primitives (sphere, capsule, cylinder, cone, arrow), two target-cache states,
+and 32 -> 8 -> 3 -> 32. The pre-cached path also exercises tiled rendering.
+Both objects remain visible in every frame, including minimum resolution 3.
+Ten final images exactly match their initial 32-segment images, with no pixel
+tolerance. Intermediate resolutions change actual pixels. Instance identity,
+parent, scale, custom ID, membership, instance mapping, mapped transforms,
+finite mesh vertices, valid indices, pixel readback and GL errors are checked.
+Only the left object changes resolution; the right object keeps its original mesh.
+The montage shows the uncached cases; all 40 original PNGs and rows are retained.
+
+Performance: 90/90 measured blocks passed, containing 2280 completed frames.
+- Static: 3 instance counts x 4 segment counts x 5 repeats x 32 frames = 1920.
+- Dynamic: 3 instance counts x 2 low resolutions x 5 repeats x 12 frames = 360.
+- Eight warmup frames per block, excluded. Cases are shuffled in each repeat
+  using seed 1110. All meshes are cached before timing.
+- A separate 16-instance smoke run passed; its 20 frames are NOT added above.
+- Default segments and explicit segments=32 produce exactly equal pixels for
+  each benchmark instance count. No timing ratio is a pass/fail assertion.
+
+Static filled scene, milliseconds per completed frame:
+instances     segments=32    segments=16    segments=8    segments=3
+64                0.613          0.489         0.435         0.417
+512               1.761          0.832         0.548         0.431
+4096             10.902          3.334         1.385         0.631
+
+Entries are medians of five block medians. Paired 32/8 latency ratios are
+1.41, 3.21 and 7.87 for the three counts; paired 32/3 ratios are 1.47, 4.07
+and 17.27. These compare different fidelity settings within this feature
+revision; they are NOT speedups against a separately timed upstream checkout.
+
+Negative result retained: switching EVERY instance between cached resolutions
+on EVERY frame costs substantially more than leaving the scene static.
+instances      alternating 32/8      alternating 32/3
+64                    1.928 ms               1.704 ms
+512                   5.023 ms               5.205 ms
+4096                 30.772 ms              29.503 ms
+
+At 4096 instances, the five 32/8 block medians range from 28.320 to 32.708 ms.
+This is end-to-end switching plus completed drawing, including all per-object
+API calls and instance-buffer rebuilding. It does not isolate mesh rebinding,
+Python, transfer or GPU draw costs. Cached geometry alone does not eliminate
+these costs. No automatic LOD policy or switching optimization is claimed.
+
+METHOD AND LIMITATIONS
+
+Hardware: physical GPU 1, NVIDIA B200; driver 580.126.20, CUDA Toolkit 13.0.88.
+CUDA_VISIBLE_DEVICES=1 maps that GPU to Warp cuda:0; EGL headless_device=1.
+Linux x86_64, Python 3.12.13, Warp 1.19.0.dev1, NumPy 2.5.3, Pyglet 2.1.16.
+Actual graphics use NVIDIA EGL/OpenGL 3.3. These supplementary runs use CUDA,
+not the separate CPU/OpenGL fix, and make no new CPU validation claim.
+
+Correctness drawing uses 384x256, filled polygons, Pyglet GL debug checks and
+explicit GL error checks. It was run in a separate process before benchmarking.
+Performance drawing uses 1280x720, filled polygons, vsync disabled, and no grid,
+sky, axes or informational overlay. Per-call Pyglet debug checks are disabled
+in timed runs; explicit error and pixel checks remain at block boundaries.
+
+Capsules form a non-overlapping grid with a fixed scene extent. As instance
+count increases, capsule dimensions shrink to keep the scene visible. All
+instances share one mesh for the selected resolution. Submitted triangle
+counts, not unique nondegenerate or visible triangles, are recorded per frame.
+This scene does not model a downstream physics simulation or typical workload.
+
+Wall time uses perf_counter_ns through glFinish for EVERY frame: it measures
+completed frame latency, rather than asynchronous command submission alone.
+Static timing has no per-object API calls. Dynamic timing includes a
+render_capsule call for every instance while alternating 32 and the low value.
+Renderer creation, mesh creation, initial upload, warmup, readback, telemetry
+and query-result retrieval are excluded. GL_TIME_ELAPSED is also retained;
+it spans GL frame commands and can include GPU idle gaps due to host work.
+It is not a draw-only GPU timer, CUDA kernel timer or proof of a bottleneck.
+
+The GPU is shared, with no exclusive reservation, clock locking or power-limit
+change. Before/after telemetry is retained for every block. Repeat ranges and
+all frame outliers remain in CSV; nothing was removed for being slow. Error
+bars show full ranges of block medians, NOT confidence intervals. A reciprocal
+latency would not establish application or displayed FPS. These observations
+are specific to this B200 setup and scene.
+
+Lower segments change visual fidelity. In particular, 3 is a legal minimum,
+not an assertion of equivalent image quality. The quality montage retains that
+visible tradeoff. No new mesh-generation or forward-geometry fix is included.
+
+PROVENANCE AND DELIVERY
+
+Existing independent standard-build artifacts from the same feature checkout
+were reused. There were no native source changes and no new native build.
+Source, libraries and experiment scripts have SHA256 hashes in the command
+records and environment JSON. A private kernel cache was used throughout.
+Every rendering, benchmark and final analysis command exited 0. Intermediate
+script lint issues were fixed before final checks; no failed rendering or
+timing execution was discarded. The smoke and first analysis are retained.
+
+Original #1110 unit/documentation/wireframe results and the older CPU combined
+results remain separate historical records. They are not included in these
+new frame counts and are not relabeled with this experiment date.
+
+This bundle is a local delivery. No assets, PR body, issue comment or review
+reply were published during this task. No performance claim was added to PR #2121.
+Logs redact checkout/home/cache paths; no credentials, hostnames or private
+email addresses are needed. SHA256SUMS covers all other files in this bundle.
+
+FILES
+filled/results.csv, filled/result.json, filled/*.png: correctness and images.
+benchmark/frames.csv: 2280 raw timed frames, without outlier filtering.
+benchmark/environment.json: metadata, 90 blocks, telemetry and default controls.
+performance_summary.csv: all 18 case summaries, ranges, p95 and paired ratios.
+filled_comparison.png: five primitives at 32, 8, 3 and restored 32.
+capsule_quality.png: fixed 512-capsule scene at all four resolutions.
+capsule_performance.png / .svg: latency, paired ratios and dynamic-switch cost.
+analysis.json: independently checked row counts and exact restored images.
+logs/: sanitized output, commands, source state, elapsed time and exit codes.
+REPRODUCE.txt: runnable commands; *.py: standalone measurement/analysis tools.

@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "excluded": [
+    "overflow/private-slurm/",
+    "unparameterized job.sbatch"
+  ],
+  "redactions": [
+    "Private checkout/home paths",
+    "Compute-node hostnames",
+    "GPU UUIDs"
+  ],
+  "changed_archived_files": [],
+  "historical_files_preserved_when_no_redaction_needed": true,
+  "public_attribution": "Public noreply author and DCO retained; no AI co-author trailer added.",
+  "source_bundle": "Original signed-off cb86abb7 commit; base 0382a97e prerequisite verified."
+}
