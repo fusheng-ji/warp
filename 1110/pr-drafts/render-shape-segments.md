@@ -4,7 +4,7 @@ Closes #1110.
 
 At the tested baseline, `OpenGLRenderer.render_*()` does not expose the existing primitive mesh generators' segment counts. Debug scenes with many capsules therefore use the default mesh density. This proposal lets callers choose the density and change an existing named primitive's resolution between frames.
 
-This work comes from an independent renderer correctness and performance investigation. I do not have a downstream application or production deployment to report. [Outside-implementation guidance was requested in #1110](https://github.com/NVIDIA/warp/issues/1110#issuecomment-6297170911); there is no maintainer reply at this snapshot, and no assignment or approval is claimed. This document is proposed PR text; no feature PR has been opened.
+This work comes from an independent renderer correctness and performance investigation. I do not have a downstream application or production deployment to report. [Outside-implementation guidance was requested in #1110](https://github.com/NVIDIA/warp/issues/1110#issuecomment-6297170911); there is no maintainer reply at this snapshot, and no assignment or approval is claimed. This PR is kept in draft while maintainer guidance on the proposed scope is pending.
 
 ## What does this change?
 
@@ -34,11 +34,11 @@ The scope covers these five OpenGL primitives. Point clouds, lines, USD renderin
 ## Existing pull requests
 
 - [x] I searched open pull requests for duplicate or overlapping work.
-- Related pull requests: #2121 fixes CPU buffer mappings and does not implement primitive resolution. Searches for open PRs mentioning segments, primitive resolution and #1110 found no duplicate implementation. The [search snapshot](duplicate-search.json) records the queries.
+- Related pull requests: #2121 fixes CPU buffer mappings and does not implement primitive resolution. Searches for open PRs mentioning segments, primitive resolution and #1110 found no duplicate implementation. The [earlier search snapshot](https://github.com/fusheng-ji/warp/blob/68ef0775e188ce09b02bdd6b62f8a4065bdf442c/1110/pr-drafts/duplicate-search.json) records the original queries; the same searches were repeated before opening this PR on 2026-10-21.
 
 ## Validation
 
-Frozen feature source: **`cb86abb75d123876d80c6832d8d360f4cda0cc10`**, one DCO-signed commit based on official main **`0382a97e2c72911c1f6bba45274e12833a19d8e2`**. The current official main has advanced; this proposal has not been rebased or retested on that newer main. The [Git bundle](https://github.com/fusheng-ji/warp/blob/036fceb1a7935b8787207ad9bbc4b97b95b3b498/1110/validation/cb86abb7/source.bundle) restores the exact measured source without depending on an unpublished branch.
+Frozen feature source: **`cb86abb75d123876d80c6832d8d360f4cda0cc10`**, one DCO-signed commit based on official main **`0382a97e2c72911c1f6bba45274e12833a19d8e2`**. The current official main has advanced; this proposal has not been rebased or retested on that newer main. The [source commit](https://github.com/fusheng-ji/warp/commit/cb86abb75d123876d80c6832d8d360f4cda0cc10) and [Git bundle](https://github.com/fusheng-ji/warp/blob/036fceb1a7935b8787207ad9bbc4b97b95b3b498/1110/validation/cb86abb7/source.bundle) identify the exact measured source.
 
 - Original regression validation: the four added unittest methods fail on the unmodified baseline because `segments` is unavailable. All **14 context-free renderer test methods** pass on the committed feature. Tests cover five primitives, default/32/8/3/NumPy-integer values, invalid values before state changes, sharing, templates, cached/uncached switching, stable identities and instance attributes.
 - Original checks: an independent standard native build, **30 wireframe B200 CUDA/OpenGL frames**, strict HTML documentation and applicable formatting checks passed. Documentation/source hashes connect the pre-commit checks to the committed source. These are original acceptance records, not new runs for this publication.
@@ -74,7 +74,7 @@ The same latency statistic includes `render_capsule()` calls for every instance,
 | 512 | 4.458 [4.435, 4.538] | 4.136 [4.054, 4.520] |
 | 4096 | 26.271 [25.049, 27.905] | 24.848 [24.748, 26.560] |
 
-The dynamic costs are retained: at 4096 capsules, alternating 32/8 takes **26.271 ms/frame [25.049, 27.905]**, compared with a static 8-segment scene at **1.385 ms/frame [1.383, 1.387]**. Geometry caching does not eliminate per-frame switching work; no automatic LOAD policy or switching optimization is claimed.
+The dynamic costs are retained: at 4096 capsules, alternating 32/8 takes **26.271 ms/frame [25.049, 27.905]**, compared with a static 8-segment scene at **1.385 ms/frame [1.383, 1.387]**. Geometry caching does not eliminate per-frame switching work; no automatic policy for selecting resolution or switching optimization is claimed.
 
 ![Static latency, paired latency ratios and dynamic-switch latency across three allocations](https://raw.githubusercontent.com/fusheng-ji/warp/036fceb1a7935b8787207ad9bbc4b97b95b3b498/1110/validation/cb86abb7/overflow/independent-summary/across_jobs.png)
 
